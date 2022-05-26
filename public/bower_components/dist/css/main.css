@@ -1,0 +1,27 @@
+/* livesearch */
+.livesearch {
+    background: #fff;
+    max-height: 25rem;
+    overflow: auto;
+    display: none;
+}
+.livesearch a {
+    color: #000 !important;
+}
+
+/* Task */
+.task-label {
+    display: flex;
+    cursor: pointer;
+}
+.task-label-title {
+    margin-left: 1rem;
+}
+
+/* Form Elements */
+label.required::after {
+    color: #dd4b39;
+    content: "*";
+    font-weight: bold;
+    margin-left: 0.3rem;
+}

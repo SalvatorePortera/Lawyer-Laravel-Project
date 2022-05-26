@@ -1,0 +1,15 @@
+{
+    "name": "Superadmin",
+    "alias": "superadmin",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Superadmin\\Providers\\SuperadminServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

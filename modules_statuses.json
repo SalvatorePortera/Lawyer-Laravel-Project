@@ -1,0 +1,18 @@
+{
+    "Setting": true,
+    "Attendance": true,
+    "Payroll": true,
+    "Leave": true,
+    "RolePermission": true,
+    "Task": true,
+    "Todo": true,
+    "Localization": true,
+    "ModuleManager": true,
+    "CustomField": true,
+    "ClientLogin": true,
+    "Finance": true,
+    "EmailtoCL": true,
+    "superadmin": true,
+    "Filemanagertest": true,
+    "Superadmin": false
+}
