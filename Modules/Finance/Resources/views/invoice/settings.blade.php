@@ -24,7 +24,7 @@
                                         <div class="primary_input ">
                                             <label class="primary_input_label required"
                                                    for="income_invoice_prefix">{{ __('finance.Income Invoice Prefix') }}</label>
-                                            <input class="form-control"
+                                            <input class="primary_input_field"
                                                    placeholder="{{ __('finance.Income Invoice Prefix') }}" type="text"
                                                    id="income_invoice_prefix" required
                                                    name="income_invoice_prefix"
@@ -36,7 +36,7 @@
                                         <div class="primary_input ">
                                             <label class="primary_input_label required"
                                                    for="expense_invoice_prefix">{{ __('finance.Expense Invoice Prefix') }}</label>
-                                            <input class="form-control" required
+                                            <input class="primary_input_field" required
                                                    placeholder="{{ __('finance.Expense Invoice Prefix') }}" type="text"
                                                    id="expense_invoice_prefix"
                                                    name="expense_invoice_prefix"
@@ -47,7 +47,7 @@
                                         <div class="primary_input ">
                                             <label class="primary_input_label required"
                                                    for="invoice_number_padding">{{ __('finance.Invoice Number Padding') }}</label>
-                                            <input class="form-control input_number" required
+                                            <input class="primary_input_field input_number" required
                                                    placeholder="{{ __('finance.Invoice Number Padding') }}" type="text"
                                                    id="invoice_number_padding"
                                                    name="invoice_number_padding"
@@ -58,7 +58,7 @@
                                         <div class="primary_input ">
                                             <label class="primary_input_label required"
                                                    for="invoice_number_separator">{{ __('finance.Invoice Number Separator') }}</label>
-                                            <input class="form-control" required
+                                            <input class="primary_input_field" required
                                                    placeholder="{{ __('finance.Invoice Number Separator') }}"
                                                    type="text"
                                                    id="invoice_number_separator"
@@ -71,7 +71,7 @@
                                         <div class="primary_input ">
                                             <label class="primary_input_label"
                                                    for="next_income_invoice_number">{{ __('finance.Next Income Invoice Number') }}</label>
-                                            <input class="form-control"
+                                            <input class="primary_input_field"
                                                    placeholder="{{ __('finance.Next Income Invoice Number') }}"
                                                    type="text"
                                                    id="next_income_invoice_number" readonly disabled
@@ -84,7 +84,7 @@
                                         <div class="primary_input ">
                                             <label class="primary_input_label"
                                                    for="next_expense_invoice_number">{{ __('finance.Next Expense Invoice Number') }}</label>
-                                            <input class="form-control"
+                                            <input class="primary_input_field"
                                                    placeholder="{{ __('finance.Next Expense Invoice Number') }}"
                                                    type="text"
                                                    id="next_expense_invoice_number" readonly disabled
@@ -161,7 +161,7 @@
                                         <div class="primary_input ">
                                             <label class="primary_input_label"
                                                    for="">{{ __('finance.Remark Title') }}</label>
-                                            <input class="form-control"
+                                            <input class="primary_input_field"
                                                    placeholder="{{ __('finance.Remark Title') }}" type="text"
                                                    id="remarks_title"
                                                    name="remarks_title" value="{{ getConfig('remarks_title') }}">
@@ -193,10 +193,10 @@
                                 </div>
                             </div>
                             <div class="submit_btn text-center mt-4">
-                                <button class="btn btn-primary submit" type="submit"><i
+                                <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                         class="ti-check"></i> {{ __('common.Save') }}</button>
 
-                                <button class="btn btn-primary submitting" type="button" disabled
+                                <button class="primary-btn fix-gr-bg submitting" type="button" disabled
                                         style="display: none; ">
                                     <i class="ti-check"></i> {{ __('common.Saving') }}</button>
                             </div>

@@ -5,7 +5,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border bg-primary-dark">
                     <h3 class="box-title"><label>@lang('hr::lang.job_title_list')</label></h3>
-                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal"
+                    <button type="button" class="primary-btn fix-gr-bg pull-right" data-toggle="modal"
                         data-target="#job_title_modal">@lang('hr::lang.add_job_title')</button>
                 </div>
                 <div class="box-body">

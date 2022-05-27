@@ -17,22 +17,22 @@
                         <div class="row">
                             <div class="primary_input col-md-12">
                                 {{Form::label('stage_id', __('case.Case Stage'),['class' => 'required'])}}
-                                {{Form::select('stage_id', $stages, $case_model->stage_id, ['class' => 'form-control select2bs4', 'data-placeholder' => __('case.Case Stage')])}}
+                                {{Form::select('stage_id', $stages, $case_model->stage_id, ['class' => 'primary_select', 'data-placeholder' => __('case.Case Stage')])}}
                             </div>
                             <div class="primary_input col-md-12">
                                 {{Form::hidden('case', $case)}}
                                 {{Form::label('hearing_date', __('case.Hearing Date'), ['class' => 'required'])}}
-                                {{Form::text('hearing_date', date('Y-m-d'), ['required' => '','class' => 'form-control primary-input date form-control date', 'placeholder' => __('case.Hearing Date')])}}
+                                {{Form::text('hearing_date', date('Y-m-d'), ['required' => '','class' => 'primary_input_field primary-input date form-control date', 'placeholder' => __('case.Hearing Date')])}}
                             </div>
                         </div>
                         <div class="primary_input">
                             {{Form::label('description', 'Court Order')}}
-                            {{Form::textarea('description', null, ['class' => 'form-control summernote', 'placeholder' => __('case.Court Order'), 'rows' => 5, 'data-parsley-errors-container' =>
+                            {{Form::textarea('description', null, ['class' => 'primary_input_field summernote', 'placeholder' => __('case.Court Order'), 'rows' => 5, 'data-parsley-errors-container' =>
                             '#description_error' ])}}
                             <span id="description_error"></span>
                         </div>
                         <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-primary" id="submit" value="submit">{{ __
+                            <button type="submit" class="primary-btn semi_large2 fix-gr-bg" id="submit" value="submit">{{ __
                   ('common.Create')
                   }}</button>
                         </div>

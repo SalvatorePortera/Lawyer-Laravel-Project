@@ -15,7 +15,7 @@
                     <img src="{{asset(getConfigValueByKey($config,'site_logo')) }}" alt="{{ getConfigValueByKey($config,'site_title') }}" id="logo_image">
                 </div>
                 <div class="update_logo_btn">
-                    <button class="btn btn-sm btn-primary "  type="button">
+                    <button class="primary-btn small fix-gr-bg "  type="button">
                         <input placeholder="Upload Logo" type="file" name="site_logo" id="site_logo" onchange="imageChangeWithFile(this, '#logo_image' )">
                         {{ __('setting.Upload Logo') }}
                     </button>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="update_logo_btn">
-                    <button class="btn btn-sm btn-primary " type="button">
+                    <button class="primary-btn small fix-gr-bg " type="button">
                         <input placeholder="Upload Logo" type="file" name="favicon_logo" id="favicon_logo" onchange="imageChangeWithFile(this, '#favicon_image' )" >
                         {{ __('setting.Upload Fav Icon') }}
                     </button>
@@ -44,32 +44,32 @@
                 <div class="col-xl-12">
                     <div class="primary_input mb-25">
                         {{ Form::label('site_title', __('setting.System Title') , ['class' => 'primary_input_label required']) }}
-                        {{ Form::text('site_title', getConfigValueByKey($config,'site_title') , ["class" => "form-control", "placeholder" => 'Infix Advocate', "required"]) }}
+                        {{ Form::text('site_title', getConfigValueByKey($config,'site_title') , ["class" => "primary_input_field", "placeholder" => 'Infix Advocate', "required"]) }}
                     </div>
                 </div>
                 <div class="col-xl-12">
                     <div class="primary_input mb-25">
                         {{ Form::label('site_description', __('setting.Description') , ['class' => 'primary_input_label required']) }}
-                        {{ Form::text('site_description', getConfigValueByKey($config,'site_description') , ["class" => "form-control", "placeholder" => __('setting.Description'), "required"]) }}
+                        {{ Form::text('site_description', getConfigValueByKey($config,'site_description') , ["class" => "primary_input_field", "placeholder" => __('setting.Description'), "required"]) }}
                     </div>
                 </div>
                 <div class="col-xl-12">
                     <div class="primary_input mb-25">
                         {{ Form::label('help_url', __('setting.Help URL') , ['class' => 'primary_input_label required']) }}
-                        {{ Form::text('help_url', getConfigValueByKey($config,'help_url') , ["class" => "form-control", "placeholder" => __('setting.Help URL'), "required"]) }}
+                        {{ Form::text('help_url', getConfigValueByKey($config,'help_url') , ["class" => "primary_input_field", "placeholder" => __('setting.Help URL'), "required"]) }}
                     </div>
                 </div>
                 <div class="col-xl-12">
                     <div class="primary_input mb-25">
                     {{ Form::label('email', __('setting.Company Email') , ['class' => 'primary_input_label']) }}
-                    {{ Form::email('email',getConfigValueByKey($config,'email'), ["class" => "form-control", "placeholder" => 'info@infix.com']) }}
+                    {{ Form::email('email',getConfigValueByKey($config,'email'), ["class" => "primary_input_field", "placeholder" => 'info@infix.com']) }}
                     </div>
                 </div>
 
                 <div class="col-xl-12">
                     <div class="primary_input mb-25">
                     {{ Form::label('phone', __('setting.Company phone') , ['class' => 'primary_input_label']) }}
-                    {{ Form::text('phone',getConfigValueByKey($config,'phone'), ["class" => "form-control", "placeholder" => '+00818***9']) }}
+                    {{ Form::text('phone',getConfigValueByKey($config,'phone'), ["class" => "primary_input_field", "placeholder" => '+00818***9']) }}
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@
                 <div class="col-xl-12">
                     <div class="primary_input mb-25">
                     {{ Form::label('address', __('setting.Company address') , ['class' => 'primary_input_label']) }}
-                    {{ Form::text('address',getConfigValueByKey($config,'address'), ["class" => "form-control", "placeholder" => __('setting.Company address')]) }}
+                    {{ Form::text('address',getConfigValueByKey($config,'address'), ["class" => "primary_input_field", "placeholder" => __('setting.Company address')]) }}
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@
                 <div class="col-xl-12">
                     <div class="primary_input mb-25">
                     {{ Form::label('mail_signature', __('setting.Mail signature') , ['class' => 'primary_input_label']) }}
-                    {{ Form::text('mail_signature',getConfigValueByKey($config,'mail_signature'), ["class" => "form-control", "placeholder" => __('setting.Mail signature')]) }}
+                    {{ Form::text('mail_signature',getConfigValueByKey($config,'mail_signature'), ["class" => "primary_input_field", "placeholder" => __('setting.Mail signature')]) }}
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@
                     <div class="primary_input mb-25t">
                         {{ Form::label('date_format_id', __('setting.Date Format') , ['class' => 'primary_input_label required']) }}
 
-                        {{ Form::select('date_format_id', $date_formats, getConfigValueByKey($config,'date_format_id'), ['class'=> 'form-control select2bs4', 'required', 'id' => 'date_format_id', 'data-parsley-errors-container' => '#date_format_id_error']) }}
+                        {{ Form::select('date_format_id', $date_formats, getConfigValueByKey($config,'date_format_id'), ['class'=> 'primary_select', 'required', 'id' => 'date_format_id', 'data-parsley-errors-container' => '#date_format_id_error']) }}
                         <span id='date_format_id_error'></span>
 
                     </div>
@@ -104,7 +104,7 @@
 
                         {{ Form::label('currency', __('setting.System Default Currency') , ['class' => 'primary_input_label required']) }}
 
-                        {{ Form::select('currency', $currencies, getConfigValueByKey($config,'currency'), ['class'=> 'form-control select2bs4', 'required', 'id' => 'currency', 'data-parsley-errors-container' => '#currency_error']) }}
+                        {{ Form::select('currency', $currencies, getConfigValueByKey($config,'currency'), ['class'=> 'primary_select', 'required', 'id' => 'currency', 'data-parsley-errors-container' => '#currency_error']) }}
                         <span id='currency_error'></span>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     <div class="primary_input mb-25t">
 
                         {{ Form::label('time_zone_id', __('setting.Time Zone') , ['class' => 'primary_input_label required']) }}
-                        {{ Form::select('time_zone_id', $timeZones, getConfigValueByKey($config,'time_zone_id'), ['class'=> 'form-control select2bs4', 'required', 'id' => 'time_zone_id', 'data-parsley-errors-container' => '#time_zone_id_error']) }}
+                        {{ Form::select('time_zone_id', $timeZones, getConfigValueByKey($config,'time_zone_id'), ['class'=> 'primary_select', 'required', 'id' => 'time_zone_id', 'data-parsley-errors-container' => '#time_zone_id_error']) }}
                         <span id='time_zone_id_error'></span>
 
 
@@ -123,14 +123,14 @@
                 <div class="col-xl-6">
                     <div class="primary_inpu mb-25t">
                         <label class="primary_input_label" for="">{{ __('setting.Currency Symbol') }}</label>
-                        <input class="form-control" placeholder="-" type="text" id="currency_symbol"
+                        <input class="primary_input_field" placeholder="-" type="text" id="currency_symbol"
                                name="currency_symbol" value="{{ getConfigValueByKey($config,'currency_symbol') }}" readonly>
                     </div>
                 </div>
                 <div class="col-xl-6">
                     <div class="primary_input">
                         <label class="primary_input_label" for="">{{ __('setting.Currency Code') }}</label>
-                        <input class="form-control" placeholder="-" type="text" id="currency_code"
+                        <input class="primary_input_field" placeholder="-" type="text" id="currency_code"
                                name="currency_code" value="{{ getConfigValueByKey($config,'currency_code') }}" readonly>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                 <div class="col-xl-6">
                     <div class="primary_input">
                     {{ Form::label('preloader', __('setting.Preloader') , ['class' => 'primary_input_label required']) }}
-                    {{ Form::text('preloader', getConfigValueByKey($config,'preloader') , ["class" => "form-control", "id"=>"preloader", "placeholder" => '-', "required"]) }}
+                    {{ Form::text('preloader', getConfigValueByKey($config,'preloader') , ["class" => "primary_input_field", "id"=>"preloader", "placeholder" => '-', "required"]) }}
 
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                     <div class="primary_input mb-25t">
                         {{ Form::label('country_id', __('setting.Country') , ['class' => 'primary_input_label required']) }}
 
-                        {{ Form::select('country_id', $countries, getConfigValueByKey($config,'country_id'), ['class'=> 'form-control select2bs4', 'required', 'id' => 'country_id', 'data-parsley-errors-container' => '#country_id_error']) }}
+                        {{ Form::select('country_id', $countries, getConfigValueByKey($config,'country_id'), ['class'=> 'primary_select', 'required', 'id' => 'country_id', 'data-parsley-errors-container' => '#country_id_error']) }}
                         <span id='country_id_error'></span>
 
                     </div>
@@ -169,10 +169,10 @@
     </div>
 
     <div class="submit_btn text-center mt-4">
-        <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i>{{ __('common.Save') }}
+        <button class="primary-btn fix-gr-bg submit" type="submit"><i class="ti-check"></i>{{ __('common.Save') }}
         </button>
 
-        <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Saving') }}
+        <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Saving') }}
         </button>
 
     </div>

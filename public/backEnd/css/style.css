@@ -57,6 +57,50 @@ input:-webkit-autofill {
   -webkit-animation-name: autofill;
   -webkit-animation-fill-mode: both;
 }
+
+/* line 30, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  color: #415094;
+  line-height: 1.5;
+}
+
+/* line 40, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
+h1 {
+  font-size: 22px;
+}
+
+/* line 43, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
+h2 {
+  font-size: 20px;
+}
+
+/* line 46, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
+h3 {
+  font-size: 18px;
+}
+
+/* line 49, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
+h4 {
+  font-size: 16px;
+}
+
+/* line 52, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
+h5 {
+  font-size: 14px;
+}
+
+/* line 55, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
+h6 {
+  font-size: 12px;
+}
+
+/* line 59, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_reset.scss */
 .list {
   list-style: none;
   margin: 0px;
@@ -571,7 +615,7 @@ button:focus {
 
 /* line 47, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
 .white-box.single-summery:hover {
-  background-color:#EC7063
+  background-color:#EC7063 
 }
 
 /* line 51, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
@@ -601,6 +645,127 @@ button:focus {
 
 /* End Boxes Area css
 ============================================================================================ */
+/* line 74, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.table thead th {
+  color: #415094;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-top: 0px;
+  padding: 12px 12px 12px 0px;
+}
+
+/* line 83, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.table tbody td {
+  vertical-align: inherit;
+}
+
+/* line 90, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.no-search .dataTables_filter > label {
+  display: none;
+}
+
+/* line 95, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.no-paginate .dataTables_wrapper .dataTables_paginate {
+  display: none;
+}
+
+/* line 100, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.no-table-info .dataTables_wrapper .dataTables_info {
+  display: none;
+}
+
+/* line 106, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-toggle {
+  background: transparent;
+  color: #415094;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid #7c32ff;
+  border-radius: 32px;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+/* line 117, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-toggle:focus {
+  box-shadow: none;
+}
+
+/* line 120, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-toggle:hover, .school-table .dropdown .dropdown-toggle:focus {
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+/* line 127, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-toggle:after {
+  content: "\e62a";
+  font-family: "themify";
+  border: none;
+  border-top: 0px;
+  font-size: 10px;
+  position: relative;
+  top: 3px;
+  left: 0;
+  font-weight: 600;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+/* line 140, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-menu {
+  border-radius: 5px 5px 10px 10px;
+  border: 0px;
+  padding: 15px 0px;
+}
+
+/* line 145, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-menu .dropdown-item {
+  color: #828bb2;
+  text-align: right;
+  font-size: 12px;
+  padding: 4px 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+/* line 153, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-menu .dropdown-item:hover {
+  color: #415094;
+}
+
+/* line 156, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown .dropdown-menu .dropdown-item:active {
+  background: transparent;
+  color: #415094;
+}
+
+/* line 164, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.school-table .dropdown.show .dropdown-toggle:after {
+  top: 16px;
+  left: 8px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
 
 /* line 177, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
 .modal .modal-dialog.large-modal {
@@ -799,6 +964,127 @@ button:focus {
 .bootstrap-datetimepicker-widget table td .btn.btn-primary:hover {
   background: transparent;
   color: #415094;
+}
+
+/* line 346, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker {
+  padding: 30px 25px;
+}
+
+/* line 348, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker.dropdown-menu {
+  border: 0;
+}
+
+/* line 351, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker.dropdown-menu td {
+  padding: 10px 12.5px;
+}
+
+/* line 354, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker.dropdown-menu th,
+.datepicker.dropdown-menu td {
+  color: #828bb2;
+}
+
+/* line 359, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker .datepicker thead tr:first-child th,
+.datepicker .datepicker tfoot tr th {
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* line 365, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker table tr td {
+  border-radius: 20px;
+}
+
+/* line 374, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker table tr td.day {
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* line 376, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker table tr td.day:hover {
+  border-radius: 20px;
+}
+
+/* line 385, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker thead tr:first-child th {
+  position: relative;
+}
+
+/* line 387, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.datepicker thead tr:first-child th:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 99%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+/* line 408, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-radio:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  border-radius: 50px;
+  border: 1px solid #415094;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* toggle on */
+/* line 423, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-radio:checked ~ label:before {
+  content: "";
+  text-indent: 1px;
+  color: #415094;
+  background-color: transparent;
+  border: 1px solid #415094;
+  -webkit-transform: rotate(65deg);
+  -moz-transform: rotate(65deg);
+  -ms-transform: rotate(65deg);
+  -o-transform: rotate(65deg);
+  transform: rotate(65deg);
+  font-size: 12px;
+  font-weight: 600;
+  border-top-color: transparent;
+}
+
+/* line 434, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-radio:checked ~ label:after {
+  content: "\e64c";
+  font-family: "themify";
+  position: absolute;
+  display: block;
+  top: -2px;
+  left: 3px;
+  text-indent: 1px;
+  color: #415094;
+  background-color: transparent;
+  border: 0px;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  transform: rotate(8deg);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* line 450, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
@@ -1076,6 +1362,49 @@ button:focus {
   display: block;
 }
 
+/* line 652, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-calendar .fc .fc-button-group > * {
+  display: block;
+}
+
+/* line 655, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-calendar .fc-basic-view .fc-body .fc-row {
+  height: 95px !important;
+}
+
+/* line 658, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-calendar .fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+  float: left;
+}
+
+/* line 665, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-calendar .fc-day.fc-widget-content.fc-today {
+  background: #EC7063;
+}
+
+/* line 668, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-calendar .fc-day-top.fc-today .fc-day-number {
+  color: #ffffff;
+}
+
+/* line 671, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-calendar .fc-state-default.fc-corner-left,
+.common-calendar .fc-button.fc-state-default {
+  color: #415094;
+  background: transparent;
+  border-radius: 30px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* line 678, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
+.common-calendar .fc-state-default.fc-corner-left:hover,
+.common-calendar .fc-button.fc-state-default:hover {
+  color: #ffffff;
+  background-color: #EC7063;
+}
 
 /* line 688, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_component.scss */
 .morris-hover {
@@ -1157,6 +1486,11 @@ button:focus {
 /* line 42, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
 .bb-15 {
   border-bottom: 1px solid rgba(65, 80, 148, 0.15);
+}
+
+/* line 46, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.white-text, .bootstrap-datetimepicker-widget table td.hour:hover, .bootstrap-datetimepicker-widget table td.minute:hover, .bootstrap-datetimepicker-widget table td span.glyphicon-chevron-up:hover:after, .bootstrap-datetimepicker-widget table td span.glyphicon-chevron-down:hover:after, .datepicker table tr td.active.day, .datepicker table tr td.day:hover, .datepicker thead tr:first-child th:hover {
+  color: #EC7063;
 }
 
 /* line 50, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
@@ -1248,6 +1582,158 @@ button:focus {
 /* End Gradient Area css
 ============================================================================================ */
 /* line 126, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.btn-success {
+  font-size: 12px;
+}
+
+/* line 129, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn {
+  display: inline-block;
+  color: #415094;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 40px;
+  padding: 0px 20px;
+  outline: none !important;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* line 147, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.form-control {
+  background: transparent;
+}
+
+/* line 150, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn label {
+  margin-bottom: 0px;
+}
+
+/* line 153, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn .common-checkbox:checked + label:before {
+  color: #ffffff;
+  top: -13px;
+}
+
+/* line 157, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn .common-checkbox + label:before {
+  border: 1px solid #ffffff;
+  top: -13px;
+}
+
+/* line 161, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn span {
+  font-weight: 600;
+}
+
+/* line 163, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn span.pl {
+  padding-left: 8px;
+}
+
+/* line 166, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn span.pr {
+  padding-right: 8px;
+}
+
+/* line 173, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.small {
+  letter-spacing: 1px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+/* line 178, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.small:hover {
+  color: #415094;
+}
+
+/* line 182, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.medium {
+  line-height: 38px !important;
+}
+
+/* line 185, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.semi-large {
+  line-height: 48px !important;
+}
+
+/* line 188, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.large {
+  letter-spacing: 1px;
+  line-height: 60px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/* line 194, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.large:hover {
+  color: #415094;
+}
+
+/* line 198, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.fix-gr-bg {
+  background-color: #3C8DBC;
+  color: #efefef;
+}
+.primary-btn.fix-gr-bg.active {
+  background-position: right center;
+  background-color: #EC7063;
+  color: #ffffff;
+}
+.bg-customize{
+  background-color: #3C8DBC;
+}
+/* line 207, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.fix-gr-bg:hover {
+  background-position: right center;
+  background-color: #EC7063;
+  color: #ffffff;
+}
+
+/* line 213, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.white {
+  background: #ffffff;
+}
+
+/* line 215, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.white:hover {
+  color: #ffffff;
+}
+
+/* line 220, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.tr-bg {
+  background: transparent;
+  border: 1px solid #c738d8;
+  line-height: 28px;
+}
+
+/* line 225, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.bord-rad {
+  border-radius: 30px;
+}
+
+/* line 228, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-btn.icon-only {
+  padding: 0 9px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50px;
+}
+
 /* Start Primary Input Area css
 ============================================================================================ */
 /* line 241, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
@@ -1281,6 +1767,108 @@ button:focus {
 }
 
 /* line 268, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-input {
+  color: #415094;
+  font-size: 13px;
+  width: 100%;
+  border: 0;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(130, 139, 178, 0.3);
+  background-color: transparent;
+  padding-bottom: 8px;
+  position: relative;
+  border-radius: 0px;
+  z-index: 99;
+}
+
+/* line 280, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-input ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #7c32ff;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* line 289, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-input ~ label {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  top: 13px;
+  color: #828bb2;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* line 105, ../../xampp/htdocs/infixeduB/public/backEnd/scss/_mixins.scss */
+.primary-input.placeholder {
+  color: #828bb2;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* line 108, ../../xampp/htdocs/infixeduB/public/backEnd/scss/_mixins.scss */
+.primary-input:-moz-placeholder {
+  color: #828bb2;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* line 111, ../../xampp/htdocs/infixeduB/public/backEnd/scss/_mixins.scss */
+.primary-input::-moz-placeholder {
+  color: #828bb2;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* line 114, ../../xampp/htdocs/infixeduB/public/backEnd/scss/_mixins.scss */
+.primary-input::-webkit-input-placeholder {
+  color: #828bb2;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* line 308, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-input:focus {
+  color: #415094 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+/* line 315, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-input.form-control[readonly] {
+  background: transparent;
+}
+
+/* line 318, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+.primary-input.form-control.is-invalid {
+  border-color: transparent;
+  border-bottom: 1px solid rgba(130, 139, 178, 0.3);
+}
+
+/* line 330, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
+textarea.primary-input {
+  padding: 10px 0px 0px 0;
+}
 
 /* line 333, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_predefine.scss */
 .form-control:focus {
@@ -2574,6 +3162,70 @@ body.login .footer_area a {
 
 @media (max-width: 615px) {
   /* line 14, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+  .student-details .nav-tabs .nav-item {
+    margin-bottom: 15px;
+  }
+}
+
+/* line 20, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .nav-tabs .nav-link {
+  background: #cad5f3;
+  color: #415094;
+  border: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 8px 25px;
+  margin-right: 10px;
+  border-radius: 0px;
+}
+
+/* line 31, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .nav-tabs .nav-link.active {
+  background: #ffffff;
+}
+
+/* line 39, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .tab-content #studentExam div.dt-buttons {
+  bottom: 0;
+}
+
+/* line 43, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .tab-content #studentExam table.dataTable {
+  box-shadow: none;
+  padding: 0;
+  padding-top: 20px;
+}
+
+/* line 51, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .tab-content #studentDocuments .table thead th {
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* line 57, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .single-meta {
+  border-bottom: 1px solid rgba(65, 80, 148, 0.15);
+  padding: 7px 0px;
+}
+
+/* line 61, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .single-meta:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 67, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .single-info {
+  border-bottom: 1px solid rgba(65, 80, 148, 0.15);
+  padding: 14px 0px;
+}
+
+/* line 71, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
+.student-details .single-info:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 /* line 78, ../../xampp/htdocs/infixeduB/public/backEnd/scss/admin/_student.scss */
 .stu-sub-head {
   font-size: 13px;
@@ -5514,9 +6166,6 @@ footer.footer-area {
 .kv-avatar {
     display: inline-block;
 }
-.kv-avatar .file-default-preview img{
-    width: 100%;
-}
 .kv-avatar .file-input {
     display: table-cell;
     width: 213px;
@@ -5525,32 +6174,4 @@ footer.footer-area {
     color: red;
     font-family: monospace;
     font-weight: normal;
-}
-/*By Salvatore*/
-.form-group{
-  margin-left: 2rem;
-}
-.custom-control label.custom-control-label{
-  font-weight: normal;
-  text-transform: inherit;
-}
-.custom-radio .custom-control-label::before {
-    background-color:warning;
-}
-
-.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
-  /*background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23ffffff'/%3E%3C/svg%3E");*/
-  background-color:success;
-}
-
-.custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
-}
-.primary_input_label {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #828BB2;
-    margin-bottom: 0;
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 400;
 }

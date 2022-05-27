@@ -193,7 +193,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <button type="submit" class="btn btn-primary pull-right" id="submit_user_button">@lang( 'messages.update'
+      <button type="submit" class="primary-btn fix-gr-bg pull-right" id="submit_user_button">@lang( 'messages.update'
         )</button>
     </div>
   </div>

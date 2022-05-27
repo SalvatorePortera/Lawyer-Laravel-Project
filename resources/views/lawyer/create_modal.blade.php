@@ -16,18 +16,18 @@
                     <input type="hidden" name="quick_add" value="1">
                     <div class="primary_input">
                         {{Form::label('name', __('lawyer.Name'),['class' => 'required'])}}
-                        {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __
+                        {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __
                         ('lawyer.Name')])}}
                     </div>
                     <div class="primary_input">
                         {{Form::label('mobile_no', __('lawyer.Mobile No'),['class' => 'required'] )}}
-                        {{Form::number('mobile_no', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('lawyer.Lawyer Mobile No')])}}
+                        {{Form::number('mobile_no', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('lawyer.Lawyer Mobile No')])}}
                     </div>
 
                     @if(moduleStatusCheck('EmailtoCL'))
                         <div class="primary_input">
                             {{Form::label('email', __('case.Email'))}}
-                            {{Form::email('email', null, ['class' => 'form-control', 'placeholder' => __('case.Email')])}}
+                            {{Form::email('email', null, ['class' => 'primary_input_field', 'placeholder' => __('case.Email')])}}
                         </div>
                     @endif
 
@@ -43,11 +43,11 @@
                     </div>
 
                     <div class="text-center mt-3">
-                        <button class="btn btn-primary submit" type="submit"><i
+                        <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                 class="ti-check"></i>{{ __('common.Create') }}
                         </button>
 
-                        <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                        <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                             <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                         </button>
                     </div>

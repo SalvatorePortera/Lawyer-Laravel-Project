@@ -23,7 +23,7 @@
         <div class="clearfix"></div>
         @endcomponent
         <div class="col-md-12">
-            <button class="btn btn-primary pull-right">@lang('messages.save')</button>
+            <button class="primary-btn fix-gr-bg pull-right">@lang('messages.save')</button>
         </div>
         {!! Form::close() !!}
     </section>

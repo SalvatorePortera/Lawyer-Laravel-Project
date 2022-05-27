@@ -1,17 +1,5 @@
 @extends('layouts.master', ['title' => __('lawyer.Lawyer Details')])
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('lawyer.Lawyer Info') }}</h1>
-      </div>
-      <div class="col-sm-6">
-            
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
     <section class="mb-40 student-details">
         @if(session()->has('message-success'))
             <div class="alert alert-success">
@@ -26,37 +14,40 @@
             <div class="row">
                 <div class="col-lg-3">
                     <!-- Start Student Meta Information -->
-                    <div class="card card-widget widget-user">
-                      <!-- Add the bg color to the header using any of the bg-* classes -->
-                      <div class="widget-user-header bg-warning">
-                        <div class="widget-user-image">
-                          <img class="img-circle elevation-2" src="{{ asset('/')}}@if(isset($model) && $model->avatar!=''){{@$model->avatar}}@else{{'public/uploads/staff/user.png'}} @endif" alt="User Avatar">
-                        </div>
-                        <!-- /.widget-user-image -->
-                        
-                      </div>
-                      <div class="card-footer p-0">
-                        <ul class="nav flex-column">
-                          <li class="nav-item">
-                            <a href="#" class="nav-link">
-                              {{ __('lawyer.Name') }} <span class="float-right">@if(isset($model)){{@$model->name}}@endif</span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="#" class="nav-link">
-                              {{ __('lawyer.Mobile') }} <span class="float-right">@if(isset($model)){{@$model->mobile_no}}@endif</span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                              @if(permissionCheck('lawyer.edit'))
-                                <a href="{{ route('lawyer.edit', $model->id) }}" class="btn btn-primary btn-sm btn-block">
-                                    {{ __('common.Edit') }}
-                                </a>
-                            @endif
-                          </li>
-                        </ul>
-                      </div>
+                    <div class="main-title">
+                        <h3 class="mb-20">@lang('lawyer.Lawyer Info')</h3>
                     </div>
+                    <div class="student-meta-box">
+                        <div class="student-meta-top"></div>
+                        <img class="student-meta-img img-100"
+                             src="{{ asset('/')}}@if(isset($model) && $model->avatar!=''){{@$model->avatar}}@else{{'public/uploads/staff/user.png'}} @endif "
+                             alt="">
+                        <div class="white-box">
+                            <div class="single-meta mt-10">
+                                <div class="d-flex justify-content-between">
+                                    <div class="name">
+                                        {{ __('lawyer.Name') }}
+                                    </div>
+                                    <div class="value">
+                                        @if(isset($model)){{@$model->name}}@endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-meta">
+                                <div class="d-flex justify-content-between">
+                                    <div class="name">
+                                        {{ __('lawyer.Mobile') }}
+                                    </div>
+                                    <div class="value">
+                                        @if(isset($model)){{@$model->mobile_no}}@endif
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Student Meta Information -->
                 </div>
                 <!-- Start Student Details -->
                 <div class="col-lg-9 staff-details">
@@ -67,7 +58,11 @@
                         </li>
 
                         <li class="nav-item edit-button">
-                        
+                        @if(permissionCheck('lawyer.edit'))
+                            <a href="{{ route('lawyer.edit', $model->id) }}" class="primary-btn small fix-gr-bg"
+                               >{{ __('common.Edit') }}
+                            </a>
+                        @endif
                         </li>
                     </ul>
                     <!-- Tab panes -->

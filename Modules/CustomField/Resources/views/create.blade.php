@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30">{{__('custom_fields.add_custom_new_fields')}}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('custom_fields.index'))
-                                    <li><a class="btn btn-primary mr-10"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="{{ route('custom_fields.index') }}"><i class="ti-list"></i>{{ __
                         ('custom_fields.custom_fields') }}</a></li>
                                 @endif
@@ -25,10 +25,10 @@
                         {!! Form::open(['route' => 'custom_fields.store', 'class' => 'form-validate-jquery', 'id' => 'content_form', 'files' => false, 'method' => 'POST']) !!}
                         @includeIf('customfield::components._form')
                         <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-primary submit" id="submit"
+                            <button type="submit" class="primary-btn semi_large2 fix-gr-bg submit" id="submit"
                                     value="submit"> {{ __('common.Create') }} </button>
 
-                            <button type="button" class="btn btn-primary submitting" id="submit"
+                            <button type="button" class="primary-btn semi_large2 fix-gr-bg submitting" id="submit"
                                     disabled style="display: none;"> {{ __ ('common.Creating') }}...
                             </button>
                         </div>

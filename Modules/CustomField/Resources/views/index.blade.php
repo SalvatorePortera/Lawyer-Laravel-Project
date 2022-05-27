@@ -10,7 +10,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px" >{{ __('custom_fields.custom_fields') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('custom_fields.store'))
-                                    <li><a class="btn btn-primary mr-10" href="{{ route('custom_fields.create') }}"><i class="ti-plus"></i>{{ __
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('custom_fields.create') }}"><i class="ti-plus"></i>{{ __
                         ('custom_fields.add_custom_new_fields') }}</a></li>
                                 @endif
                             </ul>
@@ -54,7 +54,7 @@
                                             <td>{!! populate_status($model->status) !!}</td>
                                             <td>
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">

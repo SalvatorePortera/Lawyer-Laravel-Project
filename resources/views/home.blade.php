@@ -1,28 +1,22 @@
-@push('css_before')
-  <!-- fullCalendar -->
-  <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/fullcalendar/main.min.css')}}">
-@endpush
 @extends('layouts.master')
 @section('mainContent')
-<section class="admin-visitor-area up_st_admin_visitor">
-    <div class="container-fluid pt-3">
 @if(permissionCheck('dashboard_quick_summery.index'))
 <div class="row">
-    <div class="col-lg-3 col-md-6 mt-40">
-        <a href="{{route('client.index')}}" class="d-block">
-            <div class="white-box single-summery">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h3>{{__('dashboard.Client')}} </h3>
-                        <p class="mb-0">{{__('dashboard.Total Client')}}</p>
+    <div class="col-lg-3 col-md-6">
+                <a href="{{route('client.index')}}" class="d-block">
+                    <div class="white-box single-summery">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h3>{{__('dashboard.Client')}} </h3>
+                                <p class="mb-0">{{__('dashboard.Total Client')}}</p>
+                            </div>
+                            <h1 class="gradient-color2">{{App\Models\Client::all()->count()}}
+                            </h1>
+                        </div>
                     </div>
-                    <h1 class="gradient-color2">{{App\Models\Client::all()->count()}}
-                    </h1>
-                </div>
+                </a>
             </div>
-        </a>
-    </div>
-	<div class="col-lg-3 col-md-6 mt-40">
+	<div class="col-lg-3 col-md-6">
 		<a href="{{route('lawyer.index')}}" class="d-block">
 			<div class="white-box single-summery">
 				<div class="d-flex justify-content-between">
@@ -37,30 +31,23 @@
 		</a>
 	</div>
 
-	<div class="col-lg-3 col-md-6 mt-40">
-		<a href="{{route('report.paymentdue')}}" class="d-block">
+	<div class="col-lg-3 col-md-6">
+		<a href="{{route('contact.index')}}" class="d-block">
 			<div class="white-box single-summery">
 				<div class="d-flex justify-content-between">
 					<div>
 						<h3>{{__('dashboard.Payment Due')}}</h3>
-						<p class="mb-0">{{__('dashboard.Total Amount')}}</p>
-                        <p>({{__('dashboard.Total No Of Due Bills')}})</p>
+						<p class="mb-0">{{__('dashboard.Total Payment Due')}}</p>
 					</div>
-					<div>
-                        <h3 class="gradient-color2">
-                        $ {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->sum('grand_total')}}
-                        </h3>
-                        <h3 class="gradient-color2">
-                            {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->count()}} <span>items</span>
-                        </h3>
-                    </div>
-
+					<h1 class="gradient-color2">
+                        {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->count()}}
+					</h1>
 				</div>
 			</div>
 		</a>
 	</div>
 
-	<div class="col-lg-3 col-md-6 mt-40">
+	<div class="col-lg-3 col-md-6">
 		<a href="{{route('case.index')}}" class="d-block">
 			<div class="white-box single-summery">
 				<div class="d-flex justify-content-between">
@@ -75,7 +62,7 @@
 		</a>
 	</div>
 
-    <div class="col-lg-3 col-md-6 mt-40">
+    <div class="col-lg-3 col-md-6">
                 <a href="{{route('case.index', ['status' => 'Waiting'])}}" class="d-block">
                     <div class="white-box single-summery">
                         <div class="d-flex justify-content-between">
@@ -89,7 +76,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-6 mt-40">
+            <div class="col-lg-3 col-md-6">
                 <a href="{{route('case.index', ['status' => 'Archieved'])}}" class="d-block">
                     <div class="white-box single-summery">
                         <div class="d-flex justify-content-between">
@@ -105,7 +92,7 @@
             </div>
 
 
-            <div class="col-lg-3 col-md-6 mt-40">
+            <div class="col-lg-3 col-md-6">
                 <a href="{{route('staffs.index')}}" class="d-block">
                     <div class="white-box single-summery">
                         <div class="d-flex justify-content-between">
@@ -122,7 +109,7 @@
 
 
 
-            <div class="col-lg-3 col-md-6 mt-40">
+            <div class="col-lg-3 col-md-6">
                 <a href="{{route('my-task')}}" class="d-block">
                     <div class="white-box single-summery">
                         <div class="d-flex justify-content-between">
@@ -141,63 +128,118 @@
 
 <div class="row mt-40">
     @if(permissionCheck('dashboad_calender.index'))
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">
-                    {{__('common.Calendar')}}
-                </h3>
+    <div class="col-lg-{{ permissionCheck('dashboad_calender.index') ? 7 : 12 }}">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="main-title">
+                            <h3 class="mb-20">{{__('common.Calendar')}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="white-box">
+                    <div class='common-calendar'>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <div id='common_calendar' class='common-calendar'></div>
-            </div>
-        </div>
-    </div>
     @endif
 
     @if(permissionCheck('dashboard_todo.index'))
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">
-                    {{__('todo.To Do List')}}
-                </h3>
-                <div class="card-tools">
-                  <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#add_to_do" title="Add To Do" data-modal-size="modal-md">
-                            <i class="ti-plus"></i> {{ __('event.Add') }}
-                        </a>
-                </div>
-
-            </div>
-            <div class="card-body">
-                <input type="hidden" id="url" value="{{url('/')}}">
-                @if(@$toDos->count() > 0)
-                <ul class="todo-list" data-widget="todo-list">
-                    @foreach($toDos->sortByDesc('date') as $toDoList)
-                        <li id="to_do_list_div{{@$toDoList->id}}" class="toDoList">
-                            <div  class="icheck-primary d-inline ml-2">
-                              <input @if($toDoList->status==1) checked disabled @else class="complete_task" @endif type="checkbox" id="midterm{{@$toDoList->id}}" name="complete_task" value="{{@$toDoList->id}}">
-                              <label for="midterm{{@$toDoList->id}}"></label>
+                 <div class="col-{{ permissionCheck('dashboard_todo.index') ? 5 : 6 }}">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-sm-6">
+                            <div class="main-title">
+                                <h3 class="mb-25">@lang('todo.To Do List')</h3>
                             </div>
-                            <span class="text">{{@$toDoList->title}}</span>
-                            <small class="badge badge-danger"><i class="far fa-calendar"></i> {{$toDoList->date }}</small>
-                            <div class="tools">
-                              <!--i class="fas fa-edit"></i-->
-                              <i data-id="{{@$toDoList->id}}" class="fas fa-trash del-to-do-item"></i>
-                            </div>
-                        </li>
-                    @endforeach
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 text-right">
+                            <a href="#" data-toggle="modal" class="primary-btn small fix-gr-bg"
+                               data-target="#add_to_do"
+                               title="Add To Do" data-modal-size="modal-md">
+                                <span class="ti-plus pr-2"></span>
+                                @lang('event.Add')
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="white-box school-table">
+                                <div class="row to-do-list mb-20">
+                                    <div class="col-md-6 col-6">
+                                        <button class="primary-btn small fix-gr-bg"
+                                                id="toDoList">@lang('todo.Incomplete')</button>
+                                    </div>
+                                    <div class="col-md-6 col-6 text-right">
+                                        <button class="primary-btn small tr-bg"
+                                                id="toDoListsCompleted">@lang('todo.Completed')</button>
+                                    </div>
+                                </div>
 
-                </ul>
-                @else
-                    <div class="single-to-do d-flex justify-content-between">
-                        @lang('todo.no_do_lists_assigned_yet')
+                                <input type="hidden" id="url" value="{{url('/')}}">
+
+
+                                <div class="toDoList">
+                                    @if(count(@$toDos->where('status',0)) > 0)
+
+                                        @foreach($toDos->where('status',0) as $toDoList)
+                                            <div class="single-to-do d-flex justify-content-between toDoList"
+                                                 id="to_do_list_div{{@$toDoList->id}}">
+                                                <div>
+                                                    <input type="checkbox" id="midterm{{@$toDoList->id}}"
+                                                           class="common-checkbox complete_task" name="complete_task"
+                                                           value="{{@$toDoList->id}}">
+
+                                                    <label for="midterm{{@$toDoList->id}}">
+
+                                                        <input type="hidden" id="id" value="{{@$toDoList->id}}">
+                                                        <input type="hidden" id="url" value="{{url('/')}}">
+                                                        <h5 class="d-inline">{{@$toDoList->title}}</h5>
+                                                        <p class="ml-35">
+
+                                                            {{$toDoList->date }}
+
+                                                        </p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <div class="single-to-do d-flex justify-content-between">
+                                            @lang('todo.no_do_lists_assigned_yet')
+                                        </div>
+
+                                    @endif
+                                </div>
+
+
+                                <div class="toDoListsCompleted">
+                                    @if(count(@$toDos->where('status',1))>0)
+
+                                        @foreach($toDos->where('status',1) as $toDoListsCompleted)
+
+                                            <div class="single-to-do d-flex justify-content-between"
+                                                 id="to_do_list_div{{@$toDoListsCompleted->id}}">
+                                                <div>
+                                                    <h5 class="d-inline">{{@$toDoListsCompleted->title}}</h5>
+                                                    <p class="">
+
+                                                        {{@$toDoListsCompleted->date }}
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <div class="single-to-do d-flex justify-content-between">
+                                            @lang('todo.no_do_lists_assigned_yet')
+                                        </div>
+
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                @endif
-            </div>
-        </div>
-    </div>
+                </div>
 
 @endif
 </div>
@@ -205,182 +247,155 @@
 <div class="row mt-40">
     @if(permissionCheck('dashboard_appointment.index'))
 	<div class="col-lg-6 col-md-6">
-		<div class="card">
-            <!-- table-responsive -->
-            <div class="card-header">
-                <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{__('dashboard.Appointment')}}</h3>
-            </div>
-            <div class="card-body">
-                <table class="table dataTable pt-0 shadow_none pb-0 ">
-                    <tbody>
-                        <tr>
-                            <th>{{__('dashboard.Title')}}</th>
-                            <th>{{__('dashboard.Date')}}</th>
-                            <th>{{__('dashboard.Contact')}}</th>
-                        </tr>
-                        @foreach($appointments as $appointment)
-                         <tr>
-                            <td><a href="{{ route('appointment.show', $appointment->id) }}">{{ $appointment->title }}</a></td>
-                            <td>{{ formatDate($appointment->date) }}</td>
-                            <td>{{ $appointment->contact->name }}</td>
-                        </tr>
-                        @endforeach
-                   </tbody>
-                </table>
-            </div>
-        </div>
+		<div class="white_box_30px mb_30">
+			<div class="box_header common_table_header ">
+				<div class="main-title d-md-flex">
+					<h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{__('dashboard.Appointment')}}</h3>
+				</div>
+			</div>
+			<div class="QA_section3 QA_section_heading_custom th_padding_l0 ">
+				<div class="QA_table">
+					<!-- table-responsive -->
+					<div class="table-responsive">
+					<table class="table pt-0 shadow_none pb-0 ">
+							<tbody>
+								<tr>
+									<th>{{__('dashboard.Title')}}</th>
+									<th>{{__('dashboard.Date')}}</th>
+									<th>{{__('dashboard.Contact')}}</th>
+								</tr>
+								@foreach($appointments as $appointment)
+								 <tr>
+									<td><a href="{{ route('appointment.show', $appointment->id) }}">{{ $appointment->title }}</a></td>
+									<td>{{ formatDate($appointment->date) }}</td>
+									<td>{{ $appointment->contact->name }}</td>
+								</tr>
+								@endforeach
+						   </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	@endif
 
 
 
 @if(permissionCheck('dashboard_appointment.index'))
-<div class="col-lg-6 col-md-6">
-    <div class="card">
-        <div class="card-header">
-            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{__('dashboard.Upcomming Date')}}</h3>
-        </div>
-        <div class="card-body">
-        <table class="table pt-0 shadow_none pb-0 ">
-                <tbody>
-                <tr>
-                    <th>{{__('dashboard.Case Name')}}</th>
-                    <th>{{__('dashboard.Date')}}</th>
-                </tr>
-                @foreach($upcommingdate as $date)
-                     <tr>
-                        <td><a href="{{ route('case.show', $date->id) }}">{{ $date->title }}</a></td>
-                        <td>{{ formatDate($date->date) }}</td>
-                    </tr>
-                      @endforeach
-               </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-@endif
-</div>
-</div>
-</section>
-@if(permissionCheck('dashboard_upcoming_date.index'))
-    <div class="modal fade" id="add_to_do">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary">
-                  <h4 class="modal-title">{{trans('todo.Add To Do')}}</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                </div>
-                {{ Form::open(['class' => 'form-horizontal', 'files' => true, 'route' => 'to_dos.store',
-                                    'method' => 'POST', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateToDoForm()']) }}
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="form-group row" id="sibling_class_div">
-                            <label for="" class="col-sm-2 control-label">{{__('common.Title')}}*</label>
-                            <div class="col-sm-10">
-                              <input type="text" class="form-control" placeholder="{{__('common.Title')}}" name="title" value="{{ old('title') }}">
-                              <span class="text-danger">{{$errors->first('title')}}</span>
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="white_box_30px mb_30">
+                        <div class="box_header common_table_header ">
+                            <div class="main-title d-md-flex">
+                                <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{__('dashboard.Upcomming Date')}}</h3>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 control-label">{{ __('common.Date') }}*</label>
-                            <div class="col-sm-10">
 
-                                <div class="input-group date" id="startDate" data-target-input="nearest">
-                                    <input placeholder="{{ __('common.Date') }}" type="text" class="form-control datetimepicker-input" data-target="#startDate" name="date">
-                                    <div class="input-group-append" data-target="#startDate" data-toggle="datetimepicker">
-                                      <span class="input-group-text">
-                                        <i class="far fa-calendar-alt"></i>
-                                      </span>
-                                    </div>
+
+                        <div class="QA_section3 QA_section_heading_custom th_padding_l0 ">
+                            <div class="QA_table">
+                                <!-- table-responsive -->
+                                <div class="table-responsive">
+                                <table class="table pt-0 shadow_none pb-0 ">
+                                        <tbody>
+                                        <tr>
+                                            <th>{{__('dashboard.Case Name')}}</th>
+                                            <th>{{__('dashboard.Date')}}</th>
+                                        </tr>
+                                        @foreach($upcommingdate as $date)
+                                             <tr>
+                                                <td><a href="{{ route('case.show', $date->id) }}">{{ $date->title }}</a></td>
+                                                <td>{{ formatDate($date->date) }}</td>
+                                            </tr>
+                                              @endforeach
+                                       </tbody>
+                                    </table>
                                 </div>
-                                <span class="text-danger">{{$errors->first('date')}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
+                @endif
+
+
+
+        </div>
+@if(permissionCheck('dashboard_upcoming_date.index'))
+            <div class="modal fade admin-query" id="add_to_do">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">{{trans('todo.Add To Do')}}</h4>
+                            <button type="button" class="close" data-dismiss="modal">
+                            <i class="ti-close"></i>
+                        </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                {{ Form::open(['class' => 'form-horizontal', 'files' => true, 'route' => 'to_dos.store',
+                                'method' => 'POST', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateToDoForm()']) }}
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row mt-25">
+                                            <div class="col-lg-12" id="sibling_class_div">
+                                                <div class="primary_input mb-15">
+                                                    <label class="primary_input_label"
+                                                           for="">{{__('common.Title')}}*</label>
+                                                    <input type="text" class="primary_input_field"
+                                                           placeholder="{{__('common.Title')}}" name="title"
+                                                           value="{{ old('title') }}">
+                                                    <span class="text-danger">{{$errors->first('title')}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-30">
+                                            <div class="col-lg-12" id="">
+                                                <label class="primary_input_label" for="">{{ __('common.Date') }} *</label>
+                                            <div class="primary_datepicker_input">
+                                                <div class="no-gutters input-right-icon">
+                                                    <div class="col">
+                                                        <div class="">
+                                                            <input placeholder="{{ __('common.Date') }}"
+                                                                   class="primary_input_field primary-input date form-control"
+                                                                   id="startDate" type="text" name="date"
+                                                                   value="" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <button class="" type="button">
+                                                        <i class="ti-calendar" id="start-date-icon"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 text-center">
+                                            <div class="mt-40 d-flex justify-content-between">
+                                                <button type="button" class="primary-btn tr-bg"
+                                                        data-dismiss="modal">{{__('common.Cancel')}}</button>
+                                                <input class="primary-btn fix-gr-bg" type="submit" value="{{ __('common.Save') }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{ Form::close() }}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-
-             {{ Form::close() }}
-        </div>
-          <!-- /.modal-content -->
-    </div>
-        <!-- /.modal-dialog -->
-@endif
+        @endif
 @endsection
 
 @push('admin.scripts')
-<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/fullcalendar/main.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/fullcalendar/locales-all.min.js')}}"></script>
-<script>
-    $(document).ready(function(){
-        var date = new Date()
-        var d    = date.getDate(),
-            m    = date.getMonth(),
-            y    = date.getFullYear()
-        var Calendar = FullCalendar.Calendar;
-        var calendarEl = document.getElementById('common_calendar');
-        if ($('#common_calendar').length) {
-            var calendar = new Calendar(calendarEl, {
-              headerToolbar: {
-                left  : 'prev,next today',
-                center: 'title',
-                right : 'dayGridMonth,timeGridWeek,timeGridDay'
-              },
-              locale: LANG,
-              rtl : RTL,
-              themeSystem: 'bootstrap',
-              eventClick: function (event, jsEvent, view) {
-                    $('#modalTitle').html(event.title);
-                    $('#modalBody').html(event.description);
-
-                    $('#image').attr('src', event.url);
-                    $('#fullCalModal').modal();
-                    return false;
-                },
-              //Random default events
-              events: <?php echo json_encode($calendar_events);?> ,
-              editable  : true,
-              droppable : true, // this allows things to be dropped onto the calendar !!!
-              drop      : function(info) {
-                // is the "remove after drop" checkbox checked?
-                if (checkbox.checked) {
-                  // if so, remove the element from the "Draggable Events" list
-                  info.draggedEl.parentNode.removeChild(info.draggedEl);
-                }
-              }
-            });
-            calendar.render();
-
-
-
-
-
-            //$('.common-calendar').fullCalendar();
-            // $('.common-calendar').fullCalendar({
-            //     locale: LANG,
-            //     rtl : RTL,
-            //     header: {
-            //         left: 'prev,next today',
-            //         center: 'title',
-            //         right: 'month,agendaWeek,agendaDay'
-            //     },
-                // eventClick: function (event, jsEvent, view) {
-                //     $('#modalTitle').html(event.title);
-                //     $('#modalBody').html(event.description);
-
-                //     $('#image').attr('src', event.url);
-                //     $('#fullCalModal').modal();
-                //     return false;
-                // },
-            //     height: 650,
-            //     events: <?php echo json_encode($calendar_events);?> ,
-            // });
-        }
+<script type="text/javascript" src="{{asset('public/backEnd/vendors/js/fullcalendar.min.js')}}"></script>
+<script src="{{asset('public/backEnd/vendors/js/fullcallendar-locale-all.js')}}"></script>
+    <script>
         setTimeout(function () {
             $('#yearly').fadeOut(500);
             $('#weekly_profit').fadeOut(500);
@@ -389,7 +404,27 @@
             $('.purchase_table').fadeOut(500);
         }, 1000);
 
+        if ($('.common-calendar').length) {
+            $('.common-calendar').fullCalendar({
+                locale: LANG,
+                rtl : RTL,
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                eventClick: function (event, jsEvent, view) {
+                    $('#modalTitle').html(event.title);
+                    $('#modalBody').html(event.description);
 
+                    $('#image').attr('src', event.url);
+                    $('#fullCalModal').modal();
+                    return false;
+                },
+                height: 650,
+                events: <?php echo json_encode($calendar_events);?> ,
+            });
+        }
 
         $(document).on('click', '.filtering', function () {
             $('.filtering').removeClass('active');
@@ -415,32 +450,54 @@
             })
         });
 
-        $(".complete_task").on("click", function() {
-                var url = $("#url").val();
-                var id = $(this).val();
-                var formData = {
-                    id: $(this).val(),
-                };
-
-                // get section for student
-                $.ajax({
-                    type: "GET",
-                    data: formData,
-                    dataType: "json",
-                    url: url + "/" + "complete-to-do",
-                    success: function(data) {
 
 
-                        setTimeout(function() {
-                            toastr.success('Operation Success!');
-                        }, 500);
-                    },
-                    error: function(data) {
 
-                    },
-                });
-            });
-            $("#toDoList").on("click", function(e) {
+
+$(".complete_task").on("click", function() {
+        var url = $("#url").val();
+        var id = $(this).val();
+        var formData = {
+            id: $(this).val(),
+        };
+
+        // get section for student
+        $.ajax({
+            type: "GET",
+            data: formData,
+            dataType: "json",
+            url: url + "/" + "complete-to-do",
+            success: function(data) {
+
+
+                setTimeout(function() {
+                    toastr.success(
+                        "Operation Success!",
+                        "Success Alert", {
+                            iconClass: "customer-info",
+                        }, {
+                            timeOut: 2000,
+                        }
+                    );
+                }, 500);
+
+                $("#to_do_list_div" + id + "").remove();
+
+                $("#toDoListsCompleted").children("div").remove();
+            },
+            error: function(data) {
+
+            },
+        });
+    });
+
+
+    $(document).ready(function() {
+        $(".toDoListsCompleted").hide();
+        
+    });
+
+        $("#toDoList").on("click", function(e) {
             e.preventDefault();
 
             if ($(this).hasClass("tr-bg")) {
@@ -448,16 +505,38 @@
                 $(this).addClass("fix-gr-bg");
             }
 
+            if ($("#toDoListsCompleted").hasClass("fix-gr-bg")) {
+                $("#toDoListsCompleted").removeClass("fix-gr-bg");
+                $("#toDoListsCompleted").addClass("tr-bg");
+            }
 
             $(".toDoList").show();
-
+            $(".toDoListsCompleted").hide();
         });
 
 
-        $(".del-to-do-item").on("click", function(e) {
+        $("#toDoListsCompleted").on("click", function(e) {
             e.preventDefault();
-            var todoId = $(this).data('id');
+
+            if ($(this).hasClass("tr-bg")) {
+                $(this).removeClass("tr-bg");
+                $(this).addClass("fix-gr-bg");
+            }
+
+            if ($("#toDoList").hasClass("fix-gr-bg")) {
+                $("#toDoList").removeClass("fix-gr-bg");
+                $("#toDoList").addClass("tr-bg");
+            }
+
+            $(".toDoList").hide();
+            $(".toDoListsCompleted").show();
+
+            var formData = {
+                id: 0,
+            };
+
             var url = $("#url").val();
+
             $.ajax({
                 type: "GET",
                 data: formData,
@@ -485,8 +564,6 @@
                 },
             });
         });
-    });
-
 
     </script>
 @endpush

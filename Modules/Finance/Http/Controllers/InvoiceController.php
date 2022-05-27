@@ -52,7 +52,7 @@ class InvoiceController extends Controller
 
         $data['html'] = '';
         $data['html'] .=  \Form::label('case_id', __('finance.Select Case'));
-        $data['html'] .= \Form::select('case_id', $cases,  null, ['class' => 'form-control select2bs4 select_case', 'data-parsley-errors-container' => '#case_id_error']);
+        $data['html'] .= \Form::select('case_id', $cases,  null, ['class' => 'primary_select select_case', 'data-parsley-errors-container' => '#case_id_error']);
 
         return response()->json($data);
 

@@ -9,7 +9,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('leave.Apply Leave') }}</h3>
 
                                 <ul class="d-flex">
-                                    <li><a class="btn btn-primary mr-10" href="#" data-toggle="modal"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="#" data-toggle="modal"
                                            data-target="#ApplyLeave"><i
                                                 class="ti-plus"></i>{{ __('leave.Apply New Leave') }}</a></li>
                                 </ul>
@@ -99,7 +99,7 @@
                                             <td>
                                                 <!-- shortby  -->
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">
@@ -155,7 +155,7 @@
                                 <div class="col-xl-6">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('leave.user') }} *</label>
-                                        <select class="form-control select2bs4 mb-25 department_id" name="user"
+                                        <select class="primary_select mb-25 department_id" name="user"
                                                 id="department_id" required>
                                             @foreach ($users as $key => $user)
                                                 <option
@@ -176,7 +176,7 @@
                                             <div class="col">
                                                 <div class="">
                                                     <input placeholder="{{ __('common.Date') }}"
-                                                           class="form-control primary-input date form-control"
+                                                           class="primary_input_field primary-input date form-control"
                                                            id="apply_date" type="text" name="apply_date"
                                                            value="{{date('Y-m-d')}}"
                                                            autocomplete="off" required>
@@ -193,7 +193,7 @@
                             <div class="col-xl-6">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="">{{ __('leave.Leave Type') }} *</label>
-                                    <select class="form-control select2bs4 mb-25" name="leave_type_id" id="leave_type_id"
+                                    <select class="primary_select mb-25" name="leave_type_id" id="leave_type_id"
                                             required>
                                         @foreach (\Modules\Leave\Entities\LeaveType::Active()->get() as $leave_type)
                                             <option value="{{ $leave_type->id }}">{{ $leave_type->name }}</option>
@@ -204,7 +204,7 @@
                             <div class="col-xl-6">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label">{{ __('leave.Leave') }} *</label>
-                                    <select onchange="leavePurpose(this)" class="form-control select2bs4 day mb-25" name="day"
+                                    <select onchange="leavePurpose(this)" class="primary_select day mb-25" name="day"
                                             id="leave_purpose">
                                         <option value="0">{{ __('leave.Half Day') }}</option>
                                         <option value="1">{{ __('leave.Single Day') }}</option>
@@ -223,7 +223,7 @@
                                             <div class="col">
                                                 <div class="">
                                                     <input placeholder="{{ __('common.Date') }}"
-                                                           class="form-control primary-input date form-control"
+                                                           class="primary_input_field primary-input date form-control"
                                                            id="start_date" type="text" name="start_date"
                                                            value="{{date('Y-m-d')}}"
                                                            autocomplete="off" required>
@@ -275,7 +275,7 @@
                                             <div class="col">
                                                 <div class="">
                                                     <input placeholder="{{ __('common.Date') }}"
-                                                           class="form-control primary-input date form-control"
+                                                           class="primary_input_field primary-input date form-control"
                                                            id="end_date" type="text" name="end_date"
                                                            value="{{date('Y-m-d')}}"
                                                            autocomplete="off" required>
@@ -341,7 +341,7 @@
                                             <div class="col">
                                                 <div class="">
                                                     <input placeholder="{{ __('common.Date') }}"
-                                                           class="form-control date primary-input form-control"
+                                                           class="primary_input_field date primary-input form-control"
                                                            type="text" name="makeup_date"
                                                            value="{{\Carbon\Carbon::now()->addDays(1)->format('m/d/y')}}"
                                                            autocomplete="off">
@@ -380,7 +380,7 @@
                             <div class="col-xl-6 reason">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="">{{ __('leave.Reason') }} *</label>
-                                    <input name="reason" class="form-control name"
+                                    <input name="reason" class="primary_input_field name"
                                            placeholder="{{ __('leave.Reason') }}" type="text">
                                     <span class="text-danger" id="reason_error"></span>
                                 </div>
@@ -393,7 +393,7 @@
                                         <input class="primary-input" type="text" id="placeholderFileOneName"
                                                placeholder="{{ __('common.Browse file') }}" readonly="">
                                         <button class="" type="button">
-                                            <label class="btn btn-sm btn-primary"
+                                            <label class="primary-btn small fix-gr-bg"
                                                    for="document_file_1">{{__("common.Browse")}} </label>
                                             <input type="file" class="d-none" name="file" id="document_file_1">
                                         </button>
@@ -403,7 +403,7 @@
 
                             <div class="col-lg-12 text-center">
                                 <div class="d-flex justify-content-center pt_20">
-                                    <button type="submit" class="btn btn-primary"
+                                    <button type="submit" class="primary-btn semi_large2 fix-gr-bg"
                                             id="save_button_parent"><i class="ti-check"></i>{{ __('common.Save') }}
                                     </button>
                                 </div>

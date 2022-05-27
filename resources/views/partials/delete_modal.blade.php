@@ -21,7 +21,7 @@
 
                 <div class="col-lg-12 text-center">
                     <div class="d-flex justify-content-center pt_20">
-                        <a id="delete_link" class="btn btn-primary">{{__('Delete')}}</a>
+                        <a id="delete_link" class="primary-btn semi_large2 fix-gr-bg">{{__('Delete')}}</a>
                     </div>
                 </div>
             </div>

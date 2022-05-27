@@ -67,7 +67,7 @@
                         </div>
                         <div class="text-center">
 
-                            <a href="{{ url('/') }}" class="btn btn-primary" > Back To Home </a>
+                            <a href="{{ url('/') }}" class="primary-btn fix-gr-bg" > Back To Home </a>
 
 
 
@@ -146,7 +146,7 @@
                         </div>
                         <div class="text-center">
 
-                            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#update_modal" data-modal-size="modal-md">Update</button>
+                            <button type="button" class="primary-btn fix-gr-bg"  data-toggle="modal" data-target="#update_modal" data-modal-size="modal-md">Update</button>
 
 
                         </div>
@@ -192,12 +192,12 @@
                             </div>
                              <div class="col-lg-12 text-center" >
                                 <div class="mt-40 d-flex justify-content-between">
-                                    <button type="button" class="btn btn-warning" data-dismiss="modal">
+                                    <button type="button" class="primary-btn tr-bg" data-dismiss="modal">
                                         Cancel
                                     </button>
 
-                                    <button type="submit" class="btn btn-primary submit" id="update">Update</button>
-                                    <button type="button" class="btn btn-primary submitting" style="display: none; " disabled="">Updating...</button>
+                                    <button type="submit" class="primary-btn fix-gr-bg submit" id="update">Update</button>
+                                    <button type="button" class="primary-btn fix-gr-bg submitting" style="display: none; " disabled="">Updating...</button>
 
                                 </div>
                             </div>

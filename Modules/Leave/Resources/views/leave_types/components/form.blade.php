@@ -6,7 +6,7 @@
             <div class="primary_input mb-25">
                 <label class="primary_input_label"
                     for="">{{ __('common.Name') }} *</label>
-                <input name="name" class="form-control name"
+                <input name="name" class="primary_input_field name"
                     id="name" placeholder="{{ __('common.Name') }}"
                     type="text" required="1">
                 <span class="text-danger"  id="name_error"></span>
@@ -41,7 +41,7 @@
 
         <div class="col-lg-12 text-center">
             <div class="d-flex justify-content-center pt_20">
-                <button type="submit" class="btn btn-primary"><i
+                <button type="submit" class="primary-btn semi_large2 fix-gr-bg"><i
                         class="ti-check"></i>
                         {{ $button_level_name }}
                 </button>

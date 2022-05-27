@@ -12,8 +12,6 @@ return array (
   'Total Payment Due' => 'Total Payment Due',
   'Running Cases' => 'Running Cases',
   'Total Running Cases' => 'Total Running Cases',
-  'Total No Of Due Bills'=>'Total No Of Due Bills',
-  'Total Amount'=>'Total Amount',
   'Waiting Cases' => 'Waiting Cases',
   'Total Waiting Cases' => 'Total Waiting Cases',
   'Closed Cases' => 'Closed Cases',

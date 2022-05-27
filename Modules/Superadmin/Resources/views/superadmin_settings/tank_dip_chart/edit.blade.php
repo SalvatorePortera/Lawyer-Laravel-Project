@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-primary add_dip_reading" type="button"
+                <button class="primary-btn fix-gr-bg add_dip_reading" type="button"
                     style="margin-top: 23px;">@lang('superadmin::lang.add')</button>
             </div>
             <br>
@@ -103,7 +103,7 @@
 
         <div class="clearfix"></div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">@lang( 'messages.save' )</button>
+            <button type="submit" class="primary-btn fix-gr-bg">@lang( 'messages.save' )</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">@lang( 'messages.close' )</button>
         </div>
 

@@ -12,7 +12,7 @@
                             <ul class="d-flex">
                                 
                                 <li>
-                                    <a class="btn btn-primary" href="{{ route('lawyer.index') }}">
+                                    <a class="primary-btn semi_large2 fix-gr-bg" href="{{ route('lawyer.index') }}">
                                         {{ __('Back To Lawyers') }}
                                     </a>
                                 </li>
@@ -42,19 +42,19 @@
                                 <div class="primary_input">
                                     {{Form::label('name', __('lawyer.Name'),['class' => 'required'])}}
                                     @if(getSystemSubscriptionAllowedLawyers()>0)
-                                    {{Form::text('name', null, ['required' => '', 'class' => 'form-control','placeholder' => __
+                                    {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field','placeholder' => __
                                     ('lawyer.Name')])}}
                                     @else
-                                    {{Form::text('name', null, ['required' => '', 'class' => 'form-control','disabled','placeholder' => __
+                                    {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field','disabled','placeholder' => __
                                     ('lawyer.Name')])}}
                                     @endif
                                 </div>
                                 <div class="primary_input">
                                     {{Form::label('mobile_no', __('lawyer.Mobile No'),['class' => 'required'] )}}
                                     @if(getSystemSubscriptionAllowedLawyers()>0)
-                                    {{Form::number('mobile_no', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('lawyer.Lawyer Mobile No')])}}
+                                    {{Form::number('mobile_no', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('lawyer.Lawyer Mobile No')])}}
                                     @else
-                                    {{Form::number('mobile_no', null, ['required' => '', 'class' => 'form-control','disabled','placeholder' => __('lawyer.Lawyer Mobile No')])}}
+                                    {{Form::number('mobile_no', null, ['required' => '', 'class' => 'primary_input_field','disabled','placeholder' => __('lawyer.Lawyer Mobile No')])}}
                                     @endif
                                 </div>
 
@@ -62,9 +62,9 @@
                                     <div class="primary_input">
                                         {{Form::label('email', __('case.Email'))}}
                                         @if(getSystemSubscriptionAllowedLawyers()>0)
-                                        {{Form::email('email', null, ['class' => 'form-control', 'placeholder' => __('case.Email')])}}
+                                        {{Form::email('email', null, ['class' => 'primary_input_field', 'placeholder' => __('case.Email')])}}
                                         @else
-                                        {{Form::email('email', null, ['class' => 'form-control','disabled','placeholder' => __('case.Email')])}}
+                                        {{Form::email('email', null, ['class' => 'primary_input_field','disabled','placeholder' => __('case.Email')])}}
                                         @endif
                                     </div>
                                 @endif
@@ -87,15 +87,15 @@
                         <div class="row">
                             <div class="text-center col-md-12 mt-3">
                                     @if(getSystemSubscriptionAllowedLawyers()>0)
-                                    <button class="btn btn-primary semi_large2 submit"  type="submit"><i
+                                    <button class="primary-btn fix-gr-bg semi_large2 submit"  type="submit"><i
                                             class="ti-check"></i>{{ __('common.Create') }}
                                     </button>
 
-                                    <button class="btn btn-primary submitting" type="submit" disabled
+                                    <button class="primary-btn semi_large2 fix-gr-bg submitting" type="submit" disabled
                                             style="display: none;"><i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                                     </button>
                                     @else
-                                    <button class="btn btn-primary"  disabled>
+                                    <button class="primary-btn semi_large2 fix-gr-bg"  disabled>
                                         <i class="ti-check"></i>{{ __('common.Create') }}
                                     </button>                            
                                     @endif

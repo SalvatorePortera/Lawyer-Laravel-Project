@@ -23,9 +23,9 @@
                 <div class="col-lg-12 text-center">
                     <div class="d-flex justify-content-center pt_20">
                         @if (request()->is('pos/pos-order-products') || request()->is( 'purchase/purchase_order/create'))
-                            <a id="approve_link" class="btn btn-primary">{{__('common.Yes,Cancel')}}</a>
+                            <a id="approve_link" class="primary-btn semi_large2 fix-gr-bg">{{__('common.Yes,Cancel')}}</a>
                         @else
-                            <a id="approve_link" class="btn btn-primary">{{__('common.Approve')}}</a>
+                            <a id="approve_link" class="primary-btn semi_large2 fix-gr-bg">{{__('common.Approve')}}</a>
                         @endif
                     </div>
                 </div>

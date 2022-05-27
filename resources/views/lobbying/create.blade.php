@@ -20,7 +20,7 @@
                             <div class="primary_input col-md-12">
                                 {{Form::hidden('case', $case)}}
                                 {{Form::label('hearing_date', __('common.Lobbying Date'),['class' => 'required'])}}
-                                {{Form::text('hearing_date', date('Y-m-d H:i'), ['required' => '','class' => 'form-control primary-input datetime form-control', 'placeholder' => __('common.Lobbying Date')])}}
+                                {{Form::text('hearing_date', date('Y-m-d H:i'), ['required' => '','class' => 'primary_input_field primary-input datetime form-control', 'placeholder' => __('common.Lobbying Date')])}}
                             </div>
                         </div>
 
@@ -28,7 +28,7 @@
 
                         <div class="primary_input">
                             {{Form::label('description', __('common.Lobbying Order'),['class' => 'required'])}}
-                            {{Form::textarea('description', null, ['class' => 'form-control summernote', 'placeholder' => __('common.Lobbying Order'),'required', 'rows' => 5, 'data-parsley-errors-container' =>
+                            {{Form::textarea('description', null, ['class' => 'primary_input_field summernote', 'placeholder' => __('common.Lobbying Order'),'required', 'rows' => 5, 'data-parsley-errors-container' =>
                             '#description_error'])}}
                             <span id="description_error"></span>
                         </div>
@@ -37,11 +37,11 @@
 
 
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn semi_large2 fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Create') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled
+                            <button class="primary-btn semi_large2 fix-gr-bg submitting" type="submit" disabled
                                     style="display: none;"><i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                             </button>
 

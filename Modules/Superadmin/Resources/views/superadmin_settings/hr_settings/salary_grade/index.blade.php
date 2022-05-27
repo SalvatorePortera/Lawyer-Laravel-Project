@@ -6,7 +6,7 @@
             'hr::lang.all_salary_grade')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" class="btn btn-primary btn-modal pull-right" id="add_salary_grade_btn"
+                <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" id="add_salary_grade_btn"
                     data-href="{{action('\Modules\HR\Http\Controllers\SalrayGradeController@create')}}"
                     data-container=".salary_grade_model">
                     <i class="fa fa-plus"></i> @lang( 'hr::lang.add' )</button>

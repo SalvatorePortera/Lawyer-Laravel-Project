@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <button class="primary-btn-small-input" type="button">
-                                                <label class="btn btn-primary btn-sm"
+                                                <label class="primary-btn small fix-gr-bg"
                                                        for="upload_content_file">@lang('common.Browse')</label>
                                                 <input type="file" class="d-none form-control" name="updateFile"
                                                        required
@@ -61,7 +61,7 @@
                                     @endphp
                                     <div class="row mt-40">
                                         <div class="col-lg-12 text-center">
-                                            <button class="btn btn-primary" data-toggle="tooltip"
+                                            <button class="primary-btn fix-gr-bg" data-toggle="tooltip"
                                                     title="{{@$tooltip}}">
                                                 <span class="ti-check"></span>
                                                 @if(isset($session))
@@ -128,7 +128,7 @@
                                                     @endif
 
                                                 @else
-                                                    <button data-toggle="tooltip" title="Restricted in demo mode" class="btn btn-primary btn-sm ml-2">
+                                                    <button data-toggle="tooltip" title="Restricted in demo mode" class="primary-btn small fix-gr-bg ml-2">
                                                         Revoke License
                                                     </button>
                                                 @endif

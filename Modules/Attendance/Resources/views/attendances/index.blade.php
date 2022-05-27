@@ -26,7 +26,7 @@
                             <div class="col-lg-6">
                                 <div class="primary_input mb-15">
                                     <label class="primary_input_label" for="">{{ __('attendance.Select Role') }}</label>
-                                    <select class="form-control select2bs4 mb-15 role_type" name="role_id" id="role_id" onchange="get_user()">
+                                    <select class="primary_select mb-15 role_type" name="role_id" id="role_id" onchange="get_user()">
                                         <option selected disabled>{{__('attendance.Choose One')}}</option>
                                         @foreach (\Modules\RolePermission\Entities\Role::whereNotIn('type',['normal_user','system_user'])->get() as $role)
                                             @if($role->id !== 1)
@@ -45,7 +45,7 @@
                                             <div class="col">
                                                 <div class="">
                                                     <input placeholder="{{ __('common.Date') }}"
-                                                           class="form-control primary-input date form-control"
+                                                           class="primary_input_field primary-input date form-control"
                                                            id="startDate" type="text" onchange="get_user()" name="date"
                                                            value="{{date('Y-m-d')}}" autocomplete="off">
                                                 </div>

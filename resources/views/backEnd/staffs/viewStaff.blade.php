@@ -101,7 +101,7 @@
                    </li>
                @endif
                <li class="nav-item edit-button">
-                  <a href="{{ route('staffs.edit', $staffDetails->id) }}" class="btn btn-primary btn-sm">{{ __('common.Edit') }}
+                  <a href="{{ route('staffs.edit', $staffDetails->id) }}" class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}
                   </a>
                </li>
             </ul>
@@ -388,7 +388,7 @@
                                               </td>
                                               <td>
                                                   <div class="dropdown CRM_dropdown">
-                                                      <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                      <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                               id="dropdownMenu2" data-toggle="dropdown"
                                                               aria-haspopup="true"
                                                               aria-expanded="false">
@@ -429,7 +429,7 @@
                                     <div class="col-xl-12">
                                         <div class="primary_input mb-25">
                                             <label class="primary_input_label" for="">{{ __('common.Name') }}</label>
-                                            <input name="name" class="form-control name" placeholder="{{ __('common.Name') }}" type="text" required>
+                                            <input name="name" class="primary_input_field name" placeholder="{{ __('common.Name') }}" type="text" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
@@ -439,7 +439,7 @@
                                                 <input class="primary-input" type="text" id="placeholderFileOneName"
                                                        placeholder="{{ __('common.Browse file') }}" readonly="">
                                                 <button class="" type="button">
-                                                    <label class="btn btn-primary btn-sm" for="document_file_1">{{ __('common.Browse') }}</label>
+                                                    <label class="primary-btn small fix-gr-bg" for="document_file_1">{{ __('common.Browse') }}</label>
                                                     <input type="file" class="d-none" name="file" id="document_file_1">
                                                 </button>
                                             </div>
@@ -447,8 +447,8 @@
                                     </div>
                                      <div class="col-lg-12 text-center mt-40">
                                         <div class="mt-40 d-flex justify-content-between">
-                                           <button type="button" class="btn btn-warning" data-dismiss="modal">{{ __('common.Cancel') }}</button>
-                                           <button class="btn btn-primary" type="submit">{{ __('common.Save') }}</button>
+                                           <button type="button" class="primary-btn tr-bg" data-dismiss="modal">{{ __('common.Cancel') }}</button>
+                                           <button class="primary-btn fix-gr-bg" type="submit">{{ __('common.Save') }}</button>
                                         </div>
                                      </div>
                                   </div>

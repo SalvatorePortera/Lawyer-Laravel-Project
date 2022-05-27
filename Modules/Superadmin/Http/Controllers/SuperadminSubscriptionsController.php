@@ -52,7 +52,7 @@ class SuperadminSubscriptionsController extends BaseController
                     'action',
                     '<button data-href ="{{action(\'\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@edit\',[$id])}}" class="btn btn-info btn-xs change_status" data-toggle="modal" data-target="#statusModal">
                             @lang( "superadmin::lang.status")
-                            </button> <button data-href ="{{action(\'\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@editSubscription\',["id" => $id])}}" class="btn btn-primary btn-xs btn-modal" data-container=".view_modal">
+                            </button> <button data-href ="{{action(\'\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@editSubscription\',["id" => $id])}}" class="primary-btn fix-gr-bg btn-xs btn-modal" data-container=".view_modal">
                             @lang( "messages.edit")
                             </button>'
                 )

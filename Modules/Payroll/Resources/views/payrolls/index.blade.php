@@ -1,29 +1,25 @@
 @extends('layouts.master', ['title' => 'Payroll'])
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('payroll.Payroll') }}</h1>
-      </div>
-      <div class="col-sm-6">
 
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
 <section class="admin-visitor-area up_st_admin_visitor">
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid pt-3">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="box_header common_table_header">
+                    <div class="main-title d-md-flex">
+                        <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('payroll.Payroll') }}</h3>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-lg-12">
-                <div class="card">
-                <div class="card-body">
+                <div class="white_box_50px box_shadow_white">
                     <form class="" action="{{ route('staff_search_for_payroll') }}" method="GET">
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="primary_input mb-15">
                                     <label class="primary_input_label" for="">{{ __('payroll.Select Role') }}</label>
-                                    <select class="form-control select2bs4 mb-15" name="role_id" id="role_id">
+                                    <select class="primary_select mb-15" name="role_id" id="role_id">
                                         <option selected disabled>{{__('payroll.Choose One')}}</option>
                                         @foreach (\Modules\RolePermission\Entities\Role::where('type', 'regular_user')->get() as $role)
                                             @isset($r)
@@ -39,7 +35,7 @@
                             <div class="col-lg-4">
                                 <div class="primary_input mb-15">
                                     <label class="primary_input_label" for="">{{ __('payroll.Select Month') }}</label>
-                                    <select class="form-control select2nsb mb-15" name="month" id="month">
+                                    <select class="primary_select mb-15" name="month" id="month">
                                         @foreach ($months as $month)
                                             @isset($m)
                                                 <option value="{{ $month }}"@if ($m == $month) selected @endif>{{ __('common.'.$month) }}</option>
@@ -54,7 +50,7 @@
                             <div class="col-lg-4">
                                 <div class="primary_input mb-15">
                                     <label class="primary_input_label" for="">{{ __('payroll.Select Year') }}</label>
-                                    <select class="form-control select2nsb mb-15" name="year" id="year">
+                                    <select class="primary_select mb-15" name="year" id="year">
                                         @foreach (range(\carbon\Carbon::now()->year, 2015) as $year)
                                             @isset($y)
                                                 <option value="{{ $year }}"@if ($y == $year) selected @endif>{{ $year }}</option>
@@ -71,23 +67,20 @@
                         <div class="row">
                             <div class="col-lg-12 mb-2 mt-3 text-right">
                                 {{-- <div class="d-flex"> --}}
-                                    <button type="submit" class="btn btn-sm btn-primary"id="save_button_parent"><i class="ti-search"></i>
-                                    {{ __('payroll.Search') }}</button>
+                                    <button type="submit" class="primary-btn btn-sm fix-gr-bg"id="save_button_parent"><i class="ti-search"></i>{{ __('payroll.Search') }}</button>
                                 {{-- </div> --}}
                             </div>
                         </div>
                     </form>
-                </div></div>
+                </div>
             </div>
-        </div>
             @isset($users)
-        <div class="row">
-                <div class="col-lg-12">
-
-                        <div class="card">
+                <div class="col-lg-12 mt-75 pt-75">
+                    <div class="QA_section QA_section_heading_custom check_box_table">
+                        <div class="QA_table payroll">
                             <!-- table-responsive -->
-                            <div class="card-body">
-                                <table class="table table-striped table-hover">
+                            <div class="">
+                                <table class="table Crm_table_active3">
                                     <thead>
                                         <tr>
                                             <th scope="col">{{ __('common.SL') }}</th>
@@ -131,14 +124,14 @@
                                                     <div class="dropdown CRM_dropdown">
                                                         @if(!empty($getPayrollDetails))
                                                             @if($getPayrollDetails->payroll_status == 'G')
-                                                            <button class="btn btn-block btn-sm btn-warning"> {{ __('payroll.Generated') }}</button>
+                                                            <button class=" dropdown-item primary-btn small bg-warning text-white border-0"> {{ __('payroll.Generated') }}</button>
                                                             @endif
 
                                                            @if($getPayrollDetails->payroll_status == 'P')
-                                                            <button class="btn btn-block btn-sm btn-white"> {{ __('payroll.Paid') }}</button>
+                                                            <button class="dropdown-item primary-btn small bg-success text-white border-0"> {{ __('payroll.Paid') }}</button>
                                                             @endif
                                                             @else
-                                                            <button class="btn btn-block btn-sm btn-danger">{{ __('payroll.Not generated') }}</button>
+                                                            <button class="dropdown-item primary-btn small bg-danger text-white border-0">{{ __('payroll.Not generated') }}</button>
 
                                                             @endif
                                                         </div>
@@ -147,15 +140,15 @@
                                                     <div class="dropdown CRM_dropdown">
                                                         @if(!empty($getPayrollDetails))
                                                             @if($getPayrollDetails->payroll_status == 'G')
-                                                                <a title="Proceed to pay" onclick="payrollPayment({{ $getPayrollDetails->id }},{{ $user->role_id }})"><button class="btn btn-block btn-outline-primary btn-sm">{{ __('payroll.Proceed To Pay') }}</button></a>
+                                                                <a title="Proceed to pay" onclick="payrollPayment({{ $getPayrollDetails->id }},{{ $user->role_id }})"><button class="primary-btn small tr-bg dropdown-item">{{ __('payroll.Proceed To Pay') }}</button></a>
                                                                 <div class="mt-1"></div>
-                                                                <a onclick="viewSlip({{ $getPayrollDetails }})" data-toggle="modal" data-target="#SlipForm"><button class="btn btn-block btn-outline-primary btn-sm">{{ __('payroll.View PaySlip') }}</button></a>
+                                                                <a onclick="viewSlip({{ $getPayrollDetails }})" data-toggle="modal" data-target="#SlipForm"><button class="primary-btn small tr-bg dropdown-item">{{ __('payroll.View PaySlip') }}</button></a>
                                                             @endif
                                                             @if($getPayrollDetails->payroll_status == 'P')
-                                                                <a onclick="viewSlip({{ $getPayrollDetails }})" data-toggle="modal" data-target="#SlipForm"><button class="btn btn-block btn-outline-primary btn-sm">{{ __('payroll.View PaySlip') }}</button></a>
+                                                                <a onclick="viewSlip({{ $getPayrollDetails }})" data-toggle="modal" data-target="#SlipForm"><button class="primary-btn small tr-bg dropdown-item">{{ __('payroll.View PaySlip') }}</button></a>
                                                             @endif
                                                         @else
-                                                            <a class="" href="{{ url('hr/payroll/generate-Payroll/'.$user->id.'/'.$m.'/'.$y)}}"><button class="btn btn-block btn-outline-primary btn-sm"> {{ __('payroll.Generate Payroll') }}</button></a>
+                                                            <a class="" href="{{ url('hr/payroll/generate-Payroll/'.$user->id.'/'.$m.'/'.$y)}}"><button class="primary-btn small tr-bg dropdown-item"> {{ __('payroll.Generate Payroll') }}</button></a>
                                                         @endif
                                                     </div>
                                                     </td>
@@ -166,7 +159,7 @@
                                 </table>
                             </div>
                         </div>
-
+                    </div>
                 </div>
             @endisset
         </div>
@@ -176,7 +169,7 @@
 
 </div>
 <div class="modal fade admin-query" id="SlipForm">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal_800px modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">{{ __('payroll.View Payslip Details') }}</h4>
@@ -189,11 +182,11 @@
                 <div id="printablePos">
                     <div class="row mb-25">
                         <div class="col-lg-12 text-center">
-                            <h2>d{{ config('configs')->where('key','company_name')->first()->value }}</h3>
-                            <h4>{{ config('configs')->where('key','address')->first()->value }}</h6>
+                            <h3>{{ config('configs')->where('key','company_name')->first()->value }}</h3>
+                            <h6>{{ config('configs')->where('key','address')->first()->value }}</h6>
                         </div>
                         <div class="col-lg-12 text-center">
-                            <h4>{{ __('payroll.Payslip for the period of') }}<span class="period"></span></h5>
+                            <h5>{{ __('payroll.Payslip for the period of') }}<span class="period"></span></h5>
                         </div>
                     </div>
 
@@ -207,30 +200,32 @@
                     </div>
                     <hr>
                     <div class="row justify-content-center">
-                        <div class="col-md-12">
-                            <dl class="row">
-                                <dt class="col-md-5">{{ __('common.Name') }}:</dt>
-                                <dd class="col-md-7 primary_input_label user_name"></dd>
-                                <dt class="col-md-5 primary_input_label" for="">{{ __('payroll.Payment Method') }}:</dt>
-                                <dd class="col-md-7 primary_input_label payment_mode" for=""></dd>
-                                <dt class="col-md-5 primary_input_label" for="">{{ __('payroll.Basic Salary') }}:</dt>
-                                <dd class="col-md-7 primary_input_label basic_salary" for=""></dd>
-                                <dt class="col-md-5 primary_input_label" for="">{{ __('payroll.Total Earning') }}:</dt>
-                                <dd class="col-md-7 primary_input_label total_earning" for=""></dd>
-                                <dt class="col-md-5 primary_input_label" for="">{{ __('payroll.Total Deduction') }}:</dt>
-                                <dd class="col-md-7 primary_input_label total_deduction" for=""></dd>
-                                <dt class="col-md-5 primary_input_label" for="">{{ __('payroll.Net Salary') }}:</dt>
-                                <dd class="col-md-7 primary_input_label net_salary" for=""></dd>
-                                <dt class="col-md-5 primary_input_label" for="">{{ __('payroll.Gross Salary') }}:</dt>
-                                <dd class="col-md-7 primary_input_label gross_salary" for=""></dd>
-                            </dl>
+                        <div class="col-md-5">
+                            <div class="primary_input mb-25">
+                                <label class="primary_input_label" for="">{{ __('common.Name') }}:</label>
+                                <label class="primary_input_label" for="">{{ __('payroll.Payment Method') }}:</label>
+                                <label class="primary_input_label" for="">{{ __('payroll.Basic Salary') }}:</label>
+                                <label class="primary_input_label" for="">{{ __('payroll.Total Earning') }}:</label>
+                                <label class="primary_input_label" for="">{{ __('payroll.Total Deduction') }}:</label>
+                                <label class="primary_input_label" for="">{{ __('payroll.Net Salary') }}:</label>
+                                <label class="primary_input_label" for="">{{ __('payroll.Gross Salary') }}:</label>
+                            </div>
+                        </div>
+                        <div class="primary_input mb-25">
+                            <label class="primary_input_label user_name" for=""></label>
+                            <label class="primary_input_label payment_mode" for=""></label>
+                            <label class="primary_input_label basic_salary" for=""></label>
+                            <label class="primary_input_label total_earning" for=""></label>
+                            <label class="primary_input_label total_deduction" for=""></label>
+                            <label class="primary_input_label net_salary" for=""></label>
+                            <label class="primary_input_label gross_salary" for=""></label>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <a href="" target="_blank" class="btn btn-primary mr-2 pdf_btn">{{__('payroll.PDF')}}</a>
-                    <button type="button" onclick="printDiv('printablePos')" class="btn btn-primary mr-2">{{__('common.Print')}}</button>
-                    <button type="button" onclick="modal_close()" class="btn btn-primary">{{__('common.Close')}}</button>
+                    <a href="" target="_blank" class="primary-btn fix-gr-bg mr-2 pdf_btn">{{__('payroll.PDF')}}</a>
+                    <button type="button" onclick="printDiv('printablePos')" class="primary-btn fix-gr-bg mr-2">{{__('common.Print')}}</button>
+                    <button type="button" onclick="modal_close()" class="primary-btn fix-gr-bg">{{__('common.Close')}}</button>
                 </div>
             </div>
 

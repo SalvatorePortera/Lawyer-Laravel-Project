@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="primary_input col-md-12">
                                 {{Form::label('title', __('appointment.Title'),['class' => 'required'])}}
-                                {{Form::text('title', null, ['required' => '','class' => 'form-control', 'placeholder' => __('appointment.Title')])}}
+                                {{Form::text('title', null, ['required' => '','class' => 'primary_input_field', 'placeholder' => __('appointment.Title')])}}
                             </div>
                         </div>
                         <div class="row">
@@ -37,18 +37,18 @@
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
                                 </div>
-                                {{Form::select('contact_id', $contacts, null, ['required' => '', 'class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#contact_id_error'])}}
+                                {{Form::select('contact_id', $contacts, null, ['required' => '', 'class' => 'primary_select', 'data-parsley-errors-container' => '#contact_id_error'])}}
                                 <span id="contact_id_error"></span>
                             </div>
 
                             <div class="primary_input col-md-6">
                                 {{Form::label('date', __('appointment.Appointment Date'),['class' => 'required'])}}
-                                {{Form::text('date', date('Y-m-d H:i'), ['required' => '','class' => 'form-control primary-input datetime form-control', "id"=>"fromDate",'placeholder' => __('appointment.Date')])}}
+                                {{Form::text('date', date('Y-m-d H:i'), ['required' => '','class' => 'primary_input_field primary-input datetime form-control', "id"=>"fromDate",'placeholder' => __('appointment.Date')])}}
                             </div>
                         </div>
                         <div class="primary_input">
                             {{Form::label('motive', __('appointment.Motive'),['class' => 'required'])}}
-                            {{Form::textarea('motive', null, ['required' => '','class' => 'form-control', 'placeholder' => __('appointment.Appointment Motive'), 'rows' => 5, 'data-parsley-errors-container' =>
+                            {{Form::textarea('motive', null, ['required' => '','class' => 'primary_input_field', 'placeholder' => __('appointment.Appointment Motive'), 'rows' => 5, 'data-parsley-errors-container' =>
                             '#motive_error' ])}}
                             <span id="motive_error"></span>
                         </div>
@@ -56,18 +56,18 @@
 
                         <div class="primary_input">
                             {{Form::label('notes', __('appointment.Notes'))}}
-                            {{Form::textarea('notes', null, ['class' => 'form-control summernote', 'placeholder' => __('appointment.Appointment Notes'), 'rows' => 5, 'data-parsley-errors-container' =>
+                            {{Form::textarea('notes', null, ['class' => 'primary_input_field summernote', 'placeholder' => __('appointment.Appointment Notes'), 'rows' => 5, 'data-parsley-errors-container' =>
                             '#notes_error' ])}}
                             <span id="notes_error"></span>
                         </div>
 
 
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Create') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                             </button>
                         </div>

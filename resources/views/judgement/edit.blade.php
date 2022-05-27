@@ -20,21 +20,21 @@
                             <div class="primary_input col-md-12">
                                 {{Form::hidden('case', $case)}}
                                 {{Form::label('judgement_date', __('case.Judgement Date'), ['class' => 'required'])}}
-                                {{Form::text('judgement_date', $model->date, ['required' => '','class' => 'form-control primary-input form-control datetime', 'placeholder' => __('case.Judgement Date')])}}
+                                {{Form::text('judgement_date', $model->date, ['required' => '','class' => 'primary_input_field primary-input form-control datetime', 'placeholder' => __('case.Judgement Date')])}}
                             </div>
                         </div>
                         @includeIf('customfield::fields', ['fields' => $fields, 'model' => $model])
                         <div class="primary_input">
                             {{Form::label('judgement', __('case.Judgement'), ['class' => 'required'])}}
-                            {{Form::textarea('judgement', $model->description, ['class' => 'form-control summernote', 'placeholder' => __('case.Judgement'), 'rows' => 5, 'required', 'data-parsley-errors-container' => '#judgement_error' ])}}
+                            {{Form::textarea('judgement', $model->description, ['class' => 'primary_input_field summernote', 'placeholder' => __('case.Judgement'), 'rows' => 5, 'required', 'data-parsley-errors-container' => '#judgement_error' ])}}
                             <span id="judgement_error"></span>
                         </div>
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Update') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                             </button>
                         </div>

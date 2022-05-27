@@ -1455,7 +1455,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <button type="submit"
-                                class="btn btn-primary pull-right btn-flat">@lang('messages.save')</button>
+                                class="primary-btn fix-gr-bg pull-right btn-flat">@lang('messages.save')</button>
                     </div>
                 </div>
             </div>

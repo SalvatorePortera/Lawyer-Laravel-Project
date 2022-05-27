@@ -13,7 +13,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px" >{{ __('case.Case Stage') }}</h3>
                             <ul class="d-flex">
                             @if(permissionCheck('master.stage.store'))
-                                <li><a class="btn btn-primary" href="{{ route('master.stage.create') }}"><i class="ti-plus"></i>{{ __
+                                <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('master.stage.create') }}"><i class="ti-plus"></i>{{ __
                         ('case.New Case Stage') }}</a></li>
                         @endif
                             </ul>
@@ -45,7 +45,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                        <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                        <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                                 id="dropdownMenu2" data-toggle="dropdown"
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false">

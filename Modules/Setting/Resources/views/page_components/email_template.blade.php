@@ -10,7 +10,7 @@
                 <div class="col-xl-8">
                     <div class="primary_input mb-25">
                         {{ Form::label('subject', __('setting.Subject') , ['class' => 'primary_input_label required']) }}
-                        {{ Form::text('subject', $template->subject , ["class" => "form-control", "placeholder" => __('setting.Subject'), "required"]) }}
+                        {{ Form::text('subject', $template->subject , ["class" => "primary_input_field", "placeholder" => __('setting.Subject'), "required"]) }}
                     </div>
                 </div>
 
@@ -37,10 +37,10 @@
             {{ Form::hidden('name', $template->type) }}
 
             <div class="submit_btn text-center mb-20 pt_15">
-                <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i> {{ __('common.Save') }}
+                <button class="primary-btn fix-gr-bg submit" type="submit"><i class="ti-check"></i> {{ __('common.Save') }}
                 </button>
 
-                <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i
+                <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;"><i
                         class="ti-check"></i> {{ __('common.Saving') }}</button>
             </div>
             <!-- content  -->

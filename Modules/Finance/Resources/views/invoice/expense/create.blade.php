@@ -1,45 +1,39 @@
 @extends('finance::layouts.master', ['title' => __('finance.Create New Expense Invoice')])
 
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('finance.Add Expense Invoice') }}</h1>
-      </div>
-      <div class="col-sm-6">
-        @if(permissionCheck('invoice.expenses.index'))
-            <ul class="breadcrumb float-sm-right">
-                <li>
-                    <a class="btn btn-primary mr-10 float-sm-right" href="{{ route('invoice.expenses.index') }}">
-                        <i class="fa fa-list"></i>  {{ __('finance.Expense Invoice List') }}
-                    </a>
-                </li>
-            </ul>
-        @endif
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
+
     <section class="admin-visitor-area up_st_admin_visitor">
         <div class="container-fluid pt-3">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="card">
-                    <div class="card-body">
+                    <div class="box_header">
+                        <div class="main-title d-flex justify-content-between ">
+                            <h3 class="mb-0 mr-30">{{ __('finance.Add Expense Invoice') }}</h3>
+                            <ul class="d-flex">
+                                @if(permissionCheck('invoice.expenses.index'))
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
+                                           href="{{ route('invoice.expenses.index') }}"><i class="ti-list"></i>{{ __
+                        ('finance.Expense Invoice List') }}</a></li>
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="white_box_50px box_shadow_white">
                         {!! Form::open(['route' => 'invoice.expenses.store', 'class' => 'form-validate-jquery', 'id' => 'content_form', 'files' => false, 'method' => 'POST']) !!}
                         @includeIf('finance::invoice.components.form')
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Create') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                             </button>
                         </div>
                         {!! Form::close() !!}
-                    </div></div>
+                    </div>
                 </div>
             </div>
         </div>

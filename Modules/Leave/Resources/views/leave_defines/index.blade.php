@@ -1,20 +1,7 @@
 @extends('backEnd.master')
 @section('mainContent')
     @include("backEnd.partials.alertMessage")
-    <section class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1>{{ __('leave.Leave Define') }}</h1>
-            </div>
-            <div class="col-sm-6">
-                <button class="btn btn-primary mr-10" onclick="createModalShow()">
-                    <i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('leave.Leave Define') }}
-                </button>
-           </div>
-          </div>
-        </div><!-- /.container-fluid -->
-      </section>
+
     <section class="admin-visitor-area up_st_admin_visitor">
 
         @include('leave::page-components.create_leave_define')
@@ -23,15 +10,29 @@
 
         <div class="container-fluid pt-3">
             <div class="row">
+                <div class="col-12">
+                    <div class="box_header common_table_header">
+                        <div class="main-title d-md-flex">
+                            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('leave.Leave Define') }}</h3>
+                            <ul class="d-flex">
+                                <li>
+                                    <button class="primary-btn mr-10 fix-gr-bg" onclick="createModalShow()">
+                                        <i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('leave.Leave Define') }}
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12">
-
-                        <div class="card">
-                            <div class="card-body" id="leave_define_table">
+                    <div class="QA_section QA_section_heading_custom check_box_table">
+                        <div class="QA_table">
+                            <div class="" id="leave_define_table">
                                 {{-- Leave Define List --}}
                                 @include('leave::page-components.leave_define_list')
                             </div>
                         </div>
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,11 +168,11 @@
                 $('#leave_define_edit_form #status_active').prop("checked", false);
                 $('#leave_define_edit_form .max_forward').hide();
             }
-            $('select').select2();
+            $('select').niceSelect('update');
         }
 
         function resetForm() {
-            $('select').select2();
+            $('select').niceSelect('update');
             $('#leave_define_create_form')[0].reset();
             $('#role_id_error').text('');
             $('#leave_type_id_error').text('');
@@ -208,7 +209,7 @@
                 },
                 success: function (result) {
                     $('#user_id').html(result);
-                    $('select').select2();
+                    $('select').niceSelect('update');
                 }
             });
         }

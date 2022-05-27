@@ -62,7 +62,7 @@
         </div>
 
         <div class="row" style="margin: 20px; padding-bottom:20px;">
-            <button class="btn btn-primary pull-right" id="package_variable_edit"
+            <button class="primary-btn fix-gr-bg pull-right" id="package_variable_edit"
                 type="submit">@lang('messages.submit')</button>
         </div>
     </div>

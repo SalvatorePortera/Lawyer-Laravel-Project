@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="primary-btn fix-gr-bg">Save</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
             {!! Form::close() !!}

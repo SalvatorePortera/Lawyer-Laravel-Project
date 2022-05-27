@@ -25,7 +25,7 @@
                                             <div class="no-gutters input-right-icon">
                                                 <div class="col">
                                                     <div class="">
-                                                    {{Form::text('date', date('Y-m-d'), ['class' => 'form-control primary-input date form-control', "id"=>"fromDate",'placeholder' => __('common.Date')])}}
+                                                    {{Form::text('date', date('Y-m-d'), ['class' => 'primary_input_field primary-input date form-control', "id"=>"fromDate",'placeholder' => __('common.Date')])}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -35,7 +35,7 @@
 
                                 <div class="col mt-4">
                                     <div class="primary_input mt-3">
-                                        <button type="submit" class="btn btn-primary" id="submit" value="submit" style="width: 100%;"><i class="ti-search"></i>{{ __('common.Get List') }}</button>
+                                        <button type="submit" class="primary-btn fix-gr-bg" id="submit" value="submit" style="width: 100%;"><i class="ti-search"></i>{{ __('common.Get List') }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                        <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                        <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                                 id="dropdownMenu2" data-toggle="dropdown"
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false">

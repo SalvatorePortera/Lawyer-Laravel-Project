@@ -38,7 +38,7 @@
                                         @endif
                                         <div class="input-effect">
                                             <label>@lang('role.Name') <span>*</span></label>
-                                            <input class="form-control form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                            <input class="primary_input_field form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                                 type="text" name="name" autocomplete="off" value="{{isset($role)? @$role->name: ''}}" required="1">
                                             <input type="hidden" name="id" value="{{isset($role)? @$role->id: ''}}">
                                             @if ($errors->has('name'))
@@ -50,7 +50,7 @@
                                         <div class="input-effect d-none">
                                             <div class="primary_input mb-25">
                                                 <label class="primary_input_label" for="">{{ __('role.Type') }} *</label>
-                                                <select class="form-control select2bs4 mb-25" name="type" id="type" required>
+                                                <select class="primary_select mb-25" name="type" id="type" required>
                                                     @isset($role)
                                                         <option value="system_user"@if ($role->type == "system_user") selected @endif>{{ __('role.System User') }}</option>
                                                         <option value="regular_user"@if ($role->type == "regular_user") selected @endif>{{ __('role.Regular User') }}</option>
@@ -75,7 +75,7 @@
                                 <div class="row mt-40">
                                     <div class="col-lg-12 text-center">
                                         @if(permissionCheck('permission.roles.edit') || permissionCheck('permission.roles.store'))
-                                        <button class="btn btn-primary" data-toggle="tooltip" title="{{@$tooltip}}">
+                                        <button class="primary-btn fix-gr-bg" data-toggle="tooltip" title="{{@$tooltip}}">
                                             <span class="ti-check"></span>
                                             {{!isset($role)? 'save' : 'update'}}
 
@@ -122,7 +122,7 @@
                                                 <td>
                                                     <div class="d-flex align-items-center flex-wrap">
                                                         <div class="dropdown CRM_dropdown d-inline ml-1">
-                                                        <button class="btn btn-primary dropdown-toggle mb-1" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <button class="primary-btn fix-gr-bg dropdown-toggle mb-1" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         {{ __('common.Select') }}
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
@@ -143,7 +143,7 @@
                                                     @if(permissionCheck('permission.permissions.index'))
                                                         @if(@$role->id != 1)
                                                             <a href="{{ route('permission.permissions.index', [ 'id' => @$role->id])}}" class="ml-1"   >
-                                                                <button type="button" class="btn btn-sm btn-primary"> @lang('role.assign_permission') </button>
+                                                                <button type="button" class="primary-btn small fix-gr-bg"> @lang('role.assign_permission') </button>
                                                             </a>
                                                         @endif
                                                     @endif

@@ -9,7 +9,6 @@ return array (
   'Contact Category' => 'Contact Category',
   'New Category' => 'New Category',
   'SL' => 'SL',
-  'Category List'=>'Category List',
   'Description' => 'Description',
   'Actions' => 'Actions',
   'Category Name' => 'Category Name',

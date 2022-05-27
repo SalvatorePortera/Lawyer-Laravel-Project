@@ -12,7 +12,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('setting.City') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('setup.city.store'))
-                                    <li><a class="btn btn-primary"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="{{ route('setup.city.create', ['country_id' => $country_id, 'state_id' => $state_id]) }}"><i class="ti-plus"></i>{{ __
                         ('setting.New City') }}</a></li>
                                 @endif
@@ -28,16 +28,16 @@
                         <div class="row">
                             <div class="primary_input col-md-4">
                                 {{Form::label('country_id', __('setting.Country'), ['class' => 'required'])}}
-                                {{Form::select('country_id', $countries, $country_id, ['class' => 'form-control select2bs4', 'id' => 'country_id', 'data-placeholder' => __('court.Select country'),  'data-parsley-errors-container' => '#country_id_error'])}}
+                                {{Form::select('country_id', $countries, $country_id, ['class' => 'primary_select', 'id' => 'country_id', 'data-placeholder' => __('court.Select country'),  'data-parsley-errors-container' => '#country_id_error'])}}
                                 <span id="country_id_error"></span>
                             </div>
                             <div class="primary_input col-md-4">
                                 {{Form::label('state_id', __('setting.State'), ['class' => 'required'])}}
-                                {{Form::select('state_id', $states, $state_id, ['class' => 'form-control select2bs4', 'id' => 'state_id', 'data-placeholder' => __('court.Select State'),  'data-parsley-errors-container' => '#state_id_error'])}}
+                                {{Form::select('state_id', $states, $state_id, ['class' => 'primary_select', 'id' => 'state_id', 'data-placeholder' => __('court.Select State'),  'data-parsley-errors-container' => '#state_id_error'])}}
                                 <span id="state_id_error"></span>
                             </div>
                             <div class="primary_input mt_30 col-md-4">
-                                <button type="submit" class="btn btn-primary" id="submit" value="submit" style="width: 100%;"><i class="ti-search"></i>{{ __('case.Get List') }}</button>
+                                <button type="submit" class="primary-btn fix-gr-bg" id="submit" value="submit" style="width: 100%;"><i class="ti-search"></i>{{ __('case.Get List') }}</button>
                             </div>
                         </div>
                         {!! Form::close() !!}
@@ -72,7 +72,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">

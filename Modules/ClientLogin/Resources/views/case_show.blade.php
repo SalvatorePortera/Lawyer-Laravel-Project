@@ -16,7 +16,7 @@
 
                 <div class="col-lg-12 d-print-none">
 
-                    <a class="btn btn-sm btn-primary print_window"
+                    <a class="primary-btn small fix-gr-bg print_window"
                        href="{{ route('client.case.show', [$model->id, 'print' => true]) }}" target="_blank"><i
                             class="ti-printer mr-2"></i>
                         {{ __('case.Print') }}

@@ -1,43 +1,38 @@
 @extends('layouts.master', ['title' => __('case.Case Details')])
 
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ $model->title }}</h1>
-      </div>
-      <div class="col-sm-6">
-            
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
+
     <section class="admin-visitor-area up_admin_visitor">
-        <div class="container-fluid">
+        <div class="container-fluid pt-3">
 
             <div class="row">
+                <div class="col-lg-12 col-md-6">
+                    <div class="main-title">
+                        <h3 class="mb-30">{{ $model->title }}</h3>
+                    </div>
+                </div>
+
                 <div class="col-lg-12 d-print-none">
 
                     @if($model->judgement_status=='Open' OR $model->judgement_status=='Reopen')
                         @if(permissionCheck('date.store'))
                             <a href="{{route('date.create', ['case' => $model->id])}}"
-                               class="btn btn-primary btn-sm"><i
+                               class="primary-btn small fix-gr-bg"><i
                                     class="ti-calendar mr-2"></i>{{ __('case.New Date') }}</a>
                         @endif
                         @if(permissionCheck('putlist.store'))
                             <a href="{{route('putlist.create', ['case' => $model->id])}}"
-                               class="btn btn-primary btn-sm"><i
+                               class="primary-btn small fix-gr-bg"><i
                                     class="ti-calendar mr-2"></i>{{ __('case.New Put Up Date') }}</a>
                         @endif
                         @if(permissionCheck('lobbying.store'))
                             <a href="{{route('lobbying.create', ['case' => $model->id])}}"
-                               class="btn btn-primary btn-sm"><i
+                               class="primary-btn small fix-gr-bg"><i
                                     class="ti-calendar mr-2"></i>{{ __('case.New Lobbying Date') }}</a>
                         @endif
                         @if(permissionCheck('judgement.store'))
                             <a href="{{route('judgement.create', ['case' => $model->id])}}"
-                               class="btn btn-primary btn-sm"><i
+                               class="primary-btn small fix-gr-bg"><i
                                     class="ti-calendar mr-2"></i>{{ __('case.New Judgement Date') }}</a>
                         @endif
 
@@ -45,23 +40,23 @@
                     @if($model->judgement_status=='Judgement')
                         @if(permissionCheck('judgement.store'))
                             <a href="{{route('judgement.reopen', ['case' => $model->id])}}"
-                               class="btn btn-primary btn-sm"><i
+                               class="primary-btn small fix-gr-bg"><i
                                     class="ti-calendar mr-2"></i>{{ __('case.Re-open') }}</a>
                         @endif
                         @if(permissionCheck('judgement.store'))
                             <a href="{{route('judgement.close', ['case' => $model->id])}}"
-                               class="btn btn-primary btn-sm"><i
+                               class="primary-btn small fix-gr-bg"><i
                                     class="ti-calendar mr-2"></i>{{ __('case.Close') }}</a>
                         @endif
 
                     @endif
 
-                    <a class="btn btn-primary btn-sm print_window"
+                    <a class="primary-btn small fix-gr-bg print_window"
                        href="{{ route('case.show', [$model->id, 'print' => true]) }}" target="_blank"><i
                             class="ti-printer mr-2"></i>
                         {{ __('case.Print') }}
                     </a>
-                    <a class="btn btn-primary btn-sm " href="{{ route('file.index', ['case' => $model->id]) }}"><i
+                    <a class="primary-btn small fix-gr-bg " href="{{ route('file.index', ['case' => $model->id]) }}"><i
                             class="ti-file mr-2"></i>
                         {{ __('case.File') }}
                     </a>
@@ -92,23 +87,23 @@
                                                             <a style="cursor: pointer;"
 
                                                                href="{{route('date.send_mail', ['case' => $model->id, 'date' => $date->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('case.Send Mail') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('case.Send Mail') }}</a>
                                                         @endif
                                                         @if(permissionCheck('lobbying.edit'))
                                                             <span style="cursor: pointer;"
                                                                   data-container="file_modal"
                                                                   data-href="{{route('file.create', ['case' => $model->id, 'date' => $date->id])}}"
-                                                                  class="btn btn-primary btn-sm btn-modal">{{ __('case.Add File') }}</span>
+                                                                  class="primary-btn small fix-gr-bg btn-modal">{{ __('case.Add File') }}</span>
                                                         @endif
                                                         @if(permissionCheck('lobbying.edit'))
                                                             <a href="{{route('lobbying.edit', [$date->id, 'case' => $model->id])}}"
-                                                               class="btn btn-primary btn-sm">{{__('common.Edit')}}</a>
+                                                               class="primary-btn small fix-gr-bg">{{__('common.Edit')}}</a>
                                                         @endif
                                                         @if(permissionCheck('lobbying.destroy'))
                                                             <span style="cursor: pointer;"
                                                                   data-url="{{route('lobbying.destroy', $date->id)}}"
                                                                   id="delete_item"
-                                                                  class="btn btn-primary btn-sm">{{__('common.Delete')}}</span>
+                                                                  class="primary-btn small fix-gr-bg">{{__('common.Delete')}}</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -152,23 +147,23 @@
                                                             <a style="cursor: pointer;"
 
                                                                href="{{route('date.send_mail', ['case' => $model->id, 'date' => $date->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('case.Send Mail') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('case.Send Mail') }}</a>
                                                         @endif
                                                         @if(permissionCheck('putlist.edit'))
                                                             <span style="cursor: pointer;"
                                                                   data-container="file_modal"
                                                                   data-href="{{route('file.create', ['case' => $model->id, 'date' => $date->id])}}"
-                                                                  class="btn btn-primary btn-sm btn-modal">{{ __('case.Add File') }}</span>
+                                                                  class="primary-btn small fix-gr-bg btn-modal">{{ __('case.Add File') }}</span>
                                                         @endif
                                                         @if(permissionCheck('putlist.edit'))
                                                             <a href="{{route('putlist.edit', [$date->id, 'case' => $model->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
                                                         @endif
                                                         @if(permissionCheck('putlist.destroy'))
                                                             <span style="cursor: pointer;"
                                                                   data-url="{{route('putlist.destroy', $date->id)}}"
                                                                   id="delete_item"
-                                                                  class="btn btn-primary btn-sm">{{__('case.Delete')}}</span>
+                                                                  class="primary-btn small fix-gr-bg">{{__('case.Delete')}}</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -211,20 +206,20 @@
                                                             <a style="cursor: pointer;"
 
                                                                href="{{route('date.send_mail', ['case' => $model->id, 'date' => $date->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('case.Send Mail') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('case.Send Mail') }}</a>
                                                         @endif
                                                         @if(permissionCheck('date.edit'))
                                                             <span style="cursor: pointer;"
                                                                   data-container="file_modal"
                                                                   data-href="{{route('file.create', ['case' => $model->id, 'date' => $date->id])}}"
-                                                                  class="btn btn-primary btn-sm btn-modal">{{ __('case.Add File') }}</span>
+                                                                  class="primary-btn small fix-gr-bg btn-modal">{{ __('case.Add File') }}</span>
                                                         @endif
 
                                                         @if(permissionCheck('date.destroy'))
                                                             <span style="cursor: pointer;"
                                                                   data-url="{{route('date.destroy', $date->id)}}"
                                                                   id="delete_item"
-                                                                  class="btn btn-primary btn-sm">{{__('case.Delete')}}</span>
+                                                                  class="primary-btn small fix-gr-bg">{{__('case.Delete')}}</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -268,20 +263,20 @@
                                                             <a style="cursor: pointer;"
 
                                                                href="{{route('date.send_mail', ['case' => $model->id, 'date' => $date->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('case.Send Mail') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('case.Send Mail') }}</a>
                                                         @endif
                                                         @if(permissionCheck('date.edit'))
                                                             <span style="cursor: pointer;"
                                                                   data-container="file_modal"
                                                                   data-href="{{route('file.create', ['case' => $model->id, 'date' => $date->id])}}"
-                                                                  class="btn btn-primary btn-sm btn-modal">{{ __('case.Add File') }}</span>
+                                                                  class="primary-btn small fix-gr-bg btn-modal">{{ __('case.Add File') }}</span>
                                                         @endif
 
                                                         @if(permissionCheck('date.destroy'))
                                                             <span style="cursor: pointer;"
                                                                   data-url="{{route('date.destroy', $date->id)}}"
                                                                   id="delete_item"
-                                                                  class="btn btn-primary btn-sm">{{__('case.Delete')}}</span>
+                                                                  class="primary-btn small fix-gr-bg">{{__('case.Delete')}}</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -324,23 +319,23 @@
                                                             <a style="cursor: pointer;"
 
                                                                href="{{route('date.send_mail', ['case' => $model->id, 'date' => $date->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('case.Send Mail') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('case.Send Mail') }}</a>
                                                         @endif
                                                         @if(permissionCheck('judgement.edit'))
                                                             <span style="cursor: pointer;"
                                                                   data-container="file_modal"
                                                                   data-href="{{route('file.create', ['case' => $model->id, 'date' => $date->id])}}"
-                                                                  class="btn btn-primary btn-sm btn-modal">{{ __('case.Add File') }}</span>
+                                                                  class="primary-btn small fix-gr-bg btn-modal">{{ __('case.Add File') }}</span>
                                                         @endif
                                                         @if(permissionCheck('judgement.edit'))
                                                             <a href="{{route('judgement.edit', [$date->id, 'case' => $model->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
                                                         @endif
                                                         @if(permissionCheck('judgement.destroy'))
                                                             <span style="cursor: pointer;"
                                                                   data-url="{{route('judgement.destroy', $date->id)}}"
                                                                   id="delete_item"
-                                                                  class="btn btn-primary btn-sm">{{__('case.Delete')}}</span>
+                                                                  class="primary-btn small fix-gr-bg">{{__('case.Delete')}}</span>
                                                         @endif
 
                                                     </div>
@@ -386,7 +381,7 @@
                                                             <span style="cursor: pointer;"
                                                                   data-container="file_modal"
                                                                   data-href="{{route('file.create', ['case' => $model->id, 'date' => $date->id])}}"
-                                                                  class="btn btn-primary btn-sm btn-modal">{{ __('case.Add File') }}</span>
+                                                                  class="primary-btn small fix-gr-bg btn-modal">{{ __('case.Add File') }}</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -428,23 +423,23 @@
                                                             <a style="cursor: pointer;"
 
                                                                href="{{route('date.send_mail', ['case' => $model->id, 'date' => $date->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('case.Send Mail') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('case.Send Mail') }}</a>
                                                         @endif
                                                         @if(permissionCheck('date.edit'))
                                                             <span style="cursor: pointer;"
                                                                   data-container="file_modal"
                                                                   data-href="{{route('file.create', ['case' => $model->id, 'date' => $date->id])}}"
-                                                                  class="btn btn-primary btn-sm btn-modal">{{ __('case.Add File') }}</span>
+                                                                  class="primary-btn small fix-gr-bg btn-modal">{{ __('case.Add File') }}</span>
                                                         @endif
                                                         @if(permissionCheck('date.edit'))
                                                             <a href="{{route('date.edit', [$date->id, 'case' => $model->id])}}"
-                                                               class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
+                                                               class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
                                                         @endif
                                                         @if(permissionCheck('date.destroy'))
                                                             <span style="cursor: pointer;"
                                                                   data-url="{{route('date.destroy', $date->id)}}"
                                                                   id="delete_item"
-                                                                  class="btn btn-primary btn-sm">{{__('case.Delete')}}</span>
+                                                                  class="primary-btn small fix-gr-bg">{{__('case.Delete')}}</span>
                                                         @endif
 
                                                     </div>
@@ -573,7 +568,7 @@
                                                             <td class="d-print-none text-center">
 
                                                                 <div class="dropdown CRM_dropdown">
-                                                                    <button class="btn btn-primary bg-hover-yellow dropdown-toggle"
+                                                                    <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle"
                                                                             type="button"
                                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                                             aria-haspopup="true"
@@ -895,12 +890,12 @@
                                             <a style="cursor: pointer;" data-toggle="tooltip"
                                                title="{{ __('case.Send Mail To Court') }}"
                                                href="{{route('send_email_to_court', [$model->id])}}"
-                                               class="btn btn-primary btn-sm icon-only"><i
+                                               class="primary-btn small fix-gr-bg icon-only"><i
                                                     class="ti-email"></i></a>
                                         @endif
 
                                         <a href="{{ route('case.court.change', $model->id) }}"
-                                           class="btn btn-primary btn-sm">
+                                           class="primary-btn small fix-gr-bg">
                                             {{ __('case.Court Change') }}
                                         </a>
 
@@ -994,7 +989,7 @@
 
                             <div class="single-meta mt-10">
                                 <h3 class="mb-2">{{__('case.Opposite Lawyer')}} <a
-                                        class="btn btn-primary btn-sm icon-only "
+                                        class="primary-btn small fix-gr-bg icon-only "
                                         href="{{ route('case.add_lawyer', $model->id) }}"><i class="ti-plus"
                                                                                              data-toggle="tooltip"
                                                                                              title="{{ __('common.add_lawyer_to_case') }}"></i></a>
@@ -1020,14 +1015,14 @@
                                                                 <a style="cursor: pointer;" data-toggle="tooltip"
                                                                    title="{{ __('case.Send Mail To Lawyer') }}"
                                                                    href="{{route('send_email_to_lawyer', [$model->id, $lawyer->id])}}"
-                                                                   class="btn btn-primary btn-sm icon-only"><i
+                                                                   class="primary-btn small fix-gr-bg icon-only"><i
                                                                         class="ti-email"></i></a>
                                                                 @endif
                                                                 <span style="cursor: pointer;" data-toggle="tooltip"
                                                                       title="{{ __('common.remove') }}"
                                                                       data-url="{{route('case.remove_lawyer', [$model->id, $lawyer->id])}}"
                                                                       id="delete_item"
-                                                                      class="btn btn-primary btn-sm icon-only"><i
+                                                                      class="primary-btn small fix-gr-bg icon-only"><i
                                                                         class="ti-trash"></i></span>
                                                             </div>
                                                         @endif

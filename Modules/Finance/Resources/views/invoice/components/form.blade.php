@@ -5,47 +5,47 @@
 
     <div class="primary_input col-md-4">
         {{Form::label('clientable_id', __('finance.'.ucfirst($client_type)), ['class' => 'required'])}}
-        {{Form::select('clientable_id', $clients,  null, ['required' => '', 'class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#clientable_id_error'])}}
+        {{Form::select('clientable_id', $clients,  null, ['required' => '', 'class' => 'primary_select', 'data-parsley-errors-container' => '#clientable_id_error'])}}
         <span id="clientable_id_error"></span>
     </div>
 
     @if($invoice_type == 'income')
         <div class="primary_input col-md-4" id="case_column">
             {{Form::label('case_id', __('finance.Select Case'))}}
-            {{Form::select('case_id', $cases,  null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#case_id_error'])}}
+            {{Form::select('case_id', $cases,  null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#case_id_error'])}}
             <span id="case_id_error"></span>
         </div>
     @endif
 
     <div class="primary_input col-md-4">
         {{Form::label('invoice_no', __('finance.Invoice No'), ['class' => 'required'])}}
-        {{Form::text('invoice_no', (isset($model) and $model->invoice_no) ? $model->invoice_no : $invoice_no, ['required', 'class' => 'form-control primary-input form-control', 'placeholder' => __('finance.Invoice No')])}}
+        {{Form::text('invoice_no', (isset($model) and $model->invoice_no) ? $model->invoice_no : $invoice_no, ['required', 'class' => 'primary_input_field primary-input form-control', 'placeholder' => __('finance.Invoice No')])}}
     </div>
 
     <div class="primary_input col-md-4">
         {{Form::label('invoice_date', __('finance.Invoice Date'), ['class' => 'required'])}}
-        {{Form::text('invoice_date', (isset($model) and $model->due_date) ? $model->due_date :date('Y-m-d'), ['required' => '','class' => 'form-control primary-input date form-control date', 'placeholder' => __('finance.Invoice Date')])}}
+        {{Form::text('invoice_date', (isset($model) and $model->due_date) ? $model->due_date :date('Y-m-d'), ['required' => '','class' => 'primary_input_field primary-input date form-control date', 'placeholder' => __('finance.Invoice Date')])}}
     </div>
 
     <div class="primary_input col-md-4">
         {{Form::label('due_date', __('finance.Due Date'))}}
-        {{Form::text('due_date', (isset($model) and $model->due_date) ? $model->due_date :date('Y-m-d'), ['required' => '','class' => 'form-control primary-input date form-control date', 'placeholder' => __('finance.Due Date')])}}
+        {{Form::text('due_date', (isset($model) and $model->due_date) ? $model->due_date :date('Y-m-d'), ['required' => '','class' => 'primary_input_field primary-input date form-control date', 'placeholder' => __('finance.Due Date')])}}
     </div>
 
     <div class="primary_input col-md-4">
         {{Form::label('discount_type', __('finance.Discount Type'))}}
-        {{Form::select('discount_type', $discount_type,  null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#discount_type_error'])}}
+        {{Form::select('discount_type', $discount_type,  null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#discount_type_error'])}}
         <span id="discount_type_error"></span>
     </div>
 
     <div class="primary_input col-md-4">
         {{Form::label('discount', __('finance.Discount'))}}
-        {{Form::text('discount', (isset($model) and $model->discount) ? $model->discount : 0, ['class' => 'form-control primary-input form-control input_number', 'placeholder' => __('finance.Due Date')])}}
+        {{Form::text('discount', (isset($model) and $model->discount) ? $model->discount : 0, ['class' => 'primary_input_field primary-input form-control input_number', 'placeholder' => __('finance.Due Date')])}}
     </div>
 
     <div class="primary_input col-md-4">
         {{Form::label('tax_id', __('finance.Tax'))}}
-        {{Form::select('tax_id', $taxes,  (isset($model) and $model->tax_id) ? ($model->tax_id.'-'.number_format($model->tax, 2)) : null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#tax_id_error', 'id' => 'tax_id'])}}
+        {{Form::select('tax_id', $taxes,  (isset($model) and $model->tax_id) ? ($model->tax_id.'-'.number_format($model->tax, 2)) : null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#tax_id_error', 'id' => 'tax_id'])}}
         <span id="tax_id"></span>
     </div>
 
@@ -61,7 +61,7 @@
             @endif
         </div>
 
-        {{Form::select('service_type', $service_types,  null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#service_type_error'])}}
+        {{Form::select('service_type', $service_types,  null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#service_type_error'])}}
         <span id="service_type_error"></span>
     </div>
     @if(!isset($model))
@@ -69,14 +69,14 @@
              data-old_class="{{ $invoice_type == 'income' ? 'col-md-12' : 'col-md-4' }}"
              data-new_class="{{ $invoice_type == 'income' ? 'col-md-6' : 'col-md-4' }}">
             {{Form::label('payment_method', __('finance.Payment Method'))}}
-            {{Form::select('payment_method', $payment_methods,  null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#payment_method_error', 'id' => 'payment_method'])}}
+            {{Form::select('payment_method', $payment_methods,  null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#payment_method_error', 'id' => 'payment_method'])}}
             <span id="payment_method_error"></span>
         </div>
 
         <div class="primary_input {{ $invoice_type == 'income' ? 'col-md-6' : 'col-md-12' }}" id="bank_column"
              style="display: none;">
             {{Form::label('bank_account_id', __('finance.Bank Account'))}}
-            {{Form::select('bank_account_id', $bank_accounts,  null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#bank_account_id_error'])}}
+            {{Form::select('bank_account_id', $bank_accounts,  null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#bank_account_id_error'])}}
             <span id="bank_account_id_error"></span>
         </div>
     @endif
@@ -132,7 +132,7 @@
                     <label class="font_13 theme_text f_w_500 mb-0"
                            for="sub_total">{{__('finance.SubTotal')}}</label>
                     <input type="text" id="sub_total" placeholder="{{__('finance.SubTotal')}}"
-                           class="form-control sub_total input_number"
+                           class="primary_input_field sub_total input_number"
                            value="{{ (isset($model) and $model->sub_total) ? $model->sub_total : 0 }}" name="sub_total"
                            readonly="readonly">
 
@@ -145,7 +145,7 @@
                            type="text"
                            value="{{ (isset($model) and $model->discount_amount) ? $model->discount_amount : 0 }}"
                            id="discount_amount"
-                           class="form-control input_number" placeholder="{{__('finance.Discount')}}"
+                           class="primary_input_field input_number" placeholder="{{__('finance.Discount')}}"
                            readonly>
 
                 </div>
@@ -154,7 +154,7 @@
                     <label class="font_13 theme_text f_w_500 mb-0"
                            for="net_total">{{__('finance.Net Total')}}</label>
                     <input type="text" id="net_total" placeholder="{{__('finance.Net Total')}}"
-                           class="form-control net_total input_number"
+                           class="primary_input_field net_total input_number"
                            value="{{ (isset($model) and $model->net_total) ? $model->net_total : 0 }}" name="net_total"
                            readonly="readonly">
 
@@ -166,14 +166,14 @@
                     <input name="tax_amount" type="text" id="tax_amount"
                            step="0.01" value="{{ (isset($model) and $model->tax_amount) ? $model->tax_amount : 0 }}"
                            placeholder="{{__('finance.Order Tax')}}"
-                           class="form-control input_number" readonly>
+                           class="primary_input_field input_number" readonly>
                 </div>
 
                 <div class="primary_input grid_input">
                     <label class="font_13 theme_text f_w_500 mb-0"
                            for="grand_total">{{__('finance.Grand Total')}}</label>
                     <input type="text" id="grand_total" placeholder="{{__('finance.Grand Total')}}"
-                           class="form-control grand_total input_number"
+                           class="primary_input_field grand_total input_number"
                            value="{{ (isset($model) and $model->grand_total) ? $model->grand_total : 0 }}"
                            name="grand_total" readonly="readonly">
 
@@ -184,7 +184,7 @@
                            for="paid">{{__('finance.Paid Amount')}}</label>
                     <input type="text" value="{{ (isset($model) and $model->paid) ? $model->paid : 0 }}" id="paid"
                            @isset($model) readonly @endisset
-                           class="form-control paid input_number" placeholder="{{__('finance.Paid Amount')}}"
+                           class="primary_input_field paid input_number" placeholder="{{__('finance.Paid Amount')}}"
                            name="paid">
 
                 </div>
@@ -194,7 +194,7 @@
                            for="due">{{__('finance.Due Amount')}}</label>
                     <input type="text" value="{{ (isset($model) and $model->due) ? $model->due : 0 }}" id="due"
                            placeholder="{{__('finance.Due Amount')}}" readonly
-                           class="form-control due input_number"
+                           class="primary_input_field due input_number"
                            name="due">
 
                 </div>
@@ -209,7 +209,7 @@
 
     <div class="col-lg-12">
         {{Form::label('note', __('finance.Order Note'))}}
-        {{Form::textarea('note', null, ['class' => 'form-control summernote', 'placeholder' => __('finance.Order Note')])}}
+        {{Form::textarea('note', null, ['class' => 'primary_input_field summernote', 'placeholder' => __('finance.Order Note')])}}
 
     </div>
     @isset($model)

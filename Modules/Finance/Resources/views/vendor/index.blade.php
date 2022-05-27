@@ -2,35 +2,29 @@
 
 @section('mainContent')
 
-<section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>{{ __('vendor.Vendor List') }}</h1>
-        </div>
-        <div class="col-sm-6">
-            @if(permissionCheck('vendors.store'))
-              <ul class="breadcrumb float-sm-right">
-                  <li>
-                      <a class="btn btn-primary" href="{{ route('vendors.create') }}">
-                          <i class="fa fa-plus"></i> {{ __('vendor.New Vendor') }}
-                      </a>
-                  </li>
-              </ul>
-              @endif
-       </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
-    <section class="admin-visitor-area up_st_admin_visitor">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
 
-                        <div class="card ">
+    <section class="admin-visitor-area up_st_admin_visitor">
+        <div class="container-fluid pt-3">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="box_header common_table_header xs_mb_0">
+                        <div class="main-title d-md-flex">
+                            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('vendor.Vendor List') }}</h3>
+                            <ul class="d-flex">
+                                @if(permissionCheck('vendors.store'))
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
+                                           href="{{ route('vendors.create') }}"><i class="ti-plus"></i>{{ __('vendor.New Vendor') }}</a></li>
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="QA_section QA_section_heading_custom check_box_table">
+                        <div class="QA_table ">
                             <!-- table-responsive -->
-                            <div class="card-body">
-                                <table class="table table-striped table-hover dt">
+                            <div class="">
+                                <table class="table Crm_table_active3">
                                     <thead>
                                     <tr>
                                         <th scope="col">{{ __('common.SL') }}</th>
@@ -62,7 +56,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">
@@ -82,7 +76,7 @@
                                                             <a href="#" data-id="{{ $model->id }}" data-url="{{ route('vendors.destroy', $model->id)}}"
                                                                class="dropdown-item delete_item">{{__('common.Delete')}}</a>
 
-
+                                                            
                                                         @endif
 
 
@@ -97,7 +91,7 @@
                                 </table>
                             </div>
                         </div>
-
+                    </div>
                 </div>
 
 

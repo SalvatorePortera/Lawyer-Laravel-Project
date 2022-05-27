@@ -20,7 +20,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('common.Language') }}</h3>
                             @if (permissionCheck('languages.store'))
                                 <ul class="d-flex">
-                                    <li><a data-toggle="modal"class="btn btn-primary mr-10" href="#" onclick="open_add_laguage_modal()"><i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('common.Language') }}</a></li>
+                                    <li><a data-toggle="modal"class="primary-btn mr-10 fix-gr-bg" href="#" onclick="open_add_laguage_modal()"><i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('common.Language') }}</a></li>
                                 </ul>
                             @endif
                         </div>
@@ -60,7 +60,7 @@
                                             <td>
                                                 <!-- shortby  -->
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">
@@ -113,21 +113,21 @@
                                 <div class="col-xl-12">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Name') }}</label>
-                                        <input name="name" class="form-control name" placeholder="{{ __('common.Name') }}" type="text" required>
+                                        <input name="name" class="primary_input_field name" placeholder="{{ __('common.Name') }}" type="text" required>
                                     </div>
                                 </div>
 
                                 <div class="col-xl-12">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('setting.Code') }}</label>
-                                        <input name="code" class="form-control name" placeholder="{{ __('setting.Code') }}" type="text" required>
+                                        <input name="code" class="primary_input_field name" placeholder="{{ __('setting.Code') }}" type="text" required>
                                     </div>
                                 </div>
 
                                 <div class="col-xl-12">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('setting.Native Name') }}</label>
-                                        <input name="native" class="form-control name" placeholder="{{ __('setting.Native Name') }}" type="text" required>
+                                        <input name="native" class="primary_input_field name" placeholder="{{ __('setting.Native Name') }}" type="text" required>
                                     </div>
                                 </div>
 
@@ -148,7 +148,7 @@
 
                                 <div class="col-lg-12 text-center">
                                     <div class="d-flex justify-content-center pt_20">
-                                        <button type="submit" class="btn btn-primary" id="save_button_parent"><i class="ti-check"></i>{{ __('common.Save') }}</button>
+                                        <button type="submit" class="primary-btn semi_large2 fix-gr-bg" id="save_button_parent"><i class="ti-check"></i>{{ __('common.Save') }}</button>
                                     </div>
                                 </div>
                             </div>

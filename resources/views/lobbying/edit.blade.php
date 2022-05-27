@@ -21,11 +21,11 @@
                             <div class="primary_input col-md-6">
                                 {{Form::hidden('case', $case)}}
                                 {{Form::label('hearing_date', __('case.Lobbying Date'),['class' => 'required'])}}
-                                {{Form::text('hearing_date', $model->date, ['required' => '','class' => 'form-control primary-input datetime form-control', 'placeholder' => __('case.Lobbying Date')])}}
+                                {{Form::text('hearing_date', $model->date, ['required' => '','class' => 'primary_input_field primary-input datetime form-control', 'placeholder' => __('case.Lobbying Date')])}}
                             </div>
                             <div class="primary_input col-md-6">
                                 <label for="">Mark As</label>
-                                <select name="status" id="" class="form-control select2bs4">
+                                <select name="status" id="" class="primary_select">
                                     <option
                                         {{$model->status == 1?'selected':''}} value="1">{{ __('case.Complete') }}</option>
                                     <option
@@ -38,18 +38,18 @@
 
                         <div class="primary_input">
                             {{Form::label('description', __('case.Lobbying Order'),['class' => 'required'])}}
-                            {{Form::textarea('description', null, ['class' => 'form-control summernote', 'placeholder' => __('case.Lobbying Order'),'required', 'rows' => 5, 'data-parsley-errors-container' =>
+                            {{Form::textarea('description', null, ['class' => 'primary_input_field summernote', 'placeholder' => __('case.Lobbying Order'),'required', 'rows' => 5, 'data-parsley-errors-container' =>
                   '#description_error'])}}
                             <span id="description_error"></span>
                         </div>
 
 
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn semi_large2 fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Update') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled
+                            <button class="primary-btn semi_large2 fix-gr-bg submitting" type="submit" disabled
                                     style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                             </button>
 

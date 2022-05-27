@@ -27,7 +27,7 @@
                             <div class="col-xl-4">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="current_password">{{ __('common.Current Password') }} * </label>
-                                    <input name="current_password" class="form-control name"
+                                    <input name="current_password" class="primary_input_field name"
                                            placeholder="{{ __('common.Current Password') }}" type="password"  id="current_password" required>
                                     @if ($errors->has('current_password'))
                                         <span class="text-danger" role="alert">
@@ -39,7 +39,7 @@
                             <div class="col-xl-4">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="">{{ __('common.Password') }} ({{trans('Minimum 8 Letter')}}) * </label>
-                                    <input name="password" class="form-control name"
+                                    <input name="password" class="primary_input_field name"
                                            placeholder="{{ __('common.Password') }}" type="password" minlength="8" required>
                                     @if ($errors->has('password'))
                                         <span class="text-danger" role="alert">
@@ -52,7 +52,7 @@
                             <div class="col-xl-4">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="">{{ __('common.Re-Password') }} ({{trans('Minimum 8 Letter')}}) *</label>
-                                    <input name="password_confirmation" class="form-control name"
+                                    <input name="password_confirmation" class="primary_input_field name"
                                            placeholder="{{ __('common.Re-Password') }}" type="password" minlength="6" required>
                                     @if ($errors->has('password_confirmation'))
                                         <span class="text-danger" role="alert">
@@ -64,7 +64,7 @@
 
                             <div class="col-12 mt-2">
                                 <div class="submit_btn text-center ">
-                                    <button class="btn btn-primary" type="submit"><i
+                                    <button class="primary-btn semi_large2 fix-gr-bg" type="submit"><i
                                             class="ti-check"></i>{{__('common.Change Password')}}
                                     </button>
                                 </div>

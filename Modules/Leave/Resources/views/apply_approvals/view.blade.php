@@ -113,12 +113,12 @@
                     <div class="row">
                         <input type="hidden" name="apply_leave_id" id="apply_leave_id" value="{{ $apply_leave->id }}">
                         <div class="col-xl-9 mt-2">
-                            <button type="submit" class="btn btn-sm btn-primary" data-dismiss="modal"><i
+                            <button type="submit" class="primary-btn btn-sm fix-gr-bg" data-dismiss="modal"><i
                                     class="ti-close"></i>{{ __('leave.Cancel') }}</button>
                         </div>
                         <div class="col-xl-3">
                             <div class="primary_input mb-15">
-                                <select class="form-control select2bs4 mb-15" name="status" id="status" required>
+                                <select class="primary_select mb-15" name="status" id="status" required>
                                     <option>Select one</option>
                                     <option value="1"
                                             @if ($apply_leave->status == 1) selected @endif>{{ __('leave.Approve') }}</option>

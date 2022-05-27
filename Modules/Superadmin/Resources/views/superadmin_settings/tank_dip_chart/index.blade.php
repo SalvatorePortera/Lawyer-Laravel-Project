@@ -48,11 +48,11 @@
             'superadmin::lang.tank_dip_chart')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" id="add_button_tank_dip_chart" class="btn btn-primary btn-modal pull-right" 
+                <button type="button" id="add_button_tank_dip_chart" class="primary-btn fix-gr-bg btn-modal pull-right" 
                 data-container=".tank_dip_chart_model"
                 data-href="{{action('\Modules\Superadmin\Http\Controllers\TankDipChartController@create')}}">
                 <i class="fa fa-plus"></i> @lang( 'messages.add' )</button> &nbsp;
-                <button type="button" id="add_button_tank_dip_chart" class="btn btn-primary btn-modal pull-right" 
+                <button type="button" id="add_button_tank_dip_chart" class="primary-btn fix-gr-bg btn-modal pull-right" 
                 data-container=".tank_dip_chart_model" style="margin-right: 10px"
                 data-href="{{action('\Modules\Superadmin\Http\Controllers\TankDipChartController@getImport')}}">
                 <i class="fa fa-download"></i> @lang( 'superadmin::lang.import' )</button>

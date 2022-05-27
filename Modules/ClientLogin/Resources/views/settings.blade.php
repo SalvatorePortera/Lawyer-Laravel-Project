@@ -40,7 +40,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3 text-center">
-                                                            <button class="btn btn-primary" id="_submit_btn_admission">
+                                                            <button class="primary-btn fix-gr-bg" id="_submit_btn_admission">
                                                                 <span class="ti-check"></span>
                                                                 {{__('common.Save')}}
                                                             </button>

@@ -2,61 +2,42 @@
 
 
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('contact.New Contact Category') }}</h1>
-      </div>
-      <div class="col-sm-6">
-            <ul class="breadcrumb float-sm-right">
-                <li>
-                    <a class="btn btn-primary mr-10 float-sm-right" href="{{ route('category.contact.index') }}">
-                        <i class="fa fa-list"></i>  {{__('contact.Category List')}}
-                    </a>
-                </li>
-            </ul>
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
+
 <section class="admin-visitor-area up_st_admin_visitor">
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid pt-3">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="box_header">
+                    <div class="main-title d-flex justify-content-between w-100">
+                        <h3 class="mb-0 mr-30">{{ __('contact.New Contact Category') }}</h3>
+
+                    </div>
+                </div>
+            </div>
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="white_box_50px box_shadow_white">
 
                     {!! Form::open(['route' => 'category.contact.store', 'class' => 'form-validate-jquery', 'id' =>
                     'content_form', 'files' => false, 'method' => 'POST']) !!}
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                {{Form::label('name', __('contact.Name'), ['class' => 'required'])}}
-                                {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('contact.Designation Name')])}}
-                            </div>
-                        </div>
+                    <div class="primary_input">
+                        {{Form::label('name', __('contact.Name'), ['class' => 'required'])}}
+                        {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('contact.Designation Name')])}}
                     </div>
-                    
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
+                    <div class="primary_input">
                         {{Form::label('description', __('contact.Description'))}}
-                        {{Form::textarea('description', null, ['class' => 'form-control', 'placeholder' =>
+                        {{Form::textarea('description', null, ['class' => 'primary_input_field', 'placeholder' =>
                          __('contact.Designation Description'), 'rows' => 5, 'maxlength' => 1500,
                          'data-parsley-errors-container' =>
                          '#description_error' ])}}
                         <span id="description_error"></span>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="text-center mt-3">
-                    <button class="btn btn-primary btn-lg submit" type="submit"><i class="ti-check"></i>{{ __('common.Create') }}
+                    <button class="primary-btn fix-gr-bg btn-lg submit" type="submit"><i class="ti-check"></i>{{ __('common.Create') }}
                     </button>
 
-                    <button class="btn btn-primary btn-lg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Creating') . '...' }}
+                    <button class="primary-btn fix-gr-bg btn-lg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                     </button>
                     </div>
                     {!! Form::close() !!}
@@ -68,9 +49,7 @@
                 </div>
             </div>
         </div>
-            </div>
-        
-
+    </div>
 </section>
 
 

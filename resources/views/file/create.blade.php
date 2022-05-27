@@ -18,10 +18,10 @@
                 @includeIf('case.file')
 
                 <div class="col-xl-12 text-center mt-3">
-                    <button class="btn btn-primary submit" type="submit"><i
+                    <button class="primary-btn fix-gr-bg submit" type="submit"><i
                             class="ti-check"></i>{{ __('common.Create') }}
                     </button>
-                    <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                    <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                         <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                     </button>
                 </div>

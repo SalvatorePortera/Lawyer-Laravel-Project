@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="col-lg-12 d-print-none">
-                    <a class="btn btn-primary btn-sm " href="{{ route('case.show', $model->id) }}"><i class="ti-file mr-2"></i>
+                    <a class="primary-btn small fix-gr-bg " href="{{ route('case.show', $model->id) }}"><i class="ti-file mr-2"></i>
                         {{ __('case.Case') }}
                     </a>
 
@@ -48,10 +48,10 @@
                                             @includeIf('case.file')
 
                                             <div class="col-xl-12 text-center mt-3">
-                                                <button class="btn btn-primary submit" type="submit"><i
+                                                <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                                         class="ti-check"></i>{{ __('common.Create') }}
                                                 </button>
-                                                <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                                                <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                                     <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                                                 </button>
                                             </div>

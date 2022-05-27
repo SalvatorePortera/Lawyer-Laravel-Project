@@ -25,7 +25,7 @@
                             @endforeach
                             <div class="row">
                                 <div class="col-md 12">
-                                    <button type="submit" class="btn btn-primary pull-right"
+                                    <button type="submit" class="primary-btn fix-gr-bg pull-right"
                                         style="margin-right: 20px;">Save</button>
                                 </div>
                             </div>

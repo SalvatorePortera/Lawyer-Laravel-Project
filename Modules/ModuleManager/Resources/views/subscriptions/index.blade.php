@@ -10,7 +10,7 @@
                             <ul class="d-flex">
                             @if(permissionCheck('subscriptions.store'))
                                 <li>
-                                    <a class="btn btn-primary mr-10" href="{{ route('subscriptions.create') }}"><i class="ti-plus"></i>
+                                    <a class="primary-btn mr-10 fix-gr-bg" href="{{ route('subscriptions.create') }}"><i class="ti-plus"></i>
                                         {{ __('Add Subscription') }}
                                     </a>
                                 </li>
@@ -20,10 +20,10 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <div class="card">
+                    <div class="QA_section QA_section_heading_custom check_box_table">
                         <div class="QA_table ">
                             <!-- table-responsive -->
-                            <div class="card-body">
+                            <div class="">
                                 <table class="table Crm_table_active3">
                                     <thead>
                                         <tr>
@@ -48,22 +48,8 @@
                                             <td>{{ $model->expiry_date }}</td>
                                             <td>{{ $model->disk_storage_limit }}</td>
                                             <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary">{{ __('common.Select') }}</button>
-                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                      <span class="caret"></span>
-                                                      <span class="sr-only">Toggle Dropdown</span>
-                                                    </button>
-                                                    <div class="dropdown-menu" role="menu">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                      <div class="dropdown-divider"></div>
-                                                      <a class="dropdown-item" href="#">Separated link</a>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                <div class="dropdown CRM_dropdown">
+                                                    <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">
@@ -80,7 +66,7 @@
                                                     }}" class="dropdown-item delete_item"><i class="icon-trash"></i>  {{ __('common.Delete') }}</a>
                                                     @endif 
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </td>
                                         </tr>
                                         @endforeach

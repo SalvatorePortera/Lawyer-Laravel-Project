@@ -15,7 +15,7 @@
   </div>
 
   <div class="modal-footer">
-    <input  type="submit" value="@lang( 'superadmin::lang.update' )" name="update" class="btn btn-primary">
+    <input  type="submit" value="@lang( 'superadmin::lang.update' )" name="update" class="primary-btn fix-gr-bg">
     <input  type="submit" value="@lang( 'superadmin::lang.update_password_send_sms' )" name="update_sms" class="btn btn-warning">
     <button type="button" class="btn btn-default" data-dismiss="modal">@lang( 'messages.close' )</button>
   </div>

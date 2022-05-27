@@ -25,7 +25,7 @@
                         <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('leave.Leave Type') }} </h3>
                             @if(permissionCheck('leave_types.store'))
                             <ul class="d-flex">
-                                <li><button class="btn btn-primary mr-10" onclick="createModalShow()" ><i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('leave.Leave Type') }}</button></li>
+                                <li><button class="primary-btn mr-10 fix-gr-bg" onclick="createModalShow()" ><i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('leave.Leave Type') }}</button></li>
                             </ul>
                             @endif
 

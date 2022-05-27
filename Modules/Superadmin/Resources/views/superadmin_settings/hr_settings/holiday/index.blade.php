@@ -6,7 +6,7 @@
             'hr::lang.all_holiday')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" class="btn btn-primary btn-modal pull-right" id="add_holiday_btn"
+                <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" id="add_holiday_btn"
                     data-href="{{action('\Modules\HR\Http\Controllers\HolidayController@create')}}"
                     data-container=".holiday_model">
                     <i class="fa fa-plus"></i>@lang( 'hr::lang.add_holiday' )</button>

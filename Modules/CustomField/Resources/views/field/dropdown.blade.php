@@ -18,7 +18,7 @@
     @endphp
 
     <select name="custom_field[{{ $field->id }}]"
-            id="custom_field_{{ $field->id }}" class="form-control select2bs4 custom_field"
+            id="custom_field_{{ $field->id }}" class="primary_select custom_field"
             data-parsley-errors-container="#custom_field_{{ $field->id }}_error"
             @if(!$field->parent and $field->required)
             required

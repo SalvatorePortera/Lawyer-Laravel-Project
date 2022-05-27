@@ -13,17 +13,20 @@
 			  <a href="#" class="d-block">{{ auth()->user()->name }}</a>
 			</div>
 		</div>
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                  <i class="fas fa-search fa-fw"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+
+      <!-- SidebarSearch Form -->
+		<div class="form-inline">
+			<div class="input-group" data-widget="sidebar-search">
+			  <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+			  <div class="input-group-append">
+				<button class="btn btn-sidebar">
+				  <i class="fas fa-search fa-fw"></i>
+				</button>
+			  </div>
+			</div>
+		</div>
+        
+        <!-- /.search form -->
         @if(auth()->user()->role_id)
         <!-- sidebar menu: : style can be found in sidebar.less -->
 		<!-- Sidebar Menu -->
@@ -37,7 +40,7 @@
 				  </p>
 				</a>
 			</li>
-
+            
             @if(permissionCheck('contact.index'))
             @php
                 $contact = ['contact.index', 'contact.create', 'contact.edit', 'contact.show'];
@@ -60,7 +63,7 @@
 						</a>
 					  </li>
 					  @if(permissionCheck('category.contact.index'))
-
+                        
 						<li class="nav-item">
 						<a href="{{route('category.contact.index')}}" class="nav-link {{ spn_active_link($category, 'active') }}">
 						  <i class="far fa-circle nav-icon"></i>
@@ -68,8 +71,8 @@
 						</a>
 					  </li>
                         @endif
-
-
+					  
+					  
 					</ul>
 				  </li>
             @endif
@@ -88,7 +91,7 @@
 						<i class="right fas fa-angle-left"></i>
 					  </p>
 					</a>
-
+                    
                     <ul class="nav nav-treeview">
                         @if(permissionCheck('client.index'))
                         <li class="nav-item">
@@ -99,7 +102,7 @@
 						  </li>
                         @endif
                         @if(permissionCheck('category.client.index'))
-
+                        
 						<li class="nav-item">
 							<a href="{{ route('category.client.index') }}" class="nav-link {{ spn_active_link($category, 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -125,7 +128,7 @@
 						<i class="right fas fa-angle-left"></i>
 					  </p>
 					</a>
-
+                    
                     <ul class="nav nav-treeview">
                         @if(permissionCheck('causelist.index'))
                         <li class="nav-item">
@@ -141,7 +144,7 @@
 							  <p>{{ __('case.All Case') }}</p>
 							</a>
 						  </li>
-
+                        
 						<li class="nav-item">
 							<a href="{{route('case.index', ['status' => 'Running'])}}" class="nav-link {{ (isset($page_title) and $page_title== 'Running') ? 'active' : '' }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -149,7 +152,7 @@
 							</a>
 						  </li>
                         @if(permissionCheck('case.store'))
-
+                        
 						<li class="nav-item">
 							<a href="{{ route('case.create') }}" class="nav-link {{ spn_active_link('case.create', 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -158,7 +161,7 @@
 						  </li>
                         @endif
                         @if(permissionCheck('category.case.index'))
-
+                        
 						<li class="nav-item">
 							<a href="{{route('category.case.index')}}" class="nav-link {{ spn_active_link($category, 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -167,7 +170,7 @@
 						  </li>
                         @endif
                         @if(permissionCheck('judgement.index'))
-
+                        
 						<li class="nav-item">
 							<a href="{{route('judgement.index')}}" class="nav-link {{ spn_active_link(['judgement.index', 'judgement.reopen', 'judgement.close'], 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -302,7 +305,7 @@
 						<i class="right fas fa-angle-left"></i>
 					  </p>
 					</a>
-
+                    
                     <ul class="nav nav-treeview">
                         @if(permissionCheck('master.stage.index'))
                         <li class="nav-item">
@@ -313,7 +316,7 @@
 						  </li>
                         @endif
                         @if(permissionCheck('master.act.index'))
-
+                        
 						<li class="nav-item">
 							<a href="{{route('master.act.index')}}" class="nav-link {{ spn_active_link($act, 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -322,7 +325,7 @@
 						  </li>
                         @endif
                         @if(permissionCheck('setup.city.index'))
-
+                        
 						<li class="nav-item">
 							<a href="{{route('setup.city.index')}}" class="nav-link {{ spn_active_link($city, 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -331,7 +334,7 @@
 						  </li>
                         @endif
                         @if(permissionCheck('setup.state.index'))
-
+                        
 						<li class="nav-item">
 							<a href="{{route('setup.state.index')}}" class="nav-link {{ spn_active_link($state, 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>
@@ -340,7 +343,7 @@
 						  </li>
                         @endif
                         @if(permissionCheck('setup.country.index'))
-
+                        
 						<li class="nav-item">
 							<a href="{{route('setup.country.index')}}" class="nav-link {{ spn_active_link($country, 'active') }}">
 							  <i class="far fa-circle nav-icon"></i>

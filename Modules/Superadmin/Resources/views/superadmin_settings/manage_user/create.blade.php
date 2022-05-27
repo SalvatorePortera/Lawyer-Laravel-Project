@@ -185,7 +185,7 @@
   
   <div class="row">
     <div class="col-md-12">
-      <button type="submit" class="btn btn-primary pull-right" id="submit_user_button">@lang( 'messages.save' )</button>
+      <button type="submit" class="primary-btn fix-gr-bg pull-right" id="submit_user_button">@lang( 'messages.save' )</button>
     </div>
   </div>
   {!! Form::close() !!}

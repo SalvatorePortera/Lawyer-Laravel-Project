@@ -1,13 +1,6 @@
 @extends('finance::layouts.master')
 @push('css_before')
     <style>
-        .white_box_50px {
-            padding: 50px;
-            background-color: #fff;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
-        }
         .invoice_table {
             border-collapse: collapse;
         }
@@ -309,7 +302,7 @@
 
 
     <section class="admin-visitor-area up_st_admin_visitor">
-        <div class="container-fluid">
+        <div class="container-fluid pt-3">
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     @php
@@ -318,17 +311,17 @@
                     <div class="box_header common_table_header">
                         <div class="main-title d-md-flex">
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px text-nowrap">{{ __('finance.Invoice No'). ': '.$model->invoice_no }}</h3>
-                            <ul class="d-flex list-unstyled">
+                            <ul class="d-flex">
                                 @if ($model->payment_status == 'due')
-                                    <li><a class="btn btn-primary mr-10"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="javascript:void(0)">{{ __('finance.Due')}}</a>
                                     </li>
                                 @elseif ($model->status == 'partial')
-                                    <li><a class="btn btn-primary mr-10"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="javascript:void(0)">{{__('finance.Partial')}}</a>
                                     </li>
                                 @else
-                                    <li><a class="btn btn-primary mr-10"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="javascript:void(0)">{{__('finance.Paid')}}</a>
                                     </li>
                                 @endif
@@ -338,34 +331,34 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-12">
-                    <ul class="d-flex list-unstyled float-right">
+                    <ul class="d-flex float-right">
                         @php
                             $route = 'invoice.'. $model->invoice_type .'s.'
                         @endphp
-                        <li><a class="btn btn-primary mr-10 mr-10"
+                        <li><a class="primary-btn mr-10 fix-gr-bg mr-10"
                                href="{{ route($route.'index') }}">{{__('finance.Back To List')}}</a>
                         </li>
 
                         @if(permissionCheck($route . 'edit'))
-                        <li><a class="btn btn-primary mr-10 mr-10"
+                        <li><a class="primary-btn mr-10 fix-gr-bg mr-10"
                                href="{{ route($route.'edit',$model->id) }}">{{__('common.Edit')}}</a>
                         </li>
                         @endif
 
 
-                        <li><a class="btn btn-primary mr-10 mr-10 print_window"
+                        <li><a class="primary-btn mr-10 fix-gr-bg mr-10 print_window"
                                href="{{ route('invoice.print',$model->id) }}"
                                target="_blank">{{__('common.Print')}}</a>
                         </li>
 
 
-                        <li><a class="btn btn-primary mr-10"
+                        <li><a class="primary-btn fix-gr-bg mr-10"
                                href="#" data-toggle="modal" data-target="#payments">{{__('finance.View Payments')}}</a>
                         </li>
 
 
                         @if($model->due >  0 and permissionCheck('invoice.payment.add'))
-                            <li><a class="btn btn-primary mr-10 btn-modal"
+                            <li><a class="primary-btn fix-gr-bg mr-10 btn-modal"
                                    data-container="payment_modal"
                                    href="{{ route('invoice.payment.add',$model->id) }}">{{__('finance.Add Payment')}}</a>
                             </li>
@@ -426,9 +419,7 @@
                                     <tr>
                                         <td>{{__('finance.Email')}}</td>
                                         <td>
-                                            @if($model->clientable)
                                             <a href="mailto:{{ $model->clientable->email }}">: {{ $model->clientable->email }}</a>
-                                            @endif
                                         </td>
                                     </tr>
                                 </table>
@@ -506,7 +497,7 @@
                                                 <tfoot>
                                                 <tr>
                                                     <td colspan="5" style="text-align: right">
-                                                        <ul class="list-unstyled">
+                                                        <ul>
 
                                                             <li class="nowrap">{{__('finance.Sub Total')}}
                                                                 :
@@ -542,7 +533,7 @@
                                                     </td>
 
                                                     <td class="text-right mr-0 pr-2">
-                                                        <ul class="list-unstyled">
+                                                        <ul>
 
                                                             <li class="nowrap">
                                                                 {{ amountFormat($model->sub_total) }}
@@ -638,7 +629,7 @@
                     </div>
                     <div class="row mt-30 justify-content-center">
                         <a href="{{ route('invoice.'.$model->invoice_type.'s.index') }}"
-                           class="btn btn-primary mr-20">{{__('finance.Back To Invoice List')}}</a>
+                           class="primary-btn fix-gr-bg mr-20">{{__('finance.Back To Invoice List')}}</a>
                     </div>
 
                 </div>

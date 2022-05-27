@@ -106,7 +106,7 @@
 
                         @endif
                         <li class="nav-item edit-button">
-                            <a href="#" class="btn btn-primary btn-sm"
+                            <a href="#" class="primary-btn small fix-gr-bg"
                                data-toggle="modal" data-target="#profileEditForm">{{ __('common.Edit') }}
                             </a>
                         </li>
@@ -404,7 +404,7 @@
                                                     </td>
                                                     <td>
                                                         <div class="dropdown CRM_dropdown">
-                                                            <button class="btn btn-primary bg-hover-yellow dropdown-toggle"
+                                                            <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle"
                                                                     type="button"
                                                                     id="dropdownMenu2" data-toggle="dropdown"
                                                                     aria-haspopup="true"
@@ -449,7 +449,7 @@
                                                         <div class="primary_input mb-25">
                                                             <label class="primary_input_label"
                                                                    for="">{{ __('common.Name') }}</label>
-                                                            <input name="name" class="form-control name"
+                                                            <input name="name" class="primary_input_field name"
                                                                    placeholder="{{ __('common.Name') }}" type="text"
                                                                    required>
                                                         </div>
@@ -463,7 +463,7 @@
                                                                        id="placeholderFileOneName"
                                                                        placeholder="{{ __('common.Browse file') }}" readonly="">
                                                                 <button class="" type="button">
-                                                                    <label class="btn btn-primary btn-sm"
+                                                                    <label class="primary-btn small fix-gr-bg"
                                                                            for="document_file_1">{{ __('common.Browse') }}</label>
                                                                     <input type="file" class="d-none" name="file"
                                                                            id="document_file_1">
@@ -473,9 +473,9 @@
                                                     </div>
                                                     <div class="col-lg-12 text-center mt-40">
                                                         <div class="mt-40 d-flex justify-content-between">
-                                                            <button type="button" class="btn btn-warning"
+                                                            <button type="button" class="primary-btn tr-bg"
                                                                     data-dismiss="modal">{{ __('common.Cancel') }}</button>
-                                                            <button class="btn btn-primary"
+                                                            <button class="primary-btn fix-gr-bg"
                                                                     type="submit">{{ __('common.Save') }}</button>
                                                         </div>
                                                     </div>
@@ -514,7 +514,7 @@
                             <div class="col-xl-6">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="">{{ __('common.Name') }} <span class="text-danger">*</span></label>
-                                    <input name="name" class="form-control name" placeholder="{{ __('common.Name') }}" value="{{ $user->name }}" type="text">
+                                    <input name="name" class="primary_input_field name" placeholder="{{ __('common.Name') }}" value="{{ $user->name }}" type="text">
                                 </div>
                                 @error('name')
                                 {{\Brian2694\Toastr\Facades\Toastr::error($errors->first('name'))}}
@@ -523,7 +523,7 @@
                             <div class="col-xl-6">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="">{{ __('common.Email') }} <span class="text-danger">*</span></label>
-                                    <input name="email" class="form-control name" placeholder="{{ __('common.Email') }}" value="{{ $user->email }}" type="email" readonly>
+                                    <input name="email" class="primary_input_field name" placeholder="{{ __('common.Email') }}" value="{{ $user->email }}" type="email" readonly>
                                     <span class="text-danger">{{$errors->first('email')}}</span>
                                 </div>
                             </div>
@@ -531,7 +531,7 @@
                             <div class="col-xl-6">
                                 <div class="primary_input mb-25">
                                     <label class="primary_input_label" for="">{{ __('common.Phone') }} </label>
-                                    <input name="phone" value="{{$user->staff->phone}}" class="form-control name" placeholder="{{ __('common.Phone') }}" type="tel">
+                                    <input name="phone" value="{{$user->staff->phone}}" class="primary_input_field name" placeholder="{{ __('common.Phone') }}" type="tel">
                                     @error('phone')
                                     {{\Brian2694\Toastr\Facades\Toastr::error($errors->first('phone'))}}
                                     @enderror
@@ -543,7 +543,7 @@
                                 <div class="col-xl-6">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Current Address') }} </label>
-                                        <input name="current_address" value="{{$user->staff->current_address}}" class="form-control name" placeholder="{{ __('common.Current Address') }}"  type="text">
+                                        <input name="current_address" value="{{$user->staff->current_address}}" class="primary_input_field name" placeholder="{{ __('common.Current Address') }}"  type="text">
                                     </div>
                                     @error('current_address')
                                     {{\Brian2694\Toastr\Facades\Toastr::error($errors->first('current_address'))}}
@@ -552,7 +552,7 @@
                                 <div class="col-xl-6">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Permanent Address') }} </label>
-                                        <input name="permanent_address" value="{{$user->staff->permanent_address}}" class="form-control name" placeholder="{{ __('common.Permanent Address') }}" type="text">
+                                        <input name="permanent_address" value="{{$user->staff->permanent_address}}" class="primary_input_field name" placeholder="{{ __('common.Permanent Address') }}" type="text">
                                     </div>
                                 </div>
                                 @error('permanent_address')
@@ -566,7 +566,7 @@
                                     <div class="primary_file_uploader">
                                         <input class="primary-input" type="text" id="placeholderFileTwoName" placeholder="{{ __('common.Browse file') }}" readonly="">
                                         <button class="" type="button">
-                                            <label class="btn btn-primary btn-sm" for="document_file_2">{{ __('common.Browse') }}</label>
+                                            <label class="primary-btn small fix-gr-bg" for="document_file_2">{{ __('common.Browse') }}</label>
                                             <input type="file" class="d-none" name="avatar" id="document_file_2">
                                         </button>
                                     </div>
@@ -583,7 +583,7 @@
                                 <div class="col-xl-6">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Bank Name') }}</label>
-                                        <input name="bank_name" class="form-control name" placeholder="{{ __('common.Bank Name') }}" value="{{ $user->staff != null ? $user->staff->bank_name : "" }}" type="text">
+                                        <input name="bank_name" class="primary_input_field name" placeholder="{{ __('common.Bank Name') }}" value="{{ $user->staff != null ? $user->staff->bank_name : "" }}" type="text">
                                     </div>
                                     @error('bank_name')
                                     {{\Brian2694\Toastr\Facades\Toastr::error($errors->first('bank_name'))}}
@@ -593,7 +593,7 @@
                                 <div class="col-xl-6">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Bank Branch Name') }}</label>
-                                        <input name="bank_branch_name" class="form-control name" placeholder="{{ __('common.Bank Branch Name') }}" value="{{ $user->staff != null ? $user->staff->bank_branch_name : "" }}" type="text">
+                                        <input name="bank_branch_name" class="primary_input_field name" placeholder="{{ __('common.Bank Branch Name') }}" value="{{ $user->staff != null ? $user->staff->bank_branch_name : "" }}" type="text">
                                     </div>
                                     @error('bank_branch_name')
                                     {{\Brian2694\Toastr\Facades\Toastr::error($errors->first('bank_branch_name'))}}
@@ -603,7 +603,7 @@
                                 <div class="col-xl-6">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Account Name') }}</label>
-                                        <input name="bank_account_name" class="form-control name" placeholder="{{ __('common.Account Name') }}" value="{{ $user->staff != null ? $user->staff->bank_account_name : "" }}" type="text">
+                                        <input name="bank_account_name" class="primary_input_field name" placeholder="{{ __('common.Account Name') }}" value="{{ $user->staff != null ? $user->staff->bank_account_name : "" }}" type="text">
                                     </div>
                                     @error('bank_account_name')
                                     {{\Brian2694\Toastr\Facades\Toastr::error($errors->first('bank_account_name'))}}
@@ -613,7 +613,7 @@
                                 <div class="col-xl-6">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Bank Account Number') }}</label>
-                                        <input name="bank_account_no" class="form-control name" placeholder="{{ __('common.Bank Account Number') }}" value="{{ $user->staff != null ? $user->staff->bank_account_no : "" }}" type="text">
+                                        <input name="bank_account_no" class="primary_input_field name" placeholder="{{ __('common.Bank Account Number') }}" value="{{ $user->staff != null ? $user->staff->bank_account_no : "" }}" type="text">
                                     </div>
                                 </div>
                                 @error('bank_account_no')
@@ -623,7 +623,7 @@
 
                             <div class="col-lg-12 text-center">
                                 <div class="d-flex justify-content-center pt_20">
-                                    <button type="submit" class="btn btn-primary" id="save_button_parent"><i class="ti-check"></i>{{ __('common.Update') }}
+                                    <button type="submit" class="primary-btn semi_large2 fix-gr-bg" id="save_button_parent"><i class="ti-check"></i>{{ __('common.Update') }}
                                     </button>
                                 </div>
                             </div>

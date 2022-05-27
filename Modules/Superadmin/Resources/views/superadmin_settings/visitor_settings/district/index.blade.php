@@ -6,7 +6,7 @@
             'visitor::lang.district')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" id="add_button_district" class="btn btn-primary btn-modal pull-right" 
+                <button type="button" id="add_button_district" class="primary-btn fix-gr-bg btn-modal pull-right" 
                 data-container=".default_districts_model"
                 data-href="{{action('DefaultDistrictController@create')}}">
                 <i class="fa fa-plus"></i> @lang( 'messages.add' )</button>

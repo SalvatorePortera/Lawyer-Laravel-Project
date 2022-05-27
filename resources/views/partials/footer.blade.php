@@ -63,15 +63,9 @@
 
 <!-- jQuery -->
 
-<script type="text/javascript" src="{{asset('public/jquery/dist/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/popper/umd/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<!-- @if(rtl())
-<script type="text/javascript" src="{{asset('public/bootstrap/dist/js/bootstrap-rtl.min.js')}}"></script>
-@else
-<script type="text/javascript" src="{{asset('public/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-@endif -->
-<script type="text/javascript" src="{{asset('public/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
@@ -89,16 +83,16 @@
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/bootstrap-fileinput/js/fileinput.min.js')}}"></script>
 
 <!-- daterangepicker -->
-<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/moment/moment.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/moment.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/bootstrap-datepicker.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/bootstrap-datetimepicker.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/daterangepicker.min.js"></script>
 
-<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script> -->
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/AdminLTE/dist/js/adminlte.min.js?v=3.2.0')}}"></script>
-<!-- Select2 -->
-<script type="text/javascript" src="{{asset('public/AdminLTE/plugins/select2/js/select2.full.min.js')}}"></script>
-<!-- <script src="{{asset('public/backEnd/')}}/vendors/js/select2/select2.min.js"></script> -->
+<script src="{{asset('public/backEnd/')}}/vendors/js/select2/select2.min.js"></script>
 <script src="{{ asset('public/js/parsley.min.js') }}"></script>
 
 
@@ -131,7 +125,6 @@
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
 
-
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/pdfmake/pdfmake.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/pdfmake/vfs_fonts.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/jszip/jszip.min.js')}}"></script>
@@ -139,13 +132,12 @@
 <script src="{{asset('public/frontend/')}}/vendors/nestable/jquery.nestable.js"></script>
 <script src="{{ asset('public/backEnd/vendors/js/loadah.min.js') }}"></script>
 <script src="{{ asset('public/backEnd/js/parsley_i18n/'.session()->get('locale', Config::get('app.locale')).'.js') }}"></script>
-
-<!-- <script src="{{asset('public/backEnd/')}}/vendors/js/nice-select.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/nice-select.min.js"></script>
 <script src="{{asset('public/backEnd/')}}/vendors/js/jquery.magnific-popup.min.js"></script>
-<script src="{{asset('public/backEnd/')}}/js/sweetalert.min.js"></script> -->
-<!-- <script src="{{asset('public/backEnd/')}}/js/custom.js"></script> -->
-<!-- <script src="{{asset('public/backEnd/')}}/js/main.js"></script> -->
-<!-- <script src="{{asset('public/backEnd/')}}/js/developer.js"></script> -->
+<script src="{{asset('public/backEnd/')}}/js/sweetalert.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/js/custom.js"></script>
+<script src="{{asset('public/backEnd/')}}/js/main.js"></script>
+<script src="{{asset('public/backEnd/')}}/js/developer.js"></script>
 
 
 
@@ -206,48 +198,24 @@
             $("body").find(".custom_notification").removeClass("open_notification");
         }
     });
-    function startDataTable(){
-        $("table.dt").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('.dataTables_wrapper .col-md-6:eq(0)');
-    }
+
 
 
     $(document).ready(function () {
-        $('.date').datetimepicker({
-            format: 'L'
-        });
-        $('.select2bs4').select2({
-            theme: 'bootstrap4'
-        });
-        $('.select2nsb').select2({
-            minimumResultsForSearch: -1,
-            theme: 'bootstrap4'
-        });
-        //$('.datetime').datetimepicker({format: 'LT'});
+        $('.date').datepicker('setDate', new Date());
+        $('.datetime').datetimepicker({format : 'YYYY-MM-DD H:mm'});
         $('#language_code').on('change', function () {
             var code = $(this).val();
             $.post('{{ route('language.change') }}', {_token: '{{ csrf_token() }}', code: code}, function (data) {
 
                 if (data.success) {
-                    //location.reload();
-                    toastr.options = {
-                        animation: true,
-                          autohide: false,
-                          delay: 9999
-                    };
-                    toastr.options.timeOut = 30000; // 3s
-                    console.log(toastr);
-                    toastr.error(data.success);
+                    location.reload();
+                    toastr.success(data.success);
                 } else {
                     toastr.error(data.error);
                 }
             });
         });
-        startDataTable();
     });
 </script>
 

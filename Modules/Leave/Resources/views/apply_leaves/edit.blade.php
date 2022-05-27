@@ -20,7 +20,7 @@
                                     <div class="no-gutters input-right-icon">
                                         <div class="col">
                                             <div class="">
-                                                <input placeholder="{{ __('common.Date') }}" class="form-control primary-input date form-control" id="apply_date" type="text" name="apply_date" value="{{ date('m/d/Y', strtotime($apply_leave->apply_date)) }}" autocomplete="off" required>
+                                                <input placeholder="{{ __('common.Date') }}" class="primary_input_field primary-input date form-control" id="apply_date" type="text" name="apply_date" value="{{ date('m/d/Y', strtotime($apply_leave->apply_date)) }}" autocomplete="off" required>
                                             </div>
                                         </div>
                                         <button class="" type="button">
@@ -34,7 +34,7 @@
                         <div class="col-xl-4">
                             <div class="primary_input mb-25">
                                 <label class="primary_input_label" for="">{{ __('leave.Leave Type') }}</label>
-                                <select class="form-control select2bs4 mb-25" name="leave_type_id" id="leave_type_id" required>
+                                <select class="primary_select mb-25" name="leave_type_id" id="leave_type_id" required>
                                     @foreach (\Modules\Leave\Entities\LeaveType::all() as $leave_type)
                                         <option value="{{ $leave_type->id }}" @if ($apply_leave->leave_type_id == $leave_type->id) selected @endif>{{ $leave_type->name }}</option>
                                     @endforeach
@@ -44,7 +44,7 @@
                         <div class="col-xl-4">
                             <div class="primary_input mb-25">
                                 <label class="primary_input_label">{{ __('leave.Day') }} *</label>
-                                <select onchange="leavePurpose(this)" class="form-control select2bs4 day mb-25" name="day"
+                                <select onchange="leavePurpose(this)" class="primary_select day mb-25" name="day"
                                         id="leave_purpose">
                                     <option value="0" {{$apply_leave->day == 0 ? 'selected' : '' }}>{{ __('leave.Half Day') }}</option>
                                     <option value="1" {{$apply_leave->day == 1 ? 'selected' : ''}}>{{ __('leave.Single Day') }}</option>
@@ -62,7 +62,7 @@
                                     <div class="no-gutters input-right-icon">
                                         <div class="col">
                                             <div class="">
-                                                <input placeholder="{{ __('common.Date') }}" class="form-control primary-input date form-control" id="start_date" type="text" name="start_date" value="{{ date('m/d/Y', strtotime($apply_leave->start_date)) }}" autocomplete="off" required>
+                                                <input placeholder="{{ __('common.Date') }}" class="primary_input_field primary-input date form-control" id="start_date" type="text" name="start_date" value="{{ date('m/d/Y', strtotime($apply_leave->start_date)) }}" autocomplete="off" required>
                                             </div>
                                         </div>
                                         <button class="" type="button">
@@ -109,7 +109,7 @@
                                     <div class="no-gutters input-right-icon">
                                         <div class="col">
                                             <div class="">
-                                                <input placeholder="{{ __('common.Date') }}" class="form-control primary-input date form-control" id="end_date" type="text" name="end_date" value="{{ date('m/d/Y', strtotime($apply_leave->end_date)) }}" autocomplete="off" required>
+                                                <input placeholder="{{ __('common.Date') }}" class="primary_input_field primary-input date form-control" id="end_date" type="text" name="end_date" value="{{ date('m/d/Y', strtotime($apply_leave->end_date)) }}" autocomplete="off" required>
                                             </div>
                                         </div>
                                         <button class="" type="button">
@@ -170,7 +170,7 @@
                                         <div class="col">
                                             <div class="">
                                                 <input placeholder="{{ __('common.Date') }}"
-                                                       class="form-control primary-input form-control"
+                                                       class="primary_input_field primary-input form-control"
                                                        type="text" name="makeup_date"
                                                        value="{{date('m/d/Y')}}"
                                                        autocomplete="off">
@@ -208,7 +208,7 @@
                         <div class="col-xl-6">
                             <div class="primary_input mb-25">
                                 <label class="primary_input_label" for="">{{ __('leave.Reason') }}</label>
-                                <input name="reason" class="form-control name" placeholder="{{ __('leave.Reason') }}" type="text" value="{{ $apply_leave->reason }}" required>
+                                <input name="reason" class="primary_input_field name" placeholder="{{ __('leave.Reason') }}" type="text" value="{{ $apply_leave->reason }}" required>
                             </div>
                         </div>
 
@@ -218,7 +218,7 @@
                                 <div class="primary_file_uploader">
                                     <input class="primary-input" type="text" id="placeholderFileOneName" placeholder="{{ __('common.Browse file') }}" readonly="">
                                     <button class="" type="button">
-                                        <label class="btn btn-sm btn-primary"
+                                        <label class="primary-btn small fix-gr-bg"
                                                for="document_file_1">{{__("common.Browse")}} </label>
                                         <input type="file" class="d-none" name="file" id="document_file_1">
                                     </button>

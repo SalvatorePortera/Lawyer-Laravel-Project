@@ -156,7 +156,7 @@
                     <input type="hidden" name="is_superadmin_default" value="1">
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="primary-btn fix-gr-bg">Save</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
                 {!! Form::close() !!}
@@ -201,7 +201,7 @@
                     <input type="hidden" name="is_superadmin_default" value="1">
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="primary-btn fix-gr-bg">Save</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
                 {!! Form::close() !!}
@@ -238,7 +238,7 @@
                 </div>
                 <input type="hidden" name="is_superadmin_default" value="1">
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="primary-btn fix-gr-bg">Save</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
                 {!! Form::close() !!}
@@ -286,7 +286,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="primary-btn fix-gr-bg">Save</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
                 {!! Form::close() !!}

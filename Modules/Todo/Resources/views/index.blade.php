@@ -10,7 +10,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-sm-6 text-right">
-                            <a href="#" data-toggle="modal" class="btn btn-sm btn-primary"
+                            <a href="#" data-toggle="modal" class="primary-btn small fix-gr-bg"
                                data-target="#add_to_do"
                                title="Add To Do" data-modal-size="modal-md">
                                 <span class="ti-plus pr-2"></span>
@@ -23,7 +23,7 @@
                             <div class="white-box school-table">
                                 <div class="row to-do-list mb-20">
                                     <div class="col-md-6 col-6">
-                                        <button class="btn btn-sm btn-primary"
+                                        <button class="primary-btn small fix-gr-bg"
                                                 id="toDoList">@lang('todo.incomplete')</button>
                                     </div>
                                     <div class="col-md-6 col-6">
@@ -121,7 +121,7 @@
                                                 <div class="primary_input mb-15">
                                                     <label class="primary_input_label"
                                                            for="">{{__('common.Title')}}*</label>
-                                                    <input type="text" class="form-control"
+                                                    <input type="text" class="primary_input_field"
                                                            placeholder="{{__('common.Title')}}" name="title"
                                                            value="{{ old('title') }}">
                                                     <span class="text-danger">{{$errors->first('title')}}</span>
@@ -137,7 +137,7 @@
                                                     <div class="col">
                                                         <div class="">
                                                             <input placeholder="{{ __('common.Date') }}"
-                                                                   class="form-control primary-input date form-control"
+                                                                   class="primary_input_field primary-input date form-control"
                                                                    id="startDate" type="text" name="date"
                                                                    value="{{date('Y-m-d')}}" autocomplete="off">
                                                         </div>
@@ -154,7 +154,7 @@
                                             <div class="mt-40 d-flex justify-content-between">
                                                 <button type="button" class="primary-btn tr-bg"
                                                         data-dismiss="modal">{{__('common.Cancel')}}</button>
-                                                <input class="btn btn-primary" type="submit" value="{{ __('common.Save') }}">
+                                                <input class="primary-btn fix-gr-bg" type="submit" value="{{ __('common.Save') }}">
                                             </div>
                                         </div>
                                     </div>

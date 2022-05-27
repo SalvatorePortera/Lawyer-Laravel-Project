@@ -2,36 +2,26 @@
 
 
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{__('contact.Edit Contact')}}</h1>
-      </div>
-      <div class="col-sm-6">
-            <ul class="breadcrumb float-sm-right">
-                <li>
-                    <a class="btn btn-primary mr-10 float-sm-right" href="{{ route('contact.index') }}">
-                        <i class="fa fa-list"></i>  {{__('contact.Contact List')}}
-                    </a>
-                </li>
-            </ul>
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
 
 
     <section class="admin-visitor-area up_st_admin_visitor">
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid pt-3">
+            <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="card">
-                    <div class="card-body">
+                    <div class="box_header">
+                        <div class="main-title d-flex justify-content-between w-100">
+                            <h3 class="mb-0 mr-30">{{__('contact.Edit Contact')}}</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="white_box_50px box_shadow_white">
+
                         {!! Form::model($model, ['route' => ['contact.update', $model->id], 'class' =>
                           'form-validate-jquery', 'id' => 'content_form', 'method' => 'PUT']) !!}
                         <div class="row">
-                            <div class="col-12 col-sm-6 col-xl-2 text-center">
+                            <div class="col-sm-4 text-center">
                                 <div class="kv-avatar">
                                     <div class="file-loading">
                                         <input id="avatarImage" name="avatarImage" value="fasdf.jpg" type="file">
@@ -42,7 +32,7 @@
                                     <small>Select file < 1500 KB</small>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6 col-xl-10">
+                            <div class="col-sm-8">
                                 <div class="row">
                                     <div class="primary_input col-md-12">
                                         <div class="d-flex justify-content-between">
@@ -55,7 +45,7 @@
                                                         <i class="fas fa-plus-circle"></i></a></label>
                                             @endif
                                         </div>
-                                        {{Form::select('contact_category_id', $contact_categories, null, ['class' => 'form-control select2bs4', 'data-placeholder' => __('contact.Select Designation'),  'data-parsley-errors-container' => '#contact_category_id_error'])}}
+                                        {{Form::select('contact_category_id', $contact_categories, null, ['class' => 'primary_select', 'data-placeholder' => __('contact.Select Designation'),  'data-parsley-errors-container' => '#contact_category_id_error'])}}
                                         <span id="contact_category_id_error"></span>
                                     </div>
                                 </div>
@@ -64,7 +54,7 @@
                                         <div class="d-flex justify-content-between">
                                         {{Form::label('name', __('contact.Name'), ['class' => 'required'])}}
                                         </div>
-                                        {{Form::text('name', null, ['required' => '','class' => 'form-control', 'placeholder' => __('contact.Name')])}}
+                                        {{Form::text('name', null, ['required' => '','class' => 'primary_input_field', 'placeholder' => __('contact.Name')])}}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -72,13 +62,13 @@
                                         <div class="d-flex justify-content-between">
                                         {{Form::label('mobile_no', __('contact.Mobile No'))}}
                                         </div>
-                                        {{Form::text('mobile_no', null, ['class' => 'form-control ', 'placeholder' => __('contact.Mobile No')])}}
+                                        {{Form::text('mobile_no', null, ['class' => 'primary_input_field ', 'placeholder' => __('contact.Mobile No')])}}
                                     </div>
                                     <div class="primary_input col-md-6">
                                         <div class="d-flex justify-content-between">
                                         {{Form::label('email', __('contact.Email'))}}
                                         </div>
-                                        {{Form::email('email', null, ['class' => 'form-control', 'placeholder' => __('contact.Email')])}}
+                                        {{Form::email('email', null, ['class' => 'primary_input_field', 'placeholder' => __('contact.Email')])}}
                                     </div>
                                 </div>
                             </div>
@@ -86,24 +76,24 @@
                         @includeIf('customfield::fields', ['fields' => $fields, 'model' => $model])
                         <div class="primary_input">
                             {{Form::label('description', __('contact.Description'))}}
-                            {{Form::textarea('description', null, ['class' => 'form-control summernote', 'placeholder' => __('contact.Contact Description'), 'rows' => 5, 'data-parsley-errors-container' =>
+                            {{Form::textarea('description', null, ['class' => 'primary_input_field summernote', 'placeholder' => __('contact.Contact Description'), 'rows' => 5, 'data-parsley-errors-container' =>
                             '#description_error' ])}}
                             <span id="description_error"></span>
                         </div>
                         <div class="text-center mt-3">
 
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Update') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                             </button>
 
                         </div>
                         {!! Form::close() !!}
 
-                    </div></div>
+                    </div>
                 </div>
             </div>
         </div>

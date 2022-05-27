@@ -23,7 +23,7 @@
                             @if(request()->is('task'))
                             <ul class="d-flex">
                                 @if(permissionCheck('task.store'))
-                                    <li><a class="btn btn-primary mr-10" href="{{ route('task.create') }}"><i class="ti-plus"></i>{{ __
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('task.create') }}"><i class="ti-plus"></i>{{ __
                             ('task.New Task') }}</a></li>
                                 @endif
                             </ul>
@@ -63,7 +63,7 @@
                                             <td>{!! $model->status != 1 ? '<span class="badge_3"> '.__('common.Pending').' </span>' : '<span class="badge_1"> '.__('common.Complete').'  </span>' !!}</td>
                                             <td>
                                                 <div class="dropdown CRM_dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button"
+                                                        <button class="primary-btn fix-gr-bg dropdown-toggle" type="button"
                                                                 id="dropdownMenu2" data-toggle="dropdown"
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false">

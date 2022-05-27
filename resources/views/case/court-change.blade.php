@@ -23,17 +23,17 @@
                         {{Form::hidden('id', $model->id)}}
                         {{Form::label('date', __('case.Change Date'))}}
 
-                        {{Form::text('date', date('Y-m-d'), ['class' => 'form-control primary-input date form-control date', 'placeholder' => __('case.Change Date')])}}
+                        {{Form::text('date', date('Y-m-d'), ['class' => 'primary_input_field primary-input date form-control date', 'placeholder' => __('case.Change Date')])}}
                     </div>
                     <div class="primary_input col-md-6">
                         {{Form::label('court', __('case.Court'))}}
-                        {{Form::select('court', $court, $model->court_id, ['required' => '', 'class' => 'form-control select2bs4', 'data-placeholder' => __('case.Select court'), 'data-parsley-errors-container' => '#court_error'])}}
+                        {{Form::select('court', $court, $model->court_id, ['required' => '', 'class' => 'primary_select', 'data-placeholder' => __('case.Select court'), 'data-parsley-errors-container' => '#court_error'])}}
                         <span id="court_error"></span>
                     </div>
                 </div>
                         @includeIf('case.file')
                 <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary" id="submit" value="submit">{{ __('common.Update')}}</button>
+                <button type="submit" class="primary-btn semi_large2 fix-gr-bg" id="submit" value="submit">{{ __('common.Update')}}</button>
                 </div>
                 {!! Form::close() !!}
                 </div>

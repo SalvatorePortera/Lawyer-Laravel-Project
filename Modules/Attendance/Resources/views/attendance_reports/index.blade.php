@@ -22,7 +22,7 @@
                                 <div class="col-lg-4">
                                     <div class="primary_input mb-15">
                                         <label class="primary_input_label" for="">{{ __('attendance.Select Role') }}</label>
-                                        <select class="form-control select2bs4 mb-15" name="role_id" id="role_id">
+                                        <select class="primary_select mb-15" name="role_id" id="role_id">
                                             <option selected disabled>{{__('attendance.Choose One')}}</option>
                                             @foreach (\Modules\RolePermission\Entities\Role::whereNotIn('type',['normal_user','system_user'])->get() as $role)
                                                 @isset($r)
@@ -38,7 +38,7 @@
                                 <div class="col-lg-4">
                                     <div class="primary_input mb-15">
                                         <label class="primary_input_label" for="">{{ __('attendance.Select Month') }}</label>
-                                        <select class="form-control select2bs4 mb-15" name="month" id="month">
+                                        <select class="primary_select mb-15" name="month" id="month">
                                             @foreach ($months as $month)
                                                 @isset($m)
                                                     <option value="{{ $month }}"@if ($m == $month) selected @endif>{{ __('common.'.$month) }}</option>
@@ -53,7 +53,7 @@
                                 <div class="col-lg-4">
                                     <div class="primary_input mb-15">
                                         <label class="primary_input_label" for="">{{ __('attendance.Select Year') }}</label>
-                                        <select class="form-control select2bs4 mb-15" name="year" id="year">
+                                        <select class="primary_select mb-15" name="year" id="year">
                                             @foreach (range(\carbon\Carbon::now()->year, 2015) as $year)
                                                 @isset($y)
                                                     <option value="{{ $year }}"@if ($y == $year) selected @endif>{{ $year }}</option>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 text-center">
-                                        <button type="submit" class="btn btn-sm btn-primary" id="save_button_parent"><i class="ti-search"></i>{{ __('attendance.Search') }}</button>
+                                        <button type="submit" class="primary-btn btn-sm fix-gr-bg" id="save_button_parent"><i class="ti-search"></i>{{ __('attendance.Search') }}</button>
                                 </div>
                             </div>
                         </form>
@@ -84,7 +84,7 @@
                             <div class="main-title d-md-flex">
                                 {{-- <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px"><h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('attendance.Attendance Report') }}</h3></h3> --}}
                                 <ul class="d-flex">
-                                    <li><a class="btn btn-primary mr-10 print_window" target="_blank" href="{{ route('attendance_report_print', [$r, $m, $y]) }}">
+                                    <li><a class="primary-btn mr-10 fix-gr-bg print_window" target="_blank" href="{{ route('attendance_report_print', [$r, $m, $y]) }}">
                                     <i class="ti-printer"></i>{{ __('attendance.Attendance Report') }} {{ __('attendance.Print') }}</a></li>
                                 </ul>
                             </div>

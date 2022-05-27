@@ -4,7 +4,7 @@
         <input type="hidden" name="date" value="{{$date}}">
         <div class="col-lg-12 mb-2 mt-3">
             <div class="d-flex">
-                <button type="submit" class="btn btn-sm btn-primary" id="save_button_parent"><i class="ti-check"></i>{{ __('common.Save') }}</button>
+                <button type="submit" class="primary-btn btn-sm fix-gr-bg" id="save_button_parent"><i class="ti-check"></i>{{ __('common.Save') }}</button>
             </div>
         </div>
         <div class="common_QA_section QA_section_heading_custom th_padding_l0">
@@ -48,7 +48,7 @@
                                     </td>
                                     <td>
                                         <div class="primary_input mb-25">
-                                            <input name="note_{{ $user->id }}" class="form-control name" @if (attendanceNote($user->id)) value="{{ Note($user->id) }}" @else value="" @endif placeholder="{{ __('attendance.Note') }}" type="text">
+                                            <input name="note_{{ $user->id }}" class="primary_input_field name" @if (attendanceNote($user->id)) value="{{ Note($user->id) }}" @else value="" @endif placeholder="{{ __('attendance.Note') }}" type="text">
                                         </div>
                                     </td>
                                 </tr>

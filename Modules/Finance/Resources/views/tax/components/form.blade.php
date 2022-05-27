@@ -1,11 +1,11 @@
 <div class="row">
     <div class="primary_input col-md-6">
         {{Form::label('name', __('finance.Tax Name'), ['class' => 'required'])}}
-        {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('finance.Tax Name')])}}
+        {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('finance.Tax Name')])}}
     </div>
     <div class="primary_input col-md-6">
         {{Form::label('rate', __('finance.Rate'), ['class' => 'required'])}}
-        {{Form::text('rate', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('finance.Rate')])}}
+        {{Form::text('rate', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('finance.Rate')])}}
     </div>
 
     <div class="primary_input col-md-12">

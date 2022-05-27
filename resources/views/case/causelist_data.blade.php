@@ -1,8 +1,8 @@
-<table class="table table-striped dt">
+<table class="table Crm_table_active3">
     <thead>
     <tr>
 
-        <th class="text-center" scope="col">{{ __('common.SL') }}</th>
+        <th scope="col">{{ __('common.SL') }}</th>
         <th>{{ __('case.Case') }}</th>
         <th>{{ __('case.Client') }}</th>
         <th>{{ __('case.Details') }}</th>
@@ -12,7 +12,7 @@
     <tbody>
     @foreach($models as $model)
         <tr>
-            <td class="text-center">{{ $loop->index + 1 }}</td>
+            <td>{{ $loop->index + 1 }}</td>
             <td>
                 <b>{{ __('case.Case No.') }}: </b> {{$model->case_category? $model->case_category->name : '' }}/{{$model->case_no}} <br>
                 <a href="{{route('category.case.show', $model->case_category_id)}}"><b>{{ __('case.Category') }}: </b> {{$model->case_category? $model->case_category->name : '' }}</a>  <br>
@@ -54,7 +54,7 @@
 
 
                 <div class="dropdown CRM_dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button"
+                    <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                             id="dropdownMenu2" data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false">
@@ -62,15 +62,15 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
 
-                        <a href="{{ route('case.show', $model->id) }}" class="dropdown-item"><i class="fa fa-eye"></i> {{ __('common.View') }}</a>
+                        <a href="{{ route('case.show', $model->id) }}" class="dropdown-item"><i class="icon-file-eye"></i> {{ __('common.View') }}</a>
                         @if(!$model->judgement)
-                            <a href="{{route('case.edit', $model->id)}}" class="dropdown-item"><i class="fa fa-pencil"></i> {{ __('common.Edit') }}</a>
+                            <a href="{{route('case.edit', $model->id)}}" class="dropdown-item"><i class="icon-pencil mr-2"></i>{{ __('common.Edit') }}</a>
                             <a href="{{route('date.create', ['case' => $model->id])}}" class="dropdown-item"><i
-                                    class="fa fa-calendar"></i> {{ __('case.New Date') }}</a>
+                                    class="icon-calendar3 mr-2"></i>{{ __('case.New Date') }}</a>
                             <a href="{{route('putlist.create', ['case' => $model->id])}}" class="dropdown-item"><i
-                                    class="fa fa-calendar"></i> {{ __('case.New Put Up Date') }}</a>
+                                    class="icon-calendar3 mr-2"></i>{{ __('case.New Put Up Date') }}</a>
                             <a href="{{route('judgement.create', ['case' => $model->id])}}" class="dropdown-item"><i
-                                    class="fa fa-calendar"></i> {{ __('case.New Judgement Date') }}</a>
+                                    class="icon-calendar3 mr-2"></i>{{ __('case.New Judgement Date') }}</a>
                         @endif
 
                     </div>

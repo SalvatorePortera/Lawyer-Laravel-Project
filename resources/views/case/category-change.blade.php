@@ -20,16 +20,16 @@
                     <div class="primary_input col-md-6">
                         {{Form::hidden('id', $model->id)}}
                         {{Form::label('date', __('case.Change Date'))}}
-                        {{Form::text('date', date('Y-m-d'), ['class' => 'form-control primary-input date form-control date', 'placeholder' => __('Change Date')])}}
+                        {{Form::text('date', date('Y-m-d'), ['class' => 'primary_input_field primary-input date form-control date', 'placeholder' => __('Change Date')])}}
                     </div>
                     <div class="primary_input col-md-6">
                         {{Form::label('category', __('case.Category'))}}
-                        {{Form::select('category', $category, $model->case_category_id, ['required' => '', 'class' => 'form-control select2bs4', 'data-placeholder' => __('case.Select category'), 'data-parsley-errors-container' => '#category_error'])}}
+                        {{Form::select('category', $category, $model->case_category_id, ['required' => '', 'class' => 'primary_select', 'data-placeholder' => __('case.Select category'), 'data-parsley-errors-container' => '#category_error'])}}
                         <span id="category_error"></span>
                     </div>
                 </div>
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary" id="submit" value="submit">{{ __('Update')}}</button>
+                    <button type="submit" class="primary-btn semi_large2 fix-gr-bg" id="submit" value="submit">{{ __('Update')}}</button>
                 </div>
                 {!! Form::close() !!}
                 </div>

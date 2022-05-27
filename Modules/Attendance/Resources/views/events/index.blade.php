@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="offset-lg-10 col-lg-2 text-right col-md-12 mb-20">
 
-                            <a href="{{route('events.index')}}" class="btn btn-sm btn-primary">
+                            <a href="{{route('events.index')}}" class="primary-btn small fix-gr-bg">
                                 <span class="ti-plus pr-2"></span>
                                 @lang('event.Add')
                             </a>
@@ -65,7 +65,7 @@
                                                 <label class="primary_input_label required" for="">{{ __('event.Title') }}
                                                     </label>
                                                 <input name="title" id="current_address"
-                                                       class="form-control"
+                                                       class="primary_input_field"
                                                        value="{{isset($editData) ? $editData->title : old('title') }}"
                                                        placeholder="{{ __('event.Title') }}" type="text" required>
                                                 <span class="text-danger">{{$errors->first('title')}}</span>
@@ -76,7 +76,7 @@
                                             <div class="primary_input mb-25">
                                                 <label class="primary_input_label required" for="">{{ __('event.for_whom') }}
                                                     </label>
-                                                <select class="form-control select2bs4 mb-25" name="for_whom"
+                                                <select class="primary_select mb-25" name="for_whom"
                                                         id="employment_type">
                                                     <option
                                                         value="all" {{isset($editData) && $editData->for_whom == 'all' ? 'selected' : ''}}>{{__('event.All')}}</option>
@@ -93,7 +93,7 @@
                                                 <label class="primary_input_label required" for="">{{ __('event.Location') }}
                                                     </label>
                                                 <input name="location" id="current_address"
-                                                       class="form-control name"
+                                                       class="primary_input_field name"
                                                        placeholder="{{ __('event.Location') }}"
                                                        value="{{isset($editData) ? $editData->location : old('location') }}" type="text"
                                                        required>
@@ -110,7 +110,7 @@
                                                             <div class="col">
                                                                 <div class="">
                                                                     <input placeholder="{{ __('common.Date') }}"
-                                                                           class="form-control primary-input date form-control"
+                                                                           class="primary_input_field primary-input date form-control"
                                                                            id="date_of_joining" type="text"
                                                                            name="from_date"
                                                                            value="{{isset($editData)? date('Y-m-d', strtotime($editData->from_date)): date('Y-m-d')}}"
@@ -135,7 +135,7 @@
                                                             <div class="col">
                                                                 <div class="">
                                                                     <input placeholder="{{ __('common.Date') }}"
-                                                                           class="form-control primary-input date form-control"
+                                                                           class="primary_input_field primary-input date form-control"
                                                                            type="text" name="to_date"
                                                                            value="{{isset($editData)? date('Y-m-d', strtotime($editData->to_date)): date('Y-m-d')}}"
                                                                            autocomplete="off" required>
@@ -156,7 +156,7 @@
                                                            for="">{{ __('event.Description') }}
                                                         </label>
                                                     <input name="description" id="current_address"
-                                                           class="form-control"
+                                                           class="primary_input_field"
                                                            value="{{isset($editData) ? $editData->description : old('description') }}"
                                                            placeholder="{{ __('event.Description') }}" type="text"
                                                            required>
@@ -164,7 +164,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 text-center">
-                                                <button class="btn btn-primary" data-toggle="tooltip">
+                                                <button class="primary-btn fix-gr-bg" data-toggle="tooltip">
                                                     <span class="ti-check"></span>
                                                     @if(isset($editData))
                                                         @lang('common.Update')
@@ -247,7 +247,7 @@
                                                             <td>
 
                                                                 <div class="dropdown CRM_dropdown">
-                                                                    <button class="btn btn-primary dropdown-toggle"
+                                                                    <button class="primary-btn fix-gr-bg dropdown-toggle"
                                                                             type="button"
                                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                                             aria-haspopup="true"

@@ -2,32 +2,6 @@
 /*
  * Form Checkbox Uniform
  */
-function bankOrCash(val){
-    "use strict";
-    var field =  $('#bank_account_id');
-    let method_column = $('#method_column');
-    if (val === 'bank'){
-
-        if (method_column.length){
-            method_column.removeClass(method_column.data('old_class')).addClass(method_column.data('new_class'))
-        }
-
-        $('#bank_column').show();
-        $("label[for='bank_account_id']").addClass('required');
-        field.attr('disabled', false).attr('required', true).select2({
-            theme: 'bootstrap4'
-        });
-    } else{
-        if (method_column.length){
-            method_column.removeClass(method_column.data('new_class')).addClass(method_column.data('old_class'))
-        }
-        $('#bank_column').hide();
-        $("label[for='bank_account_id']").removeClass('required');
-        field.attr('disabled', true).attr('required', false).select2({
-            theme: 'bootstrap4'
-        });
-    }
-}
 
 var _componentUniform = function () {
 
@@ -80,7 +54,7 @@ var _componentDatePicker = function (drops = 'down') {
     var year = parseInt(moment(stillUtc).local().format('YYYY')) + 2;
     // $('.date').attr('readonly', true);
 
-    $('.daterange').daterangepicker({
+    $('.date').daterangepicker({
         "applyClass": 'bg-slate-600',
         "cancelClass": 'btn-light',
         'setDate': null,
@@ -173,7 +147,6 @@ var _formValidation = function (form_id = '#content_form', modal = false, modal_
             $('.bs-callout-info').toggleClass('hidden', !ok);
             $('.bs-callout-warning').toggleClass('hidden', ok);
         });
-
         form.on('submit', function (e) {
             e.preventDefault();
             form.find('.submit').hide();
@@ -217,10 +190,10 @@ var _formValidation = function (form_id = '#content_form', modal = false, modal_
                             select_val.push(data.model.id);
                             console.log(select_val);
                             select.val(select_val)
-                                .trigger('change').select2();
+                                .trigger('change').niceSelect('update');
                         }else{
                             select.val(data.model.id)
-                                .trigger('change').select2();
+                                .trigger('change').niceSelect('update');
                         }
                     }
 
@@ -282,133 +255,15 @@ var _formValidation = function (form_id = '#content_form', modal = false, modal_
         });
     }
 };
-function hidePreloader() {
-    "use strict";
-    $('.preloader img').fadeOut();
-    $('.preloader').fadeOut();
-}
-function startDataTable(){
-    $("table.dt").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('.dataTables_wrapper .col-md-6:eq(0)');
-}
-function hideFormSubmitting(form) {
-    "use strict";
-    hidePreloader();
-    let submit = form.find('.submit');
-    let submitting = form.find('.submitting');
-    submit.show();
-    submitting.hide();
-}
-function showPreloader() {
-    "use strict";
-    $('.preloader img').fadeIn();
-    $('.preloader').fadeIn();
-}
-function showFormSubmitting(form) {
-    "use strict";
-    let submit = form.find('.submit');
-    let submitting = form.find('.submitting');
-    submit.hide();
-    submitting.show();
-    showPreloader();
-}
+
+
+/*
+ * Form Validation For Modal
+ */
+
+
+
 $(document).ready(function () {
-    $(document).on('click', '.btn-modal', function(e) {
-        e.preventDefault();
-        $('.preloader').show();
-            let depend = $(this).data('depend');
-            let container = '.' + $(this).data('container');
-            let url = $(this).data('href');
-            if (typeof (url) == 'undefined'){
-                url = $(this).attr('href');
-            }
-            var button = $(this);
-
-            if (typeof depend !== 'undefined'){
-                let depend_val = $(depend).val();
-                if (!depend_val){
-                    toastr.error($(this).data('depend_text'));
-                    $('.preloader').hide();
-                } else{
-                    let data = {
-                        "depend" : depend_val
-                    }
-                    open_btn_link(url, container,data, button);
-                }
-            } else{
-                open_btn_link(url, container, {}, button);
-            }
-
-
-        });
-
-
-        function open_btn_link(url, container, data, button){
-            $.ajax({
-                url: url,
-                data: data,
-                dataType: 'html',
-                success: function(result) {
-                    $(container)
-                        .html(result)
-                        .modal('show');
-
-                    $(container).on('shown.bs.modal', function() {
-                        $('input:text:visible:first', this).focus();
-                    });
-
-                    if ($().select2){
-                        $(container).find('.primary_select').each(function() {
-                            var dropdownParent = $(document.body);
-                            if ($(this).parents('.modal:first').length !== 0)
-                                dropdownParent = $(this).parents('.modal:first');
-                            $(this).select2();
-                        });
-                    }
-
-                    if ($().summernote){
-                        if ($(container).find('.summernote').length){
-                            $('.summernote').summernote({
-                                height:200
-                            });
-                        }
-                    }
-
-                    if ($('.date').length > 0 && $().datetimepicker) {
-                        $('.date').datetimepicker({
-                            format: 'YYYY-MM-DD'
-                        });
-                        $(document).on('click', '.date-icon', function() {
-                            $(this).parent().parent().find('.date').focus();
-                        });
-                    }
-
-                    $('[data-toggle="tooltip"]').tooltip()
-
-                    $('.preloader').hide();
-                    var $btn = button;
-                    var currentDialog = $btn.closest('.modal-dialog'),
-                        targetDialog = $(container);
-                    if (!currentDialog.length)
-                        return;
-                    targetDialog.data('previous-dialog', currentDialog);
-                    currentDialog.addClass('d-none');
-                    var stackedDialogCount = $('.modal.fade .modal-dialog.aside').length;
-                    if (stackedDialogCount <= 5){
-                        currentDialog.addClass('aside-' + stackedDialogCount);
-                    }
-
-                },
-                error: function(data) {
-                    $('.preloader').hide();
-                    toastr.error('Something is not right!', 'Opps!');
-                }
-            });
-        }
 
     /*
      * For Delete Item
@@ -421,10 +276,7 @@ $(document).ready(function () {
         $('#item_delete_form').attr('action', url);
 
     });
-    $(document).on('change', '#payment_method', function(){
-        let val = $(this).val();
-        bankOrCash(val);
-    });
+
 
     // $('.date').attr('readonly', true);
 });
@@ -471,11 +323,11 @@ $(document).ready(function () {
         $.post({
             url: url,
             data: {'_token': $('meta[name="csrf-token"]').attr('content')}
-            }).done(function (data) {
+            }).done(function (data) {       
                 toastr.success(data.message)
                 setTimeout(function () {
                      window.location.href = data.goto;
-                }, 2000);
+                }, 2000);  
           });
         // $.ajax({
         //     url: url,
@@ -545,7 +397,7 @@ function _componentAjaxChildLoad(form_id = '#content_form', parent_id = '#countr
         $.post({
             url: SET_DOMAIN + '/select/'+module,
             data: {'_token': $('meta[name="csrf-token"]').attr('content'),value: value}
-            }).done(function (data) {
+            }).done(function (data) {       
                 $.each(data, function(i, v) {
                     child.append(
                         $('<option>', {
@@ -555,9 +407,7 @@ function _componentAjaxChildLoad(form_id = '#content_form', parent_id = '#countr
                     );
                 })
                 child.trigger('change');
-                child.select2({
-                    theme: 'bootstrap4'
-                });
+                child.niceSelect('update');
           }).fail(function(data) {
                 toastr.error(trans('Something is not right'), trans('Error'))
             });

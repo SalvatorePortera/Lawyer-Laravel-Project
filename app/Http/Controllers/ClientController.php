@@ -12,6 +12,7 @@ use App\Traits\ImageStore;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Storage;
 
 class ClientController extends Controller
 {
@@ -38,7 +39,7 @@ class ClientController extends Controller
     {
         $countries = Country::all()->pluck('name', 'id')->prepend(__('client.Select country'), '');
         $states = State::where('country_id', config('configs')->where('key', 'country_id')->first()->value)->pluck('name', 'id')->prepend(__('client.Select state'), '');
-        $client_categories = ClientCategory::all()->pluck('name', 'id');
+        $client_categories = ClientCategory::all()->pluck('name', 'id')->prepend(__('client.Select Client Category'), '');
         $fields = null;
 
         if (moduleStatusCheck('CustomField')) {
@@ -188,6 +189,13 @@ class ClientController extends Controller
     public function edit($id)
     {
         $model = Client::with('user')->findOrFail($id);
+        echo $model->avatar;
+        $isExists = Storage::exists($model->avatar);
+        $path = Storage::disk('uploads')->path('file.jpg');
+        echo $path;
+        dd($isExists);
+        exit;
+
         $countries = Country::all()->pluck('name', 'id')->prepend(__('client.Select country'), '');
         $states = State::where('country_id', $model->country_id)->pluck('name', 'id')->prepend(__('client.Select state'), '');
         $cities = City::where('state_id', $model->state_id)->pluck('name', 'id')->prepend(__('client.Select city'), '');

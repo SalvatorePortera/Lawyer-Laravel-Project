@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30">{{ __('finance.Income Details') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('incomes.index'))
-                                    <li><a class="btn btn-primary mr-10"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="{{ route('incomes.index') }}"><i class="ti-list"></i>{{ __
                         ('finance.Income List') }}</a></li>
                                 @endif

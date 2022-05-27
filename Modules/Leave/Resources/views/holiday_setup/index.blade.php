@@ -8,7 +8,7 @@
                     <h3 class="mb-0 mr-30  ">{{ __('holiday.Holiday Setup') }}
                         @if(permissionCheck('holiday.add'))
                             <a href="#" data-toggle="modal" data-target="#year_add"
-                               class="btn btn-sm btn-primary text-uppercase mb-2 bord-rad float-right">
+                               class="primary-btn small fix-gr-bg text-uppercase mb-2 bord-rad float-right">
                                 {{__('common.Add')}} <span class="ti-plus"></span>
                             </a>
                         @endif
@@ -32,7 +32,7 @@
                                 <div class="col-lg-12">
                                     <div class="primary_input mb-15">
                                         <label class="primary_input_label">{{ __('holiday.Holiday Copy From') }}</label>
-                                        <select name="year" onchange="lastYearData()" class="form-control select2bs4 last_year">
+                                        <select name="year" onchange="lastYearData()" class="primary_select last_year">
                                             @isset($holiday)
                                                 @foreach($years->where('year','!=',$holiday->year) as $year)
                                                     <option value="{{$year->year}}">{{$year->year}}</option>
@@ -50,7 +50,7 @@
                                         <div class="primary_input mb-15">
                                             <label class="primary_input_label"
                                                    for="">{{ __('attendance.Select Year') }}</label>
-                                            <input type="text" name="year" class="form-control"
+                                            <input type="text" name="year" class="primary_input_field"
                                                    value="{{isset($holiday) ? $holiday->year : ''}}">
 
                                             <span class="text-danger">{{$errors->first('year')}}</span>
@@ -70,7 +70,7 @@
                                 </table>
                                 <div class="row justify-content-center mt-2">
                                     <button type="submit"
-                                            class="btn btn-sm btn-primary">{{__('holiday.Submit')}}</button>
+                                            class="primary-btn btn-sm fix-gr-bg">{{__('holiday.Submit')}}</button>
                                 </div>
                             </form>
                         </div>
@@ -105,14 +105,14 @@
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label"
                                                for="">{{ __('holiday.Year') }} *</label>
-                                        <input name="year" class="form-control"
+                                        <input name="year" class="primary_input_field"
                                                placeholder="{{ __('holiday.Year') }}"
                                                type="text" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <div class="d-flex justify-content-center pt_20">
-                                        <button type="submit" class="btn btn-primary"><i
+                                        <button type="submit" class="primary-btn semi_large2 fix-gr-bg"><i
                                                 class="ti-check"></i>
                                             {{ __('common.Save') }}
                                         </button>
@@ -137,7 +137,7 @@
             <div class="primary_input mb-15">
                 <label class="primary_input_label"
                        for="">{{__('holiday.Holiday Name')}}</label>
-                <input type="text" name="holiday_name[]" class="form-control"
+                <input type="text" name="holiday_name[]" class="primary_input_field"
                        placeholder="{{__('holiday.Holiday Name')}}">
             </div>
         </td>
@@ -145,7 +145,7 @@
             <div class="primary_input mb-15">
                 <label class="primary_input_label"
                        for="">{{__('holiday.Select Type')}} *</label>
-                <select class="form-control select2bs4 mb-15 type" name="type[]">
+                <select class="primary_select mb-15 type" name="type[]">
                     <option value="0">{{__('holiday.Single Day')}}</option>
                     <option value="1">{{__('holiday.Multiple Day')}}</option>
                 </select>
@@ -161,7 +161,7 @@
                 <div class="col">
                     <div class="">
                         <input placeholder="${ trams('js.Date') }"
-                               class="form-control primary-input date form-control"
+                               class="primary_input_field primary-input date form-control"
                                type="text" name="date[]"
                                value="{{date('Y-m-d')}}" autocomplete="off">
                                 </div>
@@ -182,7 +182,7 @@
                 <div class="col">
                     <div class="">
                         <input placeholder="${ trans('js.Date') }"
-                               class="form-control primary-input date form-control"
+                               class="primary_input_field primary-input date form-control"
                                type="text" name="start_date[]"
                                value="{{date('Y-m-d')}}"
                                            autocomplete="off">
@@ -202,7 +202,7 @@
                 <div class="col">
                     <div class="">
                         <input placeholder="${ trans('js.Date') }"
-                               class="form-control primary-input date form-control"
+                               class="primary_input_field primary-input date form-control"
                                type="text" name="end_date[]"
                                value="{{date('Y-m-d')}}"
                                            autocomplete="off">

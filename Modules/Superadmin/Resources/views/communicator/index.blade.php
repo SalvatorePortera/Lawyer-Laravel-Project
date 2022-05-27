@@ -20,7 +20,7 @@
 		        <div class="box-body">
 		        	{!! Form::open(['url' => action('\Modules\Superadmin\Http\Controllers\CommunicatorController@send'), 'method' => 'post', 'id' => 'communication_form']) !!}
 		        		<div class="col-md-12 form-group">
-		        			{!! Form::label('recipients', __('superadmin::lang.recipients').':*') !!} <button type="button" class="btn btn-primary btn-xs select-all">@lang('lang_v1.select_all')</button> <button type="button" class="btn btn-primary btn-xs deselect-all">@lang('lang_v1.deselect_all')</button>
+		        			{!! Form::label('recipients', __('superadmin::lang.recipients').':*') !!} <button type="button" class="primary-btn fix-gr-bg btn-xs select-all">@lang('lang_v1.select_all')</button> <button type="button" class="primary-btn fix-gr-bg btn-xs deselect-all">@lang('lang_v1.deselect_all')</button>
 							{!! Form::select('recipients[]', $businesses, null, ['class' => 'form-control select2', 'required', 'multiple', 'id' => 'recipients']); !!}
 		        		</div>
 		        		<div class="col-md-12 form-group">

@@ -11,7 +11,7 @@
                         <h3 class="mb-0 mr-30">{{__('Add Subscription')}}</h3>
                             <ul class="d-flex">
                                 <li>
-                                    <a class="btn btn-primary mr-10" href="{{ route('subscriptions.index') }}">
+                                    <a class="primary-btn mr-10 fix-gr-bg" href="{{ route('subscriptions.index') }}">
                                         {{ __('Back To Subscriptions') }}
                                     </a>
                                 </li>
@@ -63,10 +63,10 @@
                             </div>
 
                         <div class="text-center mt-3">
-                        <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
+                        <button class="primary-btn semi_large2 fix-gr-bg submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
                         </button>
 
-                        <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
+                        <button class="primary-btn semi_large2 fix-gr-bg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                         </button>
 
                         </div>

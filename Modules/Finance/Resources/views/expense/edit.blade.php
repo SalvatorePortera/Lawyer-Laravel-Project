@@ -1,46 +1,37 @@
 @extends('finance::layouts.master', ['title' => __('finance.Update Expense')])
 
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('finance.Update Expense') }}</h1>
-      </div>
-      <div class="col-sm-6">
-        @if(permissionCheck('expenses.index'))
-        <ul class="breadcrumb float-sm-right">
-            <li>
-                <a class="btn btn-primary mr-10" href="{{ route('expenses.index') }}"><i class="ti-list"></i> {{ __
-                        ('finance.Expense List') }}</a>
-            </li>
-        </ul>
-        @endif
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
+
     <section class="admin-visitor-area up_st_admin_visitor">
-        <div class="container-fluid">
+        <div class="container-fluid pt-3">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-
-
-                            {!! Form::model($model, ['route' => ['expenses.update', $model->id], 'class' => 'form-validate-jquery form-horizontal', 'id' => 'content_form', 'files' => false, 'method' => 'Put']) !!}
-                            @includeIf('finance::expense.components.form')
-                            <div class="text-center mt-3">
-                                <button class="btn btn-primary submit" type="submit"><i
-                                        class="ti-check"></i>{{ __('common.Update') }}
-                                </button>
-
-                                <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
-                                    <i class="ti-check"></i>{{ __('common.Updating') . '...' }}
-                                </button>
-                            </div>
-                            {!! Form::close() !!}
+                    <div class="box_header">
+                        <div class="main-title d-flex justify-content-between ">
+                            <h3 class="mb-0 mr-30">{{ __('finance.Update Expense') }}</h3>
+                            <ul class="d-flex">
+                                @if(permissionCheck('expenses.index'))
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('expenses.index') }}"><i class="ti-list"></i>{{ __
+                        ('finance.Expense List') }}</a></li>
+                                @endif
+                            </ul>
                         </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="white_box_50px box_shadow_white">
+                        {!! Form::model($model, ['route' => ['expenses.update', $model->id], 'class' => 'form-validate-jquery', 'id' => 'content_form', 'files' => false, 'method' => 'Put']) !!}
+                        @includeIf('finance::expense.components.form')
+                        <div class="text-center mt-3">
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
+                                    class="ti-check"></i>{{ __('common.Update') }}
+                            </button>
+
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
+                                <i class="ti-check"></i>{{ __('common.Updating') . '...' }}
+                            </button>
+                        </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -59,7 +50,7 @@
         $(document).ready(function () {
             _formValidation();
             bankOrCash($('#payment_method').val());
-            $("input.expensefor_group_option").change(function(e){
+            $("input.expensefor_group_option").click(function(e){
                if($(e.target).is(':checked') && $(e.target).prop('id')=='option_general'){
                     $('#row_general').removeClass('d-none');
                     $('#row_case').addClass('d-none');
@@ -89,7 +80,7 @@
                         dateType: 'json',
                         success: function (data) {
                             $("#case_column").html(data.html);
-                            $('.select_case').select2()
+                            $('.select_case').niceSelect()
                         },
                         error: function(data){
                             ajax_error(data);

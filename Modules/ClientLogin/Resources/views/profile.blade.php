@@ -360,12 +360,12 @@
                                         <div class="row">        
                                             <div class="col-xl-4">
                                                 {{Form::label('invoice_id', __('finance.Select Invoice'))}}
-                                                {{Form::select('invoice_id', $invoices,  null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#invoice_id_error'])}}
+                                                {{Form::select('invoice_id', $invoices,  null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#invoice_id_error'])}}
                                                 <span id="invoice_id_error"></span>
                                             </div>
                                             <div class="col-xl-8">
                                                 {{Form::label('case_id', __('finance.Select Case'))}}
-                                                <select class="form-control select2bs4" data-parsley-errors-container="#case_id_error" id="case_id" name="case_id">
+                                                <select class="primary_select" data-parsley-errors-container="#case_id_error" id="case_id" name="case_id">
                                                     <option value="0" selected="selected">{{__('finance.Select Case')}}</option>
                                                     @foreach ($cases as $case)
                                                     <option value="{{$case->id}}">{{$case->title}}</option>
@@ -381,22 +381,22 @@
                                                             <div class="primary_file_uploader">
                                                                 <input class="primary-input require" require type="text" id="placeholderAttachFile" placeholder="{{ __('common.Browse file') }}" readonly>
                                                                 <button class="" type="button">
-                                                                    <label class="btn btn-sm btn-primary"
+                                                                    <label class="primary-btn small fix-gr-bg"
                                                                            for="attach_file">{{__("common.Browse")}} </label>
                                                                     <input type="file" class="d-none" name="file[]" id="attach_file">
                                                                 </button>
                                                             </div>
                                                         </div>
-                                                        <span style="cursor:pointer;" class="btn btn-sm btn-primary icon-only" type="button" id="file_add"> <i class="ti-plus"></i> </span>
+                                                        <span style="cursor:pointer;" class="primary-btn small fix-gr-bg icon-only" type="button" id="file_add"> <i class="ti-plus"></i> </span>
                                                     </div>
 
                                                 </div>
 
                                                 <div class="col-xl-12 text-center mt-3">
-                                                    <button class="btn btn-primary submit" type="submit"><i
+                                                    <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                                             class="ti-check"></i>{{ __('common.Create') }}
                                                     </button>
-                                                    <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                                                    <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                                         <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                                                     </button>
                                                 </div>
@@ -440,11 +440,11 @@
                                                         {{ $file->user_filename}}
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('file.download', ['id' => $file->uuid]) }}" class="btn btn-sm btn-primary icon-only">
+                                                        <a href="{{ route('file.download', ['id' => $file->uuid]) }}" class="primary-btn small fix-gr-bg icon-only">
                                                             <i class="ti-download"></i>
                                                         </a>
                                                         <a href="#" style="cursor: pointer;"
-                                                                      data-url="{{route('client.destroy_my_file', ['id' => $file->uuid])}}" class="btn btn-sm btn-primary icon-only delete_item"><i class="ti-trash"></i></a>
+                                                                      data-url="{{route('client.destroy_my_file', ['id' => $file->uuid])}}" class="primary-btn small fix-gr-bg icon-only delete_item"><i class="ti-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

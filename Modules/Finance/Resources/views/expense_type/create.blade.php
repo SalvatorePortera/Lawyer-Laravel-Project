@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30">{{ __('finance.Add Expense Type') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('expense_types.index'))
-                                    <li><a class="btn btn-primary mr-10" href="{{ route('expense_types.index') }}"><i class="ti-list"></i>{{ __
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('expense_types.index') }}"><i class="ti-list"></i>{{ __
                         ('finance.Expense Type List') }}</a></li>
                                 @endif
                             </ul>
@@ -23,11 +23,11 @@
                         {!! Form::open(['route' => 'expense_types.store', 'class' => 'form-validate-jquery', 'id' => 'content_form', 'files' => false, 'method' => 'POST']) !!}
                         @includeIf('finance::expense_type.components.form')
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Create') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                             </button>
                         </div>

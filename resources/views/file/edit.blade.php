@@ -21,7 +21,7 @@
                             <div class="primary_file_uploader">
                                 <input class="primary-input" type="text" id="placeholderAttachFile" placeholder="{{ __('common.Browse file') }}" readonly>
                                 <button class="" type="button">
-                                    <label class="btn btn-primary btn-sm"
+                                    <label class="primary-btn small fix-gr-bg"
                                            for="attach_file">{{__("common.Browse")}} </label>
                                     <input type="file" class="d-none" name="file" id="attach_file">
                                 </button>
@@ -30,10 +30,10 @@
                     </div>
 
                 <div class="col-xl-12 text-center mt-3">
-                    <button class="btn btn-primary submit" type="submit"><i
+                    <button class="primary-btn fix-gr-bg submit" type="submit"><i
                             class="ti-check"></i>{{ __('common.Update') }}
                     </button>
-                    <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                    <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                         <i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                     </button>
                 </div>

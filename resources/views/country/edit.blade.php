@@ -19,23 +19,23 @@
                         <div class="row">
                                 <div class="primary_input col-md-4">
                                     {{Form::label('name', __('setting.Country Name'),['class' => 'required'])}}
-                                    {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('setting.Country Name')])}}
+                                    {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('setting.Country Name')])}}
                                 </div>
                                 <div class="primary_input col-md-4">
                                     {{Form::label('code', __('setting.Country code'))}}
-                                    {{Form::text('code', null, ['class' => 'form-control', 'placeholder' => __('setting.Country code')])}}
+                                    {{Form::text('code', null, ['class' => 'primary_input_field', 'placeholder' => __('setting.Country code')])}}
                                 </div>
                                 <div class="primary_input col-md-4">
                                     {{Form::label('phonecode', __('setting.Country phone code'))}}
-                                    {{Form::text('phonecode', null, ['class' => 'form-control', 'placeholder' => __('setting.Country phone code')])}}
+                                    {{Form::text('phonecode', null, ['class' => 'primary_input_field', 'placeholder' => __('setting.Country phone code')])}}
                                 </div>
                         </div>
 
                         <div class="text-center mt-3">
-                        <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
+                        <button class="primary-btn semi_large2 fix-gr-bg submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
                                     </button>
 
-                                    <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
+                                    <button class="primary-btn semi_large2 fix-gr-bg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                                     </button>
 
                         </div>

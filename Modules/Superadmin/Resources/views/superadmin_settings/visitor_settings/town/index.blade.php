@@ -6,7 +6,7 @@
             'visitor::lang.town')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" class="btn btn-primary btn-modal pull-right" id="add_button_towns"
+                <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" id="add_button_towns"
                 data-href="{{action('DefaultTownController@create')}}"
                 data-container=".default_towns_model">
                 <i class="fa fa-plus"></i> @lang( 'messages.add' )</button>

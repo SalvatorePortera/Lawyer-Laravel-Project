@@ -31,7 +31,7 @@ class ContactController extends Controller {
 	 * @return Response
 	 */
 	public function create() {
-		$contact_categories = ContactCategory::all()->pluck('name', 'id');
+		$contact_categories = ContactCategory::all()->pluck('name', 'id')->prepend(__('contact.Select Contact Category'), '');
 		$fields = null;
 
 		if (moduleStatusCheck('CustomField')){
@@ -78,18 +78,16 @@ class ContactController extends Controller {
 		$model->email = $request->email;
 		$model->contact_category_id = $request->contact_category_id;
 		$model->description = $request->description;
-        
         if ($request->avatarImage != null) {
             $model->avatar = $this->saveAvatar($request->avatarImage);
         }
-        
         $model->save();
         if (moduleStatusCheck('CustomField')){
             $this->storeFields($model, $request->custom_field, 'contact');
         }
 
 		if($model->email){
-            // dispatch(new WelcomeMailJob(['name' => $model->name, 'email' => $model->email]));
+            dispatch(new WelcomeMailJob(['name' => $model->name, 'email' => $model->email]));
         }
 
 		$response = [
@@ -130,7 +128,7 @@ class ContactController extends Controller {
             $model = Contact::with('customFields')->findOrFail($id);
             $fields = getFieldByType('contact');
         }
-		$contact_categories = ContactCategory::all()->pluck('name', 'id');
+		$contact_categories = ContactCategory::all()->pluck('name', 'id')->prepend(__('contact.Select Contact Category'), '');
 		return view('contact.edit', compact('model', 'contact_categories', 'fields'));
 	}
 

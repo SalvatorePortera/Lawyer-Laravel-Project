@@ -8,7 +8,7 @@
                 <label class="primary_input_label"
                        for="">{{__('holiday.Holiday Name')}}</label>
                 <input type="text" name="holiday_name[]"
-                       class="form-control"
+                       class="primary_input_field"
                        placeholder="{{__('holiday.Holiday Name')}}"
                        value="{{$data['holiday_name'][$key]}}">
                 <span
@@ -19,7 +19,7 @@
             <div class="primary_input mb-15">
                 <label class="primary_input_label"
                        for="">{{__('holiday.Select Type')}} *</label>
-                <select class="form-control select2bs4 mb-15 type" name="type[]">
+                <select class="primary_select mb-15 type" name="type[]">
                     <option
                         value="0" {{$data['type'][$key] == 0 ? 'selected' : ''}}>{{__('holiday.Single Day')}}</option>
                     <option
@@ -42,7 +42,7 @@
                             <div class="col">
                                 <div class="">
                                     <input placeholder="{{ __('common.Date') }}"
-                                           class="form-control primary-input date form-control"
+                                           class="primary_input_field primary-input date form-control"
                                            type="text" name="date[]"
                                            value="{{$data['date'][$key]}}"
                                            autocomplete="off">
@@ -70,7 +70,7 @@
                             <div class="col">
                                 <div class="">
                                     <input placeholder="{{ __('common.Date') }}"
-                                           class="form-control primary-input date form-control"
+                                           class="primary_input_field primary-input date form-control"
                                            type="text"
                                            name="start_date[]"
                                            value="{{$data['start_date'][$key]}}"
@@ -94,7 +94,7 @@
                             <div class="col">
                                 <div class="">
                                     <input placeholder="{{ __('common.Date') }}"
-                                           class="form-control primary-input date form-control"
+                                           class="primary_input_field primary-input date form-control"
                                            type="text" name="end_date[]"
                                            value="{{$data['end_date'][$key]}}"
                                            autocomplete="off">

@@ -91,7 +91,7 @@
 
             @endcomponent
             <div class="col-md-12">
-                <button type="submit" class="btn btn-primary pull-right " id="save_religion_btn">@lang( 'messages.save'
+                <button type="submit" class="primary-btn fix-gr-bg pull-right " id="save_religion_btn">@lang( 'messages.save'
                     )</button>
             </div>
             {!! Form::close() !!}

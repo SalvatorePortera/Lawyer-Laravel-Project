@@ -88,7 +88,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">

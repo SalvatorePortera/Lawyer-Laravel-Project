@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="col-xs-2">
-            <button class="btn btn-primary" type="submit" style="margin-top: 22px;" id="company_package_variable_add">@lang('messages.add')</button>
+            <button class="primary-btn fix-gr-bg" type="submit" style="margin-top: 22px;" id="company_package_variable_add">@lang('messages.add')</button>
         </div>
         {!! Form::close() !!}
     </div>

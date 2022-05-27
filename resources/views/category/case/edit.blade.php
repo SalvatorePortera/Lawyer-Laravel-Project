@@ -19,20 +19,20 @@
                         'form-validate-jquery', 'id' => 'content_form', 'method' => 'PUT']) !!}
                         <div class="primary_input">
                             {{Form::label('name', __('case.Name'),['class' => 'required'])}}
-                            {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('case.Case Category Name')])}}
+                            {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('case.Case Category Name')])}}
                         </div>
 
                         <div class="primary_input">
                             {{Form::label('description', __('case.Description'))}}
-                            {{Form::textarea('description', null, ['class' => 'form-control', 'placeholder' =>
+                            {{Form::textarea('description', null, ['class' => 'primary_input_field', 'placeholder' =>
                             __('case.Case Category Description'), 'rows' => 5 ])}}
                         </div>
 
                         <div class="text-center mt-3">
-                        <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
+                        <button class="primary-btn fix-gr-bg submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
                         </button>
 
-                        <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
+                        <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                         </button>
                         </div>
                         {!! Form::close() !!}

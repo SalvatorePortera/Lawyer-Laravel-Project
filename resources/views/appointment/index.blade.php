@@ -12,7 +12,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px" >{{ __('appointment.Appointment') }}</h3>
                             <ul class="d-flex">
                             @if(permissionCheck('appointment.store'))
-                                <li><a class="btn btn-primary" href="{{ route('appointment.create') }}"><i class="ti-plus"></i>{{ __
+                                <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('appointment.create') }}"><i class="ti-plus"></i>{{ __
                         ('appointment.New Appointment') }}</a></li>
                         @endif
                             </ul>
@@ -47,7 +47,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                        <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                        <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                                 id="dropdownMenu2" data-toggle="dropdown"
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false">

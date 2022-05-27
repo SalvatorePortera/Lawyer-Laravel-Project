@@ -37,8 +37,8 @@
                     </div>
                     @endif
 
-                   <button type="submit" class="offset-3 col-sm-6 btn btn-primary mt-40 submit bc-color" >{{ __('service::install.lets_go_next') }}</button>
-                   <button type="button" class="offset-3 col-sm-6 btn btn-primary mt-40 submitting bc-color" disabled style="display:none">{{ __('service::install.submitting') }}</button>
+                   <button type="submit" class="offset-3 col-sm-6 primary-btn fix-gr-bg mt-40 submit bc-color" >{{ __('service::install.lets_go_next') }}</button>
+                   <button type="button" class="offset-3 col-sm-6 primary-btn fix-gr-bg mt-40 submitting bc-color" disabled style="display:none">{{ __('service::install.submitting') }}</button>
                 </form>
             </div>
 

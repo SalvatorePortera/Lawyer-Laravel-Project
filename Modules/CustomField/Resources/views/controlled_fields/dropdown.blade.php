@@ -7,7 +7,7 @@
     @endphp
 
     <select name="controlled_field_value"
-            id="controlled_field_value" class="form-control select2bs4" data-parsley-errors-container="#controlled_field_value_error">
+            id="controlled_field_value" class="primary_select" data-parsley-errors-container="#controlled_field_value_error">
 
         @foreach($field_values as $field_value)
             <option value="{{ trim($field_value) }}" @if($value == $field_value) selected @endif>{{ trim($field_value) }}</option>

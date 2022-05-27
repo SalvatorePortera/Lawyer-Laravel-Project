@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30">{{ __('finance.Update Bank Account') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('bank_accounts.index'))
-                                    <li><a class="btn btn-primary mr-10" href="{{ route('bank_accounts.index') }}"><i class="ti-list"></i>{{ __
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('bank_accounts.index') }}"><i class="ti-list"></i>{{ __
                         ('finance.Bank Account List') }}</a></li>
                                 @endif
                             </ul>
@@ -23,11 +23,11 @@
                         {!! Form::model($model, ['route' => ['bank_accounts.update', $model->id], 'class' => 'form-validate-jquery', 'id' => 'content_form', 'files' => false, 'method' => 'Put']) !!}
                         @includeIf('finance::bank_account.components.form')
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Update') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                             </button>
                         </div>

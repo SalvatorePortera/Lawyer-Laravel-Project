@@ -16,21 +16,21 @@
                     <input type="hidden" name="quick_add" value="1">
                     <div class="primary_input">
                         {{Form::label('name', __('court.Name'), ['class' => 'required'])}}
-                        {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('court.Court Category Name')])}}
+                        {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('court.Court Category Name')])}}
                     </div>
 
                     <div class="primary_input">
                         {{Form::label('description', __('court.Description'))}}
-                        {{Form::textarea('description', null, ['class' => 'form-control', 'placeholder' =>  __('court.Client Category Description'), 'rows' => 5, 'maxlength' => 1500, 'data-parsley-errors-container' => '#description_error' ])}}
+                        {{Form::textarea('description', null, ['class' => 'primary_input_field', 'placeholder' =>  __('court.Client Category Description'), 'rows' => 5, 'maxlength' => 1500, 'data-parsley-errors-container' => '#description_error' ])}}
                         <span id="description_error"></span>
                     </div>
 
                     <div class="text-center mt-3">
-                        <button class="btn btn-primary submit" type="submit"><i
+                        <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                 class="ti-check"></i>{{ __('common.Create') }}
                         </button>
 
-                        <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                        <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                             <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                         </button>
                     </div>

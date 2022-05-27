@@ -6,7 +6,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border bg-primary-dark">
                     <h3 class="box-title"><label>@lang('hr::lang.workshift_list')</label></h3>
-                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal"
+                    <button type="button" class="primary-btn fix-gr-bg pull-right" data-toggle="modal"
                         data-target="#working_shift_modal">@lang('hr::lang.add_workshift')</button>
                 </div>
                 <div class="box-body">

@@ -15,7 +15,7 @@
                     <img class="img-fluid" src="{{asset(getConfigValueByKey($config,'login_backgroud_image')) }}" alt="Login background image" id="login_bg_image">
                 </div>
                 <div class="update_logo_btn">
-                    <button class="btn btn-sm btn-primary " type="button">
+                    <button class="primary-btn small fix-gr-bg " type="button">
                         <input placeholder="Upload Image" type="file" name="login_backgroud_image"  onchange="imageChangeWithFile(this, '#login_bg_image' )" id="login_backgroud_image">
                         {{ __('setting.Upload Image') }}
                     </button>
@@ -27,10 +27,10 @@
     </div>
 
     <div class="submit_btn text-center mt-4">
-        <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i>{{ __('common.Save') }}
+        <button class="primary-btn fix-gr-bg submit" type="submit"><i class="ti-check"></i>{{ __('common.Save') }}
         </button>
 
-        <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Saving') }}
+        <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Saving') }}
         </button>
 
     </div>

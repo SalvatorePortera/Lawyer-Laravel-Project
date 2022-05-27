@@ -20,28 +20,28 @@
 
                                 @if($model->judgement_status=='Open' OR $model->judgement_status=='Reopen')
                                 <a href="{{route('date.create', ['case' => $model->id])}}"
-                                    class="btn btn-primary btn-sm"><i
+                                    class="primary-btn small fix-gr-bg"><i
                                         class="icon-calendar3 mr-2"></i>{{ __('case.New Date') }}</a>
                                 <a href="{{route('putlist.create', ['case' => $model->id])}}"
-                                    class="btn btn-primary btn-sm"><i
+                                    class="primary-btn small fix-gr-bg"><i
                                         class="icon-calendar3 mr-2"></i>{{ __('case.New Put Up Date') }}</a>
                                 <a href="{{route('lobbying.create', ['case' => $model->id])}}"
-                                    class="btn btn-primary btn-sm"><i
+                                    class="primary-btn small fix-gr-bg"><i
                                         class="icon-calendar3 mr-2"></i>{{ __('case.New Lobbying') }}</a>
                                 <a href="{{route('judgement.create', ['case' => $model->id])}}"
-                                    class="btn btn-primary btn-sm"><i
+                                    class="primary-btn small fix-gr-bg"><i
                                         class="icon-calendar3 mr-2"></i>{{ __('case.Judgement') }}</a>
                                 @endif
                                 @if($model->judgement_status=='Judgement')
                                 <a href="{{route('judgement.reopen', ['case' => $model->id])}}"
-                                    class="btn btn-primary btn-sm"><i
+                                    class="primary-btn small fix-gr-bg"><i
                                         class="icon-calendar3 mr-2"></i>{{ __('case.Re-open') }}</a>
                                 <a href="{{route('judgement.close', ['case' => $model->id])}}"
-                                    class="btn btn-primary btn-sm"><i
+                                    class="primary-btn small fix-gr-bg"><i
                                         class="icon-calendar3 mr-2"></i>{{ __('case.Close') }}</a>
                                 @endif
 
-                                <span class="btn btn-primary btn-sm printMe"><i class="icon-printer mr-2"></i>
+                                <span class="primary-btn small fix-gr-bg printMe"><i class="icon-printer mr-2"></i>
                                     {{ __('case.Print') }}
                                 </span>
 
@@ -85,8 +85,8 @@
                                                 </div>
                                                 <div class="value">
 
-                                                <a href="{{route('lobbying.edit', [$date->id, 'case' => $model->id])}}" class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
-                                                <span style="cursor: pointer;" data-url="{{route('lobbying.destroy', $date->id)}}" id="delete_item" class="btn btn-primary btn-sm" >{{__('common.Delete')}}</span>
+                                                <a href="{{route('lobbying.edit', [$date->id, 'case' => $model->id])}}" class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
+                                                <span style="cursor: pointer;" data-url="{{route('lobbying.destroy', $date->id)}}" id="delete_item" class="primary-btn small fix-gr-bg" >{{__('common.Delete')}}</span>
                                         
                                                 </div>
                                             </div>
@@ -122,8 +122,8 @@
                                                 </div>
                                                 <div class="value">
 
-                                                <a href="{{route('putlist.edit', [$date->id, 'case' => $model->id])}}" class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
-                                                <span style="cursor: pointer;" data-url="{{route('putlist.destroy', $date->id)}}" id="delete_item" class="btn btn-primary btn-sm" >{{__('common.Delete')}}</span>
+                                                <a href="{{route('putlist.edit', [$date->id, 'case' => $model->id])}}" class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
+                                                <span style="cursor: pointer;" data-url="{{route('putlist.destroy', $date->id)}}" id="delete_item" class="primary-btn small fix-gr-bg" >{{__('common.Delete')}}</span>
                                                
                                                 </div>
                                             </div>
@@ -159,8 +159,8 @@
                                                 </div>
                                                 <div class="value">
 
-                                                <a href="{{route('date.edit', [$date->id, 'case' => $model->id])}}" class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
-                                                <span style="cursor: pointer;" data-url="{{route('date.destroy', $date->id)}}" id="delete_item" class="btn btn-primary btn-sm" >{{__('common.Delete')}}</span>
+                                                <a href="{{route('date.edit', [$date->id, 'case' => $model->id])}}" class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
+                                                <span style="cursor: pointer;" data-url="{{route('date.destroy', $date->id)}}" id="delete_item" class="primary-btn small fix-gr-bg" >{{__('common.Delete')}}</span>
                                                
                                                 </div>
                                             </div>
@@ -196,8 +196,8 @@
                                                 </div>
                                                 <div class="value">
 
-                                                <a href="{{route('date.edit', [$date->id, 'case' => $model->id])}}" class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
-                                                <span style="cursor: pointer;" data-url="{{route('date.destroy', $date->id)}}" id="delete_item" class="btn btn-primary btn-sm" >{{__('common.Delete')}}</span>
+                                                <a href="{{route('date.edit', [$date->id, 'case' => $model->id])}}" class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
+                                                <span style="cursor: pointer;" data-url="{{route('date.destroy', $date->id)}}" id="delete_item" class="primary-btn small fix-gr-bg" >{{__('common.Delete')}}</span>
                                                
                                                 </div>
                                             </div>
@@ -233,8 +233,8 @@
                                                 </div>
                                                 <div class="value">
 
-                                                <a href="{{route('judgement.edit', [$date->id, 'case' => $model->id])}}" class="btn btn-primary btn-sm">{{ __('common.Edit') }}</a>
-                                                <span style="cursor: pointer;" data-url="{{route('judgement.destroy', $date->id)}}" id="delete_item" class="btn btn-primary btn-sm" >{{__('common.Delete')}}</span>
+                                                <a href="{{route('judgement.edit', [$date->id, 'case' => $model->id])}}" class="primary-btn small fix-gr-bg">{{ __('common.Edit') }}</a>
+                                                <span style="cursor: pointer;" data-url="{{route('judgement.destroy', $date->id)}}" id="delete_item" class="primary-btn small fix-gr-bg" >{{__('common.Delete')}}</span>
                                                
                                                 </div>
                                             </div>
@@ -305,10 +305,10 @@
                                                 </div>
                                                 <div class="value">
                                                 @if(permissionCheck('date.edit'))
-                                                <a href="{{route('date.edit', [$date->id, 'case' => $model->id])}}" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="{{route('date.edit', [$date->id, 'case' => $model->id])}}" class="primary-btn small fix-gr-bg">Edit</a>
                                                 @endif
                                                 @if(permissionCheck('date.destroy'))
-                                                <span style="cursor: pointer;" data-url="{{route('date.destroy', $date->id)}}" id="delete_item" class="btn btn-primary btn-sm" >{{__('case.Delete')}}</span>
+                                                <span style="cursor: pointer;" data-url="{{route('date.destroy', $date->id)}}" id="delete_item" class="primary-btn small fix-gr-bg" >{{__('case.Delete')}}</span>
                                                 @endif
                                                
                                                 </div>

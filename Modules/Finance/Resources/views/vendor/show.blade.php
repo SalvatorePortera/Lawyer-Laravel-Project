@@ -1,18 +1,6 @@
 @extends('finance::layouts.master', ['title' => __('vendor.Vendor Details')])
 @section('mainContent')
-<section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>{{ __('vendor.Vendor Details') }}</h1>
-        </div>
-        <div class="col-sm-6">
-
-       </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
-<section class="mb-40 student-details">
+    <section class="mb-40 student-details">
         @if(session()->has('message-success'))
             <div class="alert alert-success">
                 {{ session()->get('message-success') }}
@@ -25,10 +13,13 @@
         <div class="container-fluid pt-3">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-header"></div>
+                    <div class="main-title">
+                        <h3 class="mb-20">@lang('vendor.Vendor Details')</h3>
+                    </div>
+                    <div class="student-meta-box">
+                        <div class="student-meta-top"></div>
 
-                        <div class="card-body">
+                        <div class="white-box">
                             <div class="single-meta mt-10">
                                 <div class="d-flex justify-content-between">
                                     <div class="name">
@@ -85,7 +76,7 @@
                         @endif
 
                         <li class="nav-item edit-button">
-                            <a href="{{ route('vendors.edit', $model->id) }}" class="btn btn-sm btn-primary"
+                            <a href="{{ route('vendors.edit', $model->id) }}" class="primary-btn small fix-gr-bg"
                             >{{ __('common.Edit') }}
                             </a>
                         </li>
@@ -94,21 +85,24 @@
                     <div class="tab-content">
                         <!-- Start Profile Tab -->
                         <div role="tabpanel" class="tab-pane fade show active" id="studentProfile">
-                            <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-5 col-md-5">
-                                        <div class="">
-                                            {{ __('vendor.Name') }}
+                            <div class="white-box">
+                                <h4 class="stu-sub-head">{{ __('vendor.Vendor Info') }}</h4>
+                                <div class="single-info">
+                                    <div class="row">
+                                        <div class="col-lg-5 col-md-5">
+                                            <div class="">
+                                                {{ __('vendor.Name') }}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6">
-                                        <div class="">
-                                            @if(isset($model)){{$model->name}}@endif
+                                        <div class="col-lg-7 col-md-6">
+                                            <div class="">
+                                                @if(isset($model)){{$model->name}}@endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                <div class="single-info">
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5">
                                             <div class="">
@@ -121,7 +115,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
+                                <div class="single-info">
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5">
                                             <div class="">
@@ -134,6 +130,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="single-info">
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5">
                                             <div class="">
@@ -146,7 +145,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
+                                <div class="single-info">
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5">
                                             <div class="">
@@ -159,8 +160,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
 
+                                <div class="single-info">
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5">
                                             <div class="">
@@ -173,8 +176,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-
+                                <div class="single-info">
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5">
                                             <div class="">
@@ -187,9 +191,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
 
-
+                                <div class="single-info">
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5">
                                             <div class="">
@@ -202,7 +207,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                </div>
 
                                 @if(moduleStatusCheck('CustomField') and $model->customFields)
                                     @includeIf('customfield::details.show', ['customFields' => $model->customFields])
@@ -210,14 +215,13 @@
 
 
                             </div>
-                            </div>
                         </div>
 
                         @if(moduleStatusCheck('Finance'))
                             <div role="tabpanel" class="tab-pane fade" id="invoicesTab">
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <table class="check_box_table table table-sm table-striped">
+                                <div class="QA_section QA_section_heading_custom check_box_table">
+                                    <div class="QA_table ">
+                                        <table class="check_box_table table table-sm Crm_table_active ">
                                             <thead>
                                             <tr>
                                                 <th scope="col">{{ __('common.SL') }}</th>
@@ -256,7 +260,7 @@
                                                     <td class="d-print-none text-center">
 
                                                         <div class="dropdown CRM_dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle"
+                                                            <button class="primary-btn fix-gr-bg dropdown-toggle"
                                                                     type="button"
                                                                     id="dropdownMenu2" data-toggle="dropdown"
                                                                     aria-haspopup="true"

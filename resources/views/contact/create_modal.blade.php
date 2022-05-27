@@ -21,39 +21,39 @@
                                 {{Form::label('contact_category_id', __('contact.Category'))}}
 
                             </div>
-                            {{Form::select('contact_category_id', $contact_categories, null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#contact_category_id_error'])}}
+                            {{Form::select('contact_category_id', $contact_categories, null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#contact_category_id_error'])}}
                             <span id="contact_category_id_error"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="primary_input col-md-12">
                             {{Form::label('name', __('contact.Name'), ['class' => 'required'])}}
-                            {{Form::text('name', null, ['required' => '','class' => 'form-control required', 'placeholder' => __('contact.Name')])}}
+                            {{Form::text('name', null, ['required' => '','class' => 'primary_input_field required', 'placeholder' => __('contact.Name')])}}
                         </div>
                         <div class="primary_input col-md-6">
                             {{Form::label('mobile_no', __('contact.Mobile No'))}}
-                            {{Form::number('mobile_no', null, ['class' => 'form-control ', 'placeholder' => __('contact.Mobile No')])}}
+                            {{Form::number('mobile_no', null, ['class' => 'primary_input_field ', 'placeholder' => __('contact.Mobile No')])}}
                         </div>
                         <div class="primary_input col-md-6">
                             {{Form::label('email', __('contact.Email'))}}
-                            {{Form::email('email', null, ['class' => 'form-control', 'placeholder' => __('contact.Email')])}}
+                            {{Form::email('email', null, ['class' => 'primary_input_field', 'placeholder' => __('contact.Email')])}}
                         </div>
                     </div>
 
                     @includeIf('customfield::fields', ['fields' => $fields, 'model' => null])
                     <div class="primary_input">
                         {{Form::label('description', __('contact.Description'))}}
-                        {{Form::textarea('description', null, ['class' => 'form-control summernote', 'placeholder' => __('contact.Contact Description'), 'rows' => 5, 'data-parsley-errors-container' =>
+                        {{Form::textarea('description', null, ['class' => 'primary_input_field summernote', 'placeholder' => __('contact.Contact Description'), 'rows' => 5, 'data-parsley-errors-container' =>
                         '#description_error' ])}}
                         <span id="description_error"></span>
                     </div>
 
                     <div class="text-center mt-3">
-                        <button class="btn btn-primary submit" type="submit"><i
+                        <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                 class="ti-check"></i>{{ __('common.Create') }}
                         </button>
 
-                        <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                        <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                             <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                         </button>
                     </div>

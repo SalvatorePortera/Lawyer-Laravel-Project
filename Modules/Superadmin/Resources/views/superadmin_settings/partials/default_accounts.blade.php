@@ -38,7 +38,7 @@
                         <div class="tab-pane @if(!session('status.account_default')) active @endif" id="other_accounts">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <button type="button" id="add_button" class="btn btn-primary btn-modal pull-right" 
+                                    <button type="button" id="add_button" class="primary-btn fix-gr-bg btn-modal pull-right" 
                                         data-container=".default_account_model"
                                         data-href="{{action('DefaultAccountController@create')}}">
                                         <i class="fa fa-plus"></i> @lang( 'messages.add' )</button>
@@ -63,7 +63,7 @@
                         <div class="tab-pane @if(session('status.account_default')) active @endif" id="account_types">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="button" class="btn btn-primary btn-modal pull-right" 
+                                    <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" 
                                         data-href="{{action('DefaultAccountTypeController@create')}}"
                                         data-container=".default_account_type_model">
                                         <i class="fa fa-plus"></i> @lang( 'messages.add' )</button>
@@ -86,7 +86,7 @@
                                                     <td>
                                                         
                                                         {!! Form::open(['url' => action('DefaultAccountTypeController@destroy', $account_type->id), 'method' => 'delete' ]) !!}
-                                                        <button type="button" class="btn btn-primary btn-modal btn-xs" 
+                                                        <button type="button" class="primary-btn fix-gr-bg btn-modal btn-xs" 
                                                         data-href="{{action('DefaultAccountTypeController@edit', $account_type->id)}}"
                                                         data-container=".default_account_type_model">
                                                         <i class="fa fa-edit"></i> @lang( 'messages.edit' )</button>
@@ -103,7 +103,7 @@
                                                             
     
                                                             {!! Form::open(['url' => action('DefaultAccountTypeController@destroy', $sub_type->id), 'method' => 'delete' ]) !!}
-                                                                <button type="button" class="btn btn-primary btn-modal btn-xs" 
+                                                                <button type="button" class="primary-btn fix-gr-bg btn-modal btn-xs" 
                                                             data-href="{{action('DefaultAccountTypeController@edit', $sub_type->id)}}"
                                                             data-container=".default_account_type_model">
                                                             <i class="fa fa-edit"></i> @lang( 'messages.edit' )</button>
@@ -122,7 +122,7 @@
                         <div class="tab-pane @if(session('status.account_default_group')) active @endif" id="account_groups">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="button" class="btn btn-primary btn-modal pull-right" id="add_acount_group_btn"
+                                    <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" id="add_acount_group_btn"
                                         data-href="{{action('DefaultAccountGroupController@create')}}"
                                         data-container=".default_account_group_model">
                                         <i class="fa fa-plus"></i> @lang( 'messages.add' )</button>

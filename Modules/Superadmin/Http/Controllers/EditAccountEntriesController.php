@@ -451,7 +451,7 @@ class EditAccountEntriesController extends Controller
                         if (strpos($row->attachment, 'jpg') || strpos($row->attachment, 'jpeg') || strpos($row->attachment, 'png')) {
                             $action = '<a href="#"
                             data-href="' . action("AccountController@imageModal", ["title" => "View", "url" => url($row->attachment)]) . '"
-                            class="btn-modal btn-xs btn btn-primary"
+                            class="btn-modal btn-xs primary-btn fix-gr-bg"
                             data-container=".view_modal">' . __("messages.view") . '</a>';
                         } else {
                             $action = '<a class="btn btn-default btn-xs" href="' . url($row->attachment) . '"><i class="fa fa-donwload"></i> ' . __('lang_v1.download') . '</a>';

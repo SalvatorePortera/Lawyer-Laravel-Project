@@ -97,7 +97,7 @@
                                             <div class="no-gutters input-right-icon">
                                                 <div class="col">
                                                     <div class="">
-                                                        {{ Form::text('date_range', null, ['class' => 'form-control primary-input form-control', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
+                                                        {{ Form::text('date_range', null, ['class' => 'primary_input_field primary-input form-control', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
 
                                                     </div>
                                                 </div>
@@ -113,7 +113,7 @@
                                 <input type="hidden" id="start">
                                 <input type="hidden" id="end">
                                 <div class="col-lg-6 mt-10">
-                                    <button type="submit" class="btn btn-sm btn-primary submit">
+                                    <button type="submit" class="primary-btn small fix-gr-bg submit">
                                         <span class="ti-search pr-2"></span>
                                         {{ __('common.Search') }}</button>
                                 </div>

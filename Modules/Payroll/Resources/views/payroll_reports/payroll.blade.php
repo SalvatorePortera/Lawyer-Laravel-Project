@@ -18,7 +18,7 @@
                                 <div class="col-lg-4">
                                     <div class="primary_input mb-15">
                                         <label class="primary_input_label" for="">{{ __('payroll.Select Role') }}</label>
-                                        <select class="form-control select2bs4 mb-15" name="role_id" id="role_id">
+                                        <select class="primary_select mb-15" name="role_id" id="role_id">
                                             <option selected disabled>{{__('payroll.Choose One')}}</option>
                                             @foreach (\Modules\RolePermission\Entities\Role::where('id', '!=', 1)->get() as $role)
                                                 @isset($r)
@@ -34,7 +34,7 @@
                                 <div class="col-lg-4">
                                     <div class="primary_input mb-15">
                                         <label class="primary_input_label" for="">{{ __('payroll.Select Month') }}</label>
-                                        <select class="form-control select2bs4 mb-15" name="month" id="month">
+                                        <select class="primary_select mb-15" name="month" id="month">
                                             @foreach ($months as $month)
                                                 @isset($m)
                                                     <option value="{{ $month }}"@if ($m == $month) selected @endif>{{ __('common.'.$month) }}</option>
@@ -49,7 +49,7 @@
                                 <div class="col-lg-4">
                                     <div class="primary_input mb-15">
                                         <label class="primary_input_label" for="">{{ __('payroll.Select Year') }}</label>
-                                        <select class="form-control select2bs4 mb-15" name="year" id="year">
+                                        <select class="primary_select mb-15" name="year" id="year">
                                             @foreach (range(\carbon\Carbon::now()->year, 2015) as $year)
                                                 @isset($y)
                                                     <option value="{{ $year }}"@if ($y == $year) selected @endif>{{ $year }}</option>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 mb-2 mt-3 text-right">
-                                        <button type="submit" class="btn btn-sm btn-primary"id="save_button_parent"><i class="fa fa-search"></i> {{ __('payroll.Search') }}</button>
+                                        <button type="submit" class="primary-btn btn-sm fix-gr-bg"id="save_button_parent"><i class="ti-search"></i>{{ __('payroll.Search') }}</button>
                                 </div>
                             </div>
                         </form>
@@ -80,11 +80,11 @@
                         </div>
                     </div>
                     <div class="col-lg-12 mt-40">
-
-                            <div class="card">
+                        <div class="QA_section QA_section_heading_custom check_box_table">
+                            <div class="QA_table ">
                                 <!-- table-responsive -->
-                                <div class="card-body">
-                                    <table class="table table-striped table-hover dt">
+                                <div class="">
+                                    <table class="table Crm_table_active3">
                                         <thead>
                                             <tr>
                                                 <th scope="col">{{ __('common.SL') }}</th>
@@ -128,7 +128,7 @@
                                     </table>
                                 </div>
                             </div>
-
+                        </div>
                     </div>
                 @endisset
             </div>

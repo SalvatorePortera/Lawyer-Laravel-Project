@@ -4,7 +4,7 @@
     </div>
     <div class="col-md-6 text-right">
         <a href="{{route('year.data',$holiday->id)}}"
-           class="btn btn-sm btn-primary text-uppercase bord-rad">
+           class="primary-btn small fix-gr-bg text-uppercase bord-rad">
             {{__('common.Edit')}} <span class="ti-pencil"></span>
         </a>
     </div>

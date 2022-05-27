@@ -21,7 +21,7 @@
 
         <div class="row mt-40">
             <div class="col-lg-12 text-center">
-                <button class="btn btn-primary">
+                <button class="primary-btn fix-gr-bg">
                     <span class="ti-check"></span>
                     @lang('common.Submit')
                 </button>

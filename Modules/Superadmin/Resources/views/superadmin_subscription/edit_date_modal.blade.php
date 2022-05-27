@@ -28,7 +28,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">@lang( "superadmin::lang.update")</button>
+        <button type="submit" class="primary-btn fix-gr-bg">@lang( "superadmin::lang.update")</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">@lang( "superadmin::lang.close")</button>
       </div>
       {!! Form::close() !!}

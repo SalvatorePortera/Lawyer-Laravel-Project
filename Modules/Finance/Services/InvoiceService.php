@@ -63,14 +63,13 @@ class InvoiceService
         $end= gv($request, 'end');
         return $this->model->whereBetween('invoice_date', [$start,$end])->where('payment_status','!=','paid')->where('invoice_type','=','income')->get();
     }
-
-
+   
+    
     public function findById($id, $invoice_type = null){
         $model = $this->model->with(['items', 'items.service', 'transactions']);
-
-        // if ($invoice_type){
-        //     return $model->where('invoice_type', $invoice_type)->findOrFail($id);
-        // }
+        if ($invoice_type){
+            return $model->where('invoice_type', $invoice_type)->findOrFail($id);
+        }
 
         return $model->findOrFail($id);
 
@@ -121,12 +120,12 @@ class InvoiceService
                 $this->storeFields($model, gv($requests, 'custom_field', []), gv($requests, 'invoice_type', ''). '_invoice');
             }
             $model->items()->saveMany($this->formatInvoiceItemRequest(gv($requests, 'item_row', [])));
-
-
+            
+            
             if (gv($requests, 'paid', 0) > 0){
                 $this->transactionService->store($this->formatTransactionRequest($requests, $model));
             }
-
+            
             DB::commit();
 
             return $model;

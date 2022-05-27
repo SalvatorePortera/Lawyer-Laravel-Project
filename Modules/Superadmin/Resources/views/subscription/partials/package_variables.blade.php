@@ -197,8 +197,8 @@
             {!! Form::hidden('option_variables_selected', null, ['id' => 'option_variables_selected']) !!}
             {!! Form::hidden('module_selected', null, ['id' => 'module_selected']) !!}
             @auth
-            <button type="submit" class="btn btn-primary">Pay</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="submit" class="primary-btn fix-gr-bg">Pay</button>
+            <button type="button" class="primary-btn fix-gr-bg" data-dismiss="modal">Close</button>
             @endauth
             @guest
             @if($package->hospital_system && in_array('patient' , json_decode($package->hospital_business_type)))

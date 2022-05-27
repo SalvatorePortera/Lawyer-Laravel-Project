@@ -11,7 +11,7 @@
                 <div class="primary_input">
                     <input type="hidden" name="types[]" value="MAIL_MAILER">
                     <label class="primary_input_label" for="">{{ __('setting.Email Protocol') }}</label>
-                    <select class="form-control select2bs4 mb-25" name="mail_protocol" onchange="smtp_form()" id="mail_mailer">
+                    <select class="primary_select mb-25" name="mail_protocol" onchange="smtp_form()" id="mail_mailer">
                         <option value="smtp"@if (config('configs')->where('key','mail_protocol')->first()->value == "smtp") selected @endif>SMTP</option>
                         <option value="sendmail"@if (config('configs')->where('key','mail_protocol')->first()->value == "sendmail") selected @endif>PHP Mail</option>
                     </select>
@@ -23,7 +23,7 @@
                 <div class="primary_input mb-25">
                     <input type="hidden" name="types[]" value="MAIL_FROM_NAME">
                     <label class="primary_input_label" for="">{{ __('setting.From Name') }}*</label>
-                    <input class="form-control" placeholder="Infix CRM" type="text" name="MAIL_FROM_NAME" value="{{ env('MAIL_FROM_NAME') }}">
+                    <input class="primary_input_field" placeholder="Infix CRM" type="text" name="MAIL_FROM_NAME" value="{{ env('MAIL_FROM_NAME') }}">
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
                 <div class="primary_input mb-25">
                     <input type="hidden" name="types[]" value="MAIL_FROM_ADDRESS">
                     <label class="primary_input_label" for="">{{ __('setting.From Mail') }}*</label>
-                    <input class="form-control" placeholder="demo@infix.com" type="email" name="MAIL_FROM_ADDRESS" value="{{ env('MAIL_FROM_ADDRESS') }}">
+                    <input class="primary_input_field" placeholder="demo@infix.com" type="email" name="MAIL_FROM_ADDRESS" value="{{ env('MAIL_FROM_ADDRESS') }}">
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <div class="primary_input mb-25">
                     <input type="hidden" name="types[]" value="MAIL_HOST">
                     <label class="primary_input_label" for="">{{ __('setting.Mail Host') }}</label>
-                    <input class="form-control" placeholder="-" type="text" name="MAIL_HOST" value="{{ env('MAIL_HOST') }}">
+                    <input class="primary_input_field" placeholder="-" type="text" name="MAIL_HOST" value="{{ env('MAIL_HOST') }}">
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                 <div class="primary_input mb-25">
                     <input type="hidden" name="types[]" value="MAIL_PORT">
                     <label class="primary_input_label" for="">{{ __('setting.Mail Port') }}</label>
-                    <input class="form-control" placeholder="-" type="text" name="MAIL_PORT" value="{{ env('MAIL_PORT') }}">
+                    <input class="primary_input_field" placeholder="-" type="text" name="MAIL_PORT" value="{{ env('MAIL_PORT') }}">
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
                 <div class="primary_input mb-25">
                     <input type="hidden" name="types[]" value="MAIL_USERNAME">
                     <label class="primary_input_label" for="">{{ __('setting.Mail Username') }}</label>
-                    <input class="form-control" placeholder="-" type="text" name="MAIL_USERNAME" value="{{ env('MAIL_USERNAME') }}">
+                    <input class="primary_input_field" placeholder="-" type="text" name="MAIL_USERNAME" value="{{ env('MAIL_USERNAME') }}">
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
                 <div class="primary_input mb-25">
                     <input type="hidden" name="types[]" value="MAIL_PASSWORD">
                     <label class="primary_input_label" for="">{{ __('setting.Mail Password') }}</label>
-                    <input class="form-control" placeholder="-" type="password" name="MAIL_PASSWORD" value="{{ env('MAIL_PASSWORD') }}">
+                    <input class="primary_input_field" placeholder="-" type="password" name="MAIL_PASSWORD" value="{{ env('MAIL_PASSWORD') }}">
                 </div>
             </div>
 
@@ -73,7 +73,7 @@
                 <div class="primary_input">
                     <input type="hidden" name="types[]" value="MAIL_ENCRYPTION">
                     <label class="primary_input_label" for="">{{ __('setting.Mail Encryption') }}</label>
-                    <select name="MAIL_ENCRYPTION" class="form-control select2bs4 mb-25">
+                    <select name="MAIL_ENCRYPTION" class="primary_select mb-25">
                         <option value="ssl" @if (env('MAIL_ENCRYPTION') == "ssl") selected @endif>SSL</option>
                         <option value="tls" @if (env('MAIL_ENCRYPTION') == "tls") selected @endif>TLS</option>
                     </select>
@@ -84,7 +84,7 @@
         <div class="row">
             <div class="col-12 mb-45 pt_15">
                 <div class="submit_btn text-center">
-                    <button class="btn btn-primary" type="submit"> <i class="ti-check"></i> {{ __('common.Save') }}</button>
+                    <button class="primary-btn fix-gr-bg" type="submit"> <i class="ti-check"></i> {{ __('common.Save') }}</button>
                 </div>
             </div>
         </div>
@@ -96,14 +96,14 @@
             <div class="col-xl-12">
                 <div class="primary_input mb-25">
                     {{ Form::label('email', __('setting.Send a Test Email to') , ['class' => 'primary_input_label required']) }}
-                    {{ Form::email('email', null , ["class" => "form-control", "placeholder" => __('setting.Send a Test Email to'), "required"]) }}
+                    {{ Form::email('email', null , ["class" => "primary_input_field", "placeholder" => __('setting.Send a Test Email to'), "required"]) }}
 
                 </div>
             </div>
             <div class="col-xl-12">
                 <div class="primary_input mb-25">
                     {{ Form::label('content', __('setting.Mail Text') , ['class' => 'primary_input_label required']) }}
-                    {{ Form::text('content', 'This is test mail' , ["class" => "form-control", "placeholder" => __('setting.Mail Text'), "required"]) }}
+                    {{ Form::text('content', 'This is test mail' , ["class" => "primary_input_field", "placeholder" => __('setting.Mail Text'), "required"]) }}
                 </div>
             </div>
         </div>

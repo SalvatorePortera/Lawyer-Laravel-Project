@@ -33,13 +33,13 @@
             </td>
             <td>
                 @if(permissionCheck($type.'.edit'))
-                        <span  class="btn btn-primary btn-sm icon-only  btn-modal" data-container="file_modal" data-href="{{ route('file.edit', $file->uuid) }}" style="cursor: pointer;"><i class="ti-pencil"></i></span>
+                        <span  class="primary-btn small fix-gr-bg icon-only  btn-modal" data-container="file_modal" data-href="{{ route('file.edit', $file->uuid) }}" style="cursor: pointer;"><i class="ti-pencil"></i></span>
                     @endif
                     @if(permissionCheck($type.'.destroy'))
                         <span style="cursor: pointer;"
-                              data-url="{{route('file.destroy', $file->uuid)}}" id="delete_item" class="btn btn-primary btn-sm icon-only"><i class="ti-trash"></i></span>
+                              data-url="{{route('file.destroy', $file->uuid)}}" id="delete_item" class="primary-btn small fix-gr-bg icon-only"><i class="ti-trash"></i></span>
                     @endif
-                    <a href="{{ route('file.download', ['id' => $file->uuid]) }}" class="btn btn-primary btn-sm icon-only">
+                    <a href="{{ route('file.download', ['id' => $file->uuid]) }}" class="primary-btn small fix-gr-bg icon-only">
                                                             <i class="ti-download"></i>
                                                         </a>
             </td>

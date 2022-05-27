@@ -2,38 +2,36 @@
 
 @section('mainContent')
 
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('case.Cause List')}} @isset($start_date) | {{ __('case.Date')}} :{{formatDate($start_date) }} @endisset</h1>
-      </div>
-      <div class="col-sm-6">
-            
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
+
 <section class="admin-visitor-area up_st_admin_visitor">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
+        <div class="container-fluid pt-3">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="box_header common_table_header">
+                        <div class="main-title d-md-flex">
+                            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('case.Cause List')}} @isset($start_date) | {{ __('case.Date')}} :{{formatDate($start_date) }} @endisset</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mb-3">
+                    <div class="white_box_50px box_shadow_white">
 
                         {!! Form::open(['route' => 'causelist.index', 'method' => 'get', 'id' => 'content_form']) !!}
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="primary_input">
+                                <div class="primary_input mb-15">
                                     <div class="primary_datepicker_input">
-                                        <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                      <span class="input-group-text">
-                                                        <i class="far fa-calendar-alt"></i>
-                                                      </span>
-                                                    </div>
-                                                    {{ Form::text('date_range', null, ['class' => 'form-control form-control float-right', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
+                                        <div class="no-gutters input-right-icon">
+                                            <div class="col">
+                                                <div class="">
+                                                    {{ Form::text('date_range', null, ['class' => 'primary_input_field primary-input form-control', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
+
+                                                </div>
+                                            </div>
+                                            <button class="" type="button">
+                                                <i class="ti-calendar" id="start-date-icon"></i>
+                                            </button>
                                         </div>
                                         <span id="date_range_error"></span>
                                     </div>
@@ -42,8 +40,8 @@
                             </div>
                             <input type="hidden" id="start">
                             <input type="hidden" id="end">
-                            <div class="col-lg-6">
-                                <button type="submit" class="btn btn-primary submit">
+                            <div class="col-lg-6 mt-10">
+                                <button type="submit" class="primary-btn small fix-gr-bg submit">
                                     <span class="ti-search pr-2"></span>
                                     {{ __('common.Search') }}</button>
                             </div>
@@ -51,30 +49,29 @@
                             {!! Form::close() !!}
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="col-lg-12">
-                            <div class="text-center" id="loader">
-                                <img src="{{ asset('public/backEnd/img/demo_wait.gif') }}" alt="">
-                            </div>
-
-                            <div class="QA_section QA_section_heading_custom check_box_table">
-                                <div class="QA_table" id="report_data">
-
-                                </div>
-
+                <div class="col-12">
+                        <div class="box_header common_table_header">
+                            <div class="main-title d-md-flex">
+                                <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('case.Cause List') }}</h3>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-12">
+                        <div class="text-center" id="loader">
+                            <img src="{{ asset('public/backEnd/img/demo_wait.gif') }}" alt="">
+                        </div>
+
+                        <div class="QA_section QA_section_heading_custom check_box_table">
+                            <div class="QA_table" id="report_data">
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -146,7 +143,7 @@
             dataType: 'html',
             success: function (data) {
                 $('#report_data').html(data);
-                startDataTable();
+                startDatatable();
                 $('#report_data').show();
                 $('#loader').hide();
 

@@ -15,7 +15,7 @@
                                 <input type="hidden" name="id" id="id" value="{{ $language->id }}">
                                 <div class="primary_input mb_15">
                                     <label class="primary_input_label" for=""> {{ __('common.Choose File') }}</label>
-                                    <select name="file_name" id="file_name" class="form-control select2bs4 mb-15"
+                                    <select name="file_name" id="file_name" class="primary_select mb-15"
                                             onchange="get_translate_file()">
                                         <option>{{ __('setting.Select Translatable File') }}</option>
                                         @foreach ( $files as $key => $value)

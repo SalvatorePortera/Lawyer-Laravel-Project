@@ -5,7 +5,7 @@
             'hr::lang.all_employment_status')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" class="btn btn-primary btn-modal pull-right" id="add_employment_status_btn"
+                <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" id="add_employment_status_btn"
                     data-href="{{action('\Modules\HR\Http\Controllers\EmploymentStatusController@create')}}"
                     data-container=".employment_status_model">
                     <i class="fa fa-plus"></i> @lang( 'hr::lang.add' )</button>

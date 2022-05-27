@@ -128,7 +128,7 @@
       <div class="clearfix"></div>
 
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" id="save_salary_component_btn">@lang( 'messages.save' )</button>
+        <button type="submit" class="primary-btn fix-gr-bg" id="save_salary_component_btn">@lang( 'messages.save' )</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">@lang( 'messages.close' )</button>
       </div>
 

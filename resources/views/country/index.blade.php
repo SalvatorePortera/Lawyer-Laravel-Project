@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('setting.Country') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('setup.country.store'))
-                                    <li><a class="btn btn-primary"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="{{ route('setup.country.create') }}"><i class="ti-plus"></i>{{ __
                         ('setting.New Country') }}</a></li>
                                 @endif
@@ -55,7 +55,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">

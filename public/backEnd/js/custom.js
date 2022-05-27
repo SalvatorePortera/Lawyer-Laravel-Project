@@ -405,7 +405,7 @@ function startDatatable(){
                     columns: ':visible:not(.not-export-col)'
                 }
             }
-
+            
         ],
         columnDefs: [
             { targets: [-1], className: 'not-export-col' }

@@ -2235,7 +2235,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-primary btn-xs btn-modal" data-container=".option_modal"
+                                <button class="primary-btn fix-gr-bg btn-xs btn-modal" data-container=".option_modal"
                                         data-href="{{action('\Modules\Superadmin\Http\Controllers\CompanyPackageVariableController@getOptionVariables', [ 'id' => '0', 'business_id' => $business->id])}}">@lang('superadmin::lang.enter_variables')</button>
                             </div>
                         </div>
@@ -2252,7 +2252,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-primary btn-xs btn-modal" data-container=".option_modal"
+                                <button class="primary-btn fix-gr-bg btn-xs btn-modal" data-container=".option_modal"
                                         data-href="{{action('\Modules\Superadmin\Http\Controllers\CompanyPackageVariableController@getOptionVariables', [ 'id' => '1', 'business_id' => $business->id])}}">@lang('superadmin::lang.enter_variables')</button>
                             </div>
                         </div>
@@ -2269,7 +2269,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-primary btn-xs btn-modal" data-container=".option_modal"
+                                <button class="primary-btn fix-gr-bg btn-xs btn-modal" data-container=".option_modal"
                                         data-href="{{action('\Modules\Superadmin\Http\Controllers\CompanyPackageVariableController@getOptionVariables', [ 'id' => '4', 'business_id' => $business->id])}}">@lang('superadmin::lang.enter_variables')</button>
                             </div>
                         </div>
@@ -2286,7 +2286,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-primary btn-xs btn-modal" data-container=".option_modal"
+                                <button class="primary-btn fix-gr-bg btn-xs btn-modal" data-container=".option_modal"
                                         data-href="{{action('\Modules\Superadmin\Http\Controllers\CompanyPackageVariableController@getOptionVariables', [ 'id' => '2', 'business_id' => $business->id])}}">@lang('superadmin::lang.enter_variables')</button>
                             </div>
                         </div>
@@ -2303,7 +2303,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-primary btn-xs btn-modal" data-container=".option_modal"
+                                <button class="primary-btn fix-gr-bg btn-xs btn-modal" data-container=".option_modal"
                                         data-href="{{action('\Modules\Superadmin\Http\Controllers\CompanyPackageVariableController@getOptionVariables', [ 'id' => '3', 'business_id' => $business->id])}}">@lang('superadmin::lang.enter_variables')</button>
                             </div>
                         </div>
@@ -2320,7 +2320,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-primary btn-xs btn-modal" data-container=".option_modal"
+                                <button class="primary-btn fix-gr-bg btn-xs btn-modal" data-container=".option_modal"
                                         data-href="{{action('\Modules\Superadmin\Http\Controllers\CompanyPackageVariableController@getOptionVariables', [ 'id' => '5', 'business_id' => $business->id])}}">@lang('superadmin::lang.enter_variables')</button>
                             </div>
                         </div>

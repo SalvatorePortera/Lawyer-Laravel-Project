@@ -4,13 +4,13 @@
             <div class="primary_file_uploader">
                 <input class="primary-input" type="text" id="placeholderAttachFile" placeholder="{{ __('common.Browse file') }}" readonly>
                 <button class="" type="button">
-                    <label class="btn btn-primary btn-sm"
+                    <label class="primary-btn small fix-gr-bg"
                            for="attach_file">{{__("common.Browse")}} </label>
                     <input type="file" class="d-none" name="file[]" id="attach_file">
                 </button>
             </div>
         </div>
-        <span style="cursor:pointer;" class="btn btn-primary btn-sm icon-only" type="button" id="file_add"> <i class="ti-plus"></i> </span>
+        <span style="cursor:pointer;" class="primary-btn small fix-gr-bg icon-only" type="button" id="file_add"> <i class="ti-plus"></i> </span>
     </div>
 
 </div>

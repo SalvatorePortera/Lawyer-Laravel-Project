@@ -12,16 +12,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ isset($title) ? $title .' | '. config('configs')->where('key','site_title')->first()->value :  config('configs')->where('key','site_title')->first()->value }}</title>
-
+<!-- 	@if(rtl())
+  <link rel="stylesheet" href="{{asset('public/backEnd/css/rtl/bootstrap.min.css')}}"/>
+  @else
+  <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/bootstrap.css"/>
+  @endif -->
   <link rel="icon" href="{{ asset(config('configs')->where('key','favicon_logo')->first()->value) }}" type="image/png" />
   <!-- Google Font: Source Sans Pro -->
   <!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"-->
   <!-- Font Awesome -->
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('public/AdminLTE/dist/css/adminlte.css')}}">
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
-  <!--link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/fontawesome-free/css/v4-shims.min.css')}}">
-  <link rel="stylesheet" href="{{ asset($base_path . '/css/themify-icons.css') }}"-->
+  <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/fontawesome-free/css/v4-shims.min.css')}}">
+  
+  <link rel="stylesheet" href="{{ asset($base_path . '/css/themify-icons.css') }}">
   <!-- Ionicons -->
   <!--link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"-->
   <!-- Tempusdominus Bootstrap 4 -->
@@ -30,19 +33,19 @@
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/jqvmap/jqvmap.min.css')}}">
-
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('public/AdminLTE/dist/css/adminlte.min.css')}}">
+  
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/toastr/toastr.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- typehead--->
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/typeahead/jquery.typeahead.min.css')}}">
-
+  
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/daterangepicker/daterangepicker.css')}}">
-   <!-- Select2 -->
-   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/select2/css/select2.min.css')}}">
-   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
-
+  <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/bootstrap-datetimepicker.min.css"/>
+  <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/bootstrap-datepicker.min.css"/>
+  <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/daterangepicker.css"/>
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/summernote/summernote-bs4.min.css')}}">
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -51,20 +54,21 @@
   <!-- fileupload-->
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/bootstrap-fileinput/css/fileinput.min.css')}}">
   @if(rtl())
-  <link rel="stylesheet" href="{{asset('public/bootstrap/dist/css/bootstrap-rtl.min.css')}}"/>
-  <link rel="stylesheet" href="{{asset('public/AdminLTE/dist/css/custom.css')}}">
-  @else
-  <link rel="stylesheet" href="{{asset('public/bootstrap/dist/css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('public/AdminLTE/dist/css/custom.css')}}">
   @endif
-  <!-- <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/nice-select.css"/>
+
+
+
+  <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/nice-select.css"/>
   <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/magnific-popup.css"/>
   <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/js/select2/select2.css"/>
   <link rel="stylesheet" href="{{asset('public/backEnd/vendors/css/fullcalendar.min.css')}}">
-  <link rel="stylesheet" href="{{asset('public/css/parsley.css')}}"/> -->
-  <link rel="stylesheet" href="{{asset('public/backEnd/css/style.css')}}"/>
-
-
-        {{-- <link rel="stylesheet" href="{{asset('public/frontend/')}}/css/style.css" /> --}}
+  <link rel="stylesheet" href="{{asset('public/css/parsley.css')}}"/>
+  
+            <link rel="stylesheet" href="{{asset('public/backEnd/css/style.css')}}"/>
+            <link rel="stylesheet" href="{{asset('public/backEnd/css/infix.css')}}"/>
+ 
+        <link rel="stylesheet" href="{{asset('public/frontend/')}}/css/style.css" />
   @stack('css_before')
     @yield('css')
     @stack('css_after')
@@ -76,7 +80,7 @@
 </head>
 <body class="sidebar-mini control-sidebar-slide-open sidebar-mini-xs sidebar-mini-md sidebar-collapse skin-purple">
 <div class="wrapper">
-
+	
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{ asset('public/AdminLTE/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
@@ -87,7 +91,7 @@
     });
 @endphp
 
-<nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
+<nav class="main-header navbar navbar-expand navbar-light bg-customize">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -120,27 +124,19 @@
           </a>
        </li>
     </ul>
-    <form class="form-inline ml-3">
-        <div class="input-group input-group-sm typeahead__container">
-            <input class="form-control form-control-navbar liveSearch" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-            <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-            </div>
-        </div>
-    </form>
+
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto mr-auto-navbav">
+    <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <!--li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="fas fa-search"></i>
         </a>
         <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+
+          <form class="form-inline form-country_v1" name="form-country_v1">
+            <div class="input-group input-group-sm typeahead__container">
+              <input class="form-control form-control-navbar liveSearch" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
                 <button class="btn btn-navbar" type="submit">
                   <i class="fas fa-search"></i>
@@ -151,8 +147,10 @@
               </div>
             </div>
           </form>
+          
         </div>
-      </li-->
+      </li>
+
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -188,7 +186,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-user"></i>
-
+          
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
@@ -233,7 +231,7 @@
                       <i class="ti-unlock"></i>
                       <span>{{__('common.Logout')}}</span>
                   </a>
-
+                
         </div>
       </li>
       <li class="nav-item">
@@ -245,21 +243,25 @@
   </nav>
     <!-- Main Sidebar Container -->
     @include('partials.sidebar')
-
+    
     <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 	@stack('content_header')
-
+    
     <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
 		@if(getSystemSubscription())
 		<!-- Messages: style can be found in dropdown.less-->
-		<div class="alert alert-danger alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-      System is Expired, Please contact the System Administrator.
-    </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="alert alert-danger alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                  System is expired, please contact the system Administrator.
+                </div>
+			</div>
+		</div>
 		@endif

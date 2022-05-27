@@ -13,7 +13,7 @@
         @endif
     </label>
     <input type="text" name="custom_field[{{ $field->id }}]" id="custom_field_{{ $field->id }}"
-           class="form-control primary-input form-control date custom_field" @if(!$field->parent and $field->required)
+           class="primary_input_field primary-input form-control date custom_field" @if(!$field->parent and $field->required)
            @if(!$field->parent and $field->required)
            required
            @endif

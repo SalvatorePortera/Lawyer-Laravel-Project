@@ -5,25 +5,25 @@
     </td>
     <td>
         <div class="primary_input">
-            <input name="item_row[{{ $row }}][description]" value="{{ $item->description }}"  class="form-control" id="description{{ $row }}" type="text">
+            <input name="item_row[{{ $row }}][description]" value="{{ $item->description }}"  class="primary_input_field" id="description{{ $row }}" type="text">
         </div>
     </td>
 
     <td>
         <div class="primary_input">
-            <input type="text" min="1" name="item_row[{{ $row }}][qty]" class="form-control qty input_number" value="{{ $item->qty }}" id="qty_{{ $row }}" maxlength="8" required>
+            <input type="text" min="1" name="item_row[{{ $row }}][qty]" class="primary_input_field qty input_number" value="{{ $item->qty }}" id="qty_{{ $row }}" maxlength="8" required>
         </div>
     </td>
 
     <td>
         <div class="primary_input">
-            <input name="item_row[{{ $row }}][amount]" value="{{ $item->amount }}" step="0.1" class="form-control amount input_number" id="amount_{{ $row }}" type="text" maxlength="8" required>
+            <input name="item_row[{{ $row }}][amount]" value="{{ $item->amount }}" step="0.1" class="primary_input_field amount input_number" id="amount_{{ $row }}" type="text" maxlength="8" required>
         </div>
     </td>
 
     <td>
         <div class="primary_input">
-            <input name="item_row[{{ $row }}][line_total]" value="{{ $item->total }}" class="form-control line_total input_number" id="line_total_{{ $row }}" type="text" readonly maxlength="8" required>
+            <input name="item_row[{{ $row }}][line_total]" value="{{ $item->total }}" class="primary_input_field line_total input_number" id="line_total_{{ $row }}" type="text" readonly maxlength="8" required>
         </div>
     </td>
 

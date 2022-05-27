@@ -12,7 +12,7 @@
                     <h4>@lang('common.Are you sure to delete ?')</h4>
                 </div>
                 <div class="mt-40 d-flex justify-content-between">
-                    <input type="submit" wire:click='delete' class="btn btn-primary" value="Delete"/>
+                    <input type="submit" wire:click='delete' class="primary-btn fix-gr-bg" value="Delete"/>
                 </div>
             </div>
 

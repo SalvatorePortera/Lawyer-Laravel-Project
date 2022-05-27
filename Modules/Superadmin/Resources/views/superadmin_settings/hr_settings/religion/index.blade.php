@@ -5,7 +5,7 @@
             'hr::lang.all_religion')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" class="btn btn-primary btn-modal pull-right" id="add_religion_btn"
+                <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" id="add_religion_btn"
                     data-href="{{action('\Modules\HR\Http\Controllers\ReligionController@create')}}"
                     data-container=".religion_model">
                     <i class="fa fa-plus"></i> @lang( 'hr::lang.add' )</button>

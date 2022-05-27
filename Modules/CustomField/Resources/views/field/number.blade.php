@@ -14,7 +14,7 @@
     </label>
     <input
         type="number"
-        class="form-control custom_field"
+        class="primary_input_field custom_field"
         name="custom_field[{{ $field->id }}]"
         id="custom_field_{{ $field->id }}"
         @if(!$field->parent and $field->required)

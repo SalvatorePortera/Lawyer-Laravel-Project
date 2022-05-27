@@ -19,7 +19,7 @@
                             <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('common.Staff') }}</h3>
                             @if(permissionCheck('staffs.store'))
                             <ul class="d-flex">
-                                <li><a class="btn btn-primary" href="{{ route('staffs.create') }}"><i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('common.Staff') }}</a></li>
+                                <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('staffs.create') }}"><i class="ti-plus"></i>{{ __('common.Add New') }} {{ __('common.Staff') }}</a></li>
                             </ul>
                             @endif
                         </div>
@@ -70,7 +70,7 @@
                                                 <td>
                                                     <!-- shortby  -->
                                                     <div class="dropdown CRM_dropdown">
-                                                        <button class="btn btn-primary bg-hover-yellow dropdown-toggle" type="button"
+                                                        <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                                 id="dropdownMenu2" data-toggle="dropdown"
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false">

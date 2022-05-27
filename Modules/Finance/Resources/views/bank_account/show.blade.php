@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30">{{ __('finance.Bank Account Details') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('bank_accounts.index'))
-                                    <li><a class="btn btn-primary mr-10"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="{{ route('bank_accounts.index') }}"><i class="ti-list"></i>{{ __
                         ('finance.Bank Account List') }}</a></li>
                                 @endif

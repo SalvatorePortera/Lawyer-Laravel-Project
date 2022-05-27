@@ -1,5 +1,5 @@
 <!-- table-responsive -->
-<table class="table table-striped table-hover dt">
+<table class="table Crm_table_active3">
     <thead>
     <tr>
         <th scope="col">{{ __('common.Date') }}</th>
@@ -11,8 +11,8 @@
     </tr>
     </thead>
     <tbody>
-      @foreach($data as $invoice)
-
+      @foreach($data as $invoice)   
+      
     <tr>
        <td>
            {{ formatDate($invoice['invoice_date']) }}
@@ -38,7 +38,7 @@
             {{amountFormat($invoice->due)}}
         </td>
     </tr>
-      @endforeach
+      @endforeach 
 
     </tbody>
 </table>

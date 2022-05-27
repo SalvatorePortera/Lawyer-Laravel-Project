@@ -1,55 +1,71 @@
 @extends('finance::layouts.master')
 @section('mainContent')
-<section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>{{ __('finance.Payment Due') }}</h1>
-        </div>
-        <div class="col-sm-6">
-
-       </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
     <section class="admin-visitor-area up_st_admin_visitor">
-        <div class="container-fluid">
+        <div class="container-fluid pt-3">
             <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <form method="GET" action="{{ route('report.paymentdue') }}" id="content_form">
-                                <input type="hidden" id="start">
-                                    <input type="hidden" id="end">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="far fa-calendar-alt"></i>
-                                            </span>
-                                            </div>
-                                            {{ Form::text('date_range', null, ['class' => 'form-control float-right', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <button type="submit" class="btn btn-primary submit">
-                                            <i class="fa fa-search pr-2"></i> {{ __('common.Search') }}
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
 
-                        </div>
-                        <div class="card-body" id="report_data">
-                                    @includeIf('finance::report.paymentdue.data')
-
+                <div class="col-12">
+                    <div class="box_header common_table_header">
+                        <div class="main-title d-md-flex">
+                            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('finance.Payment Due') }}</h3>
                         </div>
                     </div>
                 </div>
 
-            </div>
 
+                <div class="col-lg-12">
+                    <div class="white-box">
+                        <form method="GET" action="{{ route('report.paymentdue') }}" id="content_form">
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="primary_input mb-15">
+                                        <div class="primary_datepicker_input">
+                                            <div class="no-gutters input-right-icon">
+                                                <div class="col">
+                                                    <div class="">
+                                                        {{ Form::text('date_range', null, ['class' => 'primary_input_field primary-input form-control', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
+
+                                                    </div>
+                                                </div>
+                                                <button class="" type="button">
+                                                    <i class="ti-calendar" id="start-date-icon"></i>
+                                                </button>
+                                            </div>
+                                            <span id="date_range_error"></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <input type="hidden" id="start">
+                                <input type="hidden" id="end">
+                                <div class="col-lg-6 mt-10">
+                                    <button type="submit" class="primary-btn small fix-gr-bg submit">
+                                        <span class="ti-search pr-2"></span>
+                                        {{ __('common.Search') }}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-40">
+                <div class="col-12">
+                    <div class="box_header common_table_header">
+                        <div class="main-title d-md-flex">
+                            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('finance.Payment Due') }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="QA_section QA_section_heading_custom check_box_table">
+                        <div class="QA_table" id="report_data">
+                            @includeIf('finance::report.paymentdue.data')
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -100,7 +116,7 @@
                 dataType: 'html',
                 success: function (data) {
                     $('#report_data').html(data);
-                    startDataTable();
+                    startDatatable();
                     hideFormSubmitting(form);
                 },
                 error: function (data) {

@@ -1,39 +1,30 @@
 @extends('layouts.master', ['title' => __('client.Update Client Category')])
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('client.New Client Category') }}</h1>
-      </div>
-      <div class="col-sm-6">
-        
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
 <section class="admin-visitor-area up_st_admin_visitor">
     <div class="container-fluid pt-3">
         <div class="row justify-content-center">
-          <div class="col-12">
             <div class="col-12">
-              <div class="card">
-                <!--div class="card-header">
-                  <h3 class="card-title"></h3>
-                </div-->
-                <div class="card-body">
-                  {!! Form::model($model, ['route' => ['category.client.update', $model->id], 'class' =>
+                <div class="box_header">
+                    <div class="main-title d-flex justify-content-between w-100">
+                        <h3 class="mb-0 mr-30">{{__('client.Update Client Category')}}</h3>
+                    </div>
+                </div>
+            </div>
+                <div class="col-12">
+                    <div class="white_box_50px box_shadow_white">
+
+                        {!! Form::model($model, ['route' => ['category.client.update', $model->id], 'class' =>
                         'form-validate-jquery',
                         'id' => 'content_form', 'method' => 'PUT']) !!}
                         <div class="primary_input">
                             {{Form::label('name', __('client.Name'),['class' => 'required'])}}
-                            {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __
+                            {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __
                             ('Client Category Name')])}}
                         </div>
 
                         <div class="primary_input">
                             {{Form::label('description', __('client.Description'))}}
-                            {{Form::textarea('description', null, ['class' => 'form-control', 'placeholder' =>
+                            {{Form::textarea('description', null, ['class' => 'primary_input_field', 'placeholder' =>
                             __('client.Client Category Description'), 'rows' => 5 ])}}
                         </div>
                         <div class="primary_input mt-3">
@@ -55,16 +46,14 @@
                         </div>
                        
                        <div class="text-center ">
-                       <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
+                       <button class="primary-btn fix-gr-bg submit" type="submit"><i class="ti-check"></i>{{ __('common.Update') }}
                     </button>
 
-                    <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
+                    <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Updating') . '...' }}
                     </button>
                         </div>
                         {!! Form::close() !!}
-                </div>
-              </div>          
-                    
+                    </div>
                 </div>
             </div>
         </div>

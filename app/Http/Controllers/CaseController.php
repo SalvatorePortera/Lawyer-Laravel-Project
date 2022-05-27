@@ -479,7 +479,8 @@ class CaseController extends Controller
 
 
         $data['models'] = $data['models']->get();
-        
+
+
         if ($request->ajax()) {
             return view('case.causelist_data', $data);
         }

@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30">{{__('custom_fields.update_field')}}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('custom_fields.index'))
-                                    <li><a class="btn btn-primary mr-10" href="{{ route('custom_fields.index') }}"><i class="ti-list"></i>{{ __
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('custom_fields.index') }}"><i class="ti-list"></i>{{ __
                         ('custom_fields.field_lists') }}</a></li>
                                 @endif
                             </ul>
@@ -24,10 +24,10 @@
                         {!! Form::model($model, ['route' => ['custom_fields.update', $model->id], 'class' => 'form-validate-jquery', 'id' => 'content_form', 'files' => false, 'method' => 'PUT']) !!}
                         @includeIf('customfield::components._form')
                         <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-primary submit" id="submit"
+                            <button type="submit" class="primary-btn semi_large2 fix-gr-bg submit" id="submit"
                                     value="submit"> {{ __('Update') }} </button>
 
-                            <button type="button" class="btn btn-primary submitting" id="submit"
+                            <button type="button" class="primary-btn semi_large2 fix-gr-bg submitting" id="submit"
                                     disabled style="display: none;"> {{ __ ('Updating') }}...
                             </button>
                         </div>

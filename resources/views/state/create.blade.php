@@ -23,22 +23,22 @@
                         <div class="row">
                             <div class="primary_input col-md-6">
                                 {{Form::label('country_id', __('court.Country'), ['class' => 'required'])}}
-                                {{Form::select('country_id', $countries, $country_id, ['class' => 'form-control select2bs4', 'id' => 'country_id', 'data-placeholder' => __('court.Select country'),  'data-parsley-errors-container' => '#country_id_error', 'required'])}}
+                                {{Form::select('country_id', $countries, $country_id, ['class' => 'primary_select', 'id' => 'country_id', 'data-placeholder' => __('court.Select country'),  'data-parsley-errors-container' => '#country_id_error', 'required'])}}
                                 <span id="country_id_error"></span>
                             </div>
                             <div class="primary_input col-md-6">
                                 {{Form::label('name', __('setting.State Name'),['class' => 'required'])}}
-                                {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __('setting.State Name')])}}
+                                {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __('setting.State Name')])}}
                             </div>
 
                         </div>
 
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn semi_large2 fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Create') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled
+                            <button class="primary-btn semi_large2 fix-gr-bg submitting" type="submit" disabled
                                     style="display: none;"><i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                             </button>
 

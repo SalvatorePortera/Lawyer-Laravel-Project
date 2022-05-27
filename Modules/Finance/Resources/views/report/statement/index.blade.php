@@ -107,7 +107,7 @@
                                             <div class="no-gutters input-right-icon">
                                                 <div class="col">
                                                     <div class="">
-                                                        {{ Form::text('date_range', null, ['class' => 'form-control primary-input form-control', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
+                                                        {{ Form::text('date_range', null, ['class' => 'primary_input_field primary-input form-control', 'required', 'placeholder' => __('common.select_criteria'),  'data-parsley-errors-container' => '#date_range_error', 'id' => 'date_range', 'readonly']) }}
 
                                                     </div>
                                                 </div>
@@ -124,7 +124,7 @@
                                 <div class="col-lg-3">
                                     <div class="primary_input_label">
                                         {{Form::label('bank_account_id', __('finance.Bank Account'))}}
-                                        {{Form::select('bank_account_id', $banks,  $bank_account_id, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#bank_account_id_error'])}}
+                                        {{Form::select('bank_account_id', $banks,  $bank_account_id, ['class' => 'primary_select', 'data-parsley-errors-container' => '#bank_account_id_error'])}}
                                         <span id="bank_account_id_error"></span>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                 <input type="hidden" name="end" id="end" value="{{  $end ?? date('Y-m-d') }}">
 
                                 <div class="col-lg-2 mt-40 text-center">
-                                    <button type="submit" class="btn btn-sm btn-primary submit">
+                                    <button type="submit" class="primary-btn small fix-gr-bg submit">
                                         <span class="ti-search pr-2"></span>
                                         {{ __('common.Search') }}</button>
                                 </div>

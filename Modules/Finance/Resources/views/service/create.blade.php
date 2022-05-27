@@ -11,7 +11,7 @@
                             <h3 class="mb-0 mr-30">{{ __('finance.Add Service') }}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('services.index'))
-                                    <li><a class="btn btn-primary mr-10" href="{{ route('services.index') }}"><i class="ti-list"></i>{{ __
+                                    <li><a class="primary-btn mr-10 fix-gr-bg" href="{{ route('services.index') }}"><i class="ti-list"></i>{{ __
                         ('finance.Service List') }}</a></li>
                                 @endif
                             </ul>
@@ -23,11 +23,11 @@
                         {!! Form::open(['route' => 'services.store', 'class' => 'form-validate-jquery', 'id' => 'content_form', 'files' => false, 'method' => 'POST']) !!}
                         @includeIf('finance::service.components.form')
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Create') }}
                             </button>
 
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                             </button>
                         </div>

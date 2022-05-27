@@ -2,95 +2,86 @@
 
 @section('mainContent')
 
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('case.Filter Case')}} </h1>
-      </div>
-      <div class="col-sm-6">
-            
-     </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
+
     <section class="admin-visitor-area up_st_admin_visitor">
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid pt-3">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="box_header common_table_header">
+                        <div class="main-title d-md-flex">
+                            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('case.Filter Case')}} </h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12 mb-3">
-                    <div class="card">
-                    <div class="card-body">
+                    <div class="white_box_50px box_shadow_white">
 
                         {!! Form::open(['route' => 'case.filter', 'method' => 'get']) !!}
 
                         <div class="row">
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('case_category_id', __('case.Case Category'))}}
-                                {{Form::select('case_category_id', $case_categories, $case_category_id, ['class' => 'form-control select2bs4', 'data-placeholder' => __('case.Select Case Category'),  'data-parsley-errors-container' => '#case_category_id_error'])}}
+                                {{Form::select('case_category_id', $case_categories, $case_category_id, ['class' => 'primary_select', 'data-placeholder' => __('case.Select Case Category'),  'data-parsley-errors-container' => '#case_category_id_error'])}}
                                 <span id="case_category_id_error"></span>
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('case_no', __('case.Case No'))}}
-                                {{Form::text('case_no', $case_no, ['class' => 'form-control', 'placeholder' => __('case.Case No')])}}
+                                {{Form::text('case_no', $case_no, ['class' => 'primary_input_field', 'placeholder' => __('case.Case No')])}}
                             </div>
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('file_no', __('case.Case File No'))}}
-                                {{Form::text('file_no', $file_no, ['class' => 'form-control', 'placeholder' => __('case.Case File No')])}}
+                                {{Form::text('file_no', $file_no, ['class' => 'primary_input_field', 'placeholder' => __('case.Case File No')])}}
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('acts', __('case.Case Acts'))}}
-                                {{Form::select('acts[]', $db_acts, $acts, ['class' => 'form-control select2bs4', 'data-placeholder' => __('case.Select Acts'),  'data-parsley-errors-container' => '#act_error', 'multiple' => '', 'id' => 'acts'])}}
+                                {{Form::select('acts[]', $db_acts, $acts, ['class' => 'primary_select', 'data-placeholder' => __('case.Select Acts'),  'data-parsley-errors-container' => '#act_error', 'multiple' => '', 'id' => 'acts'])}}
                                 <span id="act_error"></span>
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('client_id', __('case.Client'))}}
-                                {{Form::select('client_id', $clients->prepend(__('case.Select Client'), ''), $client_id, ['class' => 'form-control select2bs4', 'data-placeholder' => __('case.Select Client'), 'data-parsley-errors-container' => '#client_id_error'])}}
+                                {{Form::select('client_id', $clients->prepend(__('case.Select Client'), ''), $client_id, ['class' => 'primary_select', 'data-placeholder' => __('case.Select Client'), 'data-parsley-errors-container' => '#client_id_error'])}}
                                 <span id="client_id_error"></span>
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('court_id', __('case.Court'))}}
-                                {{Form::select('court_id', $courts, $court_id, ['class' => 'form-control select2bs4', 'data-placeholder' => __('case.Select Court'),  'data-parsley-errors-container' => '#court_id_error'])}}
+                                {{Form::select('court_id', $courts, $court_id, ['class' => 'primary_select', 'data-placeholder' => __('case.Select Court'),  'data-parsley-errors-container' => '#court_id_error'])}}
                                 <span id="court_id_error"></span>
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('stage_id', __('case.Case Stage'))}}
-                                {{Form::select('stage_id', $stages, $stage_id, ['class' => 'form-control select2bs4', 'data-placeholder' => __('case.Select Case Stage'),  'data-parsley-errors-container' => '#stage_id_error'])}}
+                                {{Form::select('stage_id', $stages, $stage_id, ['class' => 'primary_select', 'data-placeholder' => __('case.Select Case Stage'),  'data-parsley-errors-container' => '#stage_id_error'])}}
                                 <span id="stage_id_error"></span>
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('receiving_date', __('case.Receiving Date'))}}
-                                {{Form::text('receiving_date', $receiving_date, ['class' => 'form-control primary-input date form-control date', "id"=>"receiving_date",'placeholder' => __('case.Date')])}}
+                                {{Form::text('receiving_date', $receiving_date, ['class' => 'primary_input_field primary-input date form-control date', "id"=>"receiving_date",'placeholder' => __('case.Date')])}}
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('filling_date', __('case.Filling Date'))}}
-                                {{Form::text('filling_date', $filling_date, ['class' => 'form-control primary-input date form-control date', "id"=>"filling_date",'placeholder' => __('case.Filling Date')])}}
+                                {{Form::text('filling_date', $filling_date, ['class' => 'primary_input_field primary-input date form-control date', "id"=>"filling_date",'placeholder' => __('case.Filling Date')])}}
                             </div>
 
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('hearing_date', __('case.Hearing Date'))}}
-                                {{Form::text('hearing_date', $hearing_date, ['class' => 'form-control primary-input date form-control date', "id"=>"hearing_date",'placeholder' => __('case.Hearing Date')])}}
+                                {{Form::text('hearing_date', $hearing_date, ['class' => 'primary_input_field primary-input date form-control date', "id"=>"hearing_date",'placeholder' => __('case.Hearing Date')])}}
                             </div>
-                            <div class=" col-md-3">
+                            <div class="primary_input col-md-3">
                                 {{Form::label('judgement_date', __('case.Judgement Date'))}}
-                                {{Form::text('judgement_date', $judgement_date, ['class' => 'form-control primary-input date form-control date', "id"=>"judgement_date",'placeholder' => __('case.Judgement Date')])}}
+                                {{Form::text('judgement_date', $judgement_date, ['class' => 'primary_input_field primary-input date form-control date', "id"=>"judgement_date",'placeholder' => __('case.Judgement Date')])}}
                             </div>
 
 
                             <div class="col-md-3 mt-40">
-                                <div class="">
-                                    <div class="btn-group">
-                                        <button type="submit" class="btn btn-primary btn-sm flex-grow-1 text-nowrap" id="submit" value="submit" ><i class="fa fa-search"></i> {{ __('case.Get List') }}</button>
-                                    </div>
-                                    <div class="btn-group">
-                                        <a href="{{ route('case.filter') }}" class="btn btn-primary btn-sm flex-grow-1 text-nowrap" ><i class="fa fa-share"></i> {{ __('case.Reset') }}</a>
-                                    </div>
+                                <div class="primary_input mb-15 d-flex align-items-center justify-content-between gap_10">
+                                    <button type="submit" class="primary-btn fix-gr-bg flex-grow-1 text-nowrap" id="submit" value="submit" ><i class="ti-search"></i>{{ __('case.Get List') }}</button>
+                                    <a href="{{ route('case.filter') }}" class="primary-btn fix-gr-bg flex-grow-1 text-nowrap" ><i class="ti-back-left"></i>{{ __('case.Reset') }}</a>
                                 </div>
 
                             </div>
@@ -98,16 +89,20 @@
 
                         </div>
                         {!! Form::close() !!}
-                    </div></div>
+                    </div>
                 </div>
-                
+                <div class="col-12">
+                    <div class="box_header common_table_header">
+                        <div class="main-title d-md-flex">
+                            <h3 class="mb-0 mr-30 mb_xs_15px mb_sm_20px">{{ __('case.Filter Case List') }}</h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12">
-                        <div class="card ">
-                            <div class="card-header">
-                                <h3 class="card-title">{{ __('case.Filter Case List') }}</h3>
-                            </div>
-                            <div class="card-body">
-                                <table class="table dt">
+                    <div class="QA_section QA_section_heading_custom check_box_table">
+                        <div class="QA_table ">
+                            <div class="">
+                                <table class="table Crm_table_active3">
                                     <thead>
                                     <tr>
 
@@ -182,7 +177,7 @@
 
 
                                                 <div class="dropdown CRM_dropdown">
-                                                    <button class="btn btn-primary  dropdown-toggle" type="button"
+                                                    <button class="primary-btn fix-gr-bg bg-hover-yellow dropdown-toggle" type="button"
                                                             id="dropdownMenu2" data-toggle="dropdown"
                                                             aria-haspopup="true"
                                                             aria-expanded="false">
@@ -190,15 +185,15 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
 
-                                                        <a href="{{ route('case.show', $model->id) }}" class="dropdown-item"><i class="fa fa-eye"></i> {{ __('common.View') }}</a>
+                                                        <a href="{{ route('case.show', $model->id) }}" class="dropdown-item"><i class="icon-file-eye"></i> {{ __('common.View') }}</a>
                                                         @if(!$model->judgement)
-                                                            <a href="{{route('case.edit', $model->id)}}" class="dropdown-item"><i class="fa fa-pencil"></i> {{ __('common.Edit') }}</a>
-                                                            <a href="{{route('date.create', ['case' => $model->id])}}" class="dropdown-item">
-                                                                <i class="fa fa-calendar"></i> {{ __('case.New Date') }}</a>
-                                                            <a href="{{route('putlist.create', ['case' => $model->id])}}" class="dropdown-item">
-                                                                <i class="fa fa-calendar"></i> {{ __('case.New Put Up Date') }}</a>
-                                                            <a href="{{route('judgement.create', ['case' => $model->id])}}" class="dropdown-item">
-                                                                <i class="fa fa-calendar"></i> {{ __('case.New Judgement Date') }}</a>
+                                                            <a href="{{route('case.edit', $model->id)}}" class="dropdown-item"><i class="icon-pencil mr-2"></i>{{ __('common.Edit') }}</a>
+                                                            <a href="{{route('date.create', ['case' => $model->id])}}" class="dropdown-item"><i
+                                                                    class="icon-calendar3 mr-2"></i>{{ __('case.New Date') }}</a>
+                                                            <a href="{{route('putlist.create', ['case' => $model->id])}}" class="dropdown-item"><i
+                                                                    class="icon-calendar3 mr-2"></i>{{ __('case.New Put Up Date') }}</a>
+                                                            <a href="{{route('judgement.create', ['case' => $model->id])}}" class="dropdown-item"><i
+                                                                    class="icon-calendar3 mr-2"></i>{{ __('case.New Judgement Date') }}</a>
                                                         @endif
 
                                                     </div>
@@ -212,7 +207,7 @@
                                 </table>
                             </div>
                         </div>
-                    
+                    </div>
                 </div>
             </div>
         </div>

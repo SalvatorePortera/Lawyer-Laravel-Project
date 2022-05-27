@@ -323,7 +323,7 @@
     $('.nice_Select').niceSelect();
     //niceselect select jquery
     $('.nice_Select2').niceSelect();
-    $('.primary_select').select2();
+    $('.primary_select').niceSelect();
 	/*-------------------------------------------------------------------------------
        Full Calendar Js
 	-------------------------------------------------------------------------------*/

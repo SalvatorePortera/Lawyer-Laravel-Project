@@ -115,7 +115,7 @@
                                 <a href="{{action('\Modules\Superadmin\Http\Controllers\BusinessController@show', [$business->id])}}"
                                 class="btn btn-info btn-xs">@lang('messages.view' )</a>
 
-                                <button type="button" class="btn btn-primary btn-xs btn-modal" data-href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@create', ['business_id' => $business->id])}}" data-container=".view_modal">
+                                <button type="button" class="primary-btn fix-gr-bg btn-xs btn-modal" data-href="{{action('\Modules\Superadmin\Http\Controllers\SuperadminSubscriptionsController@create', ['business_id' => $business->id])}}" data-container=".view_modal">
                                     @lang('superadmin::lang.add_subscription' )
                                 </button>
 
@@ -138,7 +138,7 @@
                                     </a>
                                 @endif
                                 <a href="{{action('\Modules\Superadmin\Http\Controllers\BusinessController@loginAsBusiness', [$business->id])}}"
-                                    class="btn btn-primary btn-xs">@lang('superadmin::lang.login' )
+                                    class="primary-btn fix-gr-bg btn-xs">@lang('superadmin::lang.login' )
                                 </a>
                             </div>
                         </div>

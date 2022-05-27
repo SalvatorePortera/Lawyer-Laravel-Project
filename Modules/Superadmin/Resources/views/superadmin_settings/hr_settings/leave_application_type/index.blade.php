@@ -5,7 +5,7 @@
             'hr::lang.all_leave_application_type')])
             @slot('tool')
             <div class="box-tools">
-                <button type="button" class="btn btn-primary btn-modal pull-right" id="add_leave_application_type_btn"
+                <button type="button" class="primary-btn fix-gr-bg btn-modal pull-right" id="add_leave_application_type_btn"
                     data-href="{{action('\Modules\HR\Http\Controllers\LeaveApplicationTypeController@create')}}"
                     data-container=".leave_application_type_model">
                     <i class="fa fa-plus"></i> @lang( 'hr::lang.add' )</button>

@@ -10,9 +10,9 @@
                             <h3 class="mb-0 mr-30">{{__('common.add_lawyer_to_case')}}</h3>
                             <ul class="d-flex">
                                 @if(permissionCheck('case.show'))
-                                    <li><a class="btn btn-primary"
+                                    <li><a class="primary-btn mr-10 fix-gr-bg"
                                            href="{{ route('case.show', $case->id) }}"><i
-                                                class="fa fa-list"></i> {{ __('common.back') }}</a></li>
+                                                class="ti-list"></i> {{ __('common.back') }}</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -36,20 +36,20 @@
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
                                 </div>
-                                {{Form::select('lawyer_id[]', $lawyers, null, ['class' => 'form-control select2bs4', 'data-placeholder' => __('case.Lawyer'), 'required', 'multiple'])}}
+                                {{Form::select('lawyer_id[]', $lawyers, null, ['class' => 'primary_select', 'data-placeholder' => __('case.Lawyer'), 'required', 'multiple'])}}
                             </div>
                             <div class="primary_input col-md-12">
                                 {{Form::hidden('case', $case->id)}}
                                 {{Form::label('date', __('case.Date'), ['class' => 'required'])}}
-                                {{Form::text('date', date('Y-m-d'), ['required' => '','class' => 'form-control primary-input date form-control date', 'placeholder' => __('case.Date')])}}
+                                {{Form::text('date', date('Y-m-d'), ['required' => '','class' => 'primary_input_field primary-input date form-control date', 'placeholder' => __('case.Date')])}}
                             </div>
                         </div>
 
                         <div class="text-center mt-3">
-                            <button class="btn btn-primary submit" type="submit"><i
+                            <button class="primary-btn fix-gr-bg submit" type="submit"><i
                                     class="ti-check"></i>{{ __('common.Add') }}
                             </button>
-                            <button class="btn btn-primary submitting" type="submit" disabled style="display: none;">
+                            <button class="primary-btn fix-gr-bg submitting" type="submit" disabled style="display: none;">
                                 <i class="ti-check"></i>{{ __('common.Adding') . '...' }}
                             </button>
                         </div>

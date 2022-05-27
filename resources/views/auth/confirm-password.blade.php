@@ -16,15 +16,15 @@
                             <div class="primary_input mb-25">
 
                                 {{ Form::label('password', __('Password'), ['class' => 'primary_input_label']) }}
-                                {{ Form::password('password', ['required', 'autocomplete' => 'current-password', 'placeholder' => __('Password'), 'class' => 'form-control']) }}
+                                {{ Form::password('password', ['required', 'autocomplete' => 'current-password', 'placeholder' => __('Password'), 'class' => 'primary_input_field']) }}
                             </div>
 
 
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary submit" id="save_button_parent"><i class="ti-check"></i>{{ __('Confirm') }}
+                                <button type="submit" class="primary-btn semi_large2 fix-gr-bg submit" id="save_button_parent"><i class="ti-check"></i>{{ __('Confirm') }}
                                 </button>
 
-                                <button type="button" class="btn btn-primary submitting" disabled style="display: none;">
+                                <button type="button" class="primary-btn semi_large2 fix-gr-bg submitting" disabled style="display: none;">
                                     <span class="ti-lock mr-2"></span>
                                     {{ __('Confirming') }}
                                 </button>

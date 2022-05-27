@@ -2,7 +2,7 @@
     <div class="col-md-6">
         <div class="primary_input">
             {{Form::label('form_name', __('custom_fields.form_name'), ['class' => 'required'])}}
-            {{Form::select('form_name', $forms, null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#custom_fields_form_name_error'])}}
+            {{Form::select('form_name', $forms, null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#custom_fields_form_name_error'])}}
             <span id="custom_fields_form_name_error"></span>
         </div>
     </div>
@@ -10,7 +10,7 @@
     <div class="col-md-6">
         <div class="primary_input">
             {{Form::label('type', __('custom_fields.type'), ['class' => 'required'])}}
-            {{Form::select('type', $field_types, null, ['class' => 'form-control select2bs4', 'data-parsley-errors-container' => '#custom_fields_type_error'])}}
+            {{Form::select('type', $field_types, null, ['class' => 'primary_select', 'data-parsley-errors-container' => '#custom_fields_type_error'])}}
             <span id="custom_fields_type_error"></span>
         </div>
     </div>
@@ -20,27 +20,27 @@
 <div class="row">
     <div class="primary_input col-md-6">
         {{Form::label('title', __('custom_fields.title'), ['class' => 'required'])}}
-        {{Form::text('title', null, ['required' => '','class' => 'form-control required', 'placeholder' => __('custom_fields.title')])}}
+        {{Form::text('title', null, ['required' => '','class' => 'primary_input_field required', 'placeholder' => __('custom_fields.title')])}}
     </div>
     <div class="primary_input col-md-6">
         {{Form::label('default_value', __('custom_fields.default_value'))}}
-        {{Form::text('default_value', null, ['class' => 'form-control ', 'placeholder' => __('custom_fields.default_value')])}}
+        {{Form::text('default_value', null, ['class' => 'primary_input_field ', 'placeholder' => __('custom_fields.default_value')])}}
     </div>
     <div class="primary_input col-md-12" id="mask_column" style="display: none;">
         {{Form::label('pattern', __('custom_fields.pattern'), ['class' => 'required'])}}
-        {{Form::text('pattern', null, ['class' => 'form-control ', 'placeholder' => __('custom_fields.pattern')])}}
+        {{Form::text('pattern', null, ['class' => 'primary_input_field ', 'placeholder' => __('custom_fields.pattern')])}}
     </div>
     <div class="primary_input col-md-4 max_min_col">
         {{Form::label('min', __('custom_fields.min'))}}
-        {{Form::number('min', null, ['class' => 'form-control', 'placeholder' => __('custom_fields.min')])}}
+        {{Form::number('min', null, ['class' => 'primary_input_field', 'placeholder' => __('custom_fields.min')])}}
     </div>
     <div class="primary_input col-md-4 max_min_col">
         {{Form::label('max', __('custom_fields.max'))}}
-        {{Form::number('max', null, ['class' => 'form-control', 'placeholder' => __('custom_fields.max')])}}
+        {{Form::number('max', null, ['class' => 'primary_input_field', 'placeholder' => __('custom_fields.max')])}}
     </div>
     <div class="primary_input col-md-4 width_col">
         {{Form::label('width', __('custom_fields.width'), ['class' => 'required'])}}
-        {{Form::select('width', $field_widths, null, ['class' => 'form-control select2bs4'])}}
+        {{Form::select('width', $field_widths, null, ['class' => 'primary_select'])}}
     </div>
 </div>
 <div class="row" style="display: none;" id="values_row">
@@ -65,7 +65,7 @@
             <label for="controlled_field">
                 {{ __('custom_fields.controlled_field') }}
             </label>
-            {{ Form::select('controlled_field', $controlled_fields, null, ['class' => 'form-control select2bs4', 'id' => 'controlled_field' ]) }}
+            {{ Form::select('controlled_field', $controlled_fields, null, ['class' => 'primary_select', 'id' => 'controlled_field' ]) }}
 
         </div>
     </div>

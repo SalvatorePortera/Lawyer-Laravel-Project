@@ -17,7 +17,7 @@
                         <div class="col-lg-6 col-xs-6 col-md-6 col-6 no-gutters ">
                             <a data-toggle="modal"
                                data-target="#add_module" href="#"
-                               class="btn btn-primary small pull-right">  {{__('common.Add')}}
+                               class="primary-btn fix-gr-bg small pull-right">  {{__('common.Add')}}
                                 / {{__('common.Update')}} {{__('setting.Module')}}</a>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                                             @if (! file_exists($is_module_available))
                                                 <div class="row">
                                                     <div class="col-lg-12 ">
-                                                        <a class="btn btn-primary" style="white-space: nowrap;"
+                                                        <a class="primary-btn fix-gr-bg" style="white-space: nowrap;"
                                                            href="mailto:support@1.com">   {{__('common.Buy Now')}}</a>
 
                                                     </div>
@@ -185,7 +185,7 @@
                                                placeholder="Select Module File"
                                                readonly="">
                                         <button class="" type="button">
-                                            <label class="btn btn-sm btn-primary"
+                                            <label class="primary-btn small fix-gr-bg"
                                                    for="document_file">{{__('common.Browse')}}</label>
                                             <input type="file" class="d-none fileUpload" name="module"
                                                    id="document_file" onchange="getFileName(this.value, '#document_file_placeholder')">
@@ -250,11 +250,11 @@
                     </div>
                     <div class="row mt-40">
                         <div class="col-lg-12 text-center">
-                            <button class="btn btn-primary submit">
+                            <button class="primary-btn fix-gr-bg submit">
                                 <span class="ti-check"></span>
                                 {{__('setting.Verify')}}
                             </button>
-                            <button type="button" class="btn btn-primary submitting" style="display: none">
+                            <button type="button" class="primary-btn fix-gr-bg submitting" style="display: none">
                                 <i class="fas fa-spinner fa-pulse"></i>
                                 Verifying
                             </button>

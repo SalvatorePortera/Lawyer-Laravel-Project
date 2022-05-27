@@ -1,19 +1,5 @@
 @extends('layouts.master', ['title' => __('contact.Contact Details')])
 @section('mainContent')
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>{{ __('contact.Contact Details') }}</h1>
-      </div>
-      <div class="col-sm-6">
-        <a class="btn btn-primary float-sm-right" href="{{ route('contact.index') }}">
-            <i class="fa fa-list"></i> {{ __('contact.Contact List') }}
-        </a>
-    </div>
-    </div>
-  </div><!-- /.container-fluid -->
-</section>
     <section class="mb-40 student-details">
         @if(session()->has('message-success'))
             <div class="alert alert-success">
@@ -28,6 +14,9 @@
             <div class="row">
                 <div class="col-lg-3">
                     <!-- Start Student Meta Information -->
+                    <div class="main-title">
+                        <h3 class="mb-20">@lang('contact.Contact Details')</h3>
+                    </div>
                     <div class="student-meta-box">
                         <div class="student-meta-top"></div>
                         <img class="student-meta-img img-100"
@@ -61,7 +50,7 @@
                 </div>
                 <!-- Start Student Details -->
                 <div class="col-lg-9 staff-details">
-                    <ul class="nav nav-tabs tabs_scroll_nav d-flex justify-content-between" role="tablist">
+                    <ul class="nav nav-tabs tabs_scroll_nav" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" href="#studentProfile" role="tab"
                                data-toggle="tab">{{ __('contact.Profile') }}</a>
@@ -69,7 +58,7 @@
 
                         <li class="nav-item edit-button">
                             @if(permissionCheck('contact.edit'))
-                                <a href="{{ route('contact.edit', $model->id) }}" class="btn btn-primary"
+                                <a href="{{ route('contact.edit', $model->id) }}" class="primary-btn small fix-gr-bg"
                                 >{{ __('common.Edit') }}
                                 </a>
                             @endif

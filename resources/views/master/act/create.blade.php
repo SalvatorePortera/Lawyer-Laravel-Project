@@ -21,13 +21,13 @@
                     'content_form', 'files' => false, 'method' => 'POST']) !!}
                     <div class="primary_input">
                         {{Form::label('name', __('case.Name'), ['class' => 'required'])}}
-                        {{Form::text('name', null, ['required' => '', 'class' => 'form-control', 'placeholder' => __
+                        {{Form::text('name', null, ['required' => '', 'class' => 'primary_input_field', 'placeholder' => __
                         ('case.Act')])}}
                     </div>
 
                     <div class="primary_input">
                         {{Form::label('description', __('case.Description'))}}
-                        {{Form::textarea('description', null, ['class' => 'form-control', 'placeholder' =>
+                        {{Form::textarea('description', null, ['class' => 'primary_input_field', 'placeholder' =>
                          __('case.Act Description'), 'rows' => 5, 'maxlength' => 1500,
                          'data-parsley-errors-container' =>
                          '#description_error' ])}}
@@ -35,10 +35,10 @@
                     </div>
 
                     <div class="text-center mt-3">
-                    <button class="btn btn-primary submit" type="submit"><i class="ti-check"></i>{{ __('common.Create') }}
+                    <button class="primary-btn semi_large2 fix-gr-bg submit" type="submit"><i class="ti-check"></i>{{ __('common.Create') }}
                                     </button>
 
-                                    <button class="btn btn-primary submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Creating') . '...' }}
+                                    <button class="primary-btn semi_large2 fix-gr-bg submitting" type="submit" disabled style="display: none;"><i class="ti-check"></i>{{ __('common.Creating') . '...' }}
                                     </button>
 
                     </div>

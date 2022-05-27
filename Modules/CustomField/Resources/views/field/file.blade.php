@@ -20,8 +20,8 @@
         <div class="primary_file_uploader">
             <input class="primary-input" type="text" id="custom_field_{{ $field->id }}_placeholder"
                    placeholder="{{ __('common.Browse file') }}" readonly>
-            <button class="btn btn-primary">
-                <label class=""
+            <button class="" type="button">
+                <label class="primary-btn small fix-gr-bg"
                        for="custom_field_{{ $field->id }}">{{__("common.Browse")}} </label>
                 <input type="file" class="d-none custom_field" name="custom_field[{{ $field->id }}]"
                        id="custom_field_{{ $field->id }}"
@@ -32,7 +32,6 @@
                        onchange="getFileName(this.value, '#custom_field_{{ $field->id }}_placeholder')">
             </button>
         </div>
-
         <span id="custom_field_{{ $field->id }}_error"></span>
     </div>
 </div>

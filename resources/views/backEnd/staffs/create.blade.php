@@ -36,7 +36,7 @@
                                 <div class="col-xl-4">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label required" for="">{{ __('role.Role') }}</label>
-                                        <select class="form-control select2bs4 mb-25" name="role_id" id="role_id"
+                                        <select class="primary_select mb-25" name="role_id" id="role_id"
                                                 onchange="getRoleField()">
                                             @foreach (\Modules\RolePermission\Entities\Role::where('id', '!=', 1)->get() as $key => $role)
                                                 <option
@@ -50,7 +50,7 @@
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label required"
                                                for="">{{ __('common.Name') }}</label>
-                                        <input name="name" class="form-control name"
+                                        <input name="name" class="primary_input_field name"
                                                placeholder="{{ __('common.Name') }}" type="text"
                                                value="{{old('name')}}">
                                         <span class="text-danger">{{$errors->first('name')}}</span>
@@ -61,7 +61,7 @@
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label required"
                                                for="">{{ __('common.Email') }}</label>
-                                        <input name="email" class="form-control name"
+                                        <input name="email" class="primary_input_field name"
                                                placeholder="{{ __('common.Email') }}" type="email"
                                                value="{{old('email')}}">
                                         <span class="text-danger">{{$errors->first('email')}}</span>
@@ -72,7 +72,7 @@
                                 <div class="col-xl-4">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label " for="">{{ __('common.Phone') }}</label>
-                                        <input type="number" class="form-control user_id name"
+                                        <input type="number" class="primary_input_field user_id name"
                                                placeholder="{{ __('common.Phone') }}" name="phone"
                                                value="{{old('phone')}}">
                                         <span class="text-danger">{{$errors->first('phone')}}</span>
@@ -89,7 +89,7 @@
                                                     <i style="cursor:pointer;" class="fas fa-eye-slash eye toggle-password"></i>
                                                 </div>
                                             </div>
-                                            <input type="password" class="form-control form-control"
+                                            <input type="password" class="form-control primary_input_field"
                                                    id="password" name="password" required
                                                    placeholder="{{__('common.Minimum 8 characters')}}" {{$errors->first('password') ? 'autofocus' : ''}}>
                                         </div>
@@ -107,7 +107,7 @@
                                                 <div class="col">
                                                     <div class="">
                                                         <input placeholder="{{ __('common.Date') }}"
-                                                               class="form-control primary-input date form-control"
+                                                               class="primary_input_field primary-input date form-control"
                                                                id="date_of_birth" type="text"
                                                                name="date_of_birth" value="{{date('Y-m-d')}}"
                                                                autocomplete="off">
@@ -127,7 +127,7 @@
                                         <label class="primary_input_label"
                                                for="">{{ __('common.Current Address') }}</label>
                                         <input name="current_address" id="current_address"
-                                               class="form-control name"
+                                               class="primary_input_field name"
                                                placeholder="{{ __('common.Current Address') }}" type="text"
                                                value="{{old('current_address')}}">
                                         <span class="text-danger">{{$errors->first('current_address')}}</span>
@@ -139,7 +139,7 @@
                                         <label class="primary_input_label"
                                                for="">{{ __('common.Permanent Address') }}</label>
                                         <input name="permanent_address" id="permanent_address"
-                                               class="form-control name"
+                                               class="primary_input_field name"
                                                placeholder="{{ __('common.Permanent Address') }}" type="text"
                                                value="{{old('permanent_address')}}">
                                         <span class="text-danger">{{$errors->first('permanent_address')}}</span>
@@ -157,7 +157,7 @@
                                                 <div class="col">
                                                     <div class="">
                                                         <input placeholder="{{ __('common.Date') }}"
-                                                               class="form-control primary-input date form-control"
+                                                               class="primary_input_field primary-input date form-control"
                                                                type="text" name="leave_applicable_date"
                                                                value="{{date('Y-m-d')}}" autocomplete="off">
                                                     </div>
@@ -181,7 +181,7 @@
                                 <div class="col-xl-6 bank_name_div">
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label" for="">{{ __('common.Bank Name') }}</label>
-                                        <input name="bank_name" id="bank_name" class="form-control name"
+                                        <input name="bank_name" id="bank_name" class="primary_input_field name"
                                                value="{{old('bank_name')}}" placeholder="{{ __('common.Bank Name') }}"
                                                type="text">
                                         <span class="text-danger">{{$errors->first('bank_name')}}</span>
@@ -193,7 +193,7 @@
                                         <label class="primary_input_label"
                                                for="">{{ __('common.Bank Branch Name') }}</label>
                                         <input name="bank_branch_name" value="{{old('bank_branch_name')}}"
-                                               id="bank_branch_name" class="form-control name"
+                                               id="bank_branch_name" class="primary_input_field name"
                                                placeholder="{{ __('common.Bank Branch Name') }}" type="text">
                                         <span class="text-danger">{{$errors->first('bank_branch_name')}}</span>
                                     </div>
@@ -204,7 +204,7 @@
                                         <label class="primary_input_label"
                                                for="">{{ __('common.Account Name') }}</label>
                                         <input name="bank_account_name" value="{{old('bank_account_name')}}"
-                                               id="bank_account_name" class="form-control name"
+                                               id="bank_account_name" class="primary_input_field name"
                                                placeholder="{{ __('common.Account Name') }}" type="text">
                                         <span class="text-danger">{{$errors->first('bank_account_name')}}</span>
                                     </div>
@@ -215,7 +215,7 @@
                                         <label class="primary_input_label"
                                                for="">{{ __('common.Bank Account Number') }}</label>
                                         <input name="bank_account_no" value="{{old('bank_account_no')}}"
-                                               id="bank_account_no" class="form-control name"
+                                               id="bank_account_no" class="primary_input_field name"
                                                placeholder="{{ __('common.Bank Account Number') }}" type="text">
                                         <span class="text-danger">{{$errors->first('bank_account_no')}}</span>
                                     </div>
@@ -239,7 +239,7 @@
                                                 <div class="col">
                                                     <div class="">
                                                         <input placeholder="{{ __('common.Date') }}"
-                                                               class="form-control primary-input date form-control"
+                                                               class="primary_input_field primary-input date form-control"
                                                                id="date_of_joining" type="text" name="date_of_joining"
                                                                value="{{date('Y-m-d')}}" autocomplete="off">
                                                     </div>
@@ -257,7 +257,7 @@
                                         <label class="primary_input_label required"
                                                for="">{{ __('common.Basic Salary') }}</label>
                                         <input name="basic_salary" value="{{old('basic_salary', 0)}}" id="basic_salary"
-                                               class="form-control name"
+                                               class="primary_input_field name"
                                                placeholder="{{ __('common.Basic Salary') }}" type="number">
                                         <span class="text-danger">{{$errors->first('basic_salary')}}</span>
                                     </div>
@@ -267,7 +267,7 @@
                                     <div class="primary_input mb-25">
                                         <label class="primary_input_label"
                                                for="">{{ __('common.Employment Type') }}</label>
-                                        <select class="form-control select2bs4 mb-25" name="employment_type" id="employment_type"
+                                        <select class="primary_select mb-25" name="employment_type" id="employment_type"
                                                 onchange="getField()">
                                             <option value="">{{ __('common.Select One') }}</option>
                                             <option value="Provision">{{ __('common.Provision') }}</option>
@@ -282,7 +282,7 @@
                                         <label class="primary_input_label" for="">{{ __('common.Provision Time') }}
                                             <small>({{ __('common.In Months') }})</small> </label>
                                         <input name="provisional_months" value="{{old('provisional_months')}}"
-                                               id="provisional_time" class="form-control name" placeholder="0"
+                                               id="provisional_time" class="primary_input_field name" placeholder="0"
                                                type="number">
                                         <span class="text-danger">{{$errors->first('provisional_months')}}</span>
                                     </div>
@@ -294,7 +294,7 @@
 
                                 <div class="col-lg-12 text-center">
                                     <div class="d-flex justify-content-center pt_20">
-                                        <button type="submit" class="btn btn-primary"
+                                        <button type="submit" class="primary-btn semi_large2 fix-gr-bg"
                                                 id="save_button_parent"><i class="ti-check"></i>{{ __('common.Save') }}
                                         </button>
                                     </div>
