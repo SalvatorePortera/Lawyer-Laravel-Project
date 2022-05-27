@@ -68,6 +68,7 @@ return array(
     'Modules\\' => array($baseDir . '/Modules'),
     'Mews\\Purifier\\' => array($vendorDir . '/mews/purifier/src'),
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
+    'Magarrent\\LaravelCurrencyFormatter\\' => array($vendorDir . '/magarrent/laravel-currency-formatter/src'),
     'Maatwebsite\\Excel\\' => array($vendorDir . '/maatwebsite/excel/src'),
     'Livewire\\' => array($vendorDir . '/livewire/livewire/src'),
     'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
@@ -108,4 +109,5 @@ return array(
     'Barryvdh\\DomPDF\\' => array($vendorDir . '/barryvdh/laravel-dompdf/src'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
     'App\\' => array($baseDir . '/app'),
+    'Akaunting\\Money\\' => array($vendorDir . '/akaunting/laravel-money/src'),
 );

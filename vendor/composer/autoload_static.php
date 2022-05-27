@@ -32,6 +32,7 @@ class ComposerStaticInit033a3c9525e3c4ea518baa16ef9a77dd
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'dbd9b6eefb3e962e369d7b44017a4fc3' => __DIR__ . '/..' . '/spondonit/service/helpers/helper.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'eee56a36884c3af04e64bac85043e771' => __DIR__ . '/..' . '/akaunting/laravel-money/src/helpers.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'caf23243e9cb3afd48d0414815ebf07e' => __DIR__ . '/..' . '/brian2694/laravel-toastr/src/helper.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
@@ -145,6 +146,7 @@ class ComposerStaticInit033a3c9525e3c4ea518baa16ef9a77dd
             'Modules\\' => 8,
             'Mews\\Purifier\\' => 14,
             'Matrix\\' => 7,
+            'Magarrent\\LaravelCurrencyFormatter\\' => 35,
             'Maatwebsite\\Excel\\' => 18,
         ),
         'L' => 
@@ -212,6 +214,7 @@ class ComposerStaticInit033a3c9525e3c4ea518baa16ef9a77dd
         'A' => 
         array (
             'App\\' => 4,
+            'Akaunting\\Money\\' => 16,
         ),
     );
 
@@ -471,6 +474,10 @@ class ComposerStaticInit033a3c9525e3c4ea518baa16ef9a77dd
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
+        'Magarrent\\LaravelCurrencyFormatter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/magarrent/laravel-currency-formatter/src',
+        ),
         'Maatwebsite\\Excel\\' => 
         array (
             0 => __DIR__ . '/..' . '/maatwebsite/excel/src',
@@ -632,6 +639,10 @@ class ComposerStaticInit033a3c9525e3c4ea518baa16ef9a77dd
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'Akaunting\\Money\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/akaunting/laravel-money/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -652,6 +663,9 @@ class ComposerStaticInit033a3c9525e3c4ea518baa16ef9a77dd
     );
 
     public static $classMap = array (
+        'Akaunting\\Money\\Currency' => __DIR__ . '/..' . '/akaunting/laravel-money/src/Currency.php',
+        'Akaunting\\Money\\Money' => __DIR__ . '/..' . '/akaunting/laravel-money/src/Money.php',
+        'Akaunting\\Money\\Provider' => __DIR__ . '/..' . '/akaunting/laravel-money/src/Provider.php',
         'App\\Console\\Commands\\DateReminder' => __DIR__ . '/../..' . '/app/Console/Commands/DateReminder.php',
         'App\\Console\\Commands\\RefreshDemoDb' => __DIR__ . '/../..' . '/app/Console/Commands/RefreshDemoDb.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -4039,6 +4053,9 @@ class ComposerStaticInit033a3c9525e3c4ea518baa16ef9a77dd
         'Maatwebsite\\Excel\\Validators\\RowValidator' => __DIR__ . '/..' . '/maatwebsite/excel/src/Validators/RowValidator.php',
         'Maatwebsite\\Excel\\Validators\\ValidationException' => __DIR__ . '/..' . '/maatwebsite/excel/src/Validators/ValidationException.php',
         'Maatwebsite\\Excel\\Writer' => __DIR__ . '/..' . '/maatwebsite/excel/src/Writer.php',
+        'Magarrent\\LaravelCurrencyFormatter\\Currency' => __DIR__ . '/..' . '/magarrent/laravel-currency-formatter/src/Currency.php',
+        'Magarrent\\LaravelCurrencyFormatter\\Facades\\Currency' => __DIR__ . '/..' . '/magarrent/laravel-currency-formatter/src/Facades/Currency.php',
+        'Magarrent\\LaravelCurrencyFormatter\\LaravelCurrencyFormatterServiceProvider' => __DIR__ . '/..' . '/magarrent/laravel-currency-formatter/src/LaravelCurrencyFormatterServiceProvider.php',
         'Matrix\\Builder' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Builder.php',
         'Matrix\\Decomposition\\Decomposition' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Decomposition/Decomposition.php',
         'Matrix\\Decomposition\\LU' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Decomposition/LU.php',

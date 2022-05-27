@@ -4,8 +4,73 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "385c2321e4877efe0794f843f5b6423c",
+    "content-hash": "8f1797ad8f2cb9184cdeb64fad4b6984",
     "packages": [
+        {
+            "name": "akaunting/laravel-money",
+            "version": "1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akaunting/laravel-money.git",
+                "reference": "e97cbb9735540fac995e5e0b17395ef4ba33ac38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akaunting/laravel-money/zipball/e97cbb9735540fac995e5e0b17395ef4ba33ac38",
+                "reference": "e97cbb9735540fac995e5e0b17395ef4ba33ac38",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.4",
+                "illuminate/view": ">=5.4",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=1.0",
+                "phpunit/phpunit": ">=5.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Akaunting\\Money\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Akaunting\\Money\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Duliçi",
+                    "email": "info@akaunting.com",
+                    "homepage": "https://akaunting.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Currency formatting and conversion package for Laravel",
+            "keywords": [
+                "convert",
+                "currency",
+                "format",
+                "laravel",
+                "money"
+            ],
+            "support": {
+                "issues": "https://github.com/akaunting/laravel-money/issues",
+                "source": "https://github.com/akaunting/laravel-money/tree/1.2.3"
+            },
+            "time": "2021-09-28T06:19:54+00:00"
+        },
         {
             "name": "barryvdh/laravel-dompdf",
             "version": "v0.9.0",
@@ -1897,6 +1962,68 @@
                 }
             ],
             "time": "2020-05-30T13:11:16+00:00"
+        },
+        {
+            "name": "magarrent/laravel-currency-formatter",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magarrent/laravel-currency-formatter.git",
+                "reference": "ed2ad01ed7538edb091a62c6574e004a11e2a02f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magarrent/laravel-currency-formatter/zipball/ed2ad01ed7538edb091a62c6574e004a11e2a02f",
+                "reference": "ed2ad01ed7538edb091a62c6574e004a11e2a02f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^7.0|^8.0|^9.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Magarrent\\LaravelCurrencyFormatter\\LaravelCurrencyFormatterServiceProvider"
+                    ],
+                    "aliases": {
+                        "Currency": "Magarrent\\LaravelCurrencyFormatter\\Facades\\Currency"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Magarrent\\LaravelCurrencyFormatter\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Garcia Torrent (Kodio Technologies)",
+                    "email": "magarrent@gmail.com"
+                }
+            ],
+            "description": "Tiny Laravel worldwide currency formatter",
+            "keywords": [
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/magarrent/laravel-currency-formatter/issues",
+                "source": "https://github.com/magarrent/laravel-currency-formatter/tree/1.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/magarrent",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-04-04T14:06:18+00:00"
         },
         {
             "name": "markbaker/complex",
