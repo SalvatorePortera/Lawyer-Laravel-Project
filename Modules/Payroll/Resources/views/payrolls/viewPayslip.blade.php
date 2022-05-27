@@ -126,7 +126,7 @@
 
             <tr>
                 <th scope="col">{{ __('common.Name') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">{{$payrollDetails->staff->user->name}}</td>
+                <td class="p-2" style="font-family: DejaVu Sans;">@if($payrollDetails->staff){{$payrollDetails->staff->user->name}}@endif</td>
             </tr>
 
             <tr>
