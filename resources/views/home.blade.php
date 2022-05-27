@@ -41,7 +41,7 @@
                 <div class="d-flex justify-content-between">
                         <p class="mb-0">{{__('dashboard.Total Amount')}}</p>
                         <h1 class="gradient-color2">
-                            {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->count()}}
+                           $ {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->sum('grand_total')}}
                         </h1>
                 </div>
                 <div class="d-flex justify-content-between">
