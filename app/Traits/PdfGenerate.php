@@ -12,7 +12,6 @@ trait PdfGenerate
         $pdf = PDF::loadView($view,compact('data'))->setPaper('a4', 'portrait');
         return $pdf->download("invoice-{$data->invoice_no}.pdf");
     }
-
     public function getPayroll($view, $payrollDetails)
     {
         $pdf = PDF::loadView($view,compact('payrollDetails'))->setPaper('a4', 'landscape');

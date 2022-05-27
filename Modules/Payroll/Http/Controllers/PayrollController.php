@@ -194,7 +194,6 @@ class PayrollController extends Controller
 
         try {
             $payrollDetails = $this->payrollRepository->find($id);
-
             return $this->getPayroll('payroll::payrolls.viewPayslip', $payrollDetails);
         } catch (\Exception $e) {
 
