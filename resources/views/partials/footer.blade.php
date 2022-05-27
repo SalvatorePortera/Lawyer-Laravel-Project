@@ -91,7 +91,7 @@
 <!-- <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script> -->
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('public/AdminLTE/dist/js/adminlte.min.js?v=3.2.0')}}"></script>
+<script type="text/javascript" src="{{asset('public/AdminLTE/dist/js/adminlte.js?v=3.2.0')}}"></script>
 <script src="{{asset('public/backEnd/')}}/vendors/js/select2/select2.min.js"></script>
 <script src="{{ asset('public/js/parsley.min.js') }}"></script>
 
@@ -215,6 +215,23 @@
                     toastr.error(data.error);
                 }
             });
+        });
+         $('#showDiskSize').click(function() {
+            $.post('{{ route('language.change') }}', {_token: '{{ csrf_token() }}', code: code}, function (data) {
+
+                if (data.success) {
+                    location.reload();
+                    toastr.success(data.success);
+                } else {
+                    toastr.error(data.error);
+                }
+            });
+
+
+          Toast.fire({
+            icon: 'info',
+            title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
         });
     });
 </script>

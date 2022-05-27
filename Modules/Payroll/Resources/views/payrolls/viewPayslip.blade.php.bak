@@ -1,17 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 
     <title>Invoice</title>
 
     <!-- Required meta tags -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet" href="{{asset('public/backEnd/')}}/css/rtl/bootstrap.min.css"/>
 
     <style>
-        body{font-family: DejaVu Sans;}
         .invoice_heading {
             border-bottom: 1px solid black;
             padding: 20px;
@@ -126,35 +125,35 @@
 
             <tr>
                 <th scope="col">{{ __('common.Name') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">{{$payrollDetails->staff->user->name}}</td>
+                <td class="p-2">{{$payrollDetails->staff->user->name}}</td>
             </tr>
 
             <tr>
                 <th scope="col">{{ __('payroll.Payment Method') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">{{strtoupper($payrollDetails->payment_mode)}}</td>
+                <td class="p-2">{{strtoupper($payrollDetails->payment_mode)}}</td>
             </tr>
             <tr>
                 <th scope="col">{{ __('payroll.Basic Salary') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">{{single_price($payrollDetails->basic_salary)}}</td>
+                <td class="p-2">{{single_price($payrollDetails->basic_salary)}}</td>
             </tr>
             <tr>
                 <th scope="col">{{ __('payroll.Total Earning') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">
+                <td class="p-2">
 
                     {{single_price($payrollDetails->total_earning)}}
                 </td>
             </tr>
             <tr>
                 <th scope="col">{{ __('payroll.Total Deduction') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">{{single_price($payrollDetails->total_deduction)}}</td>
+                <td class="p-2">{{single_price($payrollDetails->total_deduction)}}</td>
             </tr>
             <tr>
                 <th scope="col">{{ __('payroll.Net Salary') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">{{single_price($payrollDetails->net_salary)}}</td>
+                <td class="p-2">{{single_price($payrollDetails->net_salary)}}</td>
             </tr>
             <tr>
                 <th scope="col">{{ __('payroll.Gross Salary') }}</th>
-                <td class="p-2" style="font-family: DejaVu Sans;">{{single_price($payrollDetails->gross_salary)}}</td>
+                <td class="p-2">{{single_price($payrollDetails->gross_salary)}}</td>
             </tr>
         </table>
     </div>

@@ -19,6 +19,7 @@ trait PdfGenerate
         return $pdf->download("Payroll-{$payrollDetails->staff->employee_id}.pdf");
     }
 
+
     public function getPdf($title, $view, $data)
     {
         $pdf = PDF::loadView($view, $data)->setPaper('a4', 'portrait');

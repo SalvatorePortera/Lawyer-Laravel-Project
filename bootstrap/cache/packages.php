@@ -1,4 +1,11 @@
 <?php return array (
+  'akaunting/laravel-money' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Akaunting\\Money\\Provider',
+    ),
+  ),
   'barryvdh/laravel-debugbar' => 
   array (
     'providers' => 
@@ -121,6 +128,17 @@
     'aliases' => 
     array (
       'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
+    ),
+  ),
+  'magarrent/laravel-currency-formatter' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Magarrent\\LaravelCurrencyFormatter\\LaravelCurrencyFormatterServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Currency' => 'Magarrent\\LaravelCurrencyFormatter\\Facades\\Currency',
     ),
   ),
   'mews/purifier' => 

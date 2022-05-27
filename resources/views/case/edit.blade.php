@@ -23,7 +23,7 @@
                                     @if(permissionCheck('category.case.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('category.case.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="case_category_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -47,7 +47,7 @@
                                     @if(permissionCheck('master.act.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('master.act.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="act_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -65,7 +65,7 @@
                                             @if(permissionCheck('client.store'))
                                                 <label class="primary_input_label green_input_label" for="">
                                                     <a href="{{ route('client.create', ['quick_add' => true, 'plaintiff' => true]) }}"
-                                                       class="btn-modal"
+                                                       class="btn-modal btn btn-sm btn-warning"
                                                        data-container="client_add_modal">{{ __('case.Create New') }}
                                                         <i class="fas fa-plus-circle"></i></a></label>
                                             @endif
@@ -79,7 +79,7 @@
                                             @if(permissionCheck('client.store'))
                                                 <label class="primary_input_label green_input_label" for="">
                                                     <a href="{{ route('client.create', ['quick_add' => true, 'plaintiff' => false]) }}"
-                                                       class="btn-modal"
+                                                       class="btn-modal btn btn-sm btn-warning"
                                                        data-container="client_add_modal">{{ __('case.Create New') }}
                                                         <i class="fas fa-plus-circle"></i></a></label>
                                             @endif
@@ -95,7 +95,7 @@
                                     @if(permissionCheck('category.client.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('category.client.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="client_category_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -111,7 +111,7 @@
                                     @if(permissionCheck('category.court.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('category.court.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="court_category_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -125,7 +125,7 @@
                                     @if(permissionCheck('master.court.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('master.court.create', ['quick_add' => true]) }}"
-                                               class="btn-modal" data-depend="#court_category_id"
+                                               class="btn-modal btn btn-sm btn-warning" data-depend="#court_category_id"
                                                data-depend_text="{{ __('court.Please Select Court Category First') }}"
                                                data-container="court_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
@@ -152,7 +152,7 @@
                                     @if(permissionCheck('master.stage.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('master.stage.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="case_stage_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
