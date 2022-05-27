@@ -8606,7 +8606,7 @@ table.dataTable thead .sorting_desc::after {
 
 /* line 479, G:/laragon/www/CRM_frontend/Admin_crm/public/frontend/scss/_CRM_form.scss */
 .green_input_label a {
-  color: #8A0909;
+  color: green;
   white-space: nowrap;
 }
 

@@ -14,7 +14,7 @@ use Modules\Payroll\Http\Requests\PayrollReportFormRequest;
 use Modules\Payroll\Http\Requests\PayrollFilterFormRequest;
 use Modules\Payroll\Repositories\PayrollRepositoryInterface;
 use App\Traits\PdfGenerate;
-use PDF;
+//use PDF;
 
 class PayrollController extends Controller
 {
@@ -191,10 +191,10 @@ class PayrollController extends Controller
 
     public function getPdf($id)
     {
-        
+
         try {
             $payrollDetails = $this->payrollRepository->find($id);
-            
+
             return $this->getPayroll('payroll::payrolls.viewPayslip', $payrollDetails);
         } catch (\Exception $e) {
 

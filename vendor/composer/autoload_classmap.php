@@ -6,6 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Akaunting\\Money\\Currency' => $vendorDir . '/akaunting/laravel-money/src/Currency.php',
+    'Akaunting\\Money\\Money' => $vendorDir . '/akaunting/laravel-money/src/Money.php',
+    'Akaunting\\Money\\Provider' => $vendorDir . '/akaunting/laravel-money/src/Provider.php',
     'App\\Console\\Commands\\DateReminder' => $baseDir . '/app/Console/Commands/DateReminder.php',
     'App\\Console\\Commands\\RefreshDemoDb' => $baseDir . '/app/Console/Commands/RefreshDemoDb.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -3393,6 +3396,9 @@ return array(
     'Maatwebsite\\Excel\\Validators\\RowValidator' => $vendorDir . '/maatwebsite/excel/src/Validators/RowValidator.php',
     'Maatwebsite\\Excel\\Validators\\ValidationException' => $vendorDir . '/maatwebsite/excel/src/Validators/ValidationException.php',
     'Maatwebsite\\Excel\\Writer' => $vendorDir . '/maatwebsite/excel/src/Writer.php',
+    'Magarrent\\LaravelCurrencyFormatter\\Currency' => $vendorDir . '/magarrent/laravel-currency-formatter/src/Currency.php',
+    'Magarrent\\LaravelCurrencyFormatter\\Facades\\Currency' => $vendorDir . '/magarrent/laravel-currency-formatter/src/Facades/Currency.php',
+    'Magarrent\\LaravelCurrencyFormatter\\LaravelCurrencyFormatterServiceProvider' => $vendorDir . '/magarrent/laravel-currency-formatter/src/LaravelCurrencyFormatterServiceProvider.php',
     'Matrix\\Builder' => $vendorDir . '/markbaker/matrix/classes/src/Builder.php',
     'Matrix\\Decomposition\\Decomposition' => $vendorDir . '/markbaker/matrix/classes/src/Decomposition/Decomposition.php',
     'Matrix\\Decomposition\\LU' => $vendorDir . '/markbaker/matrix/classes/src/Decomposition/LU.php',

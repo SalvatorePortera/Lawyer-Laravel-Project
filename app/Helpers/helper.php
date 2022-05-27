@@ -6,6 +6,9 @@ use Modules\Localization\Entities\Language;
 use App\Models\Subscription;
 use App\Models\Lawyer;
 use Illuminate\Support\Facades\DB;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat\NumberFormatter;
+use Akaunting\Money\Currency;
+use Akaunting\Money\Money;
 
 if (!function_exists('_lang')) {
 	function _lang($string = '') {
@@ -1119,7 +1122,7 @@ if (!function_exists('formatDate')) {
         }
         try {
             //return Carbon::parse($input_date)->locale(session()->get('locale', Config::get('app.locale')))->translatedFormat( config('date_format'));
-            return date('d F, Y', strtotime($input_date)); 
+            return date('d F, Y', strtotime($input_date));
         } catch (\Throwable $th) {
 
             return $input_date;
@@ -1133,8 +1136,9 @@ if (!function_exists('single_price')) {
         if (!$price)
             $price = 0;
 
-        if (config('configs')->where('key', 'currency_symbol')->first()->value) {
-            return config('configs')->where('key', 'currency_symbol')->first()->value . " " . number_format($price, 2);
+        if (config('configs')->where('key', 'currency_code')->first()->value) {
+            return new Money($price, new Currency(config('configs')->where('key', 'currency_code')->first()->value));
+
         } else {
             return number_format($price, 2) . " bdt";
         }
@@ -1380,7 +1384,7 @@ if (!function_exists('getSystemSubscription')) {
             $expiry_date = date('Y-m-d H:i:s',strtotime($subscription->expiry_date));
             $currentTimestamp = strtotime($current_date);
             $expiryTimestamp = strtotime($expiry_date);
-            
+
             if($currentTimestamp >= $expiryTimestamp){
                 $is_expired = true;
             }
@@ -1460,7 +1464,7 @@ if (!function_exists('getSubscriptionDays')) {
         $date2 = $subscription->expiry_date;
         // Calculating the difference in timestamps
         $diff = strtotime($date2) - strtotime($date1);
-        
+
         // 1 day = 24 hours
         // 24 * 60 * 60 = 86400 seconds
         return abs(round($diff / 86400));

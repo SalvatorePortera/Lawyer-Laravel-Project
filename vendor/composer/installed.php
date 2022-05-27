@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => '0527.x-dev',
+        'version' => '0527.9999999.9999999.9999999-dev',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'dfa3c81f5e961620d284c190c0000cd4e1bce9fa',
+        'reference' => 'f5e25785bbbbeae487f8958baf10e3eb03e5364a',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'akaunting/laravel-money' => array(
+            'pretty_version' => '1.2.3',
+            'version' => '1.2.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../akaunting/laravel-money',
+            'aliases' => array(),
+            'reference' => 'e97cbb9735540fac995e5e0b17395ef4ba33ac38',
+            'dev_requirement' => false,
+        ),
         'barryvdh/laravel-debugbar' => array(
             'pretty_version' => 'v3.6.7',
             'version' => '3.6.7.0',
@@ -422,12 +431,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => '0527.x-dev',
+            'version' => '0527.9999999.9999999.9999999-dev',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'dfa3c81f5e961620d284c190c0000cd4e1bce9fa',
+            'reference' => 'f5e25785bbbbeae487f8958baf10e3eb03e5364a',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -536,6 +545,15 @@
             'install_path' => __DIR__ . '/../maennchen/zipstream-php',
             'aliases' => array(),
             'reference' => 'c4c5803cc1f93df3d2448478ef79394a5981cc58',
+            'dev_requirement' => false,
+        ),
+        'magarrent/laravel-currency-formatter' => array(
+            'pretty_version' => '1.0.4',
+            'version' => '1.0.4.0',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../magarrent/laravel-currency-formatter',
+            'aliases' => array(),
+            'reference' => 'ed2ad01ed7538edb091a62c6574e004a11e2a02f',
             'dev_requirement' => false,
         ),
         'markbaker/complex' => array(

@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "akaunting/laravel-money": "^1.2",
         "barryvdh/laravel-dompdf": "^0.9.0",
         "brian2694/laravel-toastr": "^5.54",
         "fideloper/proxy": "^4.0",
@@ -17,6 +18,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "livewire/livewire": "^2.3",
+        "magarrent/laravel-currency-formatter": "^1.0",
         "mews/purifier": "^3.3",
         "nwidart/laravel-modules": "^8.2",
         "spatie/laravel-activitylog": "^3.17",

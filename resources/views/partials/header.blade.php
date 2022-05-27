@@ -98,29 +98,25 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="#collapseData" data-toggle="collapse" class="nav-link text-white">Disk Size</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">
-    			@if(getSystemSubscription())
-    				System is Expired. Please contact the System Administrator
-    			@else
-    				Subscription Remaining Days : {{getSubscriptionDays()}}
+        	<a href="#" class="nav-link">
+          @if(!getSystemSubscription())
+    				<p>Subscription Remaining Days : {{getSubscriptionDays()}}</p>
     			@endif
-    		</a>
+    		  </a>
 	     </li>
        <li class="nav-item d-none d-sm-inline-block">
-          @php
+          <a class="nav-link collapse"  data-toggle="collapse" id="collapseData">
+            @php
               $sizeStorage = getSizeDiskStatus();
             @endphp
-
-          <a href="index3.html" class="nav-link">
-          @if($sizeStorage['balance_storage_size']<0)
-            System storage limit is exceeded. Please contact the System Administrator.
-          @else
-            Allocated Disk space : {{$sizeStorage['disk_storage_limit']}} MB,
-            Balance Disk space : {{$sizeStorage['balance_storage_size']}} MB
-          @endif
+            @if($sizeStorage['balance_storage_size']<0)
+              <h3 class="text-truncate text-danger">System storage limit is exceeded. Please contact the System Administrator.</h3>
+            @else
+              <h3 class="text-truncate text-warning">Allocated Disk space : {{$sizeStorage['disk_storage_limit']}} MB, Balance Disk space : {{$sizeStorage['balance_storage_size']}} MB</h3>
+            @endif
           </a>
        </li>
     </ul>
