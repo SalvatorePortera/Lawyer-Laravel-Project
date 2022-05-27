@@ -2,127 +2,137 @@
 @section('mainContent')
 @if(permissionCheck('dashboard_quick_summery.index'))
 <div class="row">
-    <div class="col-lg-3 col-md-6">
-                <a href="{{route('client.index')}}" class="d-block">
-                    <div class="white-box single-summery">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h3>{{__('dashboard.Client')}} </h3>
-                                <p class="mb-0">{{__('dashboard.Total Client')}}</p>
-                            </div>
-                            <h1 class="gradient-color2">{{App\Models\Client::all()->count()}}
-                            </h1>
-                        </div>
-                    </div>
-                </a>
+    <div class="col-xl-3 col-lg-4 col-md-6">
+        <a href="{{route('client.index')}}" class="d-block">
+            <div class="white-box single-summery">
+                <h3>{{__('dashboard.Client')}} </h3>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">{{__('dashboard.Total Client')}}</p>
+                    <h1 class="gradient-color2">{{App\Models\Client::all()->count()}}</h1>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0"> &nbsp;</p>
+                    <h1 class="gradient-color2"> &nbsp;</h1>
+                </div>
             </div>
-	<div class="col-lg-3 col-md-6">
+        </a>
+    </div>
+	<div class="col-xl-3 col-lg-4 col-md-6">
 		<a href="{{route('lawyer.index')}}" class="d-block">
 			<div class="white-box single-summery">
-				<div class="d-flex justify-content-between">
-					<div>
-						<h3>{{__('dashboard.Lawyer')}}</h3>
-						<p class="mb-0">{{__('dashboard.Total Lawyer')}}</p>
-					</div>
+				<h3>{{__('dashboard.Lawyer')}}</h3>
+                <div class="d-flex justify-content-between">
+					<p class="mb-0">{{__('dashboard.Total Lawyer')}}</p>
 					<h1 class="gradient-color2">{{App\Models\Lawyer::all()->count()}}
 					</h1>
-				</div>
-			</div>
+			     </div>
+                 <div class="d-flex justify-content-between">
+                    <p class="mb-0"> &nbsp;</p>
+                    <h1 class="gradient-color2"> &nbsp;</h1>
+                </div>
+            </div>
 		</a>
 	</div>
 
-	<div class="col-lg-3 col-md-6">
-		<a href="{{route('contact.index')}}" class="d-block">
+	<div class="col-xl-3 col-lg-4 col-md-6">
+		<a href="{{route('report.paymentdue')}}" class="d-block">
 			<div class="white-box single-summery">
-				<div class="d-flex justify-content-between">
-					<div>
-						<h3>{{__('dashboard.Payment Due')}}</h3>
-						<p class="mb-0">{{__('dashboard.Total Payment Due')}}</p>
-					</div>
-					<h1 class="gradient-color2">
-                        {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->count()}}
-					</h1>
-				</div>
-			</div>
+				<h3>{{__('dashboard.Payment Due')}}</h3>
+                <div class="d-flex justify-content-between">
+                        <p class="mb-0">{{__('dashboard.Total Amount')}}</p>
+                        <h1 class="gradient-color2">
+                            {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->count()}}
+                        </h1>
+                </div>
+                <div class="d-flex justify-content-between">
+                        <p class="mb-0">{{__('dashboard.Total No Of Due Bills')}}</p>
+                        <h1 class="gradient-color2">
+                            {{Modules\Finance\Entities\Invoice::where('payment_status','!=','paid')->where('invoice_type','=','income')->count()}}
+                        </h1>
+                </div>
+            </div>
 		</a>
 	</div>
 
 	<div class="col-lg-3 col-md-6">
 		<a href="{{route('case.index')}}" class="d-block">
 			<div class="white-box single-summery">
-				<div class="d-flex justify-content-between">
-					<div>
-						<h3>{{__('dashboard.Running Cases')}}</h3>
-						<p class="mb-0">{{__('dashboard.Total Running Cases')}}</p>
-					</div>
-					<h1 class="gradient-color2">{{App\Models\Cases::where('status', 'Open')->where('judgement_status', '=', 'Open')->count()}}
-					</h1>
+				<h3>{{__('dashboard.Running Cases')}}</h3>
+                <div class="d-flex justify-content-between">
+					<p class="mb-0">{{__('dashboard.Total Running Cases')}}</p>
+					<h1 class="gradient-color2">{{App\Models\Cases::where('status', 'Open')->where('judgement_status', '=', 'Open')->count()}}</h1>
 				</div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0"> &nbsp;</p>
+                    <h1 class="gradient-color2"> &nbsp;</h1>
+                </div>
 			</div>
 		</a>
 	</div>
 
     <div class="col-lg-3 col-md-6">
-                <a href="{{route('case.index', ['status' => 'Waiting'])}}" class="d-block">
-                    <div class="white-box single-summery">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h3>{{__('dashboard.Waiting Cases')}}</h3>
-                                <p class="mb-0">{{__('dashboard.Total Waiting Cases')}}</p>
-                            </div>
-                            <h1 class="gradient-color2">{{App\Models\Cases::where('hearing_date', '<', date('Y-m-d'))->where('status', 'Open')->where('judgement_status', '=', 'Open')->count()}}
-                            </h1>
-                        </div>
-                    </div>
-                </a>
+        <a href="{{route('case.index', ['status' => 'Waiting'])}}" class="d-block">
+            <div class="white-box single-summery">
+                <h3>{{__('dashboard.Waiting Cases')}}</h3>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">{{__('dashboard.Total Waiting Cases')}}</p>
+                    <h1 class="gradient-color2">{{App\Models\Cases::where('hearing_date', '<', date('Y-m-d'))->where('status', 'Open')->where('judgement_status', '=', 'Open')->count()}}
+                    </h1>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0"> &nbsp;</p>
+                    <h1 class="gradient-color2"> &nbsp;</h1>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <a href="{{route('case.index', ['status' => 'Archieved'])}}" class="d-block">
-                    <div class="white-box single-summery">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h3>{{__('dashboard.Closed Cases')}}</h3>
-                                <p class="mb-0">{{__('dashboard.Total Closed Cases')}}</p>
-                            </div>
-                            <h1 class="gradient-color2">{{App\Models\Cases::where('judgement_status', 'Close')->count()}}
-                            </h1>
-                        </div>
-                    </div>
-                </a>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <a href="{{route('case.index', ['status' => 'Archieved'])}}" class="d-block">
+            <div class="white-box single-summery">
+                <h3>{{__('dashboard.Closed Cases')}}</h3>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">{{__('dashboard.Total Closed Cases')}}</p>
+                    <h1 class="gradient-color2">{{App\Models\Cases::where('judgement_status', 'Close')->count()}}</h1>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0"> &nbsp;</p>
+                    <h1 class="gradient-color2"> &nbsp;</h1>
+                </div>
             </div>
-
-
-            <div class="col-lg-3 col-md-6">
-                <a href="{{route('staffs.index')}}" class="d-block">
-                    <div class="white-box single-summery">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h3>{{__('dashboard.Staff')}}</h3>
-                                <p class="mb-0">{{__('dashboard.Total Staff')}}</p>
-                            </div>
-                            <h1 class="gradient-color2">{{App\Staff::count()}}
-                            </h1>
-                        </div>
-                    </div>
-                </a>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <a href="{{route('staffs.index')}}" class="d-block">
+            <div class="white-box single-summery">
+                <h3>{{__('dashboard.Staff')}}</h3>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">{{__('dashboard.Total Staff')}}</p>
+                    <h1 class="gradient-color2">{{App\Staff::count()}}
+                    </h1>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0"> &nbsp;</p>
+                    <h1 class="gradient-color2"> &nbsp;</h1>
+                </div>
             </div>
-
-
-
-            <div class="col-lg-3 col-md-6">
-                <a href="{{route('my-task')}}" class="d-block">
-                    <div class="white-box single-summery">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h3>{{__('dashboard.Pending Task')}}</h3>
-                                <p class="mb-0">{{__('dashboard.Total Pending task')}}</p>
-                            </div>
-                            <h1 class="gradient-color2">{{Modules\Task\Entities\Task::where('status', 0)->count()}}
-                            </h1>
-                        </div>
-                    </div>
-                </a>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <a href="{{route('my-task')}}" class="d-block">
+            <div class="white-box single-summery">
+                <h3>{{__('dashboard.Pending Task')}}</h3>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">{{__('dashboard.Total Pending task')}}</p>
+                    <h1 class="gradient-color2">{{Modules\Task\Entities\Task::where('status', 0)->count()}}
+                    </h1>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0"> &nbsp;</p>
+                    <h1 class="gradient-color2"> &nbsp;</h1>
+                </div>
             </div>
+        </a>
+    </div>
 </div>
 @endif
 

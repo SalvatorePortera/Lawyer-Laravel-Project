@@ -20,7 +20,7 @@
                     <div class="student-meta-box">
                         <div class="student-meta-top"></div>
                         <img class="student-meta-img img-180"
-                             src="{{ file_exists($model->avatar) ? asset($model->avatar) : asset('public\backEnd/img/staff.jpg') }}"
+                             src="{{ Storage::disk('public')->exists($model->avatar) ? Storage::disk('public')->url($model->avatar) : asset('public\backEnd/img/staff.jpg') }}"
                              alt="">
                         <div class="white-box">
                             <div class="single-meta mt-10">

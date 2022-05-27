@@ -6,6 +6,7 @@ use App\Models\Upload;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use File;
 
@@ -97,12 +98,9 @@ trait ImageStore
 
             $current_date  = Carbon::now()->format('d-m-Y');
 
-            if(!File::isDirectory('uploads/avatar/'.$current_date)){
-
-                File::makeDirectory('uploads/avatar/'.$current_date, 0777, true, true);
-
+            if(!Storage::disk('public')->exists('uploads/avatar/'.$current_date)){
+                Storage::disk('public')->makeDirectory('uploads/avatar/'.$current_date, 0777, true, true);
             }
-
             $image_extention = str_replace('image/','',Image::make($image)->mime());
 
             if($height != null && $lenght != null ){
@@ -112,7 +110,9 @@ trait ImageStore
             }
 
             $img_name = 'uploads/avatar/'.$current_date.'/'.uniqid().'.'.$image_extention;
-            $img->save($img_name);
+            $path = Storage::putFileAs('public', $image, $img_name);
+            
+            // $img->save($img_name);
 
             return $img_name;
         }else{

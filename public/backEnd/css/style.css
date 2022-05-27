@@ -6175,3 +6175,6 @@ footer.footer-area {
     font-family: monospace;
     font-weight: normal;
 }
+.kv-avatar .file-default-preview img{
+  width: 100%
+}

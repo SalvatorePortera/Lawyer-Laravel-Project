@@ -11,6 +11,8 @@ return array (
   'Contact' => 'Contact',
   'Total Contact' => 'Total Contact',
   'Running Cases' => 'Running Cases',
+  'Total Amount'=>'Total Amount',
+  'Total No Of Due Bills'=>'Total No Of Due Bills',
   'Total Running Cases' => 'Total Running Cases',
   'Waiting Cases' => 'Waiting Cases',
   'Total Waiting Cases' => 'Total Waiting Cases',

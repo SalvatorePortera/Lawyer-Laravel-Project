@@ -16,7 +16,7 @@
                     <div class="white_box_50px box_shadow_white">
                         {!! Form::model($model, ['route' => ['client.update', $model->id], 'class' => 'form-validate-jquery', 'id' => 'content_form', 'method' => 'PUT']) !!}
                         <div class="row">
-                            <div class="col-sm-3 text-center">
+                            <div class="col-12 col-sm-6 col-xl-3 text-center">
                                 <div class="kv-avatar">
                                     <div class="file-loading">
                                         <input id="avatarImage" name="avatarImage" value="fasdf.jpg" type="file">
@@ -27,7 +27,7 @@
                                     <small>Select file < 1500 KB</small>
                                 </div>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-12 col-sm-6 col-xl-9">
                                 <div class="row">
                                     <div class="primary_input col-md-6">
                                         {{Form::label('name', __('client.Client Name'), ['class' => 'required'])}}
@@ -157,7 +157,7 @@
         removeTitle: 'Cancel or reset changes',
         elErrorContainer: '#kv-avatar-errors-2',
         msgErrorClass: 'alert alert-block alert-danger',
-        defaultPreviewContent: '<img src="'+SET_DOMAIN +'/<?php if(isset($model) && $model->avatar!='') echo $model->avatar.$model->avatar; else echo 'public/uploads/staff/user.png';?>'+'" alt="Your Avatar"><h6 class="text-muted">Click to select</h6>',
+        defaultPreviewContent: '<img src="<?php if(isset($model) && $model->avatar) echo Storage::disk('public')->url($model->avatar); else echo asset('public/uploads/staff/user.png');?>'+'" alt="Your Avatar"><h6 class="text-muted">Click to select</h6>',
         layoutTemplates: {main2: '{preview} ' + ' {remove} {browse}'},
         allowedFileExtensions: ["jpg", "png", "gif"]
     });

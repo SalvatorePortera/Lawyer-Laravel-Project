@@ -189,13 +189,9 @@ class ClientController extends Controller
     public function edit($id)
     {
         $model = Client::with('user')->findOrFail($id);
-        echo $model->avatar;
-        $isExists = Storage::exists($model->avatar);
-        $path = Storage::disk('uploads')->path('file.jpg');
-        echo $path;
-        dd($isExists);
-        exit;
-
+        $isExists = Storage::disk('public')->exists($model->avatar);
+        if(!$isExists)
+            $model->avatar=null;
         $countries = Country::all()->pluck('name', 'id')->prepend(__('client.Select country'), '');
         $states = State::where('country_id', $model->country_id)->pluck('name', 'id')->prepend(__('client.Select state'), '');
         $cities = City::where('state_id', $model->state_id)->pluck('name', 'id')->prepend(__('client.Select city'), '');

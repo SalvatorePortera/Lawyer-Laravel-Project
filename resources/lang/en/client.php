@@ -12,6 +12,7 @@ return array(
     'Create New Client Category' => 'Create New Client Category',
     'New Client Category' => 'New Client Category',
     'Name' => 'Name',
+    'Business Type'=>'Business Type',
     'Description' => 'Description',
     'Client Category Description' => 'Client Category Description',
     'Not a Court Case' => 'Not a Court Case',

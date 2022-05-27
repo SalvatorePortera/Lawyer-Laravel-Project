@@ -19,8 +19,9 @@
                     </div>
                     <div class="student-meta-box">
                         <div class="student-meta-top"></div>
+                        
                         <img class="student-meta-img img-100"
-                             src="{{ asset('/')}}@if(isset($model) && $model->avatar!=''){{@$model->avatar}}@else{{'public/uploads/staff/user.png'}} @endif "
+                             src="{{ Storage::disk('public')->exists($model->avatar) ? Storage::disk('public')->url($model->avatar) : asset('public\backEnd/img/staff.jpg') }}"
                              alt="">
                         <div class="white-box">
                             <div class="single-meta mt-10">

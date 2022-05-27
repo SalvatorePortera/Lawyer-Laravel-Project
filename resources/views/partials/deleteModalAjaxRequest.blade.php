@@ -14,6 +14,7 @@
                 <div class="mt-40 d-flex justify-content-between">
                     <button type="button" class="primary-btn tr-bg" data-dismiss="modal">@lang('common.Cancel')</button>
                     <form id="item_delete_form">
+                        @csrf
                         <input type="hidden" name="id" id="delete_item_id">
                         <input type="submit" class="primary-btn fix-gr-bg" value="Delete"/>
                     </form>

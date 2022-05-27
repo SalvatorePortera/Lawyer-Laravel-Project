@@ -20,8 +20,8 @@
                     </div>
                     <div class="student-meta-box">
                         <div class="student-meta-top"></div>
-                        <img class="student-meta-img img-100"
-                             src="{{ file_exists(@$staffDetails->user->avatar) ? asset(@$staffDetails->user->avatar) : asset('backEnd/img/Fred_man-512.png') }}"
+                            <img class="student-meta-img img-100"
+                             src="{{ Storage::disk('public')->exists(@$staffDetails->user->avatar) ? Storage::disk('public')->url(@$staffDetails->user->avatar) : asset('public\backEnd/img/staff.jpg') }}"
                              alt="">
                         <div class="white-box">
                             <div class="single-meta mt-10">

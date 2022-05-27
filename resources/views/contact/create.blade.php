@@ -117,7 +117,7 @@
         removeTitle: 'Cancel or reset changes',
         elErrorContainer: '#kv-avatar-errors-2',
         msgErrorClass: 'alert alert-block alert-danger',
-        defaultPreviewContent: '<img src="'+SET_DOMAIN +'/<?php if(isset($model) && $model->avatar!='') echo $model->avatar; else echo 'public/uploads/staff/user.png';?>'+'" alt="Your Avatar"><h6 class="text-muted">Click to select</h6>',
+        defaultPreviewContent: '<img src="<?php if(isset($model) && $model->avatar) echo Storage::disk('public')->url($model->avatar); else echo asset('public/uploads/staff/user.png');?>'+'" alt="Your Avatar"><h6 class="text-muted">Click to select</h6>',
         layoutTemplates: {main2: '{preview} ' + ' {remove} {browse}'},
         allowedFileExtensions: ["jpg", "png", "gif"]
     });

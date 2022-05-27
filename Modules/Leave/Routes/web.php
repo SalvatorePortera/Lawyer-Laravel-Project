@@ -22,6 +22,7 @@ Route::prefix('leave')->middleware('auth','systemsubscription')->group(function(
         Route::post('/change-approval', 'LeaveController@change_approval')->name('set_approval_leave');
 
         Route::get('/define-lists', 'LeaveDefineController@index')->name('leave_define.index');
+        Route::post('/define-lists', 'LeaveDefineController@index')->name('leave_define.index');
         Route::post('/define-store', 'LeaveDefineController@store')->name('leave_define.store');
         Route::post('/define-update', 'LeaveDefineController@update')->name('leave_define.update');
         Route::post('/define-delete', 'LeaveDefineController@delete')->name('leave_define.delete');
