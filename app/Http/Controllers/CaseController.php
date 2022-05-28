@@ -67,7 +67,7 @@ class CaseController extends Controller
         $data['lawyers'] = Lawyer::all()->pluck('name', 'id');
         $data['acts'] = Act::all()->pluck('name', 'id');
         $data['courts'] = ['' => __('case.Select Court')];
-
+        $data['client_type'] = ['' => __('case.Select Client Type'),'Plaintiff' => __('case.Plaintiff'),'Opposite' => __('case.Accused')];
         $fields = null;
 
         if (moduleStatusCheck('CustomField')) {
@@ -91,15 +91,17 @@ class CaseController extends Controller
                 return false;
             }
         }
-
+        //'plaintiff' => 'required|integer',
+        //'opposite' => 'required|integer',
+        //'client_category_id' => 'required|integer',
         $validate_rules = [
             'case_category_id' => 'required|integer',
             'case_no' => 'sometimes|nullable|string',
             'file_no' => 'sometimes|nullable|string|max:20',
             'acts*' => 'required|integer',
-            'plaintiff' => 'required|integer',
-            'opposite' => 'required|integer',
-            'client_category_id' => 'required|integer',
+            'caseClient'=>'required|integer',
+            'client_type'=>'required|string',
+            'caseOtherParty'=>'sometimes|nullable|string',
             'court_category_id' => 'required|integer',
             'court_id' => 'required|integer',
             'lawyer_id*' => 'sometimes|nullable|integer',
@@ -128,9 +130,9 @@ class CaseController extends Controller
                 throw ValidationException::withMessages(['judgement' => __('case.Judgment field is required ')]);
             }
         }
-        if ($request->plaintiff == $request->opposite) {
-            throw ValidationException::withMessages(['plaintiff' => __('case.Plaintiff can not be opposite')]);
-        }
+        // if ($request->plaintiff == $request->opposite) {
+        //     throw ValidationException::withMessages(['plaintiff' => __('case.Plaintiff can not be opposite')]);
+        // }
 
         try {
 
@@ -151,12 +153,25 @@ class CaseController extends Controller
                 $receiving_date = date_format(date_create($request->receiving_date), 'Y-m-d H:i:s');
             }
 
+            if($request->client_type=='Plaintiff'){
+                $plaintiff_id=$request->caseClient;
+                $opposite_id=0;
+                $plaintiff = Client::find($request->caseClient);
+                $title = $plaintiff->name . '(Client) v/s ' . $request->caseOtherParty;
+                $client_category_id = $plaintiff->client_category_id;
+            }else{
+                $opposite_id=$request->caseClient;
+                $plaintiff_id=0;
+                $opposite = Client::find($request->caseClient);
+                $title = $request->caseOtherParty . ' v/s ' . $opposite->name.'(Client)';
+                $client_category_id = $opposite->client_category_id;
+            }
 
-            $plaintiff = Client::find($request->plaintiff);
-            $opposite = Client::find($request->opposite);
-            $title = $plaintiff->name . ' v/s ' . $opposite->name;
-            $client_category = ClientCategory::find($request->client_category_id);
-            $client = $client_category->plaintiff ? 'Plaintiff' : 'Opposite';
+            // $plaintiff = Client::find($request->plaintiff);
+            // $opposite = Client::find($request->opposite);
+            
+            $client = ($request->client_type=='Plaintiff') ? 'Plaintiff' : 'Opposite';
+
             $model = new Cases();
             $model->title = $title;
             $model->client = $client;
@@ -172,10 +187,11 @@ class CaseController extends Controller
             $model->case_category_id = $request->case_category_id;
             $model->case_no = $request->case_no;
             $model->file_no = $request->file_no;
-            $model->plaintiff = $request->plaintiff;
+            $model->plaintiff = $plaintiff_id;
             $model->case_charge = $request->case_charge;
-            $model->opposite = $request->opposite;
-            $model->client_category_id = $request->client_category_id;
+            $model->opposite = $opposite_id;
+            $model->other_party = $request->caseOtherParty;
+            $model->client_category_id = $client_category_id;
             $model->court_category_id = $request->court_category_id;
             $model->court_id = $request->court_id;
             $model->ref_name = $request->ref_name;
@@ -293,6 +309,11 @@ class CaseController extends Controller
     public function edit($id)
     {
         $model = Cases::with('acts')->findOrFail($id);
+        if($model->plaintiff){
+            $model->caseClient=$model->plaintiff;
+            $model->client_type='Plaintiff';
+            $model->caseOtherParty=$model->other_party;
+        }
         $data['clients'] = Client::all()->pluck('name', 'id');
         $data['client_categories'] = ClientCategory::all()->pluck('name', 'id')->prepend(__('case.Select Client Category'), '');
         $data['stages'] = Stage::all()->pluck('name', 'id')->prepend(__('case.Select Case Stage'), '');
@@ -302,7 +323,7 @@ class CaseController extends Controller
         $data['courts'] = Court::where('court_category_id', $model->court_category_id)->pluck('name', 'id')->prepend(__('case.Select Court'), '');
         $data['acts'] = Act::all()->pluck('name', 'id');
         $data['selected_acts'] = $model->acts()->pluck('acts_id');
-
+        $data['client_type'] = ['' => __('case.Select Client Type'),'Plaintiff' => __('case.Plaintiff'),'Opposite' => __('case.Accused')];
         $fields = null;
 
         if (moduleStatusCheck('CustomField')) {
@@ -332,14 +353,17 @@ class CaseController extends Controller
                 return false;
             }
         }
+        // 'plaintiff' => 'required|integer',
+        //     'opposite' => 'required|integer',
+        //     'client_category_id' => 'required|integer',
         $validate_rules = [
             'case_category_id' => 'required|integer',
             'case_no' => 'sometimes|nullable|string',
             'file_no' => 'sometimes|nullable|string|max:20',
             'acts*' => 'required|integer',
-            'plaintiff' => 'required|integer',
-            'opposite' => 'required|integer',
-            'client_category_id' => 'required|integer',
+            'caseClient'=>'required|integer',
+            'client_type'=>'required|string',
+            'caseOtherParty'=>'sometimes|nullable|string',
             'court_category_id' => 'required|integer',
             'court_id' => 'required|integer',
             'stage_id' => 'sometimes|nullable|integer',
@@ -365,30 +389,42 @@ class CaseController extends Controller
             $filling_date = date_format(date_create($request->filling_date), 'Y-m-d H:i:s');
         }
 
-        if ($request->plaintiff == $request->opposite) {
-            Toastr::error(__('case.Plaintiff can not be opposite'));
-            throw ValidationException::withMessages(['plaintiff' => __('case.Plaintiff can not be opposite')]);
-        }
+        // if ($request->plaintiff == $request->opposite) {
+        //     Toastr::error(__('case.Plaintiff can not be opposite'));
+        //     throw ValidationException::withMessages(['plaintiff' => __('case.Plaintiff can not be opposite')]);
+        // }
         if ($request->receiving_date_yes) {
             $receiving_date = date_format(date_create($request->receiving_date), 'Y-m-d H:i:s');
         }
-
+        if($request->client_type=='Plaintiff'){
+            $plaintiff_id=$request->caseClient;
+            $opposite_id=0;
+            $plaintiff = Client::find($request->caseClient);
+            $title = $plaintiff->name . '(Client) v/s ' . $request->caseOtherParty;
+            $case_category_id = $plaintiff->client_category_id;
+        }else{
+            $opposite_id=$request->caseClient;
+            $plaintiff_id=0;
+            $opposite = Client::find($request->caseClient);
+            $title = $request->caseOtherParty . ' v/s ' . $opposite->name.'(Client)';
+            $case_category_id = $opposite->client_category_id;
+        }
 
         $model = Cases::findOrFail($id);
-        $plaintiff = Client::find($request->plaintiff);
-        $opposite = Client::find($request->opposite);
-        $title = $plaintiff->name . ' v/s ' . $opposite->name;
-        $client_category = ClientCategory::find($request->client_category_id);
-        $client = $client_category->plaintiff ? 'Plaintiff' : 'Opposite';
+        // $plaintiff = Client::find($request->plaintiff);
+        // $opposite = Client::find($request->opposite);
+        // $title = $plaintiff->name . ' v/s ' . $opposite->name;
+        // $client_category = ClientCategory::find($request->client_category_id);
+        $client = ($request->client_type=='Plaintiff') ? 'Plaintiff' : 'Opposite';
 
         $model->title = $title;
         $model->client = $client;
-        $model->case_category_id = $request->case_category_id;
+        $model->case_category_id = $case_category_id;
         $model->case_no = $request->case_no;
         $model->file_no = $request->file_no;
-        $model->plaintiff = $request->plaintiff;
+        $model->plaintiff = $plaintiff_id;
         $model->case_charge = $request->case_charge;
-        $model->opposite = $request->opposite;
+        $model->opposite = $opposite_id;
         $model->client_category_id = $request->client_category_id;
         $model->court_category_id = $request->court_category_id;
         $model->court_id = $request->court_id;

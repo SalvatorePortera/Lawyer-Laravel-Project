@@ -23,7 +23,7 @@
                                     @if(permissionCheck('category.case.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('category.case.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="case_category_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -49,7 +49,7 @@
                                     @if(permissionCheck('master.act.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('master.act.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="act_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -62,51 +62,34 @@
                             <div class="primary_input col-md-6">
                                 <div class="row">
                                     <div class="primary_input col-md-6">
-
                                         <div class="d-flex justify-content-between">
-                                            {{Form::label('plaintiff', __('case.Plaintiff'), ['class' => 'required'])}}
+                                            {{Form::label('caseClient', __('case.Client'), ['class' => 'required'])}}
                                             @if(permissionCheck('client.store'))
                                                 <label class="primary_input_label green_input_label" for="">
                                                     <a href="{{ route('client.create', ['quick_add' => true, 'plaintiff' => true]) }}"
-                                                       class="btn-modal"
+                                                       class="btn-modal btn btn-sm btn-warning"
                                                        data-container="client_add_modal">{{ __('case.Create New') }}
                                                         <i class="fas fa-plus-circle"></i></a></label>
                                             @endif
                                         </div>
-                                        {{Form::select('plaintiff', $data['clients']->prepend(__('case.Select Plaintiff'), ''), null, ['required' => '', 'class' => 'primary_select', 'data-placeholder' => __('case.Select Plaintiff'), 'data-parsley-errors-container' => '#plaintiff_error'])}}
-                                        <span id="plaintiff_error"></span>
+                                        {{Form::select('caseClient', $data['clients']->prepend(__('case.Select Client'), ''), null, ['required' => '', 'class' => 'primary_select', 'data-placeholder' => __('case.Select Client'), 'data-parsley-errors-container' => '#caseClient_error'])}}
+                                        <span id="caseClient_error"></span>
                                     </div>
                                     <div class="primary_input col-md-6">
-
                                         <div class="d-flex justify-content-between">
-                                            {{Form::label('opposite', __('case.Accuesed'), ['class' => 'required'])}}
-                                            @if(permissionCheck('client.store'))
-                                                <label class="primary_input_label green_input_label" for="">
-                                                    <a href="{{ route('client.create', ['quick_add' => true, 'plaintiff' => false]) }}"
-                                                       class="btn-modal"
-                                                       data-container="client_add_modal">{{ __('case.Create New') }}
-                                                        <i class="fas fa-plus-circle"></i></a></label>
-                                            @endif
+                                            {{Form::label('client_type', __('case.Client Type'),['class' => 'required'])}}
                                         </div>
-                                        {{Form::select('opposite', $data['clients']->prepend(__('case.Select Accuesed'), ''), null, ['required' => '', 'class' => 'primary_select', 'data-placeholder' => __('case.Select Accuesed'), 'data-parsley-errors-container' => '#opposite_error'])}}
-                                        <span id="opposite_error"></span>
+                                        {{Form::select('client_type', $data['client_type'], null, ['required' => '', 'class' => 'primary_select', 'data-placeholder' => __('case.Client Type'), 'data-parsley-errors-container' => '#client_type_error'])}}
+                                        <span id="client_type_error"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="primary_input col-md-6">
-
                                 <div class="d-flex justify-content-between">
-                                    {{Form::label('client_category_id', __('case.On Behalf Of'),['class' => 'required'])}}
-                                    @if(permissionCheck('category.client.store'))
-                                        <label class="primary_input_label green_input_label" for="">
-                                            <a href="{{ route('category.client.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
-                                               data-container="client_category_add_modal">{{ __('case.Create New') }}
-                                                <i class="fas fa-plus-circle"></i></a></label>
-                                    @endif
+                                    {{Form::label('caseOtherParty', __('case.Other Party'), ['class' => 'required'])}}
                                 </div>
-                                {{Form::select('client_category_id', $data['client_categories'], null, ['required' => '', 'class' => 'primary_select', 'data-placeholder' => __('case.Select On Behalf Of'), 'data-parsley-errors-container' => '#client_category_id_error'])}}
-                                <span id="client_category_id_error"></span>
+                                {{Form::text('caseOtherParty', null, ['class' => 'primary_input_field', 'placeholder' => __('case.Other Party')])}}
+                                <span id="caseOtherParty_error"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -117,7 +100,7 @@
                                     @if(permissionCheck('category.court.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('category.court.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="court_category_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -132,7 +115,7 @@
                                     @if(permissionCheck('master.court.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('master.court.create', ['quick_add' => true]) }}"
-                                               class="btn-modal" data-depend="#court_category_id"
+                                               class="btn-modal btn btn-sm btn-warning" data-depend="#court_category_id"
                                                data-depend_text="{{ __('court.Please Select Court Category First') }}"
                                                data-container="court_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
@@ -172,7 +155,7 @@
                                     @if(permissionCheck('lawyer.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('lawyer.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="lawyer_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
@@ -187,7 +170,7 @@
                                     @if(permissionCheck('master.stage.store'))
                                         <label class="primary_input_label green_input_label" for="">
                                             <a href="{{ route('master.stage.create', ['quick_add' => true]) }}"
-                                               class="btn-modal"
+                                               class="btn-modal btn btn-sm btn-warning"
                                                data-container="case_stage_add_modal">{{ __('case.Create New') }}
                                                 <i class="fas fa-plus-circle"></i></a></label>
                                     @endif
