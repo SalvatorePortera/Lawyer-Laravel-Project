@@ -384,17 +384,17 @@ class InvoiceService
 
     }
 
-    public function destroy(int $id, string $invoice_type)
+    public function destroy(int $id)
     {
-        $model = $this->destroyAble($id, $invoice_type);
+        $model = $this->destroyAble($id);
         $model->transactions()->delete();
         $model->items()->delete();
         return $model->delete();
     }
 
-    private function destroyAble(int $id, string $invoice_type)
+    private function destroyAble(int $id)
     {
-        return $this->findById($id, $invoice_type);
+        return $this->findById($id);
     }
 
     public function getPreRequisiteForSettings()

@@ -2,12 +2,12 @@
 
 var fileInput = document.getElementById('browseFile');
 	if (fileInput) {
-		fileInput.addEventListener('change', showFileName);
-		function showFileName(event) {
-			var fileInput = event.srcElement;
-			var fileName = fileInput.files[0].name;
-			document.getElementById('placeholderInput').placeholder = fileName;
-		}
+		// fileInput.addEventListener('change', showFileName);
+		// function showFileName(event) {
+		// 	var fileInput = event.srcElement;
+		// 	var fileName = fileInput.files[0].name;
+		// 	document.getElementById('placeholderInput').placeholder = fileName;
+		// }
 	}
 
 	if ($('.multipleSelect').length) {

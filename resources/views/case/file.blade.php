@@ -1,16 +1,29 @@
 <div class="col-xl-12 mt-3 attach-file-row">
-    <div class="attach-file-section d-flex align-items-center mb-2">
-        <div class="primary_input flex-grow-1">
-            <div class="primary_file_uploader">
-                <input class="primary-input" type="text" id="placeholderAttachFile" placeholder="{{ __('common.Browse file') }}" readonly>
-                <button class="" type="button">
-                    <label class="primary-btn small fix-gr-bg"
-                           for="attach_file">{{__("common.Browse")}} </label>
-                    <input type="file" class="d-none" name="file[]" id="attach_file">
-                </button>
-            </div>
-        </div>
-        <span style="cursor:pointer;" class="primary-btn small fix-gr-bg icon-only" type="button" id="file_add"> <i class="ti-plus"></i> </span>
-    </div>
+    <table class="table table-striped file-table">
+        <thead>
+            <tr>
+                <th width="20%">Client to</th>
+                <th class="text-center">Select File</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="attach-file-tbody">
+            <tr class="attach-row">
+                <td>
+                    <div class="icheck-primary">
+                    <input type="checkbox" checked id="check_view_to0" name="checkViewTo0" value="1">
+                    <label for="check_view_to0"></label>
+                  </div>
+                </td>
+                <td>
+                    <input type="file" name="file[]" id="attach_file">
+                </td>
+                <td>
+                    <span style="cursor:pointer;" class="primary-btn small fix-gr-bg icon-only" type="button" id="file_add"> <i class="ti-plus"></i> </span>
+                </td>
+            </tr>            
+        </tbody>
+    </table>
+    
 
 </div>

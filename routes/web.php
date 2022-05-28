@@ -149,6 +149,7 @@ Route::group(['middleware' => ['auth','systemsubscription']], function () {
 
     Route::resource('file', 'FileController');
     Route::get('/download/{id}', 'FileController@download')->name('file.download');
+    Route::get('/client2view/{id}', 'FileController@client2view')->name('file.client2view');
     
     //Modules Routes
     Route::resource('/business', '\Modules\Superadmin\Http\Controllers\BusinessController');

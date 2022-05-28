@@ -12,6 +12,9 @@
       </thead>
       <tbody>
     @foreach($files as $file)
+       @if (auth()->user()->role_id == 0 && $file->client2view==0)
+          @continue
+       @endif
         <tr>
             <td class="text-center">{{ $loop->index + 1}}.</td>
             <td>@if($file->invoice)
@@ -33,14 +36,21 @@
             </td>
             <td>
                 @if(permissionCheck($type.'.edit'))
-                        <span  class="primary-btn small fix-gr-bg icon-only  btn-modal" data-container="file_modal" data-href="{{ route('file.edit', $file->uuid) }}" style="cursor: pointer;"><i class="ti-pencil"></i></span>
-                    @endif
+                  
+                        <span class="btn @if($file->client2view==1) btn-primary @else btn-warning @endif btn-sm btn-client-view" data-url="{{route('file.client2view', $file->uuid)}}" data-file-id="{{$file->uuid}}" title="Client To View" style="cursor: pointer;">
+                          @if($file->client2view==1)
+                          <i class="fa fa-eye"></i>
+                          @else
+                          <i class="fa fa-eye-slash"></i>
+                          @endif
+                        </span>
+                @endif
                     @if(permissionCheck($type.'.destroy'))
-                        <span style="cursor: pointer;"
-                              data-url="{{route('file.destroy', $file->uuid)}}" id="delete_item" class="primary-btn small fix-gr-bg icon-only"><i class="ti-trash"></i></span>
+                        <a style="cursor: pointer;"
+                              data-url="{{route('file.destroy', $file->uuid)}}" class="btn btn-primary btn-sm delete_item"><i class="fa fa-trash"></i></a>
                     @endif
-                    <a href="{{ route('file.download', ['id' => $file->uuid]) }}" class="primary-btn small fix-gr-bg icon-only">
-                                                            <i class="ti-download"></i>
+                    <a href="{{ route('file.download', ['id' => $file->uuid]) }}" class="btn btn-primary btn-sm">
+                                                            <i class="fa fa-download"></i>
                                                         </a>
             </td>
         </tr>

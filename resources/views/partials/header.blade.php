@@ -34,7 +34,7 @@
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('public/AdminLTE/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/AdminLTE/dist/css/adminlte.css')}}">
   
   <link rel="stylesheet" href="{{asset('public/AdminLTE/plugins/toastr/toastr.min.css')}}">
   <!-- overlayScrollbars -->

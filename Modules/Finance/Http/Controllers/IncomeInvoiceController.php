@@ -54,7 +54,7 @@ class IncomeInvoiceController extends Controller
      */
     public function show($id)
     {
-        $data['model'] = $this->invoiceService->findById($id, $this->invoice_type);
+        $data['model'] = $this->invoiceService->findById($id);
         return view('finance::invoice.show', $data);
     }
 
@@ -88,7 +88,8 @@ class IncomeInvoiceController extends Controller
      */
     public function destroy($id)
     {
-        $this->invoiceService->destroy($id, $this->invoice_type);
+        $this->invoiceService->destroy($id);
+
         return response()->json(['message' => trans('finance.'. ucfirst($this->invoice_type) .' Invoice Deleted Successful'), 'goto' => route('invoice.incomes.index')]);
     }
 }

@@ -49,6 +49,10 @@ class VendorController extends Controller
 
     public function edit($id)
     {
+        if($id==0){
+            $preRequisite = $this->vendorService->getPreRequisite();
+            return view('finance::vendor.create', $preRequisite);
+        }
         $preRequisite = $this->vendorService->getPreRequisite($id);
         return view('finance::vendor.edit', $preRequisite);
     }

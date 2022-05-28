@@ -54,14 +54,14 @@ $(document).ready(function () {
 
 var fileInput = document.getElementById('photo');
 if (fileInput) {
-    fileInput.addEventListener('change', showFileName);
+    // fileInput.addEventListener('change', showFileName);
 
-    function showFileName(event) {
-        "use strict";
-        var fileInput = event.srcElement;
-        var fileName = fileInput.files[0].name;
-        document.getElementById('placeholderPhoto').placeholder = fileName;
-    }
+    // function showFileName(event) {
+    //     "use strict";
+    //     var fileInput = event.srcElement;
+    //     var fileName = fileInput.files[0].name;
+    //     document.getElementById('placeholderPhoto').placeholder = fileName;
+    // }
 }
 
 

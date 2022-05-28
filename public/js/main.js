@@ -618,12 +618,24 @@ function imageChangeWithFile(input, srcId) {
 
  var index = 0;
  $(document).on('click','#file_add',function(){
-     index = $('.attach-item').length
+
+     index = $('table.file-table tbody .attach-row').length
      addNewFileAddItem(index)
+ });
+ $(document).on('click','span.btn-client-view',function(){
+    var url = $(this).data('url');
+    $(this).toggleClass("btn-primary btn-warning");
+    $(this).children('.fa-eye, .fa-eye-slash').toggleClass("fa-eye-slash fa-eye");
+    $.get({
+            url: url,
+            }).done(function (data) {       
+                toastr.success(data.message)
+                  
+    });     
  });
 
  $(document).on('click','.case-attach',function(){
-     $(this).parent().remove();
+     $(this).parent().parent().remove();
  });
 
  $(document).on('change','.file-upload-multi',function(e){
@@ -634,21 +646,14 @@ function imageChangeWithFile(input, srcId) {
  function addNewFileAddItem(index){
      "use strict";
 
-     var attachFile = '<div class="attach-file-section d-flex align-items-center">\n' +
-         '        <div class="primary_input flex-grow-1">\n' +
-         '            <div class="primary_file_uploader">\n' +
-         '                <input class="primary-input" type="text" id="placeholderStaffsName" placeholder="'+trans('Browse File')+'" readonly>\n' +
-         '                <button class="" type="button">\n' +
-         '                    <label class="primary-btn small fix-gr-bg"\n' +
-         '                           for="attach_file_'+index+'">'+trans('Browse')+'</label>\n' +
-         '                    <input type="file" class="d-none file-upload-multi" name="file[]" id="attach_file_'+index+'">\n' +
-         '                </button>\n' +
-         '            </div>\n' +
-         '        </div>\n' +
-         '        <span style="cursor:pointer;" class="primary-btn small fix-gr-bg icon-only case-attach" type="button" > <i class="ti-trash"></i> </span>\n' +
-         '    </div>';
+     var attachFile = '<tr class="attach-row"><td><div class="icheck-primary"><input type="checkbox" checked value="1" name="checkViewTo'+index+'" id="check_view_to'+index+'"><label for="check_view_to'+index+'"></label></div></td>\n'+
+          '            <td><input type="file" name="file[]" id="attach_file_'+index+'"></td>\n'+
+         '              <td>\n' +
+         '          <span style="cursor:pointer;" class="primary-btn small fix-gr-bg icon-only case-attach" type="button" > <i class="ti-trash"></i> </span>\n' +
+        '       </td></tr>';
+        $('.attach-file-tbody').append(attachFile);
 
-     $('.attach-file-row').append(attachFile);
+
  }
 
 

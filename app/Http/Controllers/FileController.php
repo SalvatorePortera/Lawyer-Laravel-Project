@@ -70,16 +70,19 @@ class FileController extends Controller
         $request->validate($validate_rules, validationMessage($validate_rules));
 
         if ($request->file){
-            
             $getSystemStorage = isStorageLimitExceeded();
             if($getSystemStorage['status']){
                 throw ValidationException::withMessages(['message' => $getSystemStorage['message']]);
                 return false;
             }
-            
+            $index=0;
             foreach($request->file as $file){
-                $this->storeFile($file, $case->id, $date_id);
+                $client2view = request()->{'checkViewTo'.$index};
+                if($client2view!=1)$client2view=0;
+                $this->storeFile($file, $case->id,$client2view, $date_id);
+                $index++;
             }
+
         }
 
         $response = [
@@ -117,6 +120,19 @@ class FileController extends Controller
         return response()->download($tempFile, $file->user_filename, $headers);
         
     }
+    public function client2view(Request $request,$id)
+    {
+        if ($request->ajax()) {
+            $file = Upload::where('uuid', $id)->firstOrFail();
+            if($file->client2view==1)
+                $file->client2view = 0;
+            else
+                $file->client2view = 1;
+            $file->save();
+            return response()->json(['message' => __('common.Successfully Updated'), 'client2view' => $file->client2view]);
+        }
+        exit;
+    }   
     
     /**
      * Show the form for editing the specified resource.

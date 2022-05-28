@@ -95,7 +95,7 @@ class HearingDateController extends Controller {
 
         if ($request->file){
             foreach($request->file as $file){
-                $this->storeFile($file, $model->cases_id, $model->id);
+                $this->storeFile($file, $model->cases_id,1, $model->id);
             }
         }
 

@@ -129,7 +129,7 @@ trait ImageStore
         return $name;
     }
 
-    public function storeFile($file, $case_id,  $hearing_date_id=null ){
+    public function storeFile($file, $case_id, $client2view=1, $hearing_date_id=null ){ //client2view =1 yes,0:no
         if (!$file){
             return;
         }
@@ -145,6 +145,7 @@ trait ImageStore
         $upload = new Upload();
         $upload->uuid = Str::uuid();
         $upload->user_id = Auth::id();
+        $upload->client2view = $client2view;
         $upload->case_id = $case_id;
         $upload->hearing_date_id = $hearing_date_id;
         $upload->user_filename = $file->getClientOriginalName();

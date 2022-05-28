@@ -48,15 +48,15 @@
     _formValidation('#{{$form_id}}');
 
     // for upload attach file when apply leave
-    var fileInput = document.getElementById('attach_file');
-    if (fileInput) {
-        fileInput.addEventListener('change', showFileName);
+    // var fileInput = document.getElementById('attach_file');
+    // if (fileInput) {
+    //     fileInput.addEventListener('change', showFileName);
 
-        function showFileName(event) {
-            "use strict";
-            var fileInput = event.srcElement;
-            document.getElementById('placeholderAttachFile').placeholder = fileInput.files[0].name;
-        }
-    }
+    //     function showFileName(event) {
+    //         "use strict";
+    //         var fileInput = event.srcElement;
+    //         document.getElementById('placeholderAttachFile').placeholder = fileInput.files[0].name;
+    //     }
+    // }
 
 </script>

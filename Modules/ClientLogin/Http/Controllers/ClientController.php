@@ -87,8 +87,13 @@ class ClientController extends Controller
         $countries = Country::all()->pluck('name', 'id')->prepend(__('client.Select country'), '');
         $states = State::where('country_id', $user->country_id)->pluck('name', 'id')->prepend(__('client.Select state'), '');
         $cities = City::where('state_id', $user->state_id)->pluck('name', 'id')->prepend(__('client.Select city'), '');
-        $cases = Cases::all();
-        $invoices = Invoice::where('clientable_type', 'App\Models\Client')->pluck('invoice_no', 'id')->prepend( __('finance.Select Invoice'), '');
+        $invoices = Invoice::where('clientable_type', 'App\Models\Client')->where('clientable_id', auth()->user()->client->id)->pluck('invoice_no', 'id')->prepend( __('finance.Select Invoice'), '');
+        $cases = Cases::where(function($q){
+            return $q->where('status', 'Open')->orWhereIn('judgement_status',['Open','Reopen']);
+        })->where(function($q){
+            return $q->where('plaintiff', auth()->user()->client->id)->orWhere('opposite', auth()->user()->client->id);
+        })->get();
+        //$cases = Cases::all();
         $files = Upload::where('user_id', auth()->user()->id)->get();
         $fields = null;
 

@@ -577,7 +577,7 @@ class CaseController extends Controller
             }
             
             foreach ($request->file as $file) {
-                $this->storeFile($file, $model->cases_id, $date->id);
+                $this->storeFile($file, $model->cases_id,1, $date->id);
             }
         }
 
