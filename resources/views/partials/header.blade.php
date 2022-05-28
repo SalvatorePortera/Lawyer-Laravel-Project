@@ -101,13 +101,6 @@
         <a href="#collapseData" data-toggle="collapse" class="nav-link text-white">Disk Size</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        	<a href="#" class="nav-link">
-          @if(!getSystemSubscription())
-    				<p>Subscription Remaining Days : {{getSubscriptionDays()}}</p>
-    			@endif
-    		  </a>
-	     </li>
-       <li class="nav-item d-none d-sm-inline-block">
           <a class="nav-link collapse"  data-toggle="collapse" id="collapseData">
             @php
               $sizeStorage = getSizeDiskStatus();
@@ -119,6 +112,14 @@
             @endif
           </a>
        </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        	<a href="#" class="nav-link">
+          @if(!getSystemSubscription())
+    				<h4 class="text-truncate text-white">Subscription Remaining Days : {{getSubscriptionDays()}}</h4>
+    			@endif
+    		  </a>
+	     </li>
+       
     </ul>
 
     <!-- Right navbar links -->
