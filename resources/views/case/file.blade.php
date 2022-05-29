@@ -2,7 +2,7 @@
     <table class="table table-striped file-table">
         <thead>
             <tr>
-                <th width="20%">{{ __('case.CLIENT TO VIEW') }}</th>
+                <th width="20%">{{ __('case.Client to view') }}</th>
                 <th class="text-center">{{ __('case.Select File') }}</th>
                 <th></th>
             </tr>
