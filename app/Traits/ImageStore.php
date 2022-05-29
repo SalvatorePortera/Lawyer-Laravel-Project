@@ -161,7 +161,8 @@ trait ImageStore
         if (!file_exists('public/uploads/user-file')) {
             mkdir('public/uploads/user-file', 0777, true);
         }
-
+        if($invoice_id==0)$invoice_id=null;
+        if($case_id==0)$case_id=null;
         $fileName = time() .'-'.uniqid('infix-').'.'. $file->getClientOriginalExtension();
         $file->move('public/uploads/user-file/', $fileName);
         $path = 'public/uploads/user-file/' . $fileName;

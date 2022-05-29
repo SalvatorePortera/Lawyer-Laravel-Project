@@ -35,6 +35,7 @@
                 {{ $file->user_filename}}
             </td>
             <td>
+                {{$file->user->role}}
                 @if(permissionCheck($type.'.edit') && $file->user->role!=0)
                   
                         <span class="btn @if($file->client2view==1) btn-primary @else btn-warning @endif btn-sm btn-client-view" data-url="{{route('file.client2view', $file->uuid)}}" data-file-id="{{$file->uuid}}" title="Client To View" style="cursor: pointer;">
@@ -45,7 +46,7 @@
                           @endif
                         </span>
                 @endif
-                    @if(permissionCheck($type.'.destroy'))
+                    @if(permissionCheck($type.'.destroy') && $file->user->role!=0)
                         <a style="cursor: pointer;"
                               data-url="{{route('file.destroy', $file->uuid)}}" class="btn btn-primary btn-sm delete_item"><i class="fa fa-trash"></i></a>
                     @endif
