@@ -60,7 +60,7 @@
             }
         </script>
         <script src="{{ asset('public/js/parsley.min.js') }}"></script>
-        <script src="{{ asset('/backEnd/js/parsley_i18n/'.session()->get('locale', Config::get('app.locale')).'.js') }}"></script>
+        <script src="{{ asset('public/backEnd/js/parsley_i18n/'.session()->get('locale', Config::get('app.locale')).'.js') }}"></script>
         <script src="{{ asset('public/backEnd/vendors/js/toastr.min.js')}}"></script>
 
         <script>
