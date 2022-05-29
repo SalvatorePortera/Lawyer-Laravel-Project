@@ -45,7 +45,7 @@
                           @endif
                         </span>
                 @endif
-                    @if(permissionCheck($type.'.destroy') && $file->user->role!=0)
+                    @if(permissionCheck($type.'.destroy') && $file->user->role_id!=0)
                         <a style="cursor: pointer;"
                               data-url="{{route('file.destroy', $file->uuid)}}" class="btn btn-primary btn-sm delete_item"><i class="fa fa-trash"></i></a>
                     @endif
