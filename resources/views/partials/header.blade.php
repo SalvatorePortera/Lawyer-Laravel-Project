@@ -106,9 +106,9 @@
               $sizeStorage = getSizeDiskStatus();
             @endphp
             @if($sizeStorage['balance_storage_size']<0)
-              <h3 class="text-truncate text-danger">System storage limit is exceeded. Please contact the System Administrator.</h3>
+              <h3 class="text-truncate text-warning">System storage limit is exceeded. Please contact the System Administrator.</h3>
             @else
-              <h3 class="text-truncate text-warning">Allocated Disk space : {{$sizeStorage['disk_storage_limit']}} MB, Balance Disk space : {{$sizeStorage['balance_storage_size']}} MB</h3>
+              <h3 class="text-truncate text-white">Allocated Disk space : {{$sizeStorage['disk_storage_limit']}} MB, Balance Disk space : {{$sizeStorage['balance_storage_size']}} MB</h3>
             @endif
           </a>
        </li>
