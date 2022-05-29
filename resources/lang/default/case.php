@@ -13,6 +13,7 @@ return array(
     'Select Division' => 'Select Division',
     'Select Client Type'=>'Select Client Type',
     'Client to view'=>'Client to view',
+    'Select File'=>'Select File',
     'Client Type' =>'Client Type',
     'Other Party' =>'Other Party',
     'Accused'=>'Accused',
