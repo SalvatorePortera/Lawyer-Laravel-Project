@@ -2,8 +2,8 @@
     <table class="table table-striped file-table">
         <thead>
             <tr>
-                <th width="20%">Client to</th>
-                <th class="text-center">Select File</th>
+                <th width="20%">case.Client to view</th>
+                <th class="text-center">case.Select File</th>
                 <th></th>
             </tr>
         </thead>

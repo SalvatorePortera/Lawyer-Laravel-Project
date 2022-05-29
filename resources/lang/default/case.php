@@ -12,6 +12,7 @@ return array(
     'Case Added Successfully' => 'Case Added Successfully',
     'Select Division' => 'Select Division',
     'Select Client Type'=>'Select Client Type',
+    'Client to view'=>'Client to view',
     'Client Type' =>'Client Type',
     'Other Party' =>'Other Party',
     'Accused'=>'Accused',

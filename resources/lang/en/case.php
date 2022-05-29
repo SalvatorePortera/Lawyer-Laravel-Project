@@ -15,6 +15,8 @@ return array(
     'Case Not Found' => 'Case Not Found',
     'Client Type' =>'Client Type',
     'Other Party' =>'Other Party',
+    'Client to view'=>'Client to view',
+    'Select File'=>'Select File',
     'Accused'=>'Accused',
     'Select Client Type'=>'Select Client Type',
     'Case Deleted Successfully' => 'Case Deleted Successfully',
