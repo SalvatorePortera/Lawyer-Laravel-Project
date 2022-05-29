@@ -398,13 +398,13 @@ class CaseController extends Controller
         }
         if($request->client_type=='Plaintiff'){
             $plaintiff_id=$request->caseClient;
-            $opposite_id=0;
+            $opposite_id=null;
             $plaintiff = Client::find($request->caseClient);
             $title = $plaintiff->name . '(Client) v/s ' . $request->caseOtherParty;
             $case_category_id = $plaintiff->client_category_id;
         }else{
             $opposite_id=$request->caseClient;
-            $plaintiff_id=0;
+            $plaintiff_id=null;
             $opposite = Client::find($request->caseClient);
             $title = $request->caseOtherParty . ' v/s ' . $opposite->name.'(Client)';
             $case_category_id = $opposite->client_category_id;
