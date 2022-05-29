@@ -35,18 +35,18 @@ $('#receive_date_icon').on('click', function () {
     $('#receive_date').focus();
 });
 // for upload attach file when apply leave
-// var fileInput = document.getElementById('attach_file');
-// if (fileInput) {
-//     //alert("staffs photo");
-//     fileInput.addEventListener('change', showFileName);
+var fileInput = document.getElementById('attach_file');
+if (fileInput) {
+    //alert("staffs photo");
+    fileInput.addEventListener('change', showFileName);
 
-//     function showFileName(event) {
-//         "use strict";
-//         var fileInput = event.srcElement;
-//         var fileName = fileInput.files[0].name;
-//         document.getElementById('placeholderAttachFile').placeholder = fileName;
-//     }
-// }
+    function showFileName(event) {
+        "use strict";
+        var fileInput = event.srcElement;
+        var fileName = fileInput.files[0].name;
+        document.getElementById('placeholderAttachFile').placeholder = fileName;
+    }
+}
 // for global modal
 // $('body').on('click', '.nom_epi', function() { alert("hello"); })
 $(document).ready(function () {
