@@ -36,7 +36,7 @@
             </td>
             <td>
                 {{$file->user->role}}
-                @if(permissionCheck($type.'.edit') && $file->user->role!=0)
+                @if(permissionCheck($type.'.edit') && (isset($file->user) && $file->user->role!=0))
                   
                         <span class="btn @if($file->client2view==1) btn-primary @else btn-warning @endif btn-sm btn-client-view" data-url="{{route('file.client2view', $file->uuid)}}" data-file-id="{{$file->uuid}}" title="Client To View" style="cursor: pointer;">
                           @if($file->client2view==1)
