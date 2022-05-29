@@ -10,8 +10,7 @@ Route::group(['middleware' => ['auth', 'permission','systemsubscription']], func
     Route::resource('taxes', "TaxController");
     Route::resource('incomes', "IncomeController");
     Route::resource('expenses', "ExpenseController");
-    Route::resource('paymentdue', "PaymentDueController");
-
+    
     Route::group(['prefix' => 'invoice', 'as' => 'invoice.'], function (){
 
         Route::get('settings', 'InvoiceController@settings')->name('settings');

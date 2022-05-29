@@ -501,6 +501,7 @@ class CaseController extends Controller
 
     public function causelist(Request $request)
     {
+        
         $data['models'] =  Cases::where(['status' => 'Open'])->orWhereIn('judgement_status', ['Open', 'Reopen']);
         if ($request->start_date) {
             $data['start_date'] = getFormatedDate($request->start_date, true);
