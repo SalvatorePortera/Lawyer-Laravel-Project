@@ -15,7 +15,16 @@
             <td>{{ $loop->index + 1 }}</td>
             <td>
                 <b>{{ __('case.Case No.') }}: </b> {{$model->case_category? $model->case_category->name : '' }}/{{$model->case_no}} <br>
-                <a href="{{route('category.case.show', $model->case_category_id)}}"><b>{{ __('case.Category') }}: </b> {{$model->case_category? $model->case_category->name : '' }}</a-->  <br>
+                @if($model->case_category_id)
+                    <a href="{{route('category.case.show', $model->case_category_id)}}"><b>{{ __('case.Category') }}
+                            :
+                        </b> {{$model->case_category? $model->case_category->name : '' }}
+                    </a>
+                @else
+                    <b>{{ __('case.Category') }}: </b>
+                    {{$model->case_category? $model->case_category->name : '' }}
+                @endif
+                <br>
                 <a href="{{ route('case.show', $model->id) }}"><b>{{ __('case.Title') }}: </b>{{ $model->title }}
                 </a>
                 <br>
