@@ -1325,7 +1325,7 @@ if (!function_exists('isStorageLimitExceeded')) {
     function isStorageLimitExceeded()
     {
         $is_expired = false;
-        $subscription = Subscription::latest()->first();
+        $subscription = Subscription::orderBy('id', 'DESC')->first();
         if ($subscription){
             //Calculate storage size
             $db_size = getDBSizeInMB();
@@ -1363,7 +1363,7 @@ if (!function_exists('isStorageLimitExceeded')) {
             $used_total_storage_size += $public_uploads;
         }
         $disk_storage_limit = 0;
-        $subscription = Subscription::latest()->first();
+        $subscription = Subscription::orderBy('id', 'DESC')->first();
         if ($subscription){
             //Calculate storage size
             $disk_storage_limit=$subscription->disk_storage_limit;
@@ -1378,7 +1378,7 @@ if (!function_exists('getSystemSubscription')) {
     function getSystemSubscription()
     {
         $is_expired = false;
-        $subscription = Subscription::latest()->first();
+        $subscription = Subscription::orderBy('id', 'DESC')->first();
         if ($subscription){
             $current_date = date('Y-m-d H:i:s');
             $expiry_date = date('Y-m-d H:i:s',strtotime($subscription->expiry_date));
@@ -1397,7 +1397,7 @@ if (!function_exists('getSystemSubscriptionAllowedLawyers')) {
     function getSystemSubscriptionAllowedLawyers()
     {
         $availableOfLawyers = 0;
-        $subscription = Subscription::latest()->first();
+        $subscription = Subscription::orderBy('id', 'DESC')->first();
         if ($subscription){
             $current_date = date('Y-m-d H:i:s');
             $expiry_date = date('Y-m-d H:i:s',strtotime($subscription->expiry_date));
@@ -1460,7 +1460,7 @@ if (!function_exists('getSubscriptionDays')) {
     function getSubscriptionDays()
     {
         $date1 = date('Y-m-d');
-        $subscription = Subscription::latest()->first();
+        $subscription = Subscription::orderBy('id', 'DESC')->first();
         $date2 = $subscription->expiry_date;
         // Calculating the difference in timestamps
         $diff = strtotime($date2) - strtotime($date1);

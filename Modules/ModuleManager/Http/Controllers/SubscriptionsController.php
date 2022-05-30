@@ -24,7 +24,7 @@ class SubscriptionsController extends Controller
         //Artisan::call('config:clear');
         //Artisan::call("migrate", ["--path" => "Modules/ClientLogin/Database/Migrations","--force" => true]);
         //Artisan::call('optimize:clear');
-		$models = Subscription::all();
+		$models = Subscription::orderBy('id', 'DESC')->get();
 		return view('modulemanager::subscriptions.index', compact('models'));
 	}
 
