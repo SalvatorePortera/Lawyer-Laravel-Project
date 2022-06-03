@@ -1137,7 +1137,7 @@ if (!function_exists('single_price')) {
             $price = 0;
 
         if (config('configs')->where('key', 'currency_code')->first()->value) {
-            return new Money($price, new Currency(config('configs')->where('key', 'currency_code')->first()->value));
+			return new Money($price, new Currency(config('configs')->where('key', 'currency_code')->first()->value),true);
 
         } else {
             return number_format($price, 2) . " bdt";

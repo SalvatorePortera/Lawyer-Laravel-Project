@@ -54,7 +54,6 @@ class ClientController extends Controller {
 		$model->name = $request->name;
 		$model->description = $request->description;
         $model->business_type = $request->businessRadio;
-		$model->plaintiff = $request->plaintiff ? 1 : 0;
 		$model->save();
 
         $response = [
